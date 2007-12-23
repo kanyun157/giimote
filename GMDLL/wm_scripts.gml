@@ -60,6 +60,9 @@ layer_function(global.gm_class,"wm_classic_check_button",ty_real,1,argument0);
 #define wm_classic_direction
 // argument0 - Joystick ID
 layer_function(global.gm_class,"wm_classic_direction",ty_real,1,argument0);
+#define wm_classic_pressure
+// argument0 - Joystick ID
+layer_function(global.gm_class,"wm_classic_pressure",ty_real,1,argument0);
 #define wm_classic_rawx
 // argument0 - Joystick ID
 layer_function(global.gm_class,"wm_classic_rawx",ty_real,1,argument0);
@@ -107,11 +110,13 @@ function wm_nunchuck_ypos():real
 hfunction wm_nunchuck_rawx():real
 hfunction wm_nunchuck_rawy():real
 function wm_nunchuck_direction():real
+function wm_nunchuck_pressure():real
 function wm_classic_xpos(wm_joystick:real):real
 function wm_classic_ypos(wm_joystick:real):real
 hfunction wm_classic_rawx(wm_joystick:real):real
 hfunction wm_classic_rawy(wm_joystick:real):real
 function wm_classic_direction(wm_joystick:real):real
+function wm_classic_pressure(wm_joystick:real):real
 function wm_classic_trigger_pressure(trigger:real):real
 hfunction wm_classic_trigger_raw(trigger:real):real
 function wm_check_extension():real
@@ -413,6 +418,8 @@ layer_function(global.gm_class,"wm_nunchuck_get_accel_x",ty_real,0);
 layer_function(global.gm_class,"wm_nunchuck_get_accel_y",ty_real,0);
 #define wm_nunchuck_get_accel_z
 layer_function(global.gm_class,"wm_nunchuck_get_accel_z",ty_real,0);
+#define wm_nunchuck_pressure
+layer_function(global.gm_class,"wm_nunchuck_pressure",ty_real,0);
 #define wm_nunchuck_rawx
 layer_function(global.gm_class,"wm_nunchuck_rawx",ty_real,0);
 #define wm_nunchuck_rawy
