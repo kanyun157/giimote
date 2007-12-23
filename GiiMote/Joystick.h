@@ -9,7 +9,7 @@ namespace GiiMoteLib {
 
 	double GiiMote::joystick_direction(double xx, double yy)
 	{
-		return ( System::Math::Atan2(yy,xx) );
+		return ( System::Math::Atan2(yy,xx) * ( 180 / System::Math::PI ) );
 	}
 
 	/////////////////////////
