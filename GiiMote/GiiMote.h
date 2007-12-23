@@ -145,11 +145,13 @@ public:
 		double wm_nunchuck_xpos();
 		double wm_nunchuck_ypos();
 		double wm_nunchuck_direction();
+		double wm_nunchuck_pressure();
 		double wm_nunchuck_rawx();
 		double wm_nunchuck_rawy();
 
 		// Joysticks (General)
 		double joystick_direction(double xx, double yy);
+		double joystick_pressure(double xx, double yy);
 
 		// Joysticks (Classic Controller)
 		double wm_classic_xpos(double stick);
@@ -157,6 +159,7 @@ public:
 		double wm_classic_rawx(double stick);
 		double wm_classic_rawy(double stick);
 		double wm_classic_direction(double stick);
+		double wm_classic_pressure(double stick);
 
 		// Triggers (Classic Controller)
 		double wm_classic_trigger_pressure(double trigger);

@@ -12,6 +12,11 @@ namespace GiiMoteLib {
 		return ( System::Math::Atan2(yy,xx) * ( 180 / System::Math::PI ) );
 	}
 
+	double GiiMote::joystick_pressure(double xx, double yy)
+	{
+		return ( System::Math::Sqrt( ( xx * xx ) + ( yy * yy ) ) / System::Math::Sqrt( 0.5 ) );
+	}
+
 	/////////////////////////
 	// Nunchuck (Expansion)
 	/////////////////////////
@@ -64,6 +69,20 @@ namespace GiiMoteLib {
 		else
 		{
 			return ( joystick_direction(xx,yy) );
+		}
+	}
+
+	double GiiMote::wm_nunchuck_pressure()
+	{
+		double xx = wm_nunchuck_xpos();
+		double yy = wm_nunchuck_ypos();
+		if (xx == -1 || yy == -1)
+		{
+			return ( -1 );
+		}
+		else
+		{
+			return ( joystick_pressure(xx,yy) );
 		}
 	}
 
@@ -227,6 +246,22 @@ namespace GiiMoteLib {
 			if (xx != -1 && yy != -1)
 			{
 				return ( joystick_direction(xx,yy) );
+			}
+		}
+
+		return ( -1 );
+	}
+
+	double GiiMote::wm_classic_pressure(double stick)
+	{
+		double xx, yy;
+		if (stick == joyR || stick == joyL)
+		{
+			xx = wm_classic_xpos(stick);
+			yy = wm_classic_ypos(stick);
+			if (xx != -1 && yy != -1)
+			{
+				return ( joystick_pressure(xx,yy) );
 			}
 		}
 
