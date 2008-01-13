@@ -9,7 +9,8 @@ namespace GiiMoteLib {
 	double GiiMote::wm_calc_accel(float accel)
 	{
 		double val = (double)accel;
-		if (val < this->accel_dead_zone && val > -(this->accel_dead_zone))
+		// if (val < this->accel_dead_zone && val > -(this->accel_dead_zone))
+		if ( System::Math::Abs(val) < this->accel_dead_zone )
 		{
 			val = 0;
 		}
