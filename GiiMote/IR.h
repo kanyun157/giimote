@@ -19,8 +19,9 @@ namespace GiiMoteLib {
 			found_dot = this->wmState->IRState.Found2;
 			break;
 		default:
+			return ( -1 );
 			break;
-	}
+		}
 	return ( (double)found_dot );
 	}
 
