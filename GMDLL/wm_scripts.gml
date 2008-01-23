@@ -572,5 +572,6 @@ layer_function(global.gm_class,"wm_set_leds",ty_real,4,argument0,argument1,argum
 // argument0 - Leds as Integer
 layer_function(global.gm_class,"wm_set_leds_int",ty_real,1,argument0);
 #define wm_set_rumble
+
 // argument0 - rumbling
 layer_function(global.gm_class,"wm_set_rumble",ty_real,1,argument0);
