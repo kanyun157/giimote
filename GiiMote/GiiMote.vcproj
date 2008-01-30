@@ -180,7 +180,7 @@
 		/>
 		<AssemblyReference
 			RelativePath=".\WiimoteLib.dll"
-			AssemblyName="WiimoteLib, Version=1.2.0.0, processorArchitecture=MSIL"
+			AssemblyName="WiimoteLib, Version=1.2.1.0, processorArchitecture=MSIL"
 			MinFrameworkVersion="131072"
 		/>
 		<AssemblyReference

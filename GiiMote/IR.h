@@ -18,6 +18,12 @@ namespace GiiMoteLib {
 		case 2:
 			found_dot = this->wmState->IRState.Found2;
 			break;
+		case 3:
+			found_dot = this->wmState->IRState.Found3;
+			break;
+		case 4:
+			found_dot = this->wmState->IRState.Found4;
+			break;
 		default:
 			return ( -1 );
 			break;
@@ -36,6 +42,12 @@ namespace GiiMoteLib {
 		case 2:
 			size = this->wmState->IRState.Size2;
 			break;
+		case 3:
+			size = this->wmState->IRState.Size3;
+			break;
+		case 4:
+			size = this->wmState->IRState.Size4;
+			break;
 		default:
 			break;
 		}
@@ -52,6 +64,12 @@ namespace GiiMoteLib {
 			break;
 		case 2:
 			xx = this->wmState->IRState.X2;
+			break;
+		case 3:
+			xx = this->wmState->IRState.X3;
+			break;
+		case 4:
+			xx = this->wmState->IRState.X4;
 			break;
 		default:
 			break;
@@ -70,6 +88,12 @@ namespace GiiMoteLib {
 		case 2:
 			yy = this->wmState->IRState.Y2;
 			break;
+		case 3:
+			yy = this->wmState->IRState.Y3;
+			break;
+		case 4:
+			yy = this->wmState->IRState.Y4;
+			break;
 		default:
 			break;
 		}
@@ -87,6 +111,12 @@ namespace GiiMoteLib {
 		case 2:
 			xx = this->wmState->IRState.RawX2;
 			break;
+		case 3:
+			xx = this->wmState->IRState.RawX3;
+			break;
+		case 4:
+			xx = this->wmState->IRState.RawX4;
+			break;
 		default:
 			break;
 		}
@@ -103,6 +133,12 @@ namespace GiiMoteLib {
 			break;
 		case 2:
 			yy = this->wmState->IRState.RawY2;
+			break;
+		case 3:
+			yy = this->wmState->IRState.RawY3;
+			break;
+		case 4:
+			yy = this->wmState->IRState.RawY4;
 			break;
 		default:
 			break;

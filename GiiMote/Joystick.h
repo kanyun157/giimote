@@ -14,7 +14,7 @@ namespace GiiMoteLib {
 
 	double GiiMote::joystick_pressure(double xx, double yy)
 	{
-		return ( System::Math::Sqrt( System::Math::Pow(xx,2) + System::Math::Pow(yy,2) ) * 2 );
+		return ( System::Math::Sqrt( System::Math::Pow(xx, 2) + System::Math::Pow(yy, 2) ) * 2 );
 	}
 
 	/////////////////////////
