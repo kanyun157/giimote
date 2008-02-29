@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "GiiMote"
+    </assembly>
+    <members>
+        <member name="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_maxtrigger(System.Double)">
+            <summary>
+Gets the calibration data for the max of the given trigger on a Classic Controller.
+</summary>
+            <param name="trigger">The trigger to get calibration data for. btnL or btnR</param>
+            <returns>Normalized calibration data.</returns>
+        </member>
+    </members>
+</doc>
