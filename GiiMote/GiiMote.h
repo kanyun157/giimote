@@ -37,51 +37,59 @@
 using namespace System;
 using namespace WiimoteLib;
 
+/// <summary>Functionality to communicate with a Nintendo Wii Remote from Game Maker</summary>
 namespace GiiMoteLib {
 
+	/// <summary>The class embodying GiiMote</summary>
 	public ref class GiiMote
 	{
 	public:
+		/// <summary>The Wii Remote</summary>
 		Wiimote^ wm;
+		/// <summary>The Wii Remote State</summary>
 		WiimoteState^ wmState;
-		// bool connected;
+		/// <summary>Dead-zone value</summary>
 		double dead_zone;
+		/// <summary>Dead-zone value</summary>
 		double trigger_dead_zone;
+		/// <summary>Dead-zone value</summary>
 		double accel_dead_zone;
-		cli::array<double>^ IRCalibration;
 		
 
 		 //////////////////
 		// Constructors //
 	   //////////////////
 	public:
+		/// <summary>Default constructor</summary>
 		GiiMote()
 		{
 			wm = gcnew Wiimote;
-			// this->connected = false;
 			this->dead_zone = 0;
-			IRCalibration->Resize(IRCalibration,5);
-			IRCalibration = gcnew cli::array<double>(5);
 		}
-		// Developers Note:
-		// The GiiMote destructor (~GiiMote) is not bound late.
-		// If you introduce a subclass into this library which inherits from GiiMote
-		// you will need to make the destructor bind late using the keyword "virtual"
-		// It is not late bound here to avoid the small amount of overhead introduced by late binding.
+		/// <summary>Default destructor</summary>
+		/// <remarks>
+		/// The GiiMote destructor (~GiiMote) is not bound late.
+		/// If you introduce a class into this library which inherits from GiiMote
+		/// you will need to make the destructor bind late using the keyword "virtual."
+		/// </remarks>
 		~GiiMote()
 		{
 			// Cleanup after sloppy users.
-			// Actually, I think the Wiimote class does this for you as well.
+			// I think WiimoteLib does this for you as well.
 			if (wm_connected())
 			{
 				wm_disconnect();
 			}
 			// Do I need to destruct these here?
-			delete this->wm->WiimoteChanged;
-			delete this->wm->WiimoteExtensionChanged;
+			// delete (this->wm->WiimoteChanged);
+			// delete (this->wm->WiimoteExtensionChanged);
+			// delete (this->IRCalibration);
 			delete (wm);
 		}
 
+		/// <summary>Wii Remote extension state change event</summary>
+		/// <param name="sender">Object sending the event</param>
+		/// <param name="args">Current extension status</param>
 		void wm_OnWiimoteExtensionChanged(System::Object^ sender, WiimoteExtensionChangedEventArgs^ args)
 		{
 			if(args->Inserted)
@@ -94,6 +102,9 @@ namespace GiiMoteLib {
 			}
 		}
 
+		/// <summary>Wii Remote state change event</summary>
+		/// <param name="sender">Object sending the event</param>
+		/// <param name="args">Current Wii Remote state</param>
 		void wm_OnWiimoteChanged(System::Object^ sender, WiimoteChangedEventArgs^ args)
 		{
 			this->wmState = args->WiimoteState;
@@ -198,24 +209,10 @@ public:
 		double wm_ir_dot_get_midy();
 		double wm_ir_dot_get_rawmidx();
 		double wm_ir_dot_get_rawmidy();
-		//double wm_ir_display_get_x(double display_width);
-		//double wm_ir_display_get_y(double display_height);
 
 ////////////////////////////////////////////
 // Calibration
 ////////////////////////////////////////////
-		// IR Set
-		// double wm_ir_set_calibration_right(double val);
-		// double wm_ir_set_calibration_left(double val);
-		// double wm_ir_set_calibration_top(double val);
-		// double wm_ir_set_calibration_bottom(double val);
-		// double wm_ir_sensor_bar_set_pos(double pos);
-		// IR Get
-		// double wm_ir_get_calibration_right();
-		// double wm_ir_get_calibration_left();
-		// double wm_ir_get_calibration_top();
-		// double wm_ir_get_calibration_bottom();
-		// double wm_ir_sensor_bar_get_pos();
 		// Nunchuck Get
 		double wm_nunchuck_get_calibration_x0();
 		double wm_nunchuck_get_calibration_xg();
@@ -270,10 +267,10 @@ public:
 		// Wii Remote Set
 		double wm_set_calibration_x0(double val);
 		double wm_set_calibration_xg(double val);
-		double wm_get_calibration_y0(double val);
-		double wm_get_calibration_yg(double val);
-		double wm_get_calibration_z0(double val);
-		double wm_get_calibration_zg(double val);
+		double wm_set_calibration_y0(double val);
+		double wm_set_calibration_yg(double val);
+		double wm_set_calibration_z0(double val);
+		double wm_set_calibration_zg(double val);
 
 ////////////////////////////////////////////
 // Mii Functions

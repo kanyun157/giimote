@@ -118,6 +118,8 @@
 				PreprocessorDefinitions="WIN32;NDEBUG"
 				RuntimeLibrary="2"
 				UsePrecompiledHeader="2"
+				GenerateXMLDocumentationFiles="true"
+				XMLDocumentationFileName="$(IntDir)\"
 				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
