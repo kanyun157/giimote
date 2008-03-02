@@ -6,48 +6,61 @@ namespace GiiMoteLib {
 ////////////////////////////////////////////
 // Buttons
 ////////////////////////////////////////////
-	/// <summary>
-	/// Checks the state of a button
-	/// </summary>
+	/// <summary>Checks the state of a button</summary>
 	/// <param name="key_code">
 	/// The button to check
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>btnA</description>
+	///			<term>btnA</term>
+	///         <description>A Button</description>
 	///     </item>
 	///     <item>
-	///         <description>btnB</description>
+	///			<term>btnB</term>
+	///         <description>B Button</description>
 	///     </item>
 	///     <item>
-	///         <description>btnUp</description>
+	///			<term>btnUp</term>
+	///         <description>D-Pad Up</description>
 	///     </item>
 	///     <item>
-	///         <description>btnDown</description>
+	///			<term>btnDown</term>
+	///         <description>D-Pad Down</description>
 	///     </item>
 	///     <item>
-	///         <description>btnRight</description>
+	///			<term>btnRight</term>
+	///         <description>D-Pad Right</description>
 	///     </item>
 	///     <item>
-	///         <description>btnLeft</description>
+	///			<term>btnLeft</term>
+	///         <description>D-Pad Left</description>
 	///     </item>
 	///     <item>
-	///         <description>btnOne</description>
+	///			<term>btnOne</term>
+	///         <description>One Button</description>
 	///     </item>
 	///     <item>
-	///         <description>btnTwo</description>
+	///			<term>btnTwo</term>
+	///         <description>Two Button</description>
 	///     </item>
 	///     <item>
-	///         <description>btnMinus</description>
+	///			<term>btnMinus</term>
+	///         <description>Minus Button</description>
 	///     </item>
 	///     <item>
-	///         <description>btnPlus</description>
+	///			<term>btnPlus</term>
+	///         <description>Plus Button</description>
 	///     </item>
 	///     <item>
-	///         <description>btnHome</description>
+	///			<term>btnHome</term>
+	///         <description>Home Button</description>
 	///     </item>
 	/// </list>
 	/// </param>
-	/// <returns>Button pressed as bool</returns>
+	/// <returns>Button pressed</returns>
 	double GiiMote::wm_check_button(double key_code)
 	{
 		bool is_pressed = 0;
@@ -94,60 +107,77 @@ namespace GiiMoteLib {
 		return ((double)is_pressed);
 	}
 
-	/// <summary>
-	/// Checks the state of a button
-	/// </summary>
+	/// <summary>Checks the state of a button</summary>
 	/// <param name="key_code">
 	/// The button to check
 	/// <list type="bullet">
-	///     <item>
-	///         <description>btnA</description>
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
+	///		<item>
+	///			<term>btnA</term>
+	///         <description>A Button</description>
 	///     </item>
 	///     <item>
-	///         <description>btnB</description>
+	///			<term>btnB</term>
+	///         <description>B Button</description>
 	///     </item>
 	///     <item>
-	///         <description>btnUp</description>
+	///			<term>btnUp</term>
+	///         <description>D-Pad Up</description>
 	///     </item>
 	///     <item>
-	///         <description>btnDown</description>
+	///			<term>btnDown</term>
+	///         <description>D-Pad Down</description>
 	///     </item>
 	///     <item>
-	///         <description>btnRight</description>
+	///			<term>btnRight</term>
+	///         <description>D-Pad Right</description>
 	///     </item>
 	///     <item>
-	///         <description>btnLeft</description>
+	///			<term>btnLeft</term>
+	///         <description>D-Pad Left</description>
 	///     </item>
 	///     <item>
-	///         <description>btnX</description>
+	///			<term>btnX</term>
+	///         <description>X Button</description>
 	///     </item>
 	///     <item>
-	///         <description>btnY</description>
+	///			<term>btnY</term>
+	///         <description>Y Button</description>
 	///     </item>
 	///     <item>
-	///         <description>btnMinus</description>
+	///			<term>btnMinus</term>
+	///         <description>Minus Button</description>
 	///     </item>
 	///     <item>
-	///         <description>btnPlus</description>
+	///			<term>btnPlus</term>
+	///         <description>Plus Button</description>
 	///     </item>
 	///     <item>
-	///         <description>btnHome</description>
+	///			<term>btnHome</term>
+	///         <description>Home Button</description>
 	///     </item>
 	///     <item>
-	///         <description>btnL</description>
+	///			<term>btnL</term>
+	///         <description>Left Trigger</description>
 	///     </item>
 	///     <item>
-	///         <description>btnR</description>
+	///			<term>btnR</term>
+	///         <description>Right Trigger</description>
 	///     </item>
 	///     <item>
-	///         <description>btnZL</description>
+	///			<term>btnZL</term>
+	///         <description>ZL Button</description>
 	///     </item>
 	///     <item>
-	///         <description>btnZR</description>
+	///			<term>btnZR</term>
+	///         <description>ZR Button</description>
 	///     </item>
 	/// </list>
 	/// </param>
-	/// <returns>Button pressed as bool</returns>
+	/// <returns>Button pressed</returns>
 	double GiiMote::wm_classic_check_button(double key_code)
 	{
 		bool is_pressed = 0;
@@ -212,15 +242,21 @@ namespace GiiMoteLib {
 	/// <param name="key_code">
 	/// The button to check
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>btnC</description>
+	///			<term>btnC</term>
+	///         <description>C Button</description>
 	///     </item>
 	///     <item>
-	///         <description>btnZ</description>
+	///			<term>btnZ</term>
+	///         <description>Z Button</description>
 	///     </item>
 	/// </list>
 	/// </param>
-	/// <returns>Button pressed as bool</returns>
+	/// <returns>Button pressed</returns>
 	double GiiMote::wm_nunchuck_check_button(double key_code)
 	{
 		bool is_pressed = 0;
@@ -244,6 +280,23 @@ namespace GiiMoteLib {
 // Triggers
 ////////////////////////////////////////////
 
+	/// <summary>Sets the dead-zone value</summary>
+	/// <remarks>Domain: [0.0,1.0]</remarks>
+	/// <param name="val">The dead-zone value</param>
+	/// <returns>1</returns>
+	double GiiMote::wm_set_trigger_dead_zone(double val)
+	{
+		this->trigger_dead_zone = in_domain(val, 0, 1);
+		return ( 1 );
+	}
+
+	/// <summary>Gets the dead-zone value</summary>
+	/// <returns>Trigger dead-zone value</returns>
+	double GiiMote::wm_get_trigger_dead_zone()
+	{
+		return ( this->trigger_dead_zone );
+	}
+
 	// Normalized Functions
 	/// <summary>
 	/// Normalized trigger pressure
@@ -254,11 +307,17 @@ namespace GiiMoteLib {
 	/// <param name="trigger">
 	/// The trigger to check:
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>btnL</description>
+	///			<term>btnL</term>
+	///         <description>Left Trigger</description>
 	///     </item>
 	///     <item>
-	///         <description>btnR</description>
+	///			<term>btnR</term>
+	///         <description>Right Trigger</description>
 	///     </item>
 	/// </list>
 	/// </param>
@@ -288,20 +347,22 @@ namespace GiiMoteLib {
 	}
 	
 	// Raw Functions
-	/// <summary>
-	/// Raw trigger pressure
-	/// </summary>
-	/// <remarks>
-	/// Domain: [0,255]
-	/// </remarks>
+	/// <summary>Raw trigger pressure</summary>
+	/// <remarks>Domain: [0,255]</remarks>
 	/// <param name="trigger">
 	/// The trigger to check:
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>btnL</description>
+	///			<term>btnL</term>
+	///         <description>Left Trigger</description>
 	///     </item>
 	///     <item>
-	///         <description>btnR</description>
+	///			<term>btnR</term>
+	///         <description>Right Trigger</description>
 	///     </item>
 	/// </list>
 	/// </param>
