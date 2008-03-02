@@ -46,14 +46,50 @@ namespace GiiMoteLib {
 	public:
 		/// <summary>The Wii Remote</summary>
 		Wiimote^ wm;
-		/// <summary>The Wii Remote State</summary>
+		/// <summary>The current Wii Remote state</summary>
 		WiimoteState^ wmState;
-		/// <summary>Dead-zone value</summary>
-		double dead_zone;
-		/// <summary>Dead-zone value</summary>
+
+		/// <summary>Joystick dead-zone value</summary>
+		double joystick_dead_zone;
+
+
+		/// <summary>Trigger dead-zone value</summary>
 		double trigger_dead_zone;
-		/// <summary>Dead-zone value</summary>
-		double accel_dead_zone;
+
+		/// <summary>Accelerometer dead-zone values</summary>
+		/// <remarks>
+		/// <list type="bullet">
+		///     <listheader>
+		///         <term>Index</term>
+		///         <description>Dead Zone</description>
+		///     </listheader>
+		///     <item>
+		///			<term>0</term>
+		///         <description>Wii Remote X-axis</description>
+		///     </item>
+		///     <item>
+		///			<term>1</term>
+		///         <description>Wii Remote Y-axis</description>
+		///     </item>
+		///     <item>
+		///			<term>2</term>
+		///         <description>Wii Remote Z-axis</description>
+		///     </item>
+		///     <item>
+		///			<term>3</term>
+		///         <description>Nunchuck X-axis</description>
+		///     </item>
+		///     <item>
+		///			<term>4</term>
+		///         <description>Nunchuck Y-axis</description>
+		///     </item>
+		///     <item>
+		///			<term>5</term>
+		///         <description>Nunchuck Z-axis</description>
+		///     </item>
+		/// </list>
+		/// </remarks>
+		cli::array<double>^ accel_dead_zone;
 		
 
 		 //////////////////
@@ -64,7 +100,15 @@ namespace GiiMoteLib {
 		GiiMote()
 		{
 			wm = gcnew Wiimote;
-			this->dead_zone = 0;
+
+			// Default dead-zones to 0
+			this->accel_dead_zone->Resize(this->accel_dead_zone, 6);
+			for(int i = 0; i <= 5; i++)
+			{
+				this->accel_dead_zone[i] = 0;
+			}
+			this->joystick_dead_zone = 0;
+			this->trigger_dead_zone = 0;
 		}
 		/// <summary>Default destructor</summary>
 		/// <remarks>
@@ -120,8 +164,6 @@ public:
 		double wm_set_write_method(double alt_write_method);
 		double wm_connected(void);
 		double wm_disconnect(void);
-		
-		double wm_set_dead_zone(double num, double type);
 
 		// LED Functions
 		double wm_get_led(double led_num);
@@ -151,6 +193,12 @@ public:
 		double wm_nunchuck_check_button(double key_code);
 		double wm_classic_check_button(double key_code);
 		double wm_check_button(double key_code);
+
+		// Joysticks (General)
+		double joystick_direction(double xx, double yy);
+		double joystick_pressure(double xx, double yy);
+		double wm_set_joystick_dead_zone(double val);
+		double wm_get_joystick_dead_zone();
 		
 		// Joysticks (Nunchuck)
 		double wm_nunchuck_xpos();
@@ -160,10 +208,6 @@ public:
 		double wm_nunchuck_rawx();
 		double wm_nunchuck_rawy();
 
-		// Joysticks (General)
-		double joystick_direction(double xx, double yy);
-		double joystick_pressure(double xx, double yy);
-
 		// Joysticks (Classic Controller)
 		double wm_classic_xpos(double stick);
 		double wm_classic_ypos(double stick);
@@ -171,6 +215,10 @@ public:
 		double wm_classic_rawy(double stick);
 		double wm_classic_direction(double stick);
 		double wm_classic_pressure(double stick);
+
+		// Triggers (General)
+		double wm_set_trigger_dead_zone(double val);
+		double wm_get_trigger_dead_zone();
 
 		// Triggers (Classic Controller)
 		double wm_classic_trigger_pressure(double trigger);
@@ -180,7 +228,7 @@ public:
 // Accelerometers and IR
 ////////////////////////////////////////////
 		// Accelerometer (General)
-		double wm_calc_accel(float accel);
+		double wm_calc_accel(float accel, int dz_index);
 
 		// Accelerometer (Wii Remote)
 		double wm_get_accel_x();
@@ -189,6 +237,12 @@ public:
 		double wm_get_accel_rawx();
 		double wm_get_accel_rawy();
 		double wm_get_accel_rawz();
+		double wm_set_accel_dead_zone_x(double val);
+		double wm_set_accel_dead_zone_y(double val);
+		double wm_set_accel_dead_zone_z(double val);
+		double wm_get_accel_dead_zone_x();
+		double wm_get_accel_dead_zone_y();
+		double wm_get_accel_dead_zone_z();
 
 		// Accelerometer (Nunchuck)
 		double wm_nunchuck_get_accel_x();
@@ -197,6 +251,12 @@ public:
 		double wm_nunchuck_get_accel_rawx();
 		double wm_nunchuck_get_accel_rawy();
 		double wm_nunchuck_get_accel_rawz();
+		double wm_nunchuck_set_accel_dead_zone_x(double val);
+		double wm_nunchuck_set_accel_dead_zone_y(double val);
+		double wm_nunchuck_set_accel_dead_zone_z(double val);
+		double wm_nunchuck_get_accel_dead_zone_x();
+		double wm_nunchuck_get_accel_dead_zone_y();
+		double wm_nunchuck_get_accel_dead_zone_z();
 
 		// Infrared
 		double wm_ir_found_dot(double dot_number);

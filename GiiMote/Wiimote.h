@@ -142,50 +142,6 @@ namespace GiiMoteLib {
 		}
 		return (!wm_connected());
 	}
-	/// <summary>Sets a dead zone</summary>
-	/// <param name="num">The value for the dead-zone</param>
-	/// <param name="type">
-	/// The type of dead-zone:
-	/// <list type="table">
-	///     <listheader>
-	///         <term>Code</term>
-	///         <description>Dead Zone Type</description>
-	///     </listheader>
-	///     <item>
-	///         <term>0</term>
-	///         <description>Joystick dead zone</description>
-	///     </item>
-	///     <item>
-	///         <term>1</term>
-	///         <description>Trigger dead zone</description>
-	///     </item>
-	///     <item>
-	///         <term>2</term>
-	///         <description>Accelerometer dead zone</description>
-	///     </item>
-	/// </list>
-	/// </param>
-	/// <returns>Dead zone ammount</returns>
-	double GiiMote::wm_set_dead_zone(double num, double type)
-	{
-		double dz = num;
-		switch ((int)type)
-		{
-		case 0: // Joystick
-			this->dead_zone = in_domain(dz,0,0.1);
-			break;
-		case 1: // Trigger
-			this->trigger_dead_zone = in_domain(dz,0,1);
-			break;
-		case 2: // Accelerometer
-			this->accel_dead_zone = in_domain(dz,0,-1);
-			break;
-		default:
-			break;
-		}
-
-		return (dz);
-	}
 
 	/////////////////////////
 	// LED Functions

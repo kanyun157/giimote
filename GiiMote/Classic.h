@@ -11,11 +11,17 @@ namespace GiiMoteLib {
 	/// <param name="trigger">
 	/// The analog trigger to get calibration data for:
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>btnL</description>
+	///			<term>btnL</term>
+	///         <description>Left Trigger</description>
 	///     </item>
 	///     <item>
-	///         <description>btnR</description>
+	///			<term>btnR</term>
+	///         <description>Right Trigger</description>
 	///     </item>
 	/// </list>
 	/// </param>
@@ -41,13 +47,19 @@ namespace GiiMoteLib {
 	/// Gets trigger calibration data
 	/// </summary>
 	/// <param name="trigger">
-	/// The trigger to get calibration data for:
+	/// The analog trigger to get calibration data for:
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>btnL</description>
+	///			<term>btnL</term>
+	///         <description>Left Trigger</description>
 	///     </item>
 	///     <item>
-	///         <description>btnR</description>
+	///			<term>btnR</term>
+	///         <description>Right Trigger</description>
 	///     </item>
 	/// </list>
 	/// </param>
@@ -76,11 +88,17 @@ namespace GiiMoteLib {
 	/// <param name="joystick">
 	/// The joystick to get calibration data for:
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>joyL</description>
+	///			<term>joyL</term>
+	///         <description>Left Joystick</description>
 	///     </item>
 	///     <item>
-	///         <description>joyR</description>
+	///			<term>joyR</term>
+	///         <description>Right Joystick</description>
 	///     </item>
 	/// </list>
 	/// </param>
@@ -109,11 +127,17 @@ namespace GiiMoteLib {
 	/// <param name="joystick">
 	/// The joystick to get calibration data for:
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>joyL</description>
+	///			<term>joyL</term>
+	///         <description>Left Joystick</description>
 	///     </item>
 	///     <item>
-	///         <description>joyR</description>
+	///			<term>joyR</term>
+	///         <description>Right Joystick</description>
 	///     </item>
 	/// </list>
 	/// </param>
@@ -141,11 +165,17 @@ namespace GiiMoteLib {
 	/// <param name="joystick">
 	/// The joystick to get calibration data for:
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>joyL</description>
+	///			<term>joyL</term>
+	///         <description>Left Joystick</description>
 	///     </item>
 	///     <item>
-	///         <description>joyR</description>
+	///			<term>joyR</term>
+	///         <description>Right Joystick</description>
 	///     </item>
 	/// </list>
 	/// </param>
@@ -174,11 +204,17 @@ namespace GiiMoteLib {
 	/// <param name="joystick">
 	/// The joystick to get calibration data for:
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>joyL</description>
+	///			<term>joyL</term>
+	///         <description>Left Joystick</description>
 	///     </item>
 	///     <item>
-	///         <description>joyR</description>
+	///			<term>joyR</term>
+	///         <description>Right Joystick</description>
 	///     </item>
 	/// </list>
 	/// </param>
@@ -206,11 +242,17 @@ namespace GiiMoteLib {
 	/// <param name="joystick">
 	/// The joystick to get calibration data for:
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>joyL</description>
+	///			<term>joyL</term>
+	///         <description>Left Joystick</description>
 	///     </item>
 	///     <item>
-	///         <description>joyR</description>
+	///			<term>joyR</term>
+	///         <description>Right Joystick</description>
 	///     </item>
 	/// </list>
 	/// </param>
@@ -238,11 +280,17 @@ namespace GiiMoteLib {
 	/// <param name="joystick">
 	/// The joystick to get calibration data for:
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>joyL</description>
+	///			<term>joyL</term>
+	///         <description>Left Joystick</description>
 	///     </item>
 	///     <item>
-	///         <description>joyR</description>
+	///			<term>joyR</term>
+	///         <description>Right Joystick</description>
 	///     </item>
 	/// </list>
 	/// </param>
@@ -271,11 +319,17 @@ namespace GiiMoteLib {
 	/// <param name="trigger">
 	/// The analog trigger to calibrate:
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>btnL</description>
+	///			<term>btnL</term>
+	///         <description>Left Trigger</description>
 	///     </item>
 	///     <item>
-	///         <description>btnR</description>
+	///			<term>btnR</term>
+	///         <description>Right Trigger</description>
 	///     </item>
 	/// </list>
 	/// </param>
@@ -312,11 +366,17 @@ namespace GiiMoteLib {
 	/// <param name="trigger">
 	/// The analog trigger to calibrate:
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>btnL</description>
+	///			<term>btnL</term>
+	///         <description>Left Trigger</description>
 	///     </item>
 	///     <item>
-	///         <description>btnR</description>
+	///			<term>btnR</term>
+	///         <description>Right Trigger</description>
 	///     </item>
 	/// </list>
 	/// </param>
@@ -353,11 +413,17 @@ namespace GiiMoteLib {
 	/// <param name="joystick">
 	/// The joystick to calibrate:
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>joyL</description>
+	///			<term>joyL</term>
+	///         <description>Left Joystick</description>
 	///     </item>
 	///     <item>
-	///         <description>joyR</description>
+	///			<term>joyR</term>
+	///         <description>Right Joystick</description>
 	///     </item>
 	/// </list>
 	/// </param>
@@ -394,11 +460,17 @@ namespace GiiMoteLib {
 	/// <param name="joystick">
 	/// The joystick to calibrate:
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>joyL</description>
+	///			<term>joyL</term>
+	///         <description>Left Joystick</description>
 	///     </item>
 	///     <item>
-	///         <description>joyR</description>
+	///			<term>joyR</term>
+	///         <description>Right Joystick</description>
 	///     </item>
 	/// </list>
 	/// </param>
@@ -435,11 +507,17 @@ namespace GiiMoteLib {
 	/// <param name="joystick">
 	/// The joystick to calibrate:
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>joyL</description>
+	///			<term>joyL</term>
+	///         <description>Left Joystick</description>
 	///     </item>
 	///     <item>
-	///         <description>joyR</description>
+	///			<term>joyR</term>
+	///         <description>Right Joystick</description>
 	///     </item>
 	/// </list>
 	/// </param>
@@ -476,11 +554,17 @@ namespace GiiMoteLib {
 	/// <param name="joystick">
 	/// The joystick to calibrate:
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>joyL</description>
+	///			<term>joyL</term>
+	///         <description>Left Joystick</description>
 	///     </item>
 	///     <item>
-	///         <description>joyR</description>
+	///			<term>joyR</term>
+	///         <description>Right Joystick</description>
 	///     </item>
 	/// </list>
 	/// </param>
@@ -517,11 +601,17 @@ namespace GiiMoteLib {
 	/// <param name="joystick">
 	/// The joystick to calibrate:
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>joyL</description>
+	///			<term>joyL</term>
+	///         <description>Left Joystick</description>
 	///     </item>
 	///     <item>
-	///         <description>joyR</description>
+	///			<term>joyR</term>
+	///         <description>Right Joystick</description>
 	///     </item>
 	/// </list>
 	/// </param>
@@ -558,11 +648,17 @@ namespace GiiMoteLib {
 	/// <param name="joystick">
 	/// The joystick to calibrate:
 	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
 	///     <item>
-	///         <description>joyL</description>
+	///			<term>joyL</term>
+	///         <description>Left Joystick</description>
 	///     </item>
 	///     <item>
-	///         <description>joyR</description>
+	///			<term>joyR</term>
+	///         <description>Right Joystick</description>
 	///     </item>
 	/// </list>
 	/// </param>

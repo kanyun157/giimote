@@ -25,6 +25,23 @@ namespace GiiMoteLib {
 		return ( System::Math::Sqrt( System::Math::Pow(xx, 2) + System::Math::Pow(yy, 2) ) * 2 );
 	}
 
+	/// <summary>Sets the dead-zone value</summary>
+	/// <remarks>Domain: [0.0,0.5]</remarks>
+	/// <param name="val">The dead-zone value</param>
+	/// <returns>1</returns>
+	double GiiMote::wm_set_joystick_dead_zone(double val)
+	{
+		this->joystick_dead_zone = in_domain(val, 0, 0.5);
+		return ( 1 );
+	}
+
+	/// <summary>Gets the dead-zone value</summary>
+	/// <returns>Joystick dead-zone value</returns>
+	double GiiMote::wm_get_joystick_dead_zone()
+	{
+		return ( this->joystick_dead_zone );
+	}
+
 	/////////////////////////
 	// Nunchuck (Expansion)
 	/////////////////////////
@@ -44,7 +61,7 @@ namespace GiiMoteLib {
 		{
 			return ( -1 );
 		}
-		if ( System::Math::Abs(xx) < (this->dead_zone) )
+		if ( System::Math::Abs(xx) < (this->joystick_dead_zone) )
 		{
 			xx = 0;
 		}
@@ -65,7 +82,7 @@ namespace GiiMoteLib {
 		{
 			return ( -1 );
 		}
-		if ( System::Math::Abs(yy) < (this->dead_zone) )
+		if ( System::Math::Abs(yy) < (this->joystick_dead_zone) )
 		{
 			yy = 0;
 		}	
@@ -171,7 +188,7 @@ namespace GiiMoteLib {
 			return ( -1 );
 		}
 
-		if ( System::Math::Abs(xx) < (this->dead_zone) )
+		if ( System::Math::Abs(xx) < (this->joystick_dead_zone) )
 		{
 			xx = 0;
 		}
@@ -203,7 +220,7 @@ namespace GiiMoteLib {
 			return ( -1 );
 		}
 
-		if ( System::Math::Abs(yy) < (this->dead_zone) )
+		if ( System::Math::Abs(yy) < (this->joystick_dead_zone) )
 		{
 			yy = 0;
 		}	
