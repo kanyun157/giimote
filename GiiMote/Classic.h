@@ -2,8 +2,24 @@
 //				For joystick functions, see "Joystick.h".
 //				For button checking, see "GMButtons.h".
 
+
 namespace GiiMoteLib {
 	// Get Calibration
+	/// <summary>
+	/// Gets trigger calibration data
+	/// </summary>
+	/// <param name="trigger">
+	/// The analog trigger to get calibration data for:
+	/// <list type="bullet">
+	///     <item>
+	///         <description>btnL</description>
+	///     </item>
+	///     <item>
+	///         <description>btnR</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_classic_get_calibration_maxtrigger(double trigger)
 	{
 		double returnValue = -1;
@@ -21,6 +37,21 @@ namespace GiiMoteLib {
 		return (returnValue);
 	}
 
+	/// <summary>
+	/// Gets trigger calibration data
+	/// </summary>
+	/// <param name="trigger">
+	/// The trigger to get calibration data for:
+	/// <list type="bullet">
+	///     <item>
+	///         <description>btnL</description>
+	///     </item>
+	///     <item>
+	///         <description>btnR</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_classic_get_calibration_mintrigger(double trigger)
 	{
 		double returnValue = -1;
@@ -39,6 +70,21 @@ namespace GiiMoteLib {
 		return (returnValue);
 	}
 
+	/// <summary>
+	/// Gets X-axis joystick Calibration data
+	/// </summary>
+	/// <param name="joystick">
+	/// The joystick to get calibration data for:
+	/// <list type="bullet">
+	///     <item>
+	///         <description>joyL</description>
+	///     </item>
+	///     <item>
+	///         <description>joyR</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_classic_get_calibration_maxx(double joystick)
 	{
 		double returnValue = -1;
@@ -57,6 +103,21 @@ namespace GiiMoteLib {
 		return (returnValue);
 	}
 
+	/// <summary>
+	/// Gets X-axis joystick Calibration data
+	/// </summary>
+	/// <param name="joystick">
+	/// The joystick to get calibration data for:
+	/// <list type="bullet">
+	///     <item>
+	///         <description>joyL</description>
+	///     </item>
+	///     <item>
+	///         <description>joyR</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_classic_get_calibration_minx(double joystick)
 	{
 		double returnValue = -1;
@@ -74,6 +135,21 @@ namespace GiiMoteLib {
 		return (returnValue);
 	}
 
+	/// <summary>
+	/// Gets X-axis joystick Calibration data
+	/// </summary>
+	/// <param name="joystick">
+	/// The joystick to get calibration data for:
+	/// <list type="bullet">
+	///     <item>
+	///         <description>joyL</description>
+	///     </item>
+	///     <item>
+	///         <description>joyR</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_classic_get_calibration_midx(double joystick)
 	{
 		double returnValue = -1;
@@ -92,6 +168,21 @@ namespace GiiMoteLib {
 		return (returnValue);
 	}
 
+	/// <summary>
+	/// Gets Y-axis joystick Calibration data
+	/// </summary>
+	/// <param name="joystick">
+	/// The joystick to get calibration data for:
+	/// <list type="bullet">
+	///     <item>
+	///         <description>joyL</description>
+	///     </item>
+	///     <item>
+	///         <description>joyR</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_classic_get_calibration_midy(double joystick)
 	{
 		double returnValue = -1;
@@ -109,6 +200,21 @@ namespace GiiMoteLib {
 		return (returnValue);
 	}
 
+	/// <summary>
+	/// Gets Y-axis joystick Calibration data
+	/// </summary>
+	/// <param name="joystick">
+	/// The joystick to get calibration data for:
+	/// <list type="bullet">
+	///     <item>
+	///         <description>joyL</description>
+	///     </item>
+	///     <item>
+	///         <description>joyR</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_classic_get_calibration_maxy(double joystick)
 	{
 		double returnValue = -1;
@@ -126,6 +232,21 @@ namespace GiiMoteLib {
 		return (returnValue);
 	}
 
+	/// <summary>
+	/// Gets Y-axis joystick Calibration data
+	/// </summary>
+	/// <param name="joystick">
+	/// The joystick to get calibration data for:
+	/// <list type="bullet">
+	///     <item>
+	///         <description>joyL</description>
+	///     </item>
+	///     <item>
+	///         <description>joyR</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_classic_get_calibration_miny(double joystick)
 	{
 		double returnValue = -1;
@@ -144,6 +265,22 @@ namespace GiiMoteLib {
 		return (returnValue);
 	}
 	// Set Calibration
+	/// <summary>
+	/// Sets trigger calibration data
+	/// </summary>
+	/// <param name="trigger">
+	/// The analog trigger to calibrate:
+	/// <list type="bullet">
+	///     <item>
+	///         <description>btnL</description>
+	///     </item>
+	///     <item>
+	///         <description>btnR</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <param name="val">The calibration value</param>
+	/// <returns>Success</returns>
 	double GiiMote::wm_classic_set_calibration_maxtrigger(double trigger, double val)
 	{
 		unsigned char calData = (unsigned char)val;
@@ -168,6 +305,23 @@ namespace GiiMoteLib {
 		}
 		return ( 1 );
 	}
+
+	/// <summary>
+	/// Sets trigger calibration data
+	/// </summary>
+	/// <param name="trigger">
+	/// The analog trigger to calibrate:
+	/// <list type="bullet">
+	///     <item>
+	///         <description>btnL</description>
+	///     </item>
+	///     <item>
+	///         <description>btnR</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <param name="val">The calibration value</param>
+	/// <returns>Success</returns>
 	double GiiMote::wm_classic_set_calibration_mintrigger(double trigger, double val)
 	{
 		unsigned char calData = (unsigned char)val;
@@ -192,6 +346,23 @@ namespace GiiMoteLib {
 		}
 		return ( 1 );
 	}
+
+	/// <summary>
+	/// Sets X-axis joystick calibration data
+	/// </summary>
+	/// <param name="joystick">
+	/// The joystick to calibrate:
+	/// <list type="bullet">
+	///     <item>
+	///         <description>joyL</description>
+	///     </item>
+	///     <item>
+	///         <description>joyR</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <param name="val">MaxX value</param>
+	/// <returns>Success</returns>
 	double GiiMote::wm_classic_set_calibration_maxx(double joystick, double val)
 	{
 		unsigned char calData = (unsigned char)val;
@@ -216,6 +387,23 @@ namespace GiiMoteLib {
 		}
 		return ( 1 );
 	}
+
+	/// <summary>
+	/// Sets X-axis joystick calibration data
+	/// </summary>
+	/// <param name="joystick">
+	/// The joystick to calibrate:
+	/// <list type="bullet">
+	///     <item>
+	///         <description>joyL</description>
+	///     </item>
+	///     <item>
+	///         <description>joyR</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <param name="val">MinX value</param>
+	/// <returns>Success</returns>
 	double GiiMote::wm_classic_set_calibration_minx(double joystick, double val)
 	{
 		unsigned char calData = (unsigned char)val;
@@ -240,6 +428,23 @@ namespace GiiMoteLib {
 		}
 		return ( 1 );
 	}
+
+	/// <summary>
+	/// Sets X-axis joystick calibration data
+	/// </summary>
+	/// <param name="joystick">
+	/// The joystick to calibrate:
+	/// <list type="bullet">
+	///     <item>
+	///         <description>joyL</description>
+	///     </item>
+	///     <item>
+	///         <description>joyR</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <param name="val">MidX value</param>
+	/// <returns>Success</returns>
 	double GiiMote::wm_classic_set_calibration_midx(double joystick, double val)
 	{
 		unsigned char calData = (unsigned char)val;
@@ -264,6 +469,23 @@ namespace GiiMoteLib {
 		}
 		return ( 1 );
 	}
+
+	/// <summary>
+	/// Sets Y-axis joystick calibration data
+	/// </summary>
+	/// <param name="joystick">
+	/// The joystick to calibrate:
+	/// <list type="bullet">
+	///     <item>
+	///         <description>joyL</description>
+	///     </item>
+	///     <item>
+	///         <description>joyR</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <param name="val">MidY value</param>
+	/// <returns>Success</returns>
 	double GiiMote::wm_classic_set_calibration_midy(double joystick, double val)
 	{
 		unsigned char calData = (unsigned char)val;
@@ -288,6 +510,23 @@ namespace GiiMoteLib {
 		}
 		return ( 1 );
 	}
+
+	/// <summary>
+	/// Sets Y-axis joystick calibration data
+	/// </summary>
+	/// <param name="joystick">
+	/// The joystick to calibrate:
+	/// <list type="bullet">
+	///     <item>
+	///         <description>joyL</description>
+	///     </item>
+	///     <item>
+	///         <description>joyR</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <param name="val">MaxY value</param>
+	/// <returns>Success</returns>
 	double GiiMote::wm_classic_set_calibration_maxy(double joystick, double val)
 	{
 		unsigned char calData = (unsigned char)val;
@@ -312,6 +551,23 @@ namespace GiiMoteLib {
 		}
 		return ( 1 );
 	}
+
+	/// <summary>
+	/// Sets Y-axis joystick calibration data
+	/// </summary>
+	/// <param name="joystick">
+	/// The joystick to calibrate:
+	/// <list type="bullet">
+	///     <item>
+	///         <description>joyL</description>
+	///     </item>
+	///     <item>
+	///         <description>joyR</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <param name="val">MinY value</param>
+	/// <returns>Success</returns>
 	double GiiMote::wm_classic_set_calibration_miny(double joystick, double val)
 	{
 		unsigned char calData = (unsigned char)val;

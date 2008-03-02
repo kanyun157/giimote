@@ -7,11 +7,19 @@ namespace GiiMoteLib {
 	// General
 	/////////////////////////
 
+	/// <summary>Calculates the direction of a joystick</summary>
+	/// <param name="xx">The normalized X value of the joystick</param>
+	/// <param name="yy">The normalized Y value of the joystick</param>
+	/// <returns>The direction of the Joystick in degrees</returns>
 	double GiiMote::joystick_direction(double xx, double yy)
 	{
 		return ( System::Math::Atan2(yy,xx) * ( 180 / System::Math::PI ) );
 	}
 
+	/// <summary>Calculates the pressure on a joystick</summary>
+	/// <param name="xx">The normalized X value of the joystick</param>
+	/// <param name="yy">The normalized Y value of the joystick</param>
+	/// <returns>The pressure on the joystick</returns>
 	double GiiMote::joystick_pressure(double xx, double yy)
 	{
 		return ( System::Math::Sqrt( System::Math::Pow(xx, 2) + System::Math::Pow(yy, 2) ) * 2 );
@@ -22,6 +30,9 @@ namespace GiiMoteLib {
 	/////////////////////////
 
 	// Normalized Functions
+	/// <summary>Normalized joystick position</summary>
+	/// <remarks>Domain: [-0.5,0.5]</remarks>
+	/// <returns>The normalized X-position of the joystick</returns>
 	double GiiMote::wm_nunchuck_xpos()
 	{
 		double xx;
@@ -40,6 +51,9 @@ namespace GiiMoteLib {
 		return ( xx );
 	}
 
+	/// <summary>Normalized joystick position</summary>
+	/// <remarks>Domain: [-0.5,0.5]</remarks>
+	/// <returns>The normalized Y-position of the joystick</returns>
 	double GiiMote::wm_nunchuck_ypos()
 	{
 		double yy;
@@ -58,6 +72,8 @@ namespace GiiMoteLib {
 		return ( yy );
 	}
 
+	/// <summary>Joystick direction</summary>
+	/// <returns>The direction of the joystick in degrees</returns>
 	double GiiMote::wm_nunchuck_direction()
 	{
 		double xx = wm_nunchuck_xpos();
@@ -72,6 +88,8 @@ namespace GiiMoteLib {
 		}
 	}
 
+	/// <summary>Joystick pressure</summary>
+	/// <returns>The pressure on the joystick</returns>
 	double GiiMote::wm_nunchuck_pressure()
 	{
 		double xx = wm_nunchuck_xpos();
@@ -87,6 +105,9 @@ namespace GiiMoteLib {
 	}
 
 	// Raw Functions
+	/// <summary>Raw joystick X-position</summary>
+	/// <remarks>Domain: [0,255]</remarks>
+	/// <returns>Raw joystick X-position</returns>
 	double GiiMote::wm_nunchuck_rawx()
 	{
 		double rawX;
@@ -101,7 +122,9 @@ namespace GiiMoteLib {
 
 		return ( rawX );
 	}
-
+	/// <summary>Raw joystick Y-position</summary>
+	/// <remarks>Domain: [0,255]</remarks>
+	/// <returns>Raw joystick Y-position</returns>
 	double GiiMote::wm_nunchuck_rawy()
 	{
 		double rawY;
@@ -122,6 +145,9 @@ namespace GiiMoteLib {
 	/////////////////////////
 
 	// Normalized Functions
+	/// <summary>Normalized joystick position</summary>
+	/// <remarks>Domain: [-0.5,0.5]</remarks>
+	/// <returns>The normalized X-position of the joystick</returns>
 	double GiiMote::wm_classic_xpos(double stick)
 	{
 		double xx;
@@ -151,7 +177,9 @@ namespace GiiMoteLib {
 		}
 		return ( xx );
 	}
-
+	/// <summary>Normalized joystick position</summary>
+	/// <remarks>Domain: [-0.5,0.5]</remarks>
+	/// <returns>The normalized Y-position of the joystick</returns>
 	double GiiMote::wm_classic_ypos(double stick)
 	{
 		double yy;
@@ -183,7 +211,9 @@ namespace GiiMoteLib {
 	}
 
 	// Raw Functions
-
+	/// <summary>Raw joystick X-position</summary>
+	/// <remarks>Domain: [0,255]</remarks>
+	/// <returns>Raw joystick X-position</returns>
 	double GiiMote::wm_classic_rawx(double stick)
 	{
 		double rawX;
@@ -209,7 +239,9 @@ namespace GiiMoteLib {
 
 		return (rawX);
 	}
-
+	/// <summary>Raw joystick Y-position</summary>
+	/// <remarks>Domain: [0,255]</remarks>
+	/// <returns>Raw joystick Y-position</returns>
 	double GiiMote::wm_classic_rawy(double stick)
 	{
 		double rawY;
@@ -235,7 +267,8 @@ namespace GiiMoteLib {
 
 		return (rawY);
 	}
-
+	/// <summary>Joystick direction</summary>
+	/// <returns>The direction of the joystick in degrees</returns>
 	double GiiMote::wm_classic_direction(double stick)
 	{
 		double xx, yy;
@@ -251,7 +284,8 @@ namespace GiiMoteLib {
 
 		return ( -1 );
 	}
-
+	/// <summary>Joystick pressure</summary>
+	/// <returns>The pressure on the joystick</returns>
 	double GiiMote::wm_classic_pressure(double stick)
 	{
 		double xx, yy;

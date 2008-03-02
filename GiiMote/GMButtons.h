@@ -6,6 +6,48 @@ namespace GiiMoteLib {
 ////////////////////////////////////////////
 // Buttons
 ////////////////////////////////////////////
+	/// <summary>
+	/// Checks the state of a button
+	/// </summary>
+	/// <param name="key_code">
+	/// The button to check
+	/// <list type="bullet">
+	///     <item>
+	///         <description>btnA</description>
+	///     </item>
+	///     <item>
+	///         <description>btnB</description>
+	///     </item>
+	///     <item>
+	///         <description>btnUp</description>
+	///     </item>
+	///     <item>
+	///         <description>btnDown</description>
+	///     </item>
+	///     <item>
+	///         <description>btnRight</description>
+	///     </item>
+	///     <item>
+	///         <description>btnLeft</description>
+	///     </item>
+	///     <item>
+	///         <description>btnOne</description>
+	///     </item>
+	///     <item>
+	///         <description>btnTwo</description>
+	///     </item>
+	///     <item>
+	///         <description>btnMinus</description>
+	///     </item>
+	///     <item>
+	///         <description>btnPlus</description>
+	///     </item>
+	///     <item>
+	///         <description>btnHome</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <returns>Button pressed as bool</returns>
 	double GiiMote::wm_check_button(double key_code)
 	{
 		bool is_pressed = 0;
@@ -51,7 +93,61 @@ namespace GiiMoteLib {
 
 		return ((double)is_pressed);
 	}
-	
+
+	/// <summary>
+	/// Checks the state of a button
+	/// </summary>
+	/// <param name="key_code">
+	/// The button to check
+	/// <list type="bullet">
+	///     <item>
+	///         <description>btnA</description>
+	///     </item>
+	///     <item>
+	///         <description>btnB</description>
+	///     </item>
+	///     <item>
+	///         <description>btnUp</description>
+	///     </item>
+	///     <item>
+	///         <description>btnDown</description>
+	///     </item>
+	///     <item>
+	///         <description>btnRight</description>
+	///     </item>
+	///     <item>
+	///         <description>btnLeft</description>
+	///     </item>
+	///     <item>
+	///         <description>btnX</description>
+	///     </item>
+	///     <item>
+	///         <description>btnY</description>
+	///     </item>
+	///     <item>
+	///         <description>btnMinus</description>
+	///     </item>
+	///     <item>
+	///         <description>btnPlus</description>
+	///     </item>
+	///     <item>
+	///         <description>btnHome</description>
+	///     </item>
+	///     <item>
+	///         <description>btnL</description>
+	///     </item>
+	///     <item>
+	///         <description>btnR</description>
+	///     </item>
+	///     <item>
+	///         <description>btnZL</description>
+	///     </item>
+	///     <item>
+	///         <description>btnZR</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <returns>Button pressed as bool</returns>
 	double GiiMote::wm_classic_check_button(double key_code)
 	{
 		bool is_pressed = 0;
@@ -110,6 +206,21 @@ namespace GiiMoteLib {
 		return ((double)is_pressed);
 	}
 
+	/// <summary>
+	/// Checks the state of a button
+	/// </summary>
+	/// <param name="key_code">
+	/// The button to check
+	/// <list type="bullet">
+	///     <item>
+	///         <description>btnC</description>
+	///     </item>
+	///     <item>
+	///         <description>btnZ</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <returns>Button pressed as bool</returns>
 	double GiiMote::wm_nunchuck_check_button(double key_code)
 	{
 		bool is_pressed = 0;
@@ -134,6 +245,24 @@ namespace GiiMoteLib {
 ////////////////////////////////////////////
 
 	// Normalized Functions
+	/// <summary>
+	/// Normalized trigger pressure
+	/// </summary>
+	/// <remarks>
+	/// Domain: [0.0,1.0]
+	/// </remarks>
+	/// <param name="trigger">
+	/// The trigger to check:
+	/// <list type="bullet">
+	///     <item>
+	///         <description>btnL</description>
+	///     </item>
+	///     <item>
+	///         <description>btnR</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <returns>Normalized trigger pressure</returns>
 	double GiiMote::wm_classic_trigger_pressure(double trigger)
 	{
 		double val = -1;
@@ -159,6 +288,24 @@ namespace GiiMoteLib {
 	}
 	
 	// Raw Functions
+	/// <summary>
+	/// Raw trigger pressure
+	/// </summary>
+	/// <remarks>
+	/// Domain: [0,255]
+	/// </remarks>
+	/// <param name="trigger">
+	/// The trigger to check:
+	/// <list type="bullet">
+	///     <item>
+	///         <description>btnL</description>
+	///     </item>
+	///     <item>
+	///         <description>btnR</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <returns>Raw trigger pressure</returns>
 	double GiiMote::wm_classic_trigger_raw(double trigger)
 	{
 		if (trigger == btnL || trigger == 0)

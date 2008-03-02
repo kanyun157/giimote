@@ -6,6 +6,8 @@ namespace GiiMoteLib {
 	// Connection Functions
 	/////////////////////////
 
+	/// <summary>If the Wii Remote is connected</summary>
+	/// <returns>Wii Remote connected</returns>
 	double GiiMote::wm_connected()
 	{
 		try
@@ -18,13 +20,29 @@ namespace GiiMoteLib {
 		}
 
 		return ( 1 );
-		// return ((double)this->connected);
 	}
 
-	// Return Codes for wm_connect()
-	//		-1 = Wii Remote already connected
-	//		 0 = Wii Remote failed to connect / No Wii Remote detected
-	//		 1 = Wii Remote connected successfully
+	/// <summary>Connect to Wii Remote</summary>
+	/// <returns>
+	/// <list type="table">
+	///     <listheader>
+	///         <term>Return Code</term>
+	///         <description>Description</description>
+	///     </listheader>
+	///     <item>
+	///         <term>-1</term>
+	///         <description>Wii Remote already connected</description>
+	///     </item>
+	///     <item>
+	///         <term>0</term>
+	///         <description>Wii Remote failed to connect or no Wii Remote Detected</description>
+	///     </item>
+	///     <item>
+	///         <term>1</term>
+	///         <description>Wii Remote connected Successly</description>
+	///     </item>
+	/// </list>
+	/// </returns>
 	double GiiMote::wm_connect()
 	{
 		if (!wm_connected())
@@ -59,6 +77,9 @@ namespace GiiMoteLib {
 		return (wm_connected());
 	}
 
+	/// <summary>Checks to see if a Wii Remote exists</summary>
+	/// <remarks>Same as seeing if <see>wm_connect()</see> fails</remarks>
+	/// <returns>Wii Remote exists</returns>
 	double GiiMote::wm_exists()
 	{
 		if (!wm_connected())
@@ -76,6 +97,10 @@ namespace GiiMoteLib {
 		return ( 1 );
 	}
 
+	/// <summary>Manually set the bluetooth write method</summary>
+	/// <remarks>Has no effect if called after connection</remarks>
+	/// <param name="alt_write_method">Use alternate write method</param>
+	/// <returns>Success</returns>
 	double GiiMote::wm_set_write_method(double alt_write_method)
 	{
 		try
@@ -89,7 +114,7 @@ namespace GiiMoteLib {
 				this->wm->AltWriteMethod = 1;
 				break;
 			default:
-				throw ( -1 );
+				throw ( 0 );
 				break;
 			}
 		}
@@ -99,7 +124,8 @@ namespace GiiMoteLib {
 		}
 		return ( 1 );
 	}
-
+	/// <summary>Disconnect from the Wii Remote</summary>
+	/// <returns>Success</returns>
 	double GiiMote::wm_disconnect(void)
 	{
 		if (wm_connected())
@@ -110,13 +136,36 @@ namespace GiiMoteLib {
 			}
 			catch (...)
 			{
-				// Do nothing, the return statement will handle it.
+				return (-1);
 			}
 			// this->connected = false;
 		}
 		return (!wm_connected());
 	}
-
+	/// <summary>Sets a dead zone</summary>
+	/// <param name="num">The value for the dead-zone</param>
+	/// <param name="type">
+	/// The type of dead-zone:
+	/// <list type="table">
+	///     <listheader>
+	///         <term>Code</term>
+	///         <description>Dead Zone Type</description>
+	///     </listheader>
+	///     <item>
+	///         <term>0</term>
+	///         <description>Joystick dead zone</description>
+	///     </item>
+	///     <item>
+	///         <term>1</term>
+	///         <description>Trigger dead zone</description>
+	///     </item>
+	///     <item>
+	///         <term>2</term>
+	///         <description>Accelerometer dead zone</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <returns>Dead zone ammount</returns>
 	double GiiMote::wm_set_dead_zone(double num, double type)
 	{
 		double dz = num;
@@ -141,6 +190,9 @@ namespace GiiMoteLib {
 	/////////////////////////
 	// LED Functions
 	/////////////////////////
+	/// <summary>Gets the state of an LED</summary>
+	/// <param name="led_num">The LED to get the state of (1-4)</param>
+	/// <returns>The state of the LED</returns>
 	double GiiMote::wm_get_led(double led_num)
 	{
 		bool led = false;
@@ -165,7 +217,12 @@ namespace GiiMoteLib {
 
 		return ( (double)led );
 	}
-
+	/// <summary>Sets the state of the LEDs</summary>
+	/// <param name="led1">The state of LED 1 (boolean)</param>
+	/// <param name="led2">The state of LED 2 (boolean)</param>
+	/// <param name="led3">The state of LED 3 (boolean)</param>
+	/// <param name="led4">The state of LED 4 (boolean)</param>
+	/// <returns>Success</returns>
 	double GiiMote::wm_set_leds(double led1, double led2, double led3, double led4)
 	{
 		bool bLed1,bLed2,bLed3,bLed4;
@@ -186,6 +243,9 @@ namespace GiiMoteLib {
 		return ( 1 );
 	}
 
+	/// <summary>Sets the LEDS on the Wii Remote</summary>
+	/// <param name="val">The state the LEDs</param>
+	/// <returns>Success</returns>
 	double GiiMote::wm_set_leds_int(double val)
 	{
 		int LEDs = (int)val;
@@ -204,6 +264,8 @@ namespace GiiMoteLib {
 	// Status Functions
 	/////////////////////////
 
+	/// <summary>Gets the current battery level</summary>
+	/// <returns>The current battery level</returns>
 	double GiiMote::wm_get_battery()
 	{
 		double battery_state;
@@ -218,6 +280,8 @@ namespace GiiMoteLib {
 		}
 		return ( battery_state );
 	}
+	/// <summary>Updates the Wii Remote status</summary>
+	/// <returns>Success</returns>
 	double GiiMote::wm_get_status()
 	{
 		try
@@ -230,7 +294,36 @@ namespace GiiMoteLib {
 		}
 		return ( 1 );
 	}
-
+	/// <summary>Checks the current extension</summary>
+	/// <returns>
+	/// Current extension:
+	/// <list type="table">
+	///     <listheader>
+	///         <term>Code</term>
+	///         <description>Extension</description>
+	///     </listheader>
+	///     <item>
+	///         <term>expClassic</term>
+	///         <description>Classic Controller</description>
+	///     </item>
+	///     <item>
+	///         <term>expNunchuck</term>
+	///         <description>Nunchuck</description>
+	///     </item>
+	///     <item>
+	///         <term>expNone</term>
+	///         <description>None</description>
+	///     </item>
+	///     <item>
+	///         <term>expUnknown</term>
+	///         <description>Unknown Extension</description>
+	///     </item>
+	///     <item>
+	///         <term>-2</term>
+	///         <description>Error</description>
+	///     </item>
+	/// </list>
+	/// </returns>
 	double GiiMote::wm_check_extension()
 	{
 		double extension_type;
@@ -260,6 +353,9 @@ namespace GiiMoteLib {
 		return (extension_type);
 	}
 
+	/// <summary>Sets the vibration motor's status</summary>
+	/// <param name="rumbling">Rumble status (1 or 0)</param>
+	/// <returns>Rumbling (1 or 0) or error (-1)</returns>
 	double GiiMote::wm_set_rumble(double rumbling)
 	{
 		try
@@ -283,7 +379,8 @@ namespace GiiMoteLib {
 		}
 		return (wm_get_rumble());
 	}
-
+	/// <summary>Vibration motor status</summary>
+	/// <returns>Rumbling (1 or 0)</returns>
 	double GiiMote::wm_get_rumble()
 	{
 		double rumbling;
@@ -303,31 +400,46 @@ namespace GiiMoteLib {
 	// Calibration Functions
 	/////////////////////////
 	// Get
+	/// <summary>Gets the zero point of the accelerometer</summary>
+	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_get_calibration_x0()
 	{
 		return ( (double)this->wmState->AccelCalibrationInfo.X0 );
 	}
+	/// <summary>Gets the gravity at rest of the accelerometer</summary>
+	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_get_calibration_xg()
 	{
 		return ( (double)this->wmState->AccelCalibrationInfo.XG );
 	}
+	/// <summary>Gets the zero point of the accelerometer</summary>
+	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_get_calibration_y0()
 	{
 		return ( (double)this->wmState->AccelCalibrationInfo.Y0 );
 	}
+	/// <summary>Gets the gravity at rest of the accelerometer</summary>
+	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_get_calibration_yg()
 	{
 		return ( (double)this->wmState->AccelCalibrationInfo.YG );
 	}
+	/// <summary>Gets the zero point of the accelerometer</summary>
+	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_get_calibration_z0()
 	{
 		return ( (double)this->wmState->AccelCalibrationInfo.Z0 );
 	}
+	/// <summary>Gets the gravity at rest of the accelerometer</summary>
+	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_get_calibration_zg()
 	{
 		return ( (double)this->wmState->AccelCalibrationInfo.ZG );
 	}
 	// Set
+	/// <summary>Sets the zero point of the accelerometer</summary>
+	/// <param name="val">X0 Value</param>
+	/// <returns>Success</returns>
 	double GiiMote::wm_set_calibration_x0(double val)
 	{
 		try
@@ -340,6 +452,9 @@ namespace GiiMoteLib {
 		}
 		return ( 1 );
 	}
+	/// <summary>Sets the gravity at rest of the accelerometer</summary>
+	/// <param name="val">XG Value</param>
+	/// <returns>Success</returns>
 	double GiiMote::wm_set_calibration_xg(double val)
 	{
 		try
@@ -352,7 +467,10 @@ namespace GiiMoteLib {
 		}
 		return ( 1 );
 	}
-	double GiiMote::wm_get_calibration_y0(double val)
+	/// <summary>Sets the zero point of the accelerometer</summary>
+	/// <param name="val">Y0 Value</param>
+	/// <returns>Success</returns>
+	double GiiMote::wm_set_calibration_y0(double val)
 	{
 		try
 		{
@@ -364,7 +482,10 @@ namespace GiiMoteLib {
 		}
 		return ( 1 );
 	}
-	double GiiMote::wm_get_calibration_yg(double val)
+	/// <summary>Sets the gravity at rest of the accelerometer</summary>
+	/// <param name="val">YG Value</param>
+	/// <returns>Success</returns>
+	double GiiMote::wm_set_calibration_yg(double val)
 	{
 		try
 		{
@@ -376,7 +497,10 @@ namespace GiiMoteLib {
 		}
 		return ( 1 );
 	}
-	double GiiMote::wm_get_calibration_z0(double val)
+	/// <summary>Sets the zero point of the accelerometer</summary>
+	/// <param name="val">Z0 Value</param>
+	/// <returns>Success</returns>
+	double GiiMote::wm_set_calibration_z0(double val)
 	{
 		try
 		{
@@ -388,7 +512,10 @@ namespace GiiMoteLib {
 		}
 		return ( 1 );
 	}
-	double GiiMote::wm_get_calibration_zg(double val)
+	/// <summary>Sets the gravity at rest of the accelerometer</summary>
+	/// <param name="val">ZG Value</param>
+	/// <returns>Success</returns>
+	double GiiMote::wm_set_calibration_zg(double val)
 	{
 		try
 		{
@@ -406,6 +533,9 @@ namespace GiiMoteLib {
 	// Data Functions
 	/////////////////////////
 
+	/// <summary>Reads a byte from a register or memory</summary>
+	/// <param name="address">The address to read from</param>
+	/// <returns>Byte at address</returns>
 	double GiiMote::wm_bin_read_byte(double address)
 	{
 		double value;
@@ -419,7 +549,9 @@ namespace GiiMoteLib {
 		}
 		return ( value );
 	}
-
+	/// <summary>Writes a byte to a register or memory</summary>
+	/// <param name="address">The address to write to</param>
+	/// <returns>Success</returns>
 	double GiiMote::wm_bin_write_byte(double address, double value)
 	{
 		try

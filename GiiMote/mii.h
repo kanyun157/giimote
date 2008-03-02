@@ -19,7 +19,13 @@
 #define poly 0x1021 // crc-ccitt mask
 
 namespace GiiMoteLib {
-	double GiiMote::wm_mii_data_dump(System::String^ fName,double miiBlock, double miiNumber)
+
+	/// <summary>Dumps mii data from the Wii Remote</summary>
+	/// <param name="fName">The file name</param>
+	/// <param name="miiBlock">The mii block to dump from (1 or 2)</param>
+	/// <param name="miiNumber">The mii number to dump (1-10, use 0 for entire block)</param>
+	/// <returns>Success (or -1 on error)</returns>
+	double GiiMote::wm_mii_data_dump(System::String^ fName, double miiBlock, double miiNumber)
 	{
 		int start, end;
 		unsigned char tData;
@@ -60,6 +66,11 @@ namespace GiiMoteLib {
 		return ( 1 );
 	}
 
+	/// <summary>Injects mii data to the Wii Remote</summary>
+	/// <param name="fName">The file name</param>
+	/// <param name="miiBlock">The mii block to inject to</param>
+	/// <param name="miiNumber">The mii number to inject (1-10)</param>
+	/// <returns>Success (or -1 on error)</returns>
 	double GiiMote::wm_mii_data_inject(System::String^ fName,double miiBlock, double miiNumber)
 	{
 		cli::array<unsigned char,1>^ miiBuffer;
@@ -218,6 +229,9 @@ namespace GiiMoteLib {
 		return ( 1 );
 	}
 
+	/// <summary>Updates the CRC checksum of a mii block file</summary>
+	/// <param name="fName">The file name</param>
+	/// <returns>1</returns>
 	double GiiMote::wm_mii_update_crc(System::String^ fName)
 	{
 		System::IO::FileStream^ miiFile = gcnew System::IO::FileStream(fName,System::IO::FileMode::Open);
@@ -258,6 +272,9 @@ namespace GiiMoteLib {
 		return (1);
 	}
 
+	/// <summary>Updates the given Mii data</summary>
+	/// <param name="miiData">The mii data to update</param>
+	/// <returns>Updated mii data</returns>
 	cli::array<unsigned char,1>^ GiiMote::wm_mii_data_update(cli::array<unsigned char,1>^ miiData)
 	{
 		cli::array<unsigned char,1>^ text = miiData;
