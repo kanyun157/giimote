@@ -10,7 +10,7 @@ Sets Y-axis joystick calibration data
 </summary>
             <param name="joystick">
 The joystick to calibrate:
-<list type="bullet"><item><description>joyL</description></item><item><description>joyR</description></item></list></param>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>joyL</term><description>Left Joystick</description></item><item><term>joyR</term><description>Right Joystick</description></item></list></param>
             <param name="val">MinY value</param>
             <returns>Success</returns>
         </member>
@@ -20,7 +20,7 @@ Sets Y-axis joystick calibration data
 </summary>
             <param name="joystick">
 The joystick to calibrate:
-<list type="bullet"><item><description>joyL</description></item><item><description>joyR</description></item></list></param>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>joyL</term><description>Left Joystick</description></item><item><term>joyR</term><description>Right Joystick</description></item></list></param>
             <param name="val">MaxY value</param>
             <returns>Success</returns>
         </member>
@@ -30,7 +30,7 @@ Sets Y-axis joystick calibration data
 </summary>
             <param name="joystick">
 The joystick to calibrate:
-<list type="bullet"><item><description>joyL</description></item><item><description>joyR</description></item></list></param>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>joyL</term><description>Left Joystick</description></item><item><term>joyR</term><description>Right Joystick</description></item></list></param>
             <param name="val">MidY value</param>
             <returns>Success</returns>
         </member>
@@ -40,7 +40,7 @@ Sets X-axis joystick calibration data
 </summary>
             <param name="joystick">
 The joystick to calibrate:
-<list type="bullet"><item><description>joyL</description></item><item><description>joyR</description></item></list></param>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>joyL</term><description>Left Joystick</description></item><item><term>joyR</term><description>Right Joystick</description></item></list></param>
             <param name="val">MidX value</param>
             <returns>Success</returns>
         </member>
@@ -50,7 +50,7 @@ Sets X-axis joystick calibration data
 </summary>
             <param name="joystick">
 The joystick to calibrate:
-<list type="bullet"><item><description>joyL</description></item><item><description>joyR</description></item></list></param>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>joyL</term><description>Left Joystick</description></item><item><term>joyR</term><description>Right Joystick</description></item></list></param>
             <param name="val">MinX value</param>
             <returns>Success</returns>
         </member>
@@ -60,7 +60,7 @@ Sets X-axis joystick calibration data
 </summary>
             <param name="joystick">
 The joystick to calibrate:
-<list type="bullet"><item><description>joyL</description></item><item><description>joyR</description></item></list></param>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>joyL</term><description>Left Joystick</description></item><item><term>joyR</term><description>Right Joystick</description></item></list></param>
             <param name="val">MaxX value</param>
             <returns>Success</returns>
         </member>
@@ -70,7 +70,7 @@ Sets trigger calibration data
 </summary>
             <param name="trigger">
 The analog trigger to calibrate:
-<list type="bullet"><item><description>btnL</description></item><item><description>btnR</description></item></list></param>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>btnL</term><description>Left Trigger</description></item><item><term>btnR</term><description>Right Trigger</description></item></list></param>
             <param name="val">The calibration value</param>
             <returns>Success</returns>
         </member>
@@ -80,7 +80,7 @@ Sets trigger calibration data
 </summary>
             <param name="trigger">
 The analog trigger to calibrate:
-<list type="bullet"><item><description>btnL</description></item><item><description>btnR</description></item></list></param>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>btnL</term><description>Left Trigger</description></item><item><term>btnR</term><description>Right Trigger</description></item></list></param>
             <param name="val">The calibration value</param>
             <returns>Success</returns>
         </member>
@@ -90,7 +90,7 @@ Gets Y-axis joystick Calibration data
 </summary>
             <param name="joystick">
 The joystick to get calibration data for:
-<list type="bullet"><item><description>joyL</description></item><item><description>joyR</description></item></list></param>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>joyL</term><description>Left Joystick</description></item><item><term>joyR</term><description>Right Joystick</description></item></list></param>
             <returns>Normalized calibration data</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_maxy(System.Double)">
@@ -99,7 +99,7 @@ Gets Y-axis joystick Calibration data
 </summary>
             <param name="joystick">
 The joystick to get calibration data for:
-<list type="bullet"><item><description>joyL</description></item><item><description>joyR</description></item></list></param>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>joyL</term><description>Left Joystick</description></item><item><term>joyR</term><description>Right Joystick</description></item></list></param>
             <returns>Normalized calibration data</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_midy(System.Double)">
@@ -108,7 +108,7 @@ Gets Y-axis joystick Calibration data
 </summary>
             <param name="joystick">
 The joystick to get calibration data for:
-<list type="bullet"><item><description>joyL</description></item><item><description>joyR</description></item></list></param>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>joyL</term><description>Left Joystick</description></item><item><term>joyR</term><description>Right Joystick</description></item></list></param>
             <returns>Normalized calibration data</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_midx(System.Double)">
@@ -117,7 +117,7 @@ Gets X-axis joystick Calibration data
 </summary>
             <param name="joystick">
 The joystick to get calibration data for:
-<list type="bullet"><item><description>joyL</description></item><item><description>joyR</description></item></list></param>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>joyL</term><description>Left Joystick</description></item><item><term>joyR</term><description>Right Joystick</description></item></list></param>
             <returns>Normalized calibration data</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_minx(System.Double)">
@@ -126,7 +126,7 @@ Gets X-axis joystick Calibration data
 </summary>
             <param name="joystick">
 The joystick to get calibration data for:
-<list type="bullet"><item><description>joyL</description></item><item><description>joyR</description></item></list></param>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>joyL</term><description>Left Joystick</description></item><item><term>joyR</term><description>Right Joystick</description></item></list></param>
             <returns>Normalized calibration data</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_maxx(System.Double)">
@@ -135,7 +135,7 @@ Gets X-axis joystick Calibration data
 </summary>
             <param name="joystick">
 The joystick to get calibration data for:
-<list type="bullet"><item><description>joyL</description></item><item><description>joyR</description></item></list></param>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>joyL</term><description>Left Joystick</description></item><item><term>joyR</term><description>Right Joystick</description></item></list></param>
             <returns>Normalized calibration data</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_mintrigger(System.Double)">
@@ -143,8 +143,8 @@ The joystick to get calibration data for:
 Gets trigger calibration data
 </summary>
             <param name="trigger">
-The trigger to get calibration data for:
-<list type="bullet"><item><description>btnL</description></item><item><description>btnR</description></item></list></param>
+The analog trigger to get calibration data for:
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>btnL</term><description>Left Trigger</description></item><item><term>btnR</term><description>Right Trigger</description></item></list></param>
             <returns>Normalized calibration data</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_maxtrigger(System.Double)">
@@ -153,7 +153,7 @@ Gets trigger calibration data
 </summary>
             <param name="trigger">
 The analog trigger to get calibration data for:
-<list type="bullet"><item><description>btnL</description></item><item><description>btnR</description></item></list></param>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>btnL</term><description>Left Trigger</description></item><item><term>btnR</term><description>Right Trigger</description></item></list></param>
             <returns>Normalized calibration data</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_miny(System.Double)">
@@ -366,119 +366,132 @@ Gets the zero point of the accelerometer
             <param name="dot_number">Dot 1-4</param>
             <returns>Dot found as bool</returns>
         </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_dead_zone_z">
+            <summary>Gets the dead-zone value</summary>
+            <returns>Z-axis dead zone</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_dead_zone_y">
+            <summary>Gets the dead-zone value</summary>
+            <returns>Y-axis dead zone</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_dead_zone_x">
+            <summary>Gets the dead-zone value</summary>
+            <returns>X-axis dead zone</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_nunchuck_set_accel_dead_zone_z(System.Double)">
+            <summary>Sets the dead-zone value</summary>
+            <remarks>Domain: [0,Infinity]</remarks>
+            <param name="val">The dead-zone value</param>
+            <returns>1</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_nunchuck_set_accel_dead_zone_y(System.Double)">
+            <summary>Sets the dead-zone value</summary>
+            <remarks>Domain: [0,Infinity]</remarks>
+            <param name="val">The dead-zone value</param>
+            <returns>1</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_nunchuck_set_accel_dead_zone_x(System.Double)">
+            <summary>Sets the dead-zone value</summary>
+            <remarks>Domain: [0,Infinity]</remarks>
+            <param name="val">The dead-zone value</param>
+            <returns>1</returns>
+        </member>
         <member name="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_rawz">
-            <summary>
-Raw accelerometer data
-</summary>
-            <remarks>
-Domain: [0,255]
-</remarks>
+            <summary>Raw accelerometer data</summary>
+            <remarks>Domain: [0,255]</remarks>
             <returns>Raw acceleration</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_rawy">
-            <summary>
-Raw accelerometer data
-</summary>
-            <remarks>
-Domain: [0,255]
-</remarks>
+            <summary>Raw accelerometer data</summary>
+            <remarks>Domain: [0,255]</remarks>
             <returns>Raw acceleration</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_rawx">
-            <summary>
-Raw accelerometer data
-</summary>
-            <remarks>
-Domain: [0,255]
-</remarks>
+            <summary>Raw accelerometer data</summary>
+            <remarks>Domain: [0,255]</remarks>
             <returns>Raw acceleration</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_z">
-            <summary>
-Normalized accelerometer data
-</summary>
-            <remarks>
-Domain: [0,?)
-</remarks>
+            <summary>Normalized accelerometer data</summary>
+            <remarks>Domain: [0,?)</remarks>
             <returns>Normalized acceleration</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_y">
-            <summary>
-Normalized accelerometer data
-</summary>
-            <remarks>
-Domain: [0,?)
-</remarks>
+            <summary>Normalized accelerometer data</summary>
+            <remarks>Domain: [0,?)</remarks>
             <returns>Normalized acceleration</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_x">
-            <summary>
-Normalized accelerometer data
-</summary>
-            <remarks>
-Domain: [0,?)
-</remarks>
+            <summary>Normalized accelerometer data</summary>
+            <remarks>Domain: [0,?)</remarks>
             <returns>Normalized acceleration</returns>
         </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_get_accel_dead_zone_z">
+            <summary>Gets the dead-zone value</summary>
+            <returns>Z-axis dead zone</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_get_accel_dead_zone_y">
+            <summary>Gets the dead-zone value</summary>
+            <returns>Y-axis dead zone</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_get_accel_dead_zone_x">
+            <summary>Gets the dead-zone value</summary>
+            <returns>X-axis dead zone</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_set_accel_dead_zone_z(System.Double)">
+            <summary>Sets the dead-zone value</summary>
+            <remarks>Domain: [0,Infinity]</remarks>
+            <param name="val">The dead-zone value</param>
+            <returns>1</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_set_accel_dead_zone_y(System.Double)">
+            <summary>Sets the dead-zone value</summary>
+            <remarks>Domain: [0,Infinity]</remarks>
+            <param name="val">The dead-zone value</param>
+            <returns>1</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_set_accel_dead_zone_x(System.Double)">
+            <summary>Sets the dead-zone value</summary>
+            <remarks>Domain: [0,Infinity]</remarks>
+            <param name="val">The dead-zone value</param>
+            <returns>1</returns>
+        </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_accel_rawz">
-            <summary>
-Raw accelerometer data
-</summary>
-            <remarks>
-Domain: [0,255]
-</remarks>
+            <summary>Raw accelerometer data</summary>
+            <remarks>Domain: [0,255]</remarks>
             <returns>Raw acceleration</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_accel_rawy">
-            <summary>
-Raw accelerometer data
-</summary>
-            <remarks>
-Domain: [0,255]
-</remarks>
+            <summary>Raw accelerometer data</summary>
+            <remarks>Domain: [0,255]</remarks>
             <returns>Raw acceleration</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_accel_rawx">
-            <summary>
-Raw accelerometer data
-</summary>
-            <remarks>
-Domain: [0,255]
-</remarks>
+            <summary>Raw accelerometer data</summary>
+            <remarks>Domain: [0,255]</remarks>
             <returns>Raw acceleration</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_accel_z">
-            <summary>
-Normalized accelerometer data
-</summary>
-            <remarks>
-Domain: [0,?)
-</remarks>
+            <summary>Normalized accelerometer data</summary>
+            <remarks>Domain: [0,?)</remarks>
             <returns>Normalized acceleration</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_accel_y">
-            <summary>
-Normalized accelerometer data
-</summary>
-            <remarks>
-Domain: [0,?)
-</remarks>
+            <summary>Normalized accelerometer data</summary>
+            <remarks>Domain: [0,?)</remarks>
             <returns>Normalized acceleration</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_accel_x">
-            <summary>
-Normalized accelerometer data
-</summary>
-            <remarks>
-Domain: [0,?)
-</remarks>
+            <summary>Normalized accelerometer data</summary>
+            <remarks>Domain: [0,?)</remarks>
             <returns>Normalized acceleration</returns>
         </member>
-        <member name="M:GiiMoteLib.GiiMote.wm_calc_accel(System.Single)">
+        <member name="M:GiiMoteLib.GiiMote.wm_calc_accel(System.Single,System.Int32)">
             <summary>
 Re-calculates the acceleration with dead-zones
 </summary>
             <param name="accel">Normalized acceleration data</param>
+            <param name="dz_index">The index of the dead-zone to use</param>
             <returns>Acceleration</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_classic_pressure(System.Double)">
@@ -537,6 +550,16 @@ Re-calculates the acceleration with dead-zones
             <remarks>Domain: [-0.5,0.5]</remarks>
             <returns>The normalized X-position of the joystick</returns>
         </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_get_joystick_dead_zone">
+            <summary>Gets the dead-zone value</summary>
+            <returns>Joystick dead-zone value</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_set_joystick_dead_zone(System.Double)">
+            <summary>Sets the dead-zone value</summary>
+            <remarks>Domain: [0.0,0.5]</remarks>
+            <param name="val">The dead-zone value</param>
+            <returns>1</returns>
+        </member>
         <member name="M:GiiMoteLib.GiiMote.joystick_pressure(System.Double,System.Double)">
             <summary>Calculates the pressure on a joystick</summary>
             <param name="xx">The normalized X value of the joystick</param>
@@ -550,15 +573,11 @@ Re-calculates the acceleration with dead-zones
             <returns>The direction of the Joystick in degrees</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_classic_trigger_raw(System.Double)">
-            <summary>
-Raw trigger pressure
-</summary>
-            <remarks>
-Domain: [0,255]
-</remarks>
+            <summary>Raw trigger pressure</summary>
+            <remarks>Domain: [0,255]</remarks>
             <param name="trigger">
 The trigger to check:
-<list type="bullet"><item><description>btnL</description></item><item><description>btnR</description></item></list></param>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>btnL</term><description>Left Trigger</description></item><item><term>btnR</term><description>Right Trigger</description></item></list></param>
             <returns>Raw trigger pressure</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_classic_trigger_pressure(System.Double)">
@@ -570,8 +589,18 @@ Domain: [0.0,1.0]
 </remarks>
             <param name="trigger">
 The trigger to check:
-<list type="bullet"><item><description>btnL</description></item><item><description>btnR</description></item></list></param>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>btnL</term><description>Left Trigger</description></item><item><term>btnR</term><description>Right Trigger</description></item></list></param>
             <returns>Normalized trigger pressure</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_get_trigger_dead_zone">
+            <summary>Gets the dead-zone value</summary>
+            <returns>Trigger dead-zone value</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_set_trigger_dead_zone(System.Double)">
+            <summary>Sets the dead-zone value</summary>
+            <remarks>Domain: [0.0,1.0]</remarks>
+            <param name="val">The dead-zone value</param>
+            <returns>1</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_nunchuck_check_button(System.Double)">
             <summary>
@@ -579,26 +608,22 @@ Checks the state of a button
 </summary>
             <param name="key_code">
 The button to check
-<list type="bullet"><item><description>btnC</description></item><item><description>btnZ</description></item></list></param>
-            <returns>Button pressed as bool</returns>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>btnC</term><description>C Button</description></item><item><term>btnZ</term><description>Z Button</description></item></list></param>
+            <returns>Button pressed</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_classic_check_button(System.Double)">
-            <summary>
-Checks the state of a button
-</summary>
+            <summary>Checks the state of a button</summary>
             <param name="key_code">
 The button to check
-<list type="bullet"><item><description>btnA</description></item><item><description>btnB</description></item><item><description>btnUp</description></item><item><description>btnDown</description></item><item><description>btnRight</description></item><item><description>btnLeft</description></item><item><description>btnX</description></item><item><description>btnY</description></item><item><description>btnMinus</description></item><item><description>btnPlus</description></item><item><description>btnHome</description></item><item><description>btnL</description></item><item><description>btnR</description></item><item><description>btnZL</description></item><item><description>btnZR</description></item></list></param>
-            <returns>Button pressed as bool</returns>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>btnA</term><description>A Button</description></item><item><term>btnB</term><description>B Button</description></item><item><term>btnUp</term><description>D-Pad Up</description></item><item><term>btnDown</term><description>D-Pad Down</description></item><item><term>btnRight</term><description>D-Pad Right</description></item><item><term>btnLeft</term><description>D-Pad Left</description></item><item><term>btnX</term><description>X Button</description></item><item><term>btnY</term><description>Y Button</description></item><item><term>btnMinus</term><description>Minus Button</description></item><item><term>btnPlus</term><description>Plus Button</description></item><item><term>btnHome</term><description>Home Button</description></item><item><term>btnL</term><description>Left Trigger</description></item><item><term>btnR</term><description>Right Trigger</description></item><item><term>btnZL</term><description>ZL Button</description></item><item><term>btnZR</term><description>ZR Button</description></item></list></param>
+            <returns>Button pressed</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_check_button(System.Double)">
-            <summary>
-Checks the state of a button
-</summary>
+            <summary>Checks the state of a button</summary>
             <param name="key_code">
 The button to check
-<list type="bullet"><item><description>btnA</description></item><item><description>btnB</description></item><item><description>btnUp</description></item><item><description>btnDown</description></item><item><description>btnRight</description></item><item><description>btnLeft</description></item><item><description>btnOne</description></item><item><description>btnTwo</description></item><item><description>btnMinus</description></item><item><description>btnPlus</description></item><item><description>btnHome</description></item></list></param>
-            <returns>Button pressed as bool</returns>
+<list type="bullet"><listheader><term>Key Code</term><description>Button</description></listheader><item><term>btnA</term><description>A Button</description></item><item><term>btnB</term><description>B Button</description></item><item><term>btnUp</term><description>D-Pad Up</description></item><item><term>btnDown</term><description>D-Pad Down</description></item><item><term>btnRight</term><description>D-Pad Right</description></item><item><term>btnLeft</term><description>D-Pad Left</description></item><item><term>btnOne</term><description>One Button</description></item><item><term>btnTwo</term><description>Two Button</description></item><item><term>btnMinus</term><description>Minus Button</description></item><item><term>btnPlus</term><description>Plus Button</description></item><item><term>btnHome</term><description>Home Button</description></item></list></param>
+            <returns>Button pressed</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_bin_write_byte(System.Double,System.Double)">
             <summary>Writes a byte to a register or memory</summary>
@@ -705,14 +730,6 @@ Current extension:
             <param name="led_num">The LED to get the state of (1-4)</param>
             <returns>The state of the LED</returns>
         </member>
-        <member name="M:GiiMoteLib.GiiMote.wm_set_dead_zone(System.Double,System.Double)">
-            <summary>Sets a dead zone</summary>
-            <param name="num">The value for the dead-zone</param>
-            <param name="type">
-The type of dead-zone:
-<list type="table"><listheader><term>Code</term><description>Dead Zone Type</description></listheader><item><term>0</term><description>Joystick dead zone</description></item><item><term>1</term><description>Trigger dead zone</description></item><item><term>2</term><description>Accelerometer dead zone</description></item></list></param>
-            <returns>Dead zone ammount</returns>
-        </member>
         <member name="M:GiiMoteLib.GiiMote.wm_disconnect">
             <summary>Disconnect from the Wii Remote</summary>
             <returns>Success</returns>
@@ -809,16 +826,48 @@ you will need to make the destructor bind late using the keyword "virtual."
             <summary>Default constructor</summary>
         </member>
         <member name="F:GiiMoteLib.GiiMote.accel_dead_zone">
-            <summary>Dead-zone value</summary>
+            <summary>Accelerometer dead-zone values</summary>
+            <remarks>
+                <list type="bullet">
+                    <listheader>
+                        <term>Index</term>
+                        <description>Dead Zone</description>
+                    </listheader>
+                    <item>
+                        <term>0</term>
+                        <description>Wii Remote X-axis</description>
+                    </item>
+                    <item>
+                        <term>1</term>
+                        <description>Wii Remote Y-axis</description>
+                    </item>
+                    <item>
+                        <term>2</term>
+                        <description>Wii Remote Z-axis</description>
+                    </item>
+                    <item>
+                        <term>3</term>
+                        <description>Nunchuck X-axis</description>
+                    </item>
+                    <item>
+                        <term>4</term>
+                        <description>Nunchuck Y-axis</description>
+                    </item>
+                    <item>
+                        <term>5</term>
+                        <description>Nunchuck Z-axis</description>
+                    </item>
+                </list>
+            </remarks>
         </member>
         <member name="F:GiiMoteLib.GiiMote.trigger_dead_zone">
-            <summary>Dead-zone value</summary>
+            <summary>Trigger dead-zone value</summary>
         </member>
-        <member name="F:GiiMoteLib.GiiMote.dead_zone">
-            <summary>Dead-zone value</summary>
+        <member name="F:GiiMoteLib.GiiMote.joystick_dead_zone">
+            <summary>Joystick dead-zone value</summary>
         </member>
         <member name="F:GiiMoteLib.GiiMote.wmState">
-            <summary>The Wii Remote State</summary>
+            <summary>The current Wii Remote state</summary>
         </member>
         <member name="F:GiiMoteLib.GiiMote.wm">
             <summary>The Wii Remote</summary>
