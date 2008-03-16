@@ -162,18 +162,6 @@ hfunction wm_ir_dot_get_rawx(dot:real):real
 hfunction wm_ir_dot_get_rawy(dot:real):real
 hfunction wm_ir_dot_get_rawmidx():real
 hfunction wm_ir_dot_get_rawmidy():real
-function wm_ir_display_get_x():real
-function wm_ir_display_get_y():real
-function wm_ir_set_calibration_right():real
-function wm_ir_set_calibration_left():real
-function wm_ir_set_calibration_top():real
-function wm_ir_set_calibration_bottom():real
-function wm_ir_sensor_bar_set_pos():real
-function wm_ir_get_calibration_right():real
-function wm_ir_get_calibration_left():real
-function wm_ir_get_calibration_top():real
-function wm_ir_get_calibration_bottom():real
-function wm_ir_sensor_bar_get_pos():real
 
 function wm_get_calibration_x0():real
 function wm_get_calibration_xg():real
@@ -289,10 +277,6 @@ const wm_mii_weight_max			= $7F
 
 
 **********************************************************************************/
-#define wm_ir_display_get_x
-layer_function(global.gm_class,"wm_ir_display_get_x",ty_real,1,display_get_width());
-#define wm_ir_display_get_y
-layer_function(global.gm_class,"wm_ir_display_get_y",ty_real,1,display_get_height());
 #define wm_ir_dot_get_midx
 // argument0 - Dot number (1 or 2)
 layer_function(global.gm_class,"wm_ir_dot_get_midx",ty_real);
@@ -323,41 +307,6 @@ layer_function(global.gm_class,"wm_ir_dot_size",ty_real,1,argument0);
 #define wm_ir_found_dot
 // argument0 - Dot number (1 or 2)
 layer_function(global.gm_class,"wm_ir_found_dot",ty_real,1,argument0);
-#define wm_ir_get_calibration_bottom
-// wm_ir_get_calibration_bottom()
-layer_function(global.gm_class,"wm_ir_get_calibration_bottom",ty_real,0);
-#define wm_ir_get_calibration_left
-// wm_ir_get_calibration_left()
-layer_function(global.gm_class,"wm_ir_get_calibration_left",ty_real,0);
-#define wm_ir_get_calibration_right
-// wm_ir_get_calibration_right()
-layer_function(global.gm_class,"wm_ir_get_calibration_right",ty_real,0);
-#define wm_ir_get_calibration_top
-// wm_ir_get_calibration_top()
-layer_function(global.gm_class,"wm_ir_get_calibration_top",ty_real,0);
-#define wm_ir_sensor_bar_get_pos
-// wm_ir_sensor_bar_get_pos()
-layer_function(global.gm_class,"wm_ir_sensor_bar_get_pos",ty_real,0);
-#define wm_ir_sensor_bar_set_pos
-// wm_ir_sensor_bar_set_pos(pos)
-// pos == ir_screen_top || ir_screen_bottom
-layer_function(global.gm_class,"wm_ir_sensor_bar_set_pos",ty_real,1,argument0);
-#define wm_ir_set_calibration_bottom
-// wm_ir_set_calibration_bottom(val)
-// Domain: [0,1]
-layer_function(global.gm_class,"wm_ir_set_calibration_bottom",ty_real,1,argument0);
-#define wm_ir_set_calibration_left
-// wm_ir_set_calibration_left(val)
-// Domain: [0,1]
-layer_function(global.gm_class,"wm_ir_set_calibration_left",ty_real,1,argument0);
-#define wm_ir_set_calibration_right
-// wm_ir_set_calibration_right(val)
-// Domain: [0,1]
-layer_function(global.gm_class,"wm_ir_set_calibration_right",ty_real,1,argument0);
-#define wm_ir_set_calibration_top
-// wm_ir_set_calibration_top(val)
-// Domain: [0,1]
-layer_function(global.gm_class,"wm_ir_set_calibration_top",ty_real,1,argument0);
 #define wm_nunchuck_get_calibration_maxx
 layer_function(global.gm_class,"wm_nunchuck_get_calibration_maxx",ty_real,0);
 #define wm_nunchuck_get_calibration_maxy
