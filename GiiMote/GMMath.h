@@ -16,4 +16,17 @@ namespace GiiMoteLib {
 		return (val);
 	}
 
+	/// <summary>Rescales a value from one domain to another</summary>
+	/// <param name="val">The value to rescale</param>
+	/// <param name="minin">The minimum of the input domain</param>
+	/// <param name="maxin">The maximum of the input domain</param>
+	/// <param name="minout">The minimum of the output domain</param>
+	/// <param name="maxout">The maximum of the output domain</param>
+	/// <returns>The rescaled value</returns>
+	template <class T>
+	T GiiMote::domain_rescale(T val, T minin, T maxin, T minout, T maxout)
+	{
+		return (( ( ( (val - minin) / (maxin - minin) ) * (maxout - minout) ) + minout ));
+	}
+
 } // namespace GiiMoteLib
