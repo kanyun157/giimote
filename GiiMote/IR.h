@@ -198,14 +198,26 @@ namespace GiiMoteLib {
 	/// <returns>Delta x</returns>
 	double GiiMote::wm_ir_dot_get_delta_x(double dot_number)
 	{
-		if (dot_number >= 1 && dot_number <= 4)
+		float result;
+		switch ((int)dot_number)
 		{
-			return ( (double)this->ir_delta_x[(int)dot_number] );
+		case 1:
+			result = this->wmState->IRState.X1 - this->wmLastState->IRState.X1;
+			break;
+		case 2:
+			result = this->wmState->IRState.X2 - this->wmLastState->IRState.X2;
+			break;
+		case 3:
+			result = this->wmState->IRState.X3 - this->wmLastState->IRState.X3;
+			break;
+		case 4:
+			result = this->wmState->IRState.X4 - this->wmLastState->IRState.X4;
+			break;
+		default:
+			result = 0;
+			break;
 		}
-		else
-		{
-			return ( -1 );
-		}
+		return ( double(result) );
 	}
 
 	/// <summary>Change in y value of the given dot</summary>
@@ -214,14 +226,26 @@ namespace GiiMoteLib {
 	/// <returns>Delta y</returns>
 	double GiiMote::wm_ir_dot_get_delta_y(double dot_number)
 	{
-		if (dot_number >= 1 && dot_number <= 4)
+		float result;
+		switch ((int)dot_number)
 		{
-			return ( (double)this->ir_delta_y[(int)dot_number] );
+		case 1:
+			result = this->wmState->IRState.Y1 - this->wmLastState->IRState.Y1;
+			break;
+		case 2:
+			result = this->wmState->IRState.Y2 - this->wmLastState->IRState.Y2;
+			break;
+		case 3:
+			result = this->wmState->IRState.Y3 - this->wmLastState->IRState.Y3;
+			break;
+		case 4:
+			result = this->wmState->IRState.Y4 - this->wmLastState->IRState.Y4;
+			break;
+		default:
+			result = 0;
+			break;
 		}
-		else
-		{
-			return ( -1 );
-		}
+		return ( double(result) );
 	}
 
 	/// <summary>Change in raw x value of the given dot</summary>
@@ -230,30 +254,54 @@ namespace GiiMoteLib {
 	/// <returns>Delta rawx</returns>
 	double GiiMote::wm_ir_dot_get_delta_rawx(double dot_number)
 	{
-		if (dot_number >= 1 && dot_number <= 4)
+		int result;
+		switch ((int)dot_number)
 		{
-			return ( (double)this->ir_raw_delta_x[(int)dot_number] );
+		case 1:
+			result = this->wmState->IRState.RawX1 - this->wmLastState->IRState.RawX1;
+			break;
+		case 2:
+			result = this->wmState->IRState.RawX2 - this->wmLastState->IRState.RawX2;
+			break;
+		case 3:
+			result = this->wmState->IRState.RawX3 - this->wmLastState->IRState.RawX3;
+			break;
+		case 4:
+			result = this->wmState->IRState.RawX4 - this->wmLastState->IRState.RawX4;
+			break;
+		default:
+			result = 0;
+			break;
 		}
-		else
-		{
-			return ( -1 );
-		}
+		return ( double(result) );
 	}
 
-	/// <summary>Change in raw x value of the given dot</summary>
+	/// <summary>Change in raw y value of the given dot</summary>
 	/// <remarks>Domain: [0,767]</remarks>
 	/// <param name="dot_number">Dot 1-4</param>
 	/// <returns>Delta rawy</returns>
 	double GiiMote::wm_ir_dot_get_delta_rawy(double dot_number)
 	{
-		if (dot_number >= 1 && dot_number <= 4)
+		int result;
+		switch ((int)dot_number)
 		{
-			return ( (double)this->ir_raw_delta_y[(int)dot_number] );
+		case 1:
+			result = this->wmState->IRState.RawY1 - this->wmLastState->IRState.RawY1;
+			break;
+		case 2:
+			result = this->wmState->IRState.RawY2 - this->wmLastState->IRState.RawY2;
+			break;
+		case 3:
+			result = this->wmState->IRState.RawY3 - this->wmLastState->IRState.RawY3;
+			break;
+		case 4:
+			result = this->wmState->IRState.RawY4 - this->wmLastState->IRState.RawY4;
+			break;
+		default:
+			result = 0;
+			break;
 		}
-		else
-		{
-			return ( -1 );
-		}
+		return ( double(result) );
 	}
 
 	/// <summary>Change in midx value</summary>
@@ -261,7 +309,7 @@ namespace GiiMoteLib {
 	/// <returns>Delta midx</returns>
 	double GiiMote::wm_ir_dot_get_delta_midx()
 	{
-		return ( (double)this->ir_delta_midx );
+		return ( double( this->wmState->IRState.MidX - this->wmLastState->IRState.MidX ) );
 	}
 
 	/// <summary>Change in midy value</summary>
@@ -269,7 +317,7 @@ namespace GiiMoteLib {
 	/// <returns>Delta midy</returns>
 	double GiiMote::wm_ir_dot_get_delta_midy()
 	{
-		return ( (double)this->ir_delta_midy );
+		return ( double( this->wmState->IRState.MidY - this->wmLastState->IRState.MidY ) );
 	}
 
 	/// <summary>Change in raw midx value</summary>
@@ -277,7 +325,7 @@ namespace GiiMoteLib {
 	/// <returns>Delta raw midx</returns>
 	double GiiMote::wm_ir_dot_get_delta_rawmidx()
 	{
-		return ( (double)this->ir_raw_delta_midx );
+		return ( double( this->wmState->IRState.RawMidX - this->wmLastState->IRState.RawMidX ) );
 	}
 
 	/// <summary>Change in raw midy value</summary>
@@ -285,7 +333,7 @@ namespace GiiMoteLib {
 	/// <returns>Delta raw midy</returns>
 	double GiiMote::wm_ir_dot_get_delta_rawmidy()
 	{
-		return ( (double)this->ir_raw_delta_midy );
+		return ( double( this->wmState->IRState.RawMidY - this->wmLastState->IRState.RawMidY ) );
 	}
 
 	/// <summary>X coordinate of the screen that the Wii Remote is pointing at</summary>

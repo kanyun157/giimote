@@ -56,28 +56,11 @@ namespace GiiMoteLib {
 		/// <summary>The width of the current display</summary>
 		int display_width;
 
-		/// <summary>The change in IR X values after the last update</summary>
-		cli::array<float>^ ir_delta_x;
-		/// <summary>The change in IR Y values after the last update</summary>
-		cli::array<float>^ ir_delta_y;
-		/// <summary>The change in the IR MidX value after the last update</summary>
-		float ir_delta_midx;
-		/// <summary>The change in the IR MidY value after the last update</summary>
-		float ir_delta_midy;
-		/// <summary>The change in raw IR X values after the last update</summary>
-		cli::array<int>^ ir_raw_delta_x;
-		/// <summary>The change in raw IR Y values after the last update</summary>
-		cli::array<int>^ ir_raw_delta_y;
-		/// <summary>The change in the raw IR MidX value after the last update</summary>
-		int ir_raw_delta_midx;
-		/// <summary>The change in the raw IR MidY value after the last update</summary>
-		int ir_raw_delta_midy;
 		/// <summary>The X position on the screen the Wii Remote is pointing at</summary>
 		int ir_screen_x;
 		/// <summary>The Y position on the screen the Wii Remote is pointing at</summary>
 		int ir_screen_y;
 		
-
 		// Dead Zone's
 		/// <summary>Joystick dead-zone value</summary>
 		double joystick_dead_zone;
@@ -139,19 +122,8 @@ namespace GiiMoteLib {
 			this->display_height = System::Windows::Forms::Screen::PrimaryScreen->Bounds.Height;
 			this->display_width	 = System::Windows::Forms::Screen::PrimaryScreen->Bounds.Width;
 
-			cli::array<float>::Resize(this->ir_delta_x, 4);
-			cli::array<float>::Resize(this->ir_delta_y, 4);
-			cli::array<int>::Resize(this->ir_raw_delta_x, 4);
-			cli::array<int>::Resize(this->ir_raw_delta_y, 4);
-			cli::array<float>::Clear(this->ir_delta_x, 0, 4);
-			cli::array<float>::Clear(this->ir_delta_y, 0, 4);
-			cli::array<int>::Clear(this->ir_raw_delta_x, 0, 4);
-			cli::array<int>::Clear(this->ir_raw_delta_y, 0, 4);
-
-			this->ir_delta_midx = 0;
-			this->ir_delta_midy = 0;
-			this->ir_raw_delta_midx = 0;
-			this->ir_raw_delta_midy = 0;
+			this->ir_screen_x = 0;
+			this->ir_screen_y = 0;
 		}
 		/// <summary>Default destructor</summary>
 		/// <remarks>
@@ -163,7 +135,6 @@ namespace GiiMoteLib {
 		{
 			// Cleanup after sloppy users.
 			// WiimoteLib does this for you when the Dispose method is called.
-			// (But we'll do it anyways)
 			wm_disconnect();
 			delete (this->wm->WiimoteChanged);
 			delete (this->wm->WiimoteExtensionChanged);
@@ -190,72 +161,27 @@ namespace GiiMoteLib {
 		/// <param name="args">Current Wii Remote state</param>
 		void wm_OnWiimoteChanged(System::Object^ sender, WiimoteChangedEventArgs^ args)
 		{
-			this->wmLastState = wmState;
+			this->wmLastState = this->wmState;
 			this->wmState = args->WiimoteState;
 
-			int ir_found[] = { this->wmState->IRState.Found1, this->wmState->IRState.Found2, this->wmState->IRState.Found3, this->wmState->IRState.Found4};
-
-			int ir_raw_dot_x[] = { this->wmState->IRState.RawX1, this->wmState->IRState.RawX2, this->wmState->IRState.RawX3, this->wmState->IRState.RawX4 };
-			int ir_raw_dot_old_x[] = { this->wmLastState->IRState.RawX1, this->wmLastState->IRState.RawX2, this->wmLastState->IRState.RawX3, this->wmLastState->IRState.RawX4 };
-			float ir_dot_x[] = { this->wmState->IRState.X1, this->wmState->IRState.X2, this->wmState->IRState.X3, this->wmState->IRState.X4 };
-			float ir_dot_old_x[] = { this->wmLastState->IRState.X1, this->wmLastState->IRState.X2, this->wmLastState->IRState.X3, this->wmLastState->IRState.X4 };
-			
-			int ir_raw_dot_y[] = { this->wmState->IRState.RawY1, this->wmState->IRState.RawY2, this->wmState->IRState.RawY3, this->wmState->IRState.RawY4 };
-			int ir_raw_dot_old_y[] = { this->wmLastState->IRState.RawY1, this->wmLastState->IRState.RawY2, this->wmLastState->IRState.RawY3, this->wmLastState->IRState.RawY4 };
-			float ir_dot_y[] = { this->wmState->IRState.Y1, this->wmState->IRState.Y2, this->wmState->IRState.Y3, this->wmState->IRState.Y4 };
-			float ir_dot_old_y[] = { this->wmLastState->IRState.Y1, this->wmLastState->IRState.Y2, this->wmLastState->IRState.Y3, this->wmLastState->IRState.Y4 };
-
-			for(int i = 0; i < 4; i++)
+			if (this->wmState->IRState.Found1 && this->wmState->IRState.Found2)
 			{
-				if (ir_found[i])
-				{
-					this->ir_raw_delta_x[i] = (ir_raw_dot_x[i] - ir_raw_dot_old_x[i]);
-					this->ir_delta_x[i] = (ir_dot_x[i] - ir_dot_old_x[i]);
-					this->ir_raw_delta_y[i] = (ir_raw_dot_y[i] - ir_raw_dot_old_y[i]);
-					this->ir_delta_y[i] = (ir_dot_y[i] - ir_dot_old_y[i]);
-				}
-				else
-				{
-					this->ir_delta_x[i] = 0;
-					this->ir_delta_y[i] = 0;
-					this->ir_raw_delta_x[i] = 0;
-					this->ir_raw_delta_y[i] = 0;
-				}
-			}
-
-			if (ir_found[0] && ir_found[1])
-			{
-				ir_screen_x = display_width - GiiMote::domain_rescale<int>(this->wmState->IRState.RawMidX, 0, 1023, 0, display_width);
-				ir_screen_y = GiiMote::domain_rescale<int>(this->wmState->IRState.RawMidY, 0, 767, 0, display_height);
-
-				this->ir_delta_midx = this->wmState->IRState.MidX - this->wmLastState->IRState.MidX;
-				this->ir_delta_midy = this->wmState->IRState.MidY - this->wmLastState->IRState.MidY;
-				this->ir_raw_delta_midx = this->wmState->IRState.RawMidX - this->wmLastState->IRState.RawMidX;
-				this->ir_raw_delta_midy = this->wmState->IRState.RawMidY - this->wmLastState->IRState.RawMidY;
+				this->ir_screen_x = display_width - GiiMote::domain_rescale<int>(this->wmState->IRState.RawMidX, 0, 1023, 0, display_width);
+				this->ir_screen_y = GiiMote::domain_rescale<int>(this->wmState->IRState.RawMidY, 0, 767, 0, display_height);
 			}
 			else
 			{
-				if (ir_found[0])
+				if (this->wmState->IRState.Found1)
 				{
-					ir_screen_x -= GiiMote::domain_rescale<int>(ir_raw_delta_x[0], 0, 1023, 0, display_width);
-					ir_screen_y -= GiiMote::domain_rescale<int>(ir_raw_delta_y[0], 0, 767, 0, display_height);
-
-					this->ir_delta_midx += ir_delta_x[0];
-					this->ir_delta_midy += ir_delta_y[0];
-					this->ir_raw_delta_midx += ir_raw_delta_x[0];
-					this->ir_raw_delta_midy += ir_raw_delta_y[0];
+					this->ir_screen_x -= GiiMote::domain_rescale<int>((int)wm_ir_dot_get_delta_rawx(1), 0, 1023, 0, display_width);
+					this->ir_screen_y -= GiiMote::domain_rescale<int>((int)wm_ir_dot_get_delta_rawy(1), 0, 767, 0, display_height);
 				}
 				else
 				{
-					if (ir_found[1])
+					if (this->wmState->IRState.Found2)
 					{
-						ir_screen_x -= GiiMote::domain_rescale<int>(ir_raw_delta_x[1], 0, 1023, 0, display_width);
-						ir_screen_y -= GiiMote::domain_rescale<int>(ir_raw_delta_y[0], 0, 767, 0, display_height);
-
-						this->ir_delta_midx += ir_delta_x[1];
-						this->ir_delta_midy += ir_delta_y[1];
-						this->ir_raw_delta_midx += ir_raw_delta_x[1];
-						this->ir_raw_delta_midy += ir_raw_delta_y[1];
+						this->ir_screen_x -= GiiMote::domain_rescale<int>((int)wm_ir_dot_get_delta_rawx(2), 0, 1023, 0, display_width);
+						this->ir_screen_y -= GiiMote::domain_rescale<int>((int)wm_ir_dot_get_delta_rawy(2), 0, 767, 0, display_height);
 					}
 					else
 					{
@@ -266,8 +192,8 @@ namespace GiiMoteLib {
 						// position. However, if the IR is not visible that most likely
 						// means we are not facing the screen anyways, and integrating the acceleration
 						// is not very accurate.
-						ir_screen_x = -1;
-						ir_screen_y = -1;
+						this->ir_screen_x = -1;
+						this->ir_screen_y = -1;
 					}
 				}
 			}
@@ -309,7 +235,8 @@ public:
 ////////////////////////////////////////////
 // Mathematical Functions
 ////////////////////////////////////////////
-		double in_domain(double x, double d1,double d2);
+		template <class T>
+		T in_domain(T x, T d1, T d2);
 		template <class T>
 		T domain_rescale(T val, T minin, T maxin, T minout, T maxout);
 
