@@ -312,14 +312,66 @@ Gets the zero point of the accelerometer
 </summary>
             <returns>Normalized calibration data</returns>
         </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_ir_display_get_y">
+            <summary>Y coordinate of the screen that the Wii Remote is pointing at</summary>
+            <returns>Y coordinate relative to screen</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_ir_display_get_x">
+            <summary>X coordinate of the screen that the Wii Remote is pointing at</summary>
+            <returns>X coordinate relative to screen</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_rawmidy">
+            <summary>Change in raw midy value</summary>
+            <remarks>Domain: [0,767]</remarks>
+            <returns>Delta raw midy</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_rawmidx">
+            <summary>Change in raw midx value</summary>
+            <remarks>Domain: [0,1023]</remarks>
+            <returns>Delta raw midx</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_midy">
+            <summary>Change in midy value</summary>
+            <remarks>Domain: [0,1]</remarks>
+            <returns>Delta midy</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_midx">
+            <summary>Change in midx value</summary>
+            <remarks>Domain: [0,1]</remarks>
+            <returns>Delta midx</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_rawy(System.Double)">
+            <summary>Change in raw x value of the given dot</summary>
+            <remarks>Domain: [0,767]</remarks>
+            <param name="dot_number">Dot 1-4</param>
+            <returns>Delta rawy</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_rawx(System.Double)">
+            <summary>Change in raw x value of the given dot</summary>
+            <remarks>Domain: [0,1023]</remarks>
+            <param name="dot_number">Dot 1-4</param>
+            <returns>Delta rawx</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_y(System.Double)">
+            <summary>Change in y value of the given dot</summary>
+            <remarks>Domain: [0,1]</remarks>
+            <param name="dot_number">Dot 1-4</param>
+            <returns>Delta y</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_x(System.Double)">
+            <summary>Change in x value of the given dot</summary>
+            <remarks>Domain: [0,1]</remarks>
+            <param name="dot_number">Dot 1-4</param>
+            <returns>Delta x</returns>
+        </member>
         <member name="M:GiiMoteLib.GiiMote.wm_ir_dot_get_rawmidy">
             <summary>Raw midpoint of IR sensors 1 and 2 only along the Y-axis</summary>
-            <remarks>Domain: [0,1023], [0,767]</remarks>
+            <remarks>Domain: [0,767]</remarks>
             <returns>Raw Y Midpoint</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_ir_dot_get_rawmidx">
             <summary>Raw midpoint of IR sensors 1 and 2 only along the X-axis</summary>
-            <remarks>Domain: [0,1023], [0,767]</remarks>
+            <remarks>Domain: [0,1023]</remarks>
             <returns>Raw X Midpoint</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_ir_dot_get_midy">
@@ -365,6 +417,22 @@ Gets the zero point of the accelerometer
             <summary>Checks to see if the given IR dot is visible</summary>
             <param name="dot_number">Dot 1-4</param>
             <returns>Dot found as bool</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_get_altitude">
+            <summary>Distance of the Wii Remote from the sensor bar</summary>
+            <returns>Distance in XX</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_get_yaw">
+            <summary>The yaw of the Wii Remote</summary>
+            <returns>Yaw in degrees</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_get_pitch">
+            <summary>The pitch of the Wii Remote</summary>
+            <returns>Pitch in degrees</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_get_roll">
+            <summary>The roll of the Wii Remote</summary>
+            <returns>Roll in degrees</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_dead_zone_z">
             <summary>Gets the dead-zone value</summary>
@@ -633,7 +701,7 @@ The button to check
         <member name="M:GiiMoteLib.GiiMote.wm_bin_read_byte(System.Double)">
             <summary>Reads a byte from a register or memory</summary>
             <param name="address">The address to read from</param>
-            <returns>Byte at address</returns>
+            <returns>Byte at address or -1 on error</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_set_calibration_zg(System.Double)">
             <summary>Sets the gravity at rest of the accelerometer</summary>
@@ -691,12 +759,12 @@ The button to check
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_rumble">
             <summary>Vibration motor status</summary>
-            <returns>Rumbling (1 or 0)</returns>
+            <returns>Rumbling (1 or 0) or Error (-1)</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_set_rumble(System.Double)">
             <summary>Sets the vibration motor's status</summary>
-            <param name="rumbling">Rumble status (1 or 0)</param>
-            <returns>Rumbling (1 or 0) or error (-1)</returns>
+            <param name="rumbling">Rumble status (true or false)</param>
+            <returns>Success</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_check_extension">
             <summary>Checks the current extension</summary>
@@ -743,7 +811,26 @@ Current extension:
         <member name="M:GiiMoteLib.GiiMote.wm_exists">
             <summary>Checks to see if a Wii Remote exists</summary>
             <remarks>Same as seeing if <see>wm_connect()</see> fails</remarks>
-            <returns>Wii Remote exists</returns>
+            <returns>
+                <list type="table">
+                    <listheader>
+                        <term>Return Code</term>
+                        <description>Description</description>
+                    </listheader>
+                    <item>
+                        <term>-1</term>
+                        <description>Wii Remote detected but an error occured</description>
+                    </item>
+                    <item>
+                        <term>0</term>
+                        <description>No Wii Remote detected</description>
+                    </item>
+                    <item>
+                        <term>1</term>
+                        <description>Wii Remote detected</description>
+                    </item>
+                </list>
+            </returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_connect">
             <summary>Connect to Wii Remote</summary>
@@ -753,6 +840,10 @@ Current extension:
                         <term>Return Code</term>
                         <description>Description</description>
                     </listheader>
+                    <item>
+                        <term>-2</term>
+                        <description>Wii Remote connected but an error occured</description>
+                    </item>
                     <item>
                         <term>-1</term>
                         <description>Wii Remote already connected</description>
@@ -865,6 +956,45 @@ you will need to make the destructor bind late using the keyword "virtual."
         </member>
         <member name="F:GiiMoteLib.GiiMote.joystick_dead_zone">
             <summary>Joystick dead-zone value</summary>
+        </member>
+        <member name="F:GiiMoteLib.GiiMote.ir_screen_y">
+            <summary>The Y position on the screen the Wii Remote is pointing at</summary>
+        </member>
+        <member name="F:GiiMoteLib.GiiMote.ir_screen_x">
+            <summary>The X position on the screen the Wii Remote is pointing at</summary>
+        </member>
+        <member name="F:GiiMoteLib.GiiMote.ir_raw_delta_midy">
+            <summary>The change in the raw IR MidY value after the last update</summary>
+        </member>
+        <member name="F:GiiMoteLib.GiiMote.ir_raw_delta_midx">
+            <summary>The change in the raw IR MidX value after the last update</summary>
+        </member>
+        <member name="F:GiiMoteLib.GiiMote.ir_raw_delta_y">
+            <summary>The change in raw IR Y values after the last update</summary>
+        </member>
+        <member name="F:GiiMoteLib.GiiMote.ir_raw_delta_x">
+            <summary>The change in raw IR X values after the last update</summary>
+        </member>
+        <member name="F:GiiMoteLib.GiiMote.ir_delta_midy">
+            <summary>The change in the IR MidY value after the last update</summary>
+        </member>
+        <member name="F:GiiMoteLib.GiiMote.ir_delta_midx">
+            <summary>The change in the IR MidX value after the last update</summary>
+        </member>
+        <member name="F:GiiMoteLib.GiiMote.ir_delta_y">
+            <summary>The change in IR Y values after the last update</summary>
+        </member>
+        <member name="F:GiiMoteLib.GiiMote.ir_delta_x">
+            <summary>The change in IR X values after the last update</summary>
+        </member>
+        <member name="F:GiiMoteLib.GiiMote.display_width">
+            <summary>The width of the current display</summary>
+        </member>
+        <member name="F:GiiMoteLib.GiiMote.display_height">
+            <summary>The height of the current display</summary>
+        </member>
+        <member name="F:GiiMoteLib.GiiMote.wmLastState">
+            <summary>The last Wii Remote state</summary>
         </member>
         <member name="F:GiiMoteLib.GiiMote.wmState">
             <summary>The current Wii Remote state</summary>
