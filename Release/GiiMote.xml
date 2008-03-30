@@ -341,7 +341,7 @@ Gets the zero point of the accelerometer
             <returns>Delta midx</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_rawy(System.Double)">
-            <summary>Change in raw x value of the given dot</summary>
+            <summary>Change in raw y value of the given dot</summary>
             <remarks>Domain: [0,767]</remarks>
             <param name="dot_number">Dot 1-4</param>
             <returns>Delta rawy</returns>
@@ -863,14 +863,6 @@ Current extension:
             <summary>If the Wii Remote is connected</summary>
             <returns>Wii Remote connected</returns>
         </member>
-        <member name="M:GiiMoteLib.GiiMote.in_domain(System.Double,System.Double,System.Double)">
-            <summary>Checks a number against the given domain</summary>
-            <remarks>Use -1 for infinity</remarks>
-            <param name="x">The value to check</param>
-            <param name="d1">The minimum value</param>
-            <param name="d2">The maximum value</param>
-            <returns>The closest number to x in the given domain</returns>
-        </member>
         <member name="M:GiiMoteLib.GiiMote.wm_mii_data_update(System.Byte[])">
             <summary>Updates the given Mii data</summary>
             <param name="miiData">The mii data to update</param>
@@ -962,30 +954,6 @@ you will need to make the destructor bind late using the keyword "virtual."
         </member>
         <member name="F:GiiMoteLib.GiiMote.ir_screen_x">
             <summary>The X position on the screen the Wii Remote is pointing at</summary>
-        </member>
-        <member name="F:GiiMoteLib.GiiMote.ir_raw_delta_midy">
-            <summary>The change in the raw IR MidY value after the last update</summary>
-        </member>
-        <member name="F:GiiMoteLib.GiiMote.ir_raw_delta_midx">
-            <summary>The change in the raw IR MidX value after the last update</summary>
-        </member>
-        <member name="F:GiiMoteLib.GiiMote.ir_raw_delta_y">
-            <summary>The change in raw IR Y values after the last update</summary>
-        </member>
-        <member name="F:GiiMoteLib.GiiMote.ir_raw_delta_x">
-            <summary>The change in raw IR X values after the last update</summary>
-        </member>
-        <member name="F:GiiMoteLib.GiiMote.ir_delta_midy">
-            <summary>The change in the IR MidY value after the last update</summary>
-        </member>
-        <member name="F:GiiMoteLib.GiiMote.ir_delta_midx">
-            <summary>The change in the IR MidX value after the last update</summary>
-        </member>
-        <member name="F:GiiMoteLib.GiiMote.ir_delta_y">
-            <summary>The change in IR Y values after the last update</summary>
-        </member>
-        <member name="F:GiiMoteLib.GiiMote.ir_delta_x">
-            <summary>The change in IR X values after the last update</summary>
         </member>
         <member name="F:GiiMoteLib.GiiMote.display_width">
             <summary>The width of the current display</summary>
