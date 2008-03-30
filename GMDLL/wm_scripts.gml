@@ -121,6 +121,9 @@ hfunction wm_classic_trigger_raw(trigger:real):real
 function wm_check_extension():real
 function wm_set_rumble(rumbling:real):real
 function wm_get_rumble():real
+function wm_get_roll():real
+function wm_get_pitch():real
+function wm_get_yaw():real
 
 function wm_set_joystick_dead_zone(val:real):real
 function wm_set_trigger_dead_zone(val:real):real
@@ -162,6 +165,18 @@ hfunction wm_ir_dot_get_rawx(dot:real):real
 hfunction wm_ir_dot_get_rawy(dot:real):real
 hfunction wm_ir_dot_get_rawmidx():real
 hfunction wm_ir_dot_get_rawmidy():real
+function wm_ir_dot_get_delta_x(dot:real):real
+function wm_ir_dot_get_delta_y(dot:real):real
+hfunction wm_ir_dot_get_delta_rawx(dot:real):real
+hfunction wm_ir_dot_get_delta_rawy(dot:real):real
+function wm_ir_dot_get_delta_midx():real
+function wm_ir_dot_get_delta_midy():real
+hfunction wm_ir_dot_get_delta_rawmidx():real
+hfunction wm_ir_dot_get_delta_rawmidy():real
+function wm_ir_display_get_x():real
+function wm_ir_display_get_y():real
+function wm_ir_window_get_x():real
+function wm_ir_window_get_y():real
 
 function wm_get_calibration_x0():real
 function wm_get_calibration_xg():real
@@ -277,11 +292,33 @@ const wm_mii_weight_max			= $7F
 
 
 **********************************************************************************/
+#define wm_ir_dot_get_delta_midx
+layer_function(global.gm_class,"wm_ir_dot_get_delta_midx",ty_real);
+#define wm_ir_dot_get_delta_midy
+layer_function(global.gm_class,"wm_ir_dot_get_delta_midy",ty_real);
+#define wm_ir_dot_get_delta_rawmidx
+layer_function(global.gm_class,"wm_ir_dot_get_delta_rawmidx",ty_real);
+#define wm_ir_dot_get_delta_rawmidy
+layer_function(global.gm_class,"wm_ir_dot_get_delta_rawmidy",ty_real);
+#define wm_ir_dot_get_delta_rawx
+layer_function(global.gm_class,"wm_ir_dot_get_delta_rawx",ty_real,1,argument0);
+#define wm_ir_dot_get_delta_rawy
+layer_function(global.gm_class,"wm_ir_dot_get_delta_rawy",ty_real,1,argument0);
+#define wm_ir_dot_get_delta_x
+layer_function(global.gm_class,"wm_ir_dot_get_delta_x",ty_real,1,argument0);
+#define wm_ir_dot_get_delta_y
+layer_function(global.gm_class,"wm_ir_dot_get_delta_y",ty_real,1,argument0);
+#define wm_ir_display_get_x
+layer_function(global.gm_class,"wm_ir_display_get_x",ty_real);
+#define wm_ir_display_get_y
+layer_function(global.gm_class,"wm_ir_display_get_y",ty_real);
+#define wm_ir_window_get_x
+return ( wm_ir_display_get_x() - window_get_x() );
+#define wm_ir_window_get_y
+return ( wm_ir_display_get_y() - window_get_y() );
 #define wm_ir_dot_get_midx
-// argument0 - Dot number (1 or 2)
 layer_function(global.gm_class,"wm_ir_dot_get_midx",ty_real);
 #define wm_ir_dot_get_midy
-// argument0 - Dot number (1 or 2)
 layer_function(global.gm_class,"wm_ir_dot_get_midy",ty_real);
 #define wm_ir_dot_get_rawmidx
 // argument0 - Dot number (1 or 2)
@@ -296,7 +333,7 @@ layer_function(global.gm_class,"wm_ir_dot_get_rawx",ty_real,1,argument0);
 // argument0 - Dot number (1 or 2)
 layer_function(global.gm_class,"wm_ir_dot_get_rawy",ty_real,1,argument0);
 #define wm_ir_dot_get_x
-// argument0 - Dot number (1 or 2)
+// argument0 - Dot number
 layer_function(global.gm_class,"wm_ir_dot_get_x",ty_real,1,argument0);
 #define wm_ir_dot_get_y
 // argument0 - Dot number (1 or 2)
@@ -523,6 +560,14 @@ return (wm_mii_block_offset + (wm_mii_block_size * (mii_block - 1)) + (wm_mii_si
 #define wm_mii_update_crc
 // argument0 - The filename to update.
 layer_function(global.gm_class,"wm_mii_update_crc",ty_real,1,argument0);
+#define wm_get_altitude
+layer_function(global.gm_class,"wm_get_altitude",ty_real,0);
+#define wm_get_pitch
+layer_function(global.gm_class,"wm_get_pitch",ty_real,0);
+#define wm_get_roll
+layer_function(global.gm_class,"wm_get_roll",ty_real,0);
+#define wm_get_yaw
+layer_function(global.gm_class,"wm_get_yaw",ty_real,0);
 #define wm_check_button
 // argument0 - Button key code
 layer_function(global.gm_class,"wm_check_button",ty_real,1,argument0);
