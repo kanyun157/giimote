@@ -30,6 +30,10 @@ namespace GiiMoteLib {
 	///         <description>Description</description>
 	///     </listheader>
 	///     <item>
+	///         <term>-2</term>
+	///         <description>Wii Remote connected but an error occured</description>
+	///     </item>
+	///     <item>
 	///         <term>-1</term>
 	///         <description>Wii Remote already connected</description>
 	///     </item>
@@ -55,18 +59,24 @@ namespace GiiMoteLib {
 			{
 				return ( 0 );
 			}
-			// this->connected = true;
-			if (this->wm->WiimoteState->Extension)
+			try
 			{
-				this->wm->SetReportType(Wiimote::InputReport::IRExtensionAccel, true);
+				this->wm->WiimoteChanged += (gcnew WiimoteChangedEventHandler(this,&GiiMote::wm_OnWiimoteChanged));
+				this->wm->WiimoteExtensionChanged += (gcnew WiimoteExtensionChangedEventHandler(this,&GiiMote::wm_OnWiimoteExtensionChanged));
+				if (this->wm->WiimoteState->Extension)
+				{
+					this->wm->SetReportType(Wiimote::InputReport::IRExtensionAccel, true);
+				}
+				else
+				{
+					this->wm->SetReportType(Wiimote::InputReport::IRAccel, true);
+				}
+				this->wm->SetLEDs(false, false, false, false);
 			}
-			else
+			catch(...)
 			{
-				this->wm->SetReportType(Wiimote::InputReport::IRAccel, true);
+				return ( -2 );
 			}
-			this->wm->WiimoteChanged += (gcnew WiimoteChangedEventHandler(this,&GiiMote::wm_OnWiimoteChanged));
-			this->wm->WiimoteExtensionChanged += (gcnew WiimoteExtensionChangedEventHandler(this,&GiiMote::wm_OnWiimoteExtensionChanged));
-			this->wm->SetLEDs(false, false, false, false);
 			// wm->GetStatus(); - This is covered in wm_connected().
 		}
 		else
@@ -74,12 +84,31 @@ namespace GiiMoteLib {
 			return ( -1 );
 		}
 
-		return (wm_connected());
+		return (1);
 	}
 
 	/// <summary>Checks to see if a Wii Remote exists</summary>
 	/// <remarks>Same as seeing if <see>wm_connect()</see> fails</remarks>
-	/// <returns>Wii Remote exists</returns>
+	/// <returns>
+	/// <list type="table">
+	///     <listheader>
+	///         <term>Return Code</term>
+	///         <description>Description</description>
+	///     </listheader>
+	///     <item>
+	///         <term>-1</term>
+	///         <description>Wii Remote detected but an error occured</description>
+	///     </item>
+	///     <item>
+	///         <term>0</term>
+	///         <description>No Wii Remote detected</description>
+	///     </item>
+	///     <item>
+	///         <term>1</term>
+	///         <description>Wii Remote detected</description>
+	///     </item>
+	/// </list>
+	/// </returns>
 	double GiiMote::wm_exists()
 	{
 		if (!wm_connected())
@@ -92,7 +121,14 @@ namespace GiiMoteLib {
 			{
 				return ( 0 );
 			}
-			this->wm->Disconnect();
+			try
+			{
+				this->wm->Disconnect();
+			}
+			catch(...)
+			{
+				return ( -1 );
+			}
 		}
 		return ( 1 );
 	}
@@ -136,11 +172,10 @@ namespace GiiMoteLib {
 			}
 			catch (...)
 			{
-				return (-1);
+				return (0);
 			}
-			// this->connected = false;
 		}
-		return (!wm_connected());
+		return (1);
 	}
 
 	/////////////////////////
@@ -152,23 +187,30 @@ namespace GiiMoteLib {
 	double GiiMote::wm_get_led(double led_num)
 	{
 		bool led = false;
-		switch( (int)led_num )
+		try
 		{
-		case 1:
-			led = this->wmState->LEDState.LED1;
-			break;
-		case 2:
-			led = this->wmState->LEDState.LED2;
-			break;
-		case 3:
-			led = this->wmState->LEDState.LED3;
-			break;
-		case 4:
-			led = this->wmState->LEDState.LED4;
-			break;
-		default:
+			switch( (int)led_num )
+			{
+			case 1:
+				led = this->wmState->LEDState.LED1;
+				break;
+			case 2:
+				led = this->wmState->LEDState.LED2;
+				break;
+			case 3:
+				led = this->wmState->LEDState.LED3;
+				break;
+			case 4:
+				led = this->wmState->LEDState.LED4;
+				break;
+			default:
+				throw( 0 );
+				break;
+			}
+		}
+		catch(...)
+		{
 			led = false;
-			break;
 		}
 
 		return ( (double)led );
@@ -182,10 +224,10 @@ namespace GiiMoteLib {
 	double GiiMote::wm_set_leds(double led1, double led2, double led3, double led4)
 	{
 		bool bLed1,bLed2,bLed3,bLed4;
-		bLed1 = (led1 > 0);
-		bLed2 = (led2 > 0);
-		bLed3 = (led3 > 0);
-		bLed4 = (led4 > 0);
+		bLed1 = (led1 > 0.5);
+		bLed2 = (led2 > 0.5);
+		bLed3 = (led3 > 0.5);
+		bLed4 = (led4 > 0.5);
 
 		try
 		{
@@ -236,6 +278,7 @@ namespace GiiMoteLib {
 		}
 		return ( battery_state );
 	}
+
 	/// <summary>Updates the Wii Remote status</summary>
 	/// <returns>Success</returns>
 	double GiiMote::wm_get_status()
@@ -250,6 +293,7 @@ namespace GiiMoteLib {
 		}
 		return ( 1 );
 	}
+
 	/// <summary>Checks the current extension</summary>
 	/// <returns>
 	/// Current extension:
@@ -310,8 +354,8 @@ namespace GiiMoteLib {
 	}
 
 	/// <summary>Sets the vibration motor's status</summary>
-	/// <param name="rumbling">Rumble status (1 or 0)</param>
-	/// <returns>Rumbling (1 or 0) or error (-1)</returns>
+	/// <param name="rumbling">Rumble status (true or false)</param>
+	/// <returns>Success</returns>
 	double GiiMote::wm_set_rumble(double rumbling)
 	{
 		try
@@ -325,18 +369,18 @@ namespace GiiMoteLib {
 				this->wm->SetRumble(true);
 				break;
 			default:
-				throw (-1);
+				throw (0);
 				break;
 			}
 		}
 		catch(...)
 		{
-			return (-1);
+			return (0);
 		}
-		return (wm_get_rumble());
+		return (1);
 	}
 	/// <summary>Vibration motor status</summary>
-	/// <returns>Rumbling (1 or 0)</returns>
+	/// <returns>Rumbling (1 or 0) or Error (-1)</returns>
 	double GiiMote::wm_get_rumble()
 	{
 		double rumbling;
@@ -491,7 +535,7 @@ namespace GiiMoteLib {
 
 	/// <summary>Reads a byte from a register or memory</summary>
 	/// <param name="address">The address to read from</param>
-	/// <returns>Byte at address</returns>
+	/// <returns>Byte at address or -1 on error</returns>
 	double GiiMote::wm_bin_read_byte(double address)
 	{
 		double value;

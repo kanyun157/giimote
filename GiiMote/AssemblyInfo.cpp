@@ -16,7 +16,7 @@ using namespace System::Security::Permissions;
 [assembly:AssemblyConfigurationAttribute("")];
 [assembly:AssemblyCompanyAttribute("GreenMan Games")];
 [assembly:AssemblyProductAttribute("GiiMote")];
-[assembly:AssemblyCopyrightAttribute("Copyright GreenMan Games 2007")];
+[assembly:AssemblyCopyrightAttribute("Copyright 2007 GreenMan Games")];
 [assembly:AssemblyTrademarkAttribute("")];
 [assembly:AssemblyCultureAttribute("")];
 
@@ -31,7 +31,7 @@ using namespace System::Security::Permissions;
 // You can specify all the value or you can default the Revision and Build Numbers
 // by using the '*' as shown below:
 
-[assembly:AssemblyVersionAttribute("2.5.*")];
+[assembly:AssemblyVersionAttribute("2.6.*")];
 
 [assembly:ComVisible(false)];
 

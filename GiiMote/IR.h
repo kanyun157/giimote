@@ -178,18 +178,128 @@ namespace GiiMoteLib {
 		return( (double)this->wmState->IRState.MidY );
 	}
 	/// <summary>Raw midpoint of IR sensors 1 and 2 only along the X-axis</summary>
-	/// <remarks>Domain: [0,1023], [0,767]</remarks>
+	/// <remarks>Domain: [0,1023]</remarks>
 	/// <returns>Raw X Midpoint</returns>
 	double GiiMote::wm_ir_dot_get_rawmidx()
 	{
 		return ( (double)this->wmState->IRState.RawMidX );
 	}
 	/// <summary>Raw midpoint of IR sensors 1 and 2 only along the Y-axis</summary>
-	/// <remarks>Domain: [0,1023], [0,767]</remarks>
+	/// <remarks>Domain: [0,767]</remarks>
 	/// <returns>Raw Y Midpoint</returns>
 	double GiiMote::wm_ir_dot_get_rawmidy()
 	{
 		return ( (double)this->wmState->IRState.RawMidY );
+	}
+
+	/// <summary>Change in x value of the given dot</summary>
+	/// <remarks>Domain: [0,1]</remarks>
+	/// <param name="dot_number">Dot 1-4</param>
+	/// <returns>Delta x</returns>
+	double GiiMote::wm_ir_dot_get_delta_x(double dot_number)
+	{
+		if (dot_number >= 1 && dot_number <= 4)
+		{
+			return ( (double)this->ir_delta_x[(int)dot_number] );
+		}
+		else
+		{
+			return ( -1 );
+		}
+	}
+
+	/// <summary>Change in y value of the given dot</summary>
+	/// <remarks>Domain: [0,1]</remarks>
+	/// <param name="dot_number">Dot 1-4</param>
+	/// <returns>Delta y</returns>
+	double GiiMote::wm_ir_dot_get_delta_y(double dot_number)
+	{
+		if (dot_number >= 1 && dot_number <= 4)
+		{
+			return ( (double)this->ir_delta_y[(int)dot_number] );
+		}
+		else
+		{
+			return ( -1 );
+		}
+	}
+
+	/// <summary>Change in raw x value of the given dot</summary>
+	/// <remarks>Domain: [0,1023]</remarks>
+	/// <param name="dot_number">Dot 1-4</param>
+	/// <returns>Delta rawx</returns>
+	double GiiMote::wm_ir_dot_get_delta_rawx(double dot_number)
+	{
+		if (dot_number >= 1 && dot_number <= 4)
+		{
+			return ( (double)this->ir_raw_delta_x[(int)dot_number] );
+		}
+		else
+		{
+			return ( -1 );
+		}
+	}
+
+	/// <summary>Change in raw x value of the given dot</summary>
+	/// <remarks>Domain: [0,767]</remarks>
+	/// <param name="dot_number">Dot 1-4</param>
+	/// <returns>Delta rawy</returns>
+	double GiiMote::wm_ir_dot_get_delta_rawy(double dot_number)
+	{
+		if (dot_number >= 1 && dot_number <= 4)
+		{
+			return ( (double)this->ir_raw_delta_y[(int)dot_number] );
+		}
+		else
+		{
+			return ( -1 );
+		}
+	}
+
+	/// <summary>Change in midx value</summary>
+	/// <remarks>Domain: [0,1]</remarks>
+	/// <returns>Delta midx</returns>
+	double GiiMote::wm_ir_dot_get_delta_midx()
+	{
+		return ( (double)this->ir_delta_midx );
+	}
+
+	/// <summary>Change in midy value</summary>
+	/// <remarks>Domain: [0,1]</remarks>
+	/// <returns>Delta midy</returns>
+	double GiiMote::wm_ir_dot_get_delta_midy()
+	{
+		return ( (double)this->ir_delta_midy );
+	}
+
+	/// <summary>Change in raw midx value</summary>
+	/// <remarks>Domain: [0,1023]</remarks>
+	/// <returns>Delta raw midx</returns>
+	double GiiMote::wm_ir_dot_get_delta_rawmidx()
+	{
+		return ( (double)this->ir_raw_delta_midx );
+	}
+
+	/// <summary>Change in raw midy value</summary>
+	/// <remarks>Domain: [0,767]</remarks>
+	/// <returns>Delta raw midy</returns>
+	double GiiMote::wm_ir_dot_get_delta_rawmidy()
+	{
+		return ( (double)this->ir_raw_delta_midy );
+	}
+
+	/// <summary>X coordinate of the screen that the Wii Remote is pointing at</summary>
+	/// <returns>X coordinate relative to screen</returns>
+	double GiiMote::wm_ir_display_get_x()
+	{
+		return ((double)this->ir_screen_x);
+	}
+
+	/// <summary>Y coordinate of the screen that the Wii Remote is pointing at</summary>
+	/// <returns>Y coordinate relative to screen</returns>
+	double GiiMote::wm_ir_display_get_y()
+	{
+		return ((double)this->ir_screen_y);
 	}
 
 } // namespace GiiMoteLib

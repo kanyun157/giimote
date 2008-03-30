@@ -9,6 +9,7 @@
 #include "GMButtons.h"
 #include "Joystick.h"
 #include "GMAccel.h"
+#include "Orientation.h"
 #include "IR.h"
 #include "Nunchuck.h"
 #include "Classic.h"
