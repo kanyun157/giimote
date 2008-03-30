@@ -75,7 +75,7 @@ namespace GiiMoteLib {
 	/// <returns>1</returns>
 	double GiiMote::wm_set_accel_dead_zone_x(double val)
 	{
-		accel_dead_zone[0] = in_domain(val, 0, -1);
+		accel_dead_zone[0] = in_domain<double>(val, 0, -1);
 		return ( 1 );
 	}
 	/// <summary>Sets the dead-zone value</summary>
@@ -84,7 +84,7 @@ namespace GiiMoteLib {
 	/// <returns>1</returns>
 	double GiiMote::wm_set_accel_dead_zone_y(double val)
 	{
-		accel_dead_zone[1] = in_domain(val, 0, -1);
+		accel_dead_zone[1] = in_domain<double>(val, 0, -1);
 		return ( 1 );
 	}
 	/// <summary>Sets the dead-zone value</summary>
@@ -93,7 +93,7 @@ namespace GiiMoteLib {
 	/// <returns>1</returns>
 	double GiiMote::wm_set_accel_dead_zone_z(double val)
 	{
-		accel_dead_zone[2] = in_domain(val, 0, -1);
+		accel_dead_zone[2] = in_domain<double>(val, 0, -1);
 		return ( 1 );
 	}
 	/// <summary>Gets the dead-zone value</summary>
@@ -167,7 +167,7 @@ namespace GiiMoteLib {
 	/// <returns>1</returns>
 	double GiiMote::wm_nunchuck_set_accel_dead_zone_x(double val)
 	{
-		accel_dead_zone[3] = in_domain(val, 0, -1);
+		accel_dead_zone[3] = in_domain<double>(val, 0, -1);
 		return ( 1 );
 	}
 	/// <summary>Sets the dead-zone value</summary>
@@ -176,7 +176,7 @@ namespace GiiMoteLib {
 	/// <returns>1</returns>
 	double GiiMote::wm_nunchuck_set_accel_dead_zone_y(double val)
 	{
-		accel_dead_zone[4] = in_domain(val, 0, -1);
+		accel_dead_zone[4] = in_domain<double>(val, 0, -1);
 		return ( 1 );
 	}
 	/// <summary>Sets the dead-zone value</summary>
@@ -185,7 +185,7 @@ namespace GiiMoteLib {
 	/// <returns>1</returns>
 	double GiiMote::wm_nunchuck_set_accel_dead_zone_z(double val)
 	{
-		accel_dead_zone[5] = in_domain(val, 0, -1);
+		accel_dead_zone[5] = in_domain<double>(val, 0, -1);
 		return ( 1 );
 	}
 	/// <summary>Gets the dead-zone value</summary>

@@ -61,8 +61,6 @@ namespace GiiMoteLib {
 			}
 			try
 			{
-				this->wm->WiimoteChanged += (gcnew WiimoteChangedEventHandler(this,&GiiMote::wm_OnWiimoteChanged));
-				this->wm->WiimoteExtensionChanged += (gcnew WiimoteExtensionChangedEventHandler(this,&GiiMote::wm_OnWiimoteExtensionChanged));
 				if (this->wm->WiimoteState->Extension)
 				{
 					this->wm->SetReportType(Wiimote::InputReport::IRExtensionAccel, true);
@@ -71,6 +69,8 @@ namespace GiiMoteLib {
 				{
 					this->wm->SetReportType(Wiimote::InputReport::IRAccel, true);
 				}
+				this->wm->WiimoteChanged += (gcnew WiimoteChangedEventHandler(this,&GiiMote::wm_OnWiimoteChanged));
+				this->wm->WiimoteExtensionChanged += (gcnew WiimoteExtensionChangedEventHandler(this,&GiiMote::wm_OnWiimoteExtensionChanged));
 				this->wm->SetLEDs(false, false, false, false);
 			}
 			catch(...)
