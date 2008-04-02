@@ -12,6 +12,7 @@
 #define expNone 0
 #define expUnknown -1
 
+// Wii Remote specific buttons:
 #define btnA 0
 #define btnB 1
 #define btnUp 2
@@ -23,16 +24,21 @@
 #define btnPlus 8
 #define btnMinus 9
 #define btnHome 10
-#define btnX 6
-#define btnY 7
-#define btnL 11
-#define btnR 12
-#define btnZL 13
-#define btnZR 14
-#define btnC 0
-#define btnZ 1
+
+// Classic Specific
+#define btnX 11
+#define btnY 12
+#define btnL 13
+#define btnR 14
+#define btnZL 15
+#define btnZR 16
+
 #define joyL 0
 #define joyR 1
+
+// Nunchuck Specific
+#define btnC 19
+#define btnZ 20
 
 using namespace System;
 using namespace WiimoteLib;
@@ -46,9 +52,9 @@ namespace GiiMoteLib {
 	public:
 		/// <summary>The Wii Remote</summary>
 		Wiimote^ wm;
-		/// <summary>The current Wii Remote state</summary>
+		/// <summary>The current state of the Wii Remote</summary>
 		WiimoteState^ wmState;
-		/// <summary>The last Wii Remote state</summary>
+		/// <summary>The previous state of the Wii Remote</summary>
 		WiimoteState^ wmLastState;
 
 		/// <summary>The height of the current display</summary>
