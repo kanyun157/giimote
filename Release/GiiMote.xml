@@ -962,10 +962,10 @@ you will need to make the destructor bind late using the keyword "virtual."
             <summary>The height of the current display</summary>
         </member>
         <member name="F:GiiMoteLib.GiiMote.wmLastState">
-            <summary>The last Wii Remote state</summary>
+            <summary>The previous state of the Wii Remote</summary>
         </member>
         <member name="F:GiiMoteLib.GiiMote.wmState">
-            <summary>The current Wii Remote state</summary>
+            <summary>The current state of the Wii Remote</summary>
         </member>
         <member name="F:GiiMoteLib.GiiMote.wm">
             <summary>The Wii Remote</summary>
