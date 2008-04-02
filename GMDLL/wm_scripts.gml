@@ -82,7 +82,7 @@ layer_function(global.gm_class,"wm_classic_xpos",ty_real,1,argument0);
 // argument0 - Joystick ID
 layer_function(global.gm_class,"wm_classic_ypos",ty_real,1,argument0);
 #define GED_Definitions
-/**********************************************************************************
+/*****************************************************************************
 
 ///////////////////////////////////
 // GED Function Definitions
@@ -121,9 +121,11 @@ hfunction wm_classic_trigger_raw(trigger:real):real
 function wm_check_extension():real
 function wm_set_rumble(rumbling:real):real
 function wm_get_rumble():real
+
 function wm_get_roll():real
 function wm_get_pitch():real
 function wm_get_yaw():real
+function wm_get_altitude():real
 
 function wm_set_joystick_dead_zone(val:real):real
 function wm_set_trigger_dead_zone(val:real):real
@@ -241,6 +243,10 @@ function wm_mii_data_inject(file:string,block:real,mii:real):real
 function wm_mii_update_crc(file:string):real
 function wm_mii_get_address(mii:real,block:real):real
 
+*****************************************************************************/
+#define GED_Constants
+/*****************************************************************************
+
 ///////////////////////////////////
 // GED Constant Definitions
 ///////////////////////////////////
@@ -259,19 +265,19 @@ const wm_minus = 9
 const wm_home = 10
 
 // Classic Specific
-const wm_x = 6
-const wm_y = 7
-const wm_l = 11
-const wm_r = 12
-const wm_zl = 13
-const wm_zr = 14
+const wm_x = 11
+const wm_y = 12
+const wm_l = 13
+const wm_r = 14
+const wm_zl = 15
+const wm_zr = 16
 
 const wm_joy_left = 0
 const wm_joy_right = 1
 
 // Nunchuck Specific
-const wm_c = 0
-const wm_z = 1
+const wm_c = 19
+const wm_z = 20
 
 // Extension Types
 const ext_classic = 1
@@ -290,8 +296,7 @@ const wm_mii_height_max			= $7F
 const wm_mii_weight_min			= $00
 const wm_mii_weight_max			= $7F
 
-
-**********************************************************************************/
+*****************************************************************************/
 #define wm_ir_dot_get_delta_midx
 layer_function(global.gm_class,"wm_ir_dot_get_delta_midx",ty_real);
 #define wm_ir_dot_get_delta_midy
