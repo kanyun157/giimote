@@ -7,10 +7,10 @@
 
 #define export extern "C" __declspec( dllexport ) /*__cdecl*/
 
-#define expClassic 1
-#define expNunchuck 2
-#define expNone 0
-#define expUnknown -1
+#define extClassic 1
+#define extNunchuck 2
+#define extNone 0
+#define extUnknown -1
 
 // Wii Remote specific buttons:
 #define btnA 0
@@ -39,6 +39,17 @@
 // Nunchuck Specific
 #define btnC 19
 #define btnZ 20
+
+// Report Types
+#define rtAuto 0
+#define rtButtons 1
+#define	rtButtonsAccel 2
+#define rtButtonsExtension 3
+#define rtExtensionAccel 4
+#define rtIRAccel 5
+#define rtIRExtensionAccel 6
+#define rtReadData 7
+#define rtStatus 8
 
 using namespace System;
 using namespace WiimoteLib;
@@ -107,14 +118,20 @@ namespace GiiMoteLib {
 		/// </remarks>
 		cli::array<double>^ accel_dead_zone;
 
+		/// <summary>The report type of the Wii Remote</summary>
+		int report_type;
+		/// <summary>Weather or not the Wii Remote should update automatically</summary>
+		bool auto_update;
+
 		 //////////////////
 		// Constructors //
 	   //////////////////
 	public:
 		/// <summary>Default constructor</summary>
+		/// <returns>Nothing</returns>
 		GiiMote()
 		{
-			wm = gcnew Wiimote;
+			this->wm = gcnew Wiimote;
 
 			// Default dead-zones to 0
 			this->accel_dead_zone->Resize(this->accel_dead_zone, 6);
@@ -122,14 +139,23 @@ namespace GiiMoteLib {
 			{
 				this->accel_dead_zone[i] = 0;
 			}
-			this->joystick_dead_zone = 0;
-			this->trigger_dead_zone  = 0;
+			this->joystick_dead_zone = this->trigger_dead_zone = 0;
 
+			// Get the width and height of the primary display
 			this->display_height = System::Windows::Forms::Screen::PrimaryScreen->Bounds.Height;
 			this->display_width	 = System::Windows::Forms::Screen::PrimaryScreen->Bounds.Width;
 
-			this->ir_screen_x = 0;
-			this->ir_screen_y = 0;
+			// Set the current X and Y position on the display to 0
+			this->ir_screen_x = this->ir_screen_y = 0;
+
+			// Default the report type to rt_auto
+			this->report_type = rtAuto;
+
+			// Default the state in case we do not auto_update.
+			this->wmLastState = this->wmState = wm->WiimoteState;
+
+			// Auto update the Wii Remote's status by default
+			this->auto_update = true;
 		}
 		/// <summary>Default destructor</summary>
 		/// <remarks>
@@ -137,13 +163,10 @@ namespace GiiMoteLib {
 		/// If you introduce a class into this library which inherits from GiiMote
 		/// you will need to make the destructor bind late using the keyword "virtual."
 		/// </remarks>
+		/// <returns>Nothing</returns>
 		~GiiMote()
 		{
-			// Cleanup after sloppy users.
-			// WiimoteLib does this for you when the Dispose method is called.
 			wm_disconnect();
-			delete (this->wm->WiimoteChanged);
-			delete (this->wm->WiimoteExtensionChanged);
 			delete (wm);
 		}
 
@@ -152,13 +175,9 @@ namespace GiiMoteLib {
 		/// <param name="args">Current extension status</param>
 		void wm_OnWiimoteExtensionChanged(System::Object^ sender, WiimoteExtensionChangedEventArgs^ args)
 		{
-			if(args->Inserted)
+			if (this->report_type == rtAuto)
 			{
-				this->wm->SetReportType(Wiimote::InputReport::IRExtensionAccel, true);
-			}
-			else
-			{
-				this->wm->SetReportType(Wiimote::InputReport::IRAccel, true);
+				wm_set_report_type(rtAuto);
 			}
 		}
 
@@ -167,39 +186,44 @@ namespace GiiMoteLib {
 		/// <param name="args">Current Wii Remote state</param>
 		void wm_OnWiimoteChanged(System::Object^ sender, WiimoteChangedEventArgs^ args)
 		{
-			this->wmLastState = this->wmState;
-			this->wmState = args->WiimoteState;
+			if ( this->auto_update )
+			{
+				this->wmLastState = this->wmState;
+				this->wmLastState->IRState = this->wmState->IRState;
+				this->wmState = args->WiimoteState;
+				this->wmState->IRState = args->WiimoteState->IRState;
 
-			if (this->wmState->IRState.Found1 && this->wmState->IRState.Found2)
-			{
-				this->ir_screen_x = display_width - GiiMote::domain_rescale<int>(this->wmState->IRState.RawMidX, 0, 1023, 0, display_width);
-				this->ir_screen_y = GiiMote::domain_rescale<int>(this->wmState->IRState.RawMidY, 0, 767, 0, display_height);
-			}
-			else
-			{
-				if (this->wmState->IRState.Found1)
+				if (this->wmState->IRState.Found1 && this->wmState->IRState.Found2)
 				{
-					this->ir_screen_x -= GiiMote::domain_rescale<int>((int)wm_ir_dot_get_delta_rawx(1), 0, 1023, 0, display_width);
-					this->ir_screen_y -= GiiMote::domain_rescale<int>((int)wm_ir_dot_get_delta_rawy(1), 0, 767, 0, display_height);
+					this->ir_screen_x = display_width - (int)domain_rescale(this->wmState->IRState.RawMidX, 0, 1023, 0, display_width);
+					this->ir_screen_y = (int)domain_rescale(this->wmState->IRState.RawMidY, 0, 767, 0, display_height);
 				}
 				else
 				{
-					if (this->wmState->IRState.Found2)
+					if (this->wmState->IRState.Found1)
 					{
-						this->ir_screen_x -= GiiMote::domain_rescale<int>((int)wm_ir_dot_get_delta_rawx(2), 0, 1023, 0, display_width);
-						this->ir_screen_y -= GiiMote::domain_rescale<int>((int)wm_ir_dot_get_delta_rawy(2), 0, 767, 0, display_height);
+						this->ir_screen_x -= (int)domain_rescale(wm_ir_dot_get_delta_rawx(1), 0, 1023, 0, display_width);
+						this->ir_screen_y -= (int)domain_rescale(wm_ir_dot_get_delta_rawy(1), 0, 767, 0, display_height);
 					}
 					else
 					{
-						// When the sensor bar is not visible we have a few options...
-						// The Wii simply hides the cursor until the IR points are
-						// visible again. However, we could also double integrate
-						// the accelerometer data to estimate the change in
-						// position. However, if the IR is not visible that most likely
-						// means we are not facing the screen anyways, and integrating the acceleration
-						// is not very accurate.
-						this->ir_screen_x = -1;
-						this->ir_screen_y = -1;
+						if (this->wmState->IRState.Found2)
+						{
+							this->ir_screen_x -= (int)domain_rescale(wm_ir_dot_get_delta_rawx(2), 0, 1023, 0, display_width);
+							this->ir_screen_y -= (int)domain_rescale(wm_ir_dot_get_delta_rawy(2), 0, 767, 0, display_height);
+						}
+						else
+						{
+							// When the sensor bar is not visible we have a few options...
+							// The Wii simply hides the cursor until the IR points are
+							// visible again. However, we could also double integrate
+							// the accelerometer data to estimate the change in
+							// position. However, if the IR is not visible that most likely
+							// means we are not facing the screen anyways, and integrating the acceleration
+							// is not very accurate.
+							this->ir_screen_x = -1;
+							this->ir_screen_y = -1;
+						}
 					}
 				}
 			}
@@ -213,8 +237,12 @@ public:
 		double wm_connect();
 		double wm_exists();
 		double wm_set_write_method(double alt_write_method);
-		double wm_connected(void);
-		double wm_disconnect(void);
+		double wm_connected();
+		double wm_disconnect();
+		double wm_set_report_type(double report_type);
+		double wm_get_report_type();
+		double wm_set_automatic_update(double val);
+		double wm_get_automatic_update();
 
 		// LED Functions
 		double wm_get_led(double led_num);
@@ -241,10 +269,8 @@ public:
 ////////////////////////////////////////////
 // Mathematical Functions
 ////////////////////////////////////////////
-		template <class T>
-		T in_domain(T x, T d1, T d2);
-		template <class T>
-		T domain_rescale(T val, T minin, T maxin, T minout, T maxout);
+		double in_domain(double x, double d1, double d2);
+		double domain_rescale(double val, double minin, double maxin, double minout, double maxout);
 
 ////////////////////////////////////////////
 // Buttons, Joysticks, and Triggers

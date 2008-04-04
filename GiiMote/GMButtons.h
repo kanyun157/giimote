@@ -286,7 +286,7 @@ namespace GiiMoteLib {
 	/// <returns>1</returns>
 	double GiiMote::wm_set_trigger_dead_zone(double val)
 	{
-		this->trigger_dead_zone = in_domain<double>(val, 0, 1);
+		this->trigger_dead_zone = in_domain(val, 0, 1);
 		return ( 1 );
 	}
 
