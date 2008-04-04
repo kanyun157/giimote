@@ -53,7 +53,10 @@ namespace GiiMoteLib {
 		{
 			try
 			{
+				this->wm->WiimoteChanged += (gcnew WiimoteChangedEventHandler(this,&GiiMote::wm_OnWiimoteChanged));
+				this->wm->WiimoteExtensionChanged += (gcnew WiimoteExtensionChangedEventHandler(this,&GiiMote::wm_OnWiimoteExtensionChanged));
 				this->wm->Connect();
+				wm_set_report_type(this->report_type);
 			}
 			catch( ... )
 			{
@@ -61,16 +64,6 @@ namespace GiiMoteLib {
 			}
 			try
 			{
-				if (this->wm->WiimoteState->Extension)
-				{
-					this->wm->SetReportType(Wiimote::InputReport::IRExtensionAccel, true);
-				}
-				else
-				{
-					this->wm->SetReportType(Wiimote::InputReport::IRAccel, true);
-				}
-				this->wm->WiimoteChanged += (gcnew WiimoteChangedEventHandler(this,&GiiMote::wm_OnWiimoteChanged));
-				this->wm->WiimoteExtensionChanged += (gcnew WiimoteExtensionChangedEventHandler(this,&GiiMote::wm_OnWiimoteExtensionChanged));
 				this->wm->SetLEDs(false, false, false, false);
 			}
 			catch(...)
@@ -162,20 +155,192 @@ namespace GiiMoteLib {
 	}
 	/// <summary>Disconnect from the Wii Remote</summary>
 	/// <returns>Success</returns>
-	double GiiMote::wm_disconnect(void)
+	double GiiMote::wm_disconnect()
 	{
 		if (wm_connected())
 		{
 			try
 			{
+				delete (this->wm->WiimoteChanged);
+				delete (this->wm->WiimoteExtensionChanged);
 				this->wm->Disconnect();
 			}
 			catch (...)
 			{
-				return (0);
+				return ( 0 );
 			}
 		}
-		return (1);
+		return ( 1 );
+	}
+
+	/// <summary>Changes the report type of the Wii Remote</summary>
+	/// <param name="report_type">
+	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Value</term>
+	///         <description>Report Type</description>
+	///     </listheader>
+	///     <item>
+	///			<term>0</term>
+	///         <description>rtAuto</description>
+	///     </item>
+	///     <item>
+	///			<term>1</term>
+	///         <description>rtButtons</description>
+	///     </item>
+	///     <item>
+	///			<term>2</term>
+	///         <description>rtButtonsAccel</description>
+	///     </item>
+	///     <item>
+	///			<term>3</term>
+	///         <description>rtButtonsExtension</description>
+	///     </item>
+	///     <item>
+	///			<term>4</term>
+	///         <description>rtExtensionAccel</description>
+	///     </item>
+	///     <item>
+	///			<term>5</term>
+	///         <description>rtIRAccel</description>
+	///     </item>
+	///     <item>
+	///			<term>6</term>
+	///         <description>rtIRExtensionAccel</description>
+	///     </item>
+	///     <item>
+	///			<term>7</term>
+	///         <description>rtReadData</description>
+	///     </item>
+	///     <item>
+	///			<term>8</term>
+	///         <description>rtStatus</description>
+	///     </item>
+	/// </list>	
+	/// </param>
+	/// <returns>Success</returns>
+	double GiiMote::wm_set_report_type(double report_type)
+	{
+		if (!wm_connected())
+		{
+			this->report_type = int(report_type);
+			return ( 1 );
+		}
+
+		if (report_type == rtAuto)
+		{
+			try
+			{
+				if (this->wm->WiimoteState->Extension)
+				{
+					this->wm->SetReportType(Wiimote::InputReport::IRExtensionAccel, true);
+				}
+				else
+				{
+					this->wm->SetReportType(Wiimote::InputReport::IRAccel, true);
+				}
+			}
+			catch(...)
+			{
+				return ( 0 );
+			}
+
+			this->report_type = rtAuto;
+		}
+		else
+		{
+			try
+			{
+				switch ( int(report_type) )
+				{
+				case rtButtons:
+					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::Buttons, true);
+					break;
+				case rtButtonsAccel:
+					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::ButtonsAccel, true);
+					break;
+				case rtButtonsExtension:
+					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::ButtonsExtension, true);
+					break;
+				case rtExtensionAccel:
+					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::ExtensionAccel, true);
+					break;
+				case rtIRAccel:
+					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::IRAccel, true);
+					break;
+				case rtIRExtensionAccel:
+					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::IRExtensionAccel, true);
+					break;
+				case rtReadData:
+					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::ReadData, true);
+					break;
+				case rtStatus:
+					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::Status, true);
+					break;
+				default:
+					return ( 0 );
+					break;
+				}
+			}
+			catch(...)
+			{
+				return ( 0 );
+			}
+
+			this->report_type = (int)report_type;
+		}
+
+		return ( 1 );
+	}
+
+	/// <summary>Gets the current report type of the Wii Remote</summary>
+	/// <returns>
+	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Value</term>
+	///         <description>Report Type</description>
+	///     </listheader>
+	///     <item>
+	///			<term>0</term>
+	///         <description>rtAuto</description>
+	///     </item>
+	///     <item>
+	///			<term>1</term>
+	///         <description>rtButtons</description>
+	///     </item>
+	///     <item>
+	///			<term>2</term>
+	///         <description>rtButtonsAccel</description>
+	///     </item>
+	///     <item>
+	///			<term>3</term>
+	///         <description>rtButtonsExtension</description>
+	///     </item>
+	///     <item>
+	///			<term>4</term>
+	///         <description>rtExtensionAccel</description>
+	///     </item>
+	///     <item>
+	///			<term>5</term>
+	///         <description>rtIRAccel</description>
+	///     </item>
+	///     <item>
+	///			<term>6</term>
+	///         <description>rtIRExtensionAccel</description>
+	///     </item>
+	///     <item>
+	///			<term>7</term>
+	///         <description>rtReadData</description>
+	///     </item>
+	///     <item>
+	///			<term>8</term>
+	///         <description>rtStatus</description>
+	///     </item>
+	/// </list>
+	/// </returns>
+	double GiiMote::wm_get_report_type()
+	{
+		return ( this->report_type );
 	}
 
 	/////////////////////////
@@ -269,7 +434,6 @@ namespace GiiMoteLib {
 		double battery_state;
 		try
 		{
-			this->wm->GetStatus();
 			battery_state = (double)this->wmState->Battery;
 		}
 		catch(...)
@@ -291,7 +455,30 @@ namespace GiiMoteLib {
 		{
 			return ( 0 );
 		}
+
 		return ( 1 );
+	}
+
+	/// <summary>Should the Wii Remote update automatically?</summary>
+	/// <param name="val">Auto update</param>
+	/// <returns>Success or -1 on error</returns>
+	double GiiMote::wm_set_automatic_update(double val)
+	{
+		// Get rid of warning C4800 temporarily... I know I'm casting a double to a bool.
+		#pragma warning(push)
+		#pragma warning(disable: 4800)
+		this->auto_update = cli::safe_cast<bool>(val);
+		// Enable warning C4800 incase I do it somewhere else by mistake.
+		#pragma warning(pop)
+
+		return ( 1 );
+	}
+
+	/// <summary>Is the Wii Remote updating automatically?</summary>
+	/// <returns>Auto updating?</returns>
+	double GiiMote::wm_get_automatic_update()
+	{
+		return ( this->auto_update );
 	}
 
 	/// <summary>Checks the current extension</summary>
@@ -303,20 +490,20 @@ namespace GiiMoteLib {
 	///         <description>Extension</description>
 	///     </listheader>
 	///     <item>
-	///         <term>expClassic</term>
-	///         <description>Classic Controller</description>
+	///         <term>1</term>
+	///         <description>extClassic</description>
 	///     </item>
 	///     <item>
-	///         <term>expNunchuck</term>
-	///         <description>Nunchuck</description>
+	///         <term>2</term>
+	///         <description>extNunchuck</description>
 	///     </item>
 	///     <item>
-	///         <term>expNone</term>
-	///         <description>None</description>
+	///         <term>0</term>
+	///         <description>extNone</description>
 	///     </item>
 	///     <item>
-	///         <term>expUnknown</term>
-	///         <description>Unknown Extension</description>
+	///         <term>-1</term>
+	///         <description>extUnknown</description>
 	///     </item>
 	///     <item>
 	///         <term>-2</term>
@@ -332,16 +519,16 @@ namespace GiiMoteLib {
 			switch(this->wmState->ExtensionType)
 			{
 			case WiimoteLib::ExtensionType::ClassicController:
-				extension_type = expClassic;
+				extension_type = extClassic;
 				break;
 			case WiimoteLib::ExtensionType::Nunchuk:
-				extension_type = expNunchuck;
+				extension_type = extNunchuck;
 				break;
 			case WiimoteLib::ExtensionType::None:
-				extension_type = expNone;
+				extension_type = extNone;
 				break;
 			default:
-				extension_type = expUnknown;
+				extension_type = extUnknown;
 				break;
 			}
 		}

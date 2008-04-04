@@ -47,21 +47,29 @@ namespace GiiMoteLib {
     {
 		double yaw = 0;
 
-		if (this->wmState->IRState.Found1)
+		try
 		{
-			yaw = Math::Atan2(512 - this->wmState->IRState.RawX1, 600);
+			if (this->wmState->IRState.Found1)
+			{
+				// This is not right at all...
+				yaw = Math::Atan2(512 - this->wmState->IRState.RawX1, 600);
+			}
+		}
+		catch(...)
+		{
+			return ( -1 );
 		}
 
-		return ( yaw );
+		return ( yaw * (180 / Math::PI) );
     }
 
 	/// <summary>Distance of the Wii Remote from the sensor bar</summary>
-	/// <returns>Distance in XX</returns>
+	/// <returns>Distance in millimiters</returns>
 	double GiiMote::wm_get_altitude()
 	{
 		if (this->wmState->IRState.Found1 && this->wmState->IRState.Found2)
 		{
-			return ( 264 / Math::Abs(this->wmState->IRState.X2 - this->wmState->IRState.X1) );
+			return ( ( -54 * Math::Abs(this->wmState->IRState.X2 - this->wmState->IRState.X1) + 77 ) * 100 );
 		}
 		else
 		{
