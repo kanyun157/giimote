@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE bodyText [ <!ENTITY nbsp "&#160;"> ]>
+<topic xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <!-- The page title -->
+  <title>Copyright</title>
+  <!-- The body text for the topic -->
+  <bodyText>
+<div>GiiMote</div>
+<div>Copyright 2007 Samuel Whited</div>
+<div><a href="http://www.greenmangames.vze.com/">http://www.greenmangames.vze.com/</a></div>
+<div><a href="http://giimote.googlecode.com/">http://giimote.googlecode.com/</a></div>
+<div>&nbsp;</div>
+<div>Licensed under the terms of the Microsoft Public License (Ms-PL).</div>
+  </bodyText>
+</topic>

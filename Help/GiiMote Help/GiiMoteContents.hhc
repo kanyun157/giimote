@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="Window Styles" value="0x800025">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GiiMote">
+		<param name="Local" value="GiiMote.htm#GiiMote">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Connecting the Wii Remote">
+			<param name="Local" value="GiiMote.htm#Connecting">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Setting Up and Tearing Down GiiMote">
+			<param name="Local" value="GiiMote.htm#setup">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Reading Buttons">
+			<param name="Local" value="GiiMote.htm#buttons">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Joystick Positions">
+			<param name="Local" value="GiiMote.htm#joystick">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Accelerometer Data">
+			<param name="Local" value="GiiMote.htm#accel">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Dead Zone's">
+			<param name="Local" value="GiiMote.htm#dead_zone">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Infrared Readout">
+			<param name="Local" value="GiiMote.htm#IR">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Feedback">
+			<param name="Local" value="GiiMote.htm#MISC">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Orientation">
+			<param name="Local" value="GiiMote.htm#orientation">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Mii Data">
+			<param name="Local" value="GiiMote.htm#MII">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Reading and Writing Data">
+			<param name="Local" value="GiiMote.htm#fStream">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Hidden Functions">
+			<param name="Local" value="GiiMote.htm#hidden">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Calibration">
+			<param name="Local" value="GiiMote.htm#calibration">
+			</OBJECT>
+	</UL>
+</UL>
+</BODY></HTML>
