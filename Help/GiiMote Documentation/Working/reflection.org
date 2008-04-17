@@ -1,0 +1,3084 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<reflection>
+  <assemblies>
+    <assembly name="GiiMote">
+      <assemblydata version="2.6.3028.35560" culture="" key="" hash="SHA1" />
+      <attributes>
+        <attribute>
+          <type api="T:System.CLSCompliantAttribute" ref="true" />
+          <argument>
+            <type api="T:System.Boolean" ref="false" />
+            <value>True</value>
+          </argument>
+        </attribute>
+        <attribute>
+          <type api="T:System.Reflection.AssemblyTrademarkAttribute" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value />
+          </argument>
+        </attribute>
+        <attribute>
+          <type api="T:System.Reflection.AssemblyTitleAttribute" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value>GiiMote</value>
+          </argument>
+        </attribute>
+        <attribute>
+          <type api="T:System.Runtime.InteropServices.ComVisibleAttribute" ref="true" />
+          <argument>
+            <type api="T:System.Boolean" ref="false" />
+            <value>False</value>
+          </argument>
+        </attribute>
+        <attribute>
+          <type api="T:System.Reflection.AssemblyCopyrightAttribute" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value>Copyright 2007 GreenMan Games</value>
+          </argument>
+        </attribute>
+        <attribute>
+          <type api="T:System.Reflection.AssemblyConfigurationAttribute" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value />
+          </argument>
+        </attribute>
+        <attribute>
+          <type api="T:System.Reflection.AssemblyProductAttribute" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value>GiiMote</value>
+          </argument>
+        </attribute>
+        <attribute>
+          <type api="T:System.Reflection.AssemblyCompanyAttribute" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value>GreenMan Games</value>
+          </argument>
+        </attribute>
+        <attribute>
+          <type api="T:System.Reflection.AssemblyDescriptionAttribute" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value>Wii Remote Extension for Game Maker</value>
+          </argument>
+        </attribute>
+        <attribute>
+          <type api="T:System.Security.Permissions.SecurityPermissionAttribute" ref="true" />
+          <argument>
+            <type api="T:System.Security.Permissions.SecurityAction" ref="false" />
+            <enumValue>
+              <field name="RequestMinimum" />
+            </enumValue>
+          </argument>
+          <assignment name="UnmanagedCode">
+            <type api="T:System.Boolean" ref="false" />
+            <value>True</value>
+          </assignment>
+        </attribute>
+        <attribute>
+          <type api="T:System.Security.Permissions.SecurityPermissionAttribute" ref="true" />
+          <argument>
+            <type api="T:System.Security.Permissions.SecurityAction" ref="false" />
+            <enumValue>
+              <field name="RequestMinimum" />
+            </enumValue>
+          </argument>
+          <assignment name="SkipVerification">
+            <type api="T:System.Boolean" ref="false" />
+            <value>True</value>
+          </assignment>
+        </attribute>
+      </attributes>
+    </assembly>
+  </assemblies>
+  <apis>
+    <api id="N:GiiMoteLib">
+      <apidata name="GiiMoteLib" group="namespace" />
+      <elements>
+        <element api="T:GiiMoteLib.GiiMote" />
+      </elements>
+    </api>
+    <api id="T:GiiMoteLib.GiiMote">
+      <apidata name="GiiMote" group="type" subgroup="class" />
+      <typedata visibility="public" serializable="false" layout="auto" format="ansi" />
+      <family>
+        <ancestors>
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <implements>
+        <type api="T:System.IDisposable" ref="true" />
+      </implements>
+      <elements>
+        <element api="F:GiiMoteLib.GiiMote.wm" />
+        <element api="F:GiiMoteLib.GiiMote.wmState" />
+        <element api="F:GiiMoteLib.GiiMote.display_height" />
+        <element api="F:GiiMoteLib.GiiMote.display_width" />
+        <element api="F:GiiMoteLib.GiiMote.ir_screen_x" />
+        <element api="F:GiiMoteLib.GiiMote.ir_screen_y" />
+        <element api="F:GiiMoteLib.GiiMote.joystick_dead_zone" />
+        <element api="F:GiiMoteLib.GiiMote.trigger_dead_zone" />
+        <element api="F:GiiMoteLib.GiiMote.accel_dead_zone" />
+        <element api="F:GiiMoteLib.GiiMote.report_type" />
+        <element api="F:GiiMoteLib.GiiMote.ir_last_x" />
+        <element api="F:GiiMoteLib.GiiMote.ir_last_y" />
+        <element api="F:GiiMoteLib.GiiMote.ir_last_rawx" />
+        <element api="F:GiiMoteLib.GiiMote.ir_last_rawy" />
+        <element api="F:GiiMoteLib.GiiMote.ir_last_midx" />
+        <element api="F:GiiMoteLib.GiiMote.ir_last_midy" />
+        <element api="F:GiiMoteLib.GiiMote.ir_last_rawmidx" />
+        <element api="F:GiiMoteLib.GiiMote.ir_last_rawmidy" />
+        <element api="M:GiiMoteLib.GiiMote.#ctor" />
+        <element api="M:GiiMoteLib.GiiMote.wm_OnWiimoteExtensionChanged(System.Object,WiimoteLib.WiimoteExtensionChangedEventArgs)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_OnWiimoteChanged(System.Object,WiimoteLib.WiimoteChangedEventArgs)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_connect" />
+        <element api="M:GiiMoteLib.GiiMote.wm_exists" />
+        <element api="M:GiiMoteLib.GiiMote.wm_set_write_method(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_connected" />
+        <element api="M:GiiMoteLib.GiiMote.wm_disconnect" />
+        <element api="M:GiiMoteLib.GiiMote.wm_set_report_type(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_report_type" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_led(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_set_leds(System.Double,System.Double,System.Double,System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_set_leds_int(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_battery" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_status" />
+        <element api="M:GiiMoteLib.GiiMote.wm_check_extension" />
+        <element api="M:GiiMoteLib.GiiMote.wm_set_rumble(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_rumble" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_roll" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_pitch" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_yaw" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_altitude" />
+        <element api="M:GiiMoteLib.GiiMote.wm_bin_read_byte(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_bin_write_byte(System.Double,System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.in_domain(System.Double,System.Double,System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.domain_rescale(System.Double,System.Double,System.Double,System.Double,System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_check_button(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_check_button(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_check_button(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.joystick_direction(System.Double,System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.joystick_pressure(System.Double,System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_set_joystick_dead_zone(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_joystick_dead_zone" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_xpos" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_ypos" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_direction" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_pressure" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_rawx" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_rawy" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_xpos(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_ypos(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_rawx(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_rawy(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_direction(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_pressure(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_set_trigger_dead_zone(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_trigger_dead_zone" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_trigger_pressure(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_trigger_raw(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_calc_accel(System.Single,System.Int32)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_accel_x" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_accel_y" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_accel_z" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_accel_rawx" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_accel_rawy" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_accel_rawz" />
+        <element api="M:GiiMoteLib.GiiMote.wm_set_accel_dead_zone_x(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_set_accel_dead_zone_y(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_set_accel_dead_zone_z(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_accel_dead_zone_x" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_accel_dead_zone_y" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_accel_dead_zone_z" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_x" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_y" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_z" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_rawx" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_rawy" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_rawz" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_set_accel_dead_zone_x(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_set_accel_dead_zone_y(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_set_accel_dead_zone_z(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_dead_zone_x" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_dead_zone_y" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_dead_zone_z" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_found_dot(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_dot_size(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_dot_get_x(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_dot_get_y(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_dot_get_rawx(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_dot_get_rawy(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_dot_get_midx" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_dot_get_midy" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_dot_get_rawmidx" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_dot_get_rawmidy" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_x(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_y(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_rawx(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_rawy(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_midx" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_midy" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_rawmidx" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_rawmidy" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_display_get_x" />
+        <element api="M:GiiMoteLib.GiiMote.wm_ir_display_get_y" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_x0" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_xg" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_y0" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_yg" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_z0" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_zg" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_maxx" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_maxy" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_midx" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_midy" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_minx" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_miny" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_x0(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_xg(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_y0(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_yg(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_z0(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_zg(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_maxx(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_maxy(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_midx(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_midy(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_minx(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_miny(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_maxtrigger(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_mintrigger(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_maxx(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_minx(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_midx(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_midy(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_maxy(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_miny(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_set_calibration_maxtrigger(System.Double,System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_set_calibration_mintrigger(System.Double,System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_set_calibration_maxx(System.Double,System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_set_calibration_minx(System.Double,System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_set_calibration_midx(System.Double,System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_set_calibration_midy(System.Double,System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_set_calibration_maxy(System.Double,System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_classic_set_calibration_miny(System.Double,System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_calibration_x0" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_calibration_xg" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_calibration_y0" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_calibration_yg" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_calibration_z0" />
+        <element api="M:GiiMoteLib.GiiMote.wm_get_calibration_zg" />
+        <element api="M:GiiMoteLib.GiiMote.wm_set_calibration_x0(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_set_calibration_xg(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_set_calibration_y0(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_set_calibration_yg(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_set_calibration_z0(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_set_calibration_zg(System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_mii_data_dump(System.String,System.Double,System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_mii_data_inject(System.String,System.Double,System.Double)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_mii_update_crc(System.String)" />
+        <element api="M:GiiMoteLib.GiiMote.wm_mii_data_update(System.Byte[])" />
+        <element api="M:GiiMoteLib.GiiMote.Dispose(System.Boolean)" />
+        <element api="M:GiiMoteLib.GiiMote.Dispose" />
+        <element api="M:System.Object.ToString">
+          <apidata name="ToString" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.Equals(System.Object)">
+          <apidata name="Equals" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="obj">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetHashCode">
+          <apidata name="GetHashCode" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetType">
+          <apidata name="GetType" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Type" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.Finalize">
+          <apidata name="Finalize" group="member" subgroup="method" />
+          <memberdata visibility="family" />
+          <proceduredata virtual="true" />
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.MemberwiseClone">
+          <apidata name="MemberwiseClone" group="member" subgroup="method" />
+          <memberdata visibility="family" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Object" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+      </elements>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.#ctor">
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" />
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="F:GiiMoteLib.GiiMote.accel_dead_zone">
+      <apidata name="accel_dead_zone" group="member" subgroup="field" />
+      <memberdata visibility="public" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <arrayOf rank="1">
+          <type api="T:System.Double" ref="false" />
+        </arrayOf>
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="F:GiiMoteLib.GiiMote.display_height">
+      <apidata name="display_height" group="member" subgroup="field" />
+      <memberdata visibility="public" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:System.Int32" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="F:GiiMoteLib.GiiMote.display_width">
+      <apidata name="display_width" group="member" subgroup="field" />
+      <memberdata visibility="public" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:System.Int32" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.Dispose">
+      <apidata name="Dispose" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <implements>
+        <member api="M:System.IDisposable.Dispose">
+          <type api="T:System.IDisposable" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.Dispose(System.Boolean)">
+      <apidata name="Dispose" group="member" subgroup="method" />
+      <memberdata visibility="family" />
+      <proceduredata virtual="true" />
+      <parameters>
+        <parameter name="">
+          <type api="T:System.Boolean" ref="false" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.domain_rescale(System.Double,System.Double,System.Double,System.Double,System.Double)">
+      <apidata name="domain_rescale" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="minin">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="maxin">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="minout">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="maxout">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.in_domain(System.Double,System.Double,System.Double)">
+      <apidata name="in_domain" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="x">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="d1">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="d2">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="F:GiiMoteLib.GiiMote.ir_last_midx">
+      <apidata name="ir_last_midx" group="member" subgroup="field" />
+      <memberdata visibility="public" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:System.Single" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="F:GiiMoteLib.GiiMote.ir_last_midy">
+      <apidata name="ir_last_midy" group="member" subgroup="field" />
+      <memberdata visibility="public" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:System.Single" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="F:GiiMoteLib.GiiMote.ir_last_rawmidx">
+      <apidata name="ir_last_rawmidx" group="member" subgroup="field" />
+      <memberdata visibility="public" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:System.Int32" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="F:GiiMoteLib.GiiMote.ir_last_rawmidy">
+      <apidata name="ir_last_rawmidy" group="member" subgroup="field" />
+      <memberdata visibility="public" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:System.Int32" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="F:GiiMoteLib.GiiMote.ir_last_rawx">
+      <apidata name="ir_last_rawx" group="member" subgroup="field" />
+      <memberdata visibility="public" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <arrayOf rank="1">
+          <type api="T:System.Int32" ref="false" />
+        </arrayOf>
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="F:GiiMoteLib.GiiMote.ir_last_rawy">
+      <apidata name="ir_last_rawy" group="member" subgroup="field" />
+      <memberdata visibility="public" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <arrayOf rank="1">
+          <type api="T:System.Int32" ref="false" />
+        </arrayOf>
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="F:GiiMoteLib.GiiMote.ir_last_x">
+      <apidata name="ir_last_x" group="member" subgroup="field" />
+      <memberdata visibility="public" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <arrayOf rank="1">
+          <type api="T:System.Single" ref="false" />
+        </arrayOf>
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="F:GiiMoteLib.GiiMote.ir_last_y">
+      <apidata name="ir_last_y" group="member" subgroup="field" />
+      <memberdata visibility="public" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <arrayOf rank="1">
+          <type api="T:System.Single" ref="false" />
+        </arrayOf>
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="F:GiiMoteLib.GiiMote.ir_screen_x">
+      <apidata name="ir_screen_x" group="member" subgroup="field" />
+      <memberdata visibility="public" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:System.Int32" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="F:GiiMoteLib.GiiMote.ir_screen_y">
+      <apidata name="ir_screen_y" group="member" subgroup="field" />
+      <memberdata visibility="public" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:System.Int32" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="F:GiiMoteLib.GiiMote.joystick_dead_zone">
+      <apidata name="joystick_dead_zone" group="member" subgroup="field" />
+      <memberdata visibility="public" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.joystick_direction(System.Double,System.Double)">
+      <apidata name="joystick_direction" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="xx">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="yy">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.joystick_pressure(System.Double,System.Double)">
+      <apidata name="joystick_pressure" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="xx">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="yy">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="F:GiiMoteLib.GiiMote.report_type">
+      <apidata name="report_type" group="member" subgroup="field" />
+      <memberdata visibility="public" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:System.Int32" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="F:GiiMoteLib.GiiMote.trigger_dead_zone">
+      <apidata name="trigger_dead_zone" group="member" subgroup="field" />
+      <memberdata visibility="public" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="F:GiiMoteLib.GiiMote.wm">
+      <apidata name="wm" group="member" subgroup="field" />
+      <memberdata visibility="public" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:WiimoteLib.Wiimote" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_bin_read_byte(System.Double)">
+      <apidata name="wm_bin_read_byte" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="address">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_bin_write_byte(System.Double,System.Double)">
+      <apidata name="wm_bin_write_byte" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="address">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="value">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_calc_accel(System.Single,System.Int32)">
+      <apidata name="wm_calc_accel" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="accel">
+          <type api="T:System.Single" ref="false" />
+        </parameter>
+        <parameter name="dz_index">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_check_button(System.Double)">
+      <apidata name="wm_check_button" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="key_code">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_check_extension">
+      <apidata name="wm_check_extension" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_check_button(System.Double)">
+      <apidata name="wm_classic_check_button" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="key_code">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_direction(System.Double)">
+      <apidata name="wm_classic_direction" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="stick">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_maxtrigger(System.Double)">
+      <apidata name="wm_classic_get_calibration_maxtrigger" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="trigger">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_maxx(System.Double)">
+      <apidata name="wm_classic_get_calibration_maxx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="joystick">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_maxy(System.Double)">
+      <apidata name="wm_classic_get_calibration_maxy" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="joystick">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_midx(System.Double)">
+      <apidata name="wm_classic_get_calibration_midx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="joystick">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_midy(System.Double)">
+      <apidata name="wm_classic_get_calibration_midy" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="joystick">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_mintrigger(System.Double)">
+      <apidata name="wm_classic_get_calibration_mintrigger" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="trigger">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_minx(System.Double)">
+      <apidata name="wm_classic_get_calibration_minx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="joystick">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_get_calibration_miny(System.Double)">
+      <apidata name="wm_classic_get_calibration_miny" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="joystick">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_pressure(System.Double)">
+      <apidata name="wm_classic_pressure" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="stick">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_rawx(System.Double)">
+      <apidata name="wm_classic_rawx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="stick">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_rawy(System.Double)">
+      <apidata name="wm_classic_rawy" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="stick">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_set_calibration_maxtrigger(System.Double,System.Double)">
+      <apidata name="wm_classic_set_calibration_maxtrigger" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="trigger">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_set_calibration_maxx(System.Double,System.Double)">
+      <apidata name="wm_classic_set_calibration_maxx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="joystick">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_set_calibration_maxy(System.Double,System.Double)">
+      <apidata name="wm_classic_set_calibration_maxy" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="joystick">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_set_calibration_midx(System.Double,System.Double)">
+      <apidata name="wm_classic_set_calibration_midx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="joystick">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_set_calibration_midy(System.Double,System.Double)">
+      <apidata name="wm_classic_set_calibration_midy" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="joystick">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_set_calibration_mintrigger(System.Double,System.Double)">
+      <apidata name="wm_classic_set_calibration_mintrigger" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="trigger">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_set_calibration_minx(System.Double,System.Double)">
+      <apidata name="wm_classic_set_calibration_minx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="joystick">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_set_calibration_miny(System.Double,System.Double)">
+      <apidata name="wm_classic_set_calibration_miny" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="joystick">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_trigger_pressure(System.Double)">
+      <apidata name="wm_classic_trigger_pressure" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="trigger">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_trigger_raw(System.Double)">
+      <apidata name="wm_classic_trigger_raw" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="trigger">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_xpos(System.Double)">
+      <apidata name="wm_classic_xpos" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="stick">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_classic_ypos(System.Double)">
+      <apidata name="wm_classic_ypos" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="stick">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_connect">
+      <apidata name="wm_connect" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_connected">
+      <apidata name="wm_connected" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_disconnect">
+      <apidata name="wm_disconnect" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_exists">
+      <apidata name="wm_exists" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_accel_dead_zone_x">
+      <apidata name="wm_get_accel_dead_zone_x" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_accel_dead_zone_y">
+      <apidata name="wm_get_accel_dead_zone_y" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_accel_dead_zone_z">
+      <apidata name="wm_get_accel_dead_zone_z" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_accel_rawx">
+      <apidata name="wm_get_accel_rawx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_accel_rawy">
+      <apidata name="wm_get_accel_rawy" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_accel_rawz">
+      <apidata name="wm_get_accel_rawz" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_accel_x">
+      <apidata name="wm_get_accel_x" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_accel_y">
+      <apidata name="wm_get_accel_y" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_accel_z">
+      <apidata name="wm_get_accel_z" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_altitude">
+      <apidata name="wm_get_altitude" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_battery">
+      <apidata name="wm_get_battery" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_calibration_x0">
+      <apidata name="wm_get_calibration_x0" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_calibration_xg">
+      <apidata name="wm_get_calibration_xg" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_calibration_y0">
+      <apidata name="wm_get_calibration_y0" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_calibration_yg">
+      <apidata name="wm_get_calibration_yg" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_calibration_z0">
+      <apidata name="wm_get_calibration_z0" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_calibration_zg">
+      <apidata name="wm_get_calibration_zg" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_joystick_dead_zone">
+      <apidata name="wm_get_joystick_dead_zone" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_led(System.Double)">
+      <apidata name="wm_get_led" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="led_num">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_pitch">
+      <apidata name="wm_get_pitch" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_report_type">
+      <apidata name="wm_get_report_type" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_roll">
+      <apidata name="wm_get_roll" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_rumble">
+      <apidata name="wm_get_rumble" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_status">
+      <apidata name="wm_get_status" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_trigger_dead_zone">
+      <apidata name="wm_get_trigger_dead_zone" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_get_yaw">
+      <apidata name="wm_get_yaw" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_display_get_x">
+      <apidata name="wm_ir_display_get_x" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_display_get_y">
+      <apidata name="wm_ir_display_get_y" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_midx">
+      <apidata name="wm_ir_dot_get_delta_midx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_midy">
+      <apidata name="wm_ir_dot_get_delta_midy" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_rawmidx">
+      <apidata name="wm_ir_dot_get_delta_rawmidx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_rawmidy">
+      <apidata name="wm_ir_dot_get_delta_rawmidy" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_rawx(System.Double)">
+      <apidata name="wm_ir_dot_get_delta_rawx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="dot_number">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_rawy(System.Double)">
+      <apidata name="wm_ir_dot_get_delta_rawy" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="dot_number">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_x(System.Double)">
+      <apidata name="wm_ir_dot_get_delta_x" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="dot_number">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_y(System.Double)">
+      <apidata name="wm_ir_dot_get_delta_y" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="dot_number">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_dot_get_midx">
+      <apidata name="wm_ir_dot_get_midx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_dot_get_midy">
+      <apidata name="wm_ir_dot_get_midy" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_dot_get_rawmidx">
+      <apidata name="wm_ir_dot_get_rawmidx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_dot_get_rawmidy">
+      <apidata name="wm_ir_dot_get_rawmidy" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_dot_get_rawx(System.Double)">
+      <apidata name="wm_ir_dot_get_rawx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="dot_number">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_dot_get_rawy(System.Double)">
+      <apidata name="wm_ir_dot_get_rawy" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="dot_number">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_dot_get_x(System.Double)">
+      <apidata name="wm_ir_dot_get_x" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="dot_number">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_dot_get_y(System.Double)">
+      <apidata name="wm_ir_dot_get_y" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="dot_number">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_dot_size(System.Double)">
+      <apidata name="wm_ir_dot_size" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="dot_number">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_ir_found_dot(System.Double)">
+      <apidata name="wm_ir_found_dot" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="dot_number">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_mii_data_dump(System.String,System.Double,System.Double)">
+      <apidata name="wm_mii_data_dump" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="fName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="miiBlock">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="miiNumber">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_mii_data_inject(System.String,System.Double,System.Double)">
+      <apidata name="wm_mii_data_inject" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="fName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="miiBlock">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="miiNumber">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_mii_data_update(System.Byte[])">
+      <apidata name="wm_mii_data_update" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="miiData">
+          <arrayOf rank="1">
+            <type api="T:System.Byte" ref="false" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <returns>
+        <arrayOf rank="1">
+          <type api="T:System.Byte" ref="false" />
+        </arrayOf>
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_mii_update_crc(System.String)">
+      <apidata name="wm_mii_update_crc" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="fName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_check_button(System.Double)">
+      <apidata name="wm_nunchuck_check_button" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="key_code">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_direction">
+      <apidata name="wm_nunchuck_direction" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_dead_zone_x">
+      <apidata name="wm_nunchuck_get_accel_dead_zone_x" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_dead_zone_y">
+      <apidata name="wm_nunchuck_get_accel_dead_zone_y" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_dead_zone_z">
+      <apidata name="wm_nunchuck_get_accel_dead_zone_z" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_rawx">
+      <apidata name="wm_nunchuck_get_accel_rawx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_rawy">
+      <apidata name="wm_nunchuck_get_accel_rawy" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_rawz">
+      <apidata name="wm_nunchuck_get_accel_rawz" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_x">
+      <apidata name="wm_nunchuck_get_accel_x" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_y">
+      <apidata name="wm_nunchuck_get_accel_y" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_z">
+      <apidata name="wm_nunchuck_get_accel_z" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_maxx">
+      <apidata name="wm_nunchuck_get_calibration_maxx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_maxy">
+      <apidata name="wm_nunchuck_get_calibration_maxy" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_midx">
+      <apidata name="wm_nunchuck_get_calibration_midx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_midy">
+      <apidata name="wm_nunchuck_get_calibration_midy" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_minx">
+      <apidata name="wm_nunchuck_get_calibration_minx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_miny">
+      <apidata name="wm_nunchuck_get_calibration_miny" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_x0">
+      <apidata name="wm_nunchuck_get_calibration_x0" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_xg">
+      <apidata name="wm_nunchuck_get_calibration_xg" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_y0">
+      <apidata name="wm_nunchuck_get_calibration_y0" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_yg">
+      <apidata name="wm_nunchuck_get_calibration_yg" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_z0">
+      <apidata name="wm_nunchuck_get_calibration_z0" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_zg">
+      <apidata name="wm_nunchuck_get_calibration_zg" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_pressure">
+      <apidata name="wm_nunchuck_pressure" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_rawx">
+      <apidata name="wm_nunchuck_rawx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_rawy">
+      <apidata name="wm_nunchuck_rawy" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_set_accel_dead_zone_x(System.Double)">
+      <apidata name="wm_nunchuck_set_accel_dead_zone_x" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_set_accel_dead_zone_y(System.Double)">
+      <apidata name="wm_nunchuck_set_accel_dead_zone_y" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_set_accel_dead_zone_z(System.Double)">
+      <apidata name="wm_nunchuck_set_accel_dead_zone_z" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_maxx(System.Double)">
+      <apidata name="wm_nunchuck_set_calibration_maxx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_maxy(System.Double)">
+      <apidata name="wm_nunchuck_set_calibration_maxy" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_midx(System.Double)">
+      <apidata name="wm_nunchuck_set_calibration_midx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_midy(System.Double)">
+      <apidata name="wm_nunchuck_set_calibration_midy" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_minx(System.Double)">
+      <apidata name="wm_nunchuck_set_calibration_minx" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_miny(System.Double)">
+      <apidata name="wm_nunchuck_set_calibration_miny" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_x0(System.Double)">
+      <apidata name="wm_nunchuck_set_calibration_x0" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_xg(System.Double)">
+      <apidata name="wm_nunchuck_set_calibration_xg" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_y0(System.Double)">
+      <apidata name="wm_nunchuck_set_calibration_y0" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_yg(System.Double)">
+      <apidata name="wm_nunchuck_set_calibration_yg" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_z0(System.Double)">
+      <apidata name="wm_nunchuck_set_calibration_z0" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_zg(System.Double)">
+      <apidata name="wm_nunchuck_set_calibration_zg" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_xpos">
+      <apidata name="wm_nunchuck_xpos" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_nunchuck_ypos">
+      <apidata name="wm_nunchuck_ypos" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_OnWiimoteChanged(System.Object,WiimoteLib.WiimoteChangedEventArgs)">
+      <apidata name="wm_OnWiimoteChanged" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="sender">
+          <type api="T:System.Object" ref="true" />
+        </parameter>
+        <parameter name="args">
+          <type api="T:WiimoteLib.WiimoteChangedEventArgs" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_OnWiimoteExtensionChanged(System.Object,WiimoteLib.WiimoteExtensionChangedEventArgs)">
+      <apidata name="wm_OnWiimoteExtensionChanged" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="sender">
+          <type api="T:System.Object" ref="true" />
+        </parameter>
+        <parameter name="args">
+          <type api="T:WiimoteLib.WiimoteExtensionChangedEventArgs" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_set_accel_dead_zone_x(System.Double)">
+      <apidata name="wm_set_accel_dead_zone_x" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_set_accel_dead_zone_y(System.Double)">
+      <apidata name="wm_set_accel_dead_zone_y" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_set_accel_dead_zone_z(System.Double)">
+      <apidata name="wm_set_accel_dead_zone_z" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_set_calibration_x0(System.Double)">
+      <apidata name="wm_set_calibration_x0" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_set_calibration_xg(System.Double)">
+      <apidata name="wm_set_calibration_xg" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_set_calibration_y0(System.Double)">
+      <apidata name="wm_set_calibration_y0" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_set_calibration_yg(System.Double)">
+      <apidata name="wm_set_calibration_yg" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_set_calibration_z0(System.Double)">
+      <apidata name="wm_set_calibration_z0" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_set_calibration_zg(System.Double)">
+      <apidata name="wm_set_calibration_zg" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_set_joystick_dead_zone(System.Double)">
+      <apidata name="wm_set_joystick_dead_zone" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_set_leds(System.Double,System.Double,System.Double,System.Double)">
+      <apidata name="wm_set_leds" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="led1">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="led2">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="led3">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+        <parameter name="led4">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_set_leds_int(System.Double)">
+      <apidata name="wm_set_leds_int" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_set_report_type(System.Double)">
+      <apidata name="wm_set_report_type" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="report_type">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_set_rumble(System.Double)">
+      <apidata name="wm_set_rumble" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="rumbling">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_set_trigger_dead_zone(System.Double)">
+      <apidata name="wm_set_trigger_dead_zone" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="val">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="M:GiiMoteLib.GiiMote.wm_set_write_method(System.Double)">
+      <apidata name="wm_set_write_method" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="alt_write_method">
+          <type api="T:System.Double" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Double" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+    <api id="F:GiiMoteLib.GiiMote.wmState">
+      <apidata name="wmState" group="member" subgroup="field" />
+      <memberdata visibility="public" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:WiimoteLib.WiimoteState" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="GiiMote" module="GiiMote" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:GiiMoteLib" />
+        <type api="T:GiiMoteLib.GiiMote" ref="true" />
+      </containers>
+    </api>
+  </apis>
+</reflection>
