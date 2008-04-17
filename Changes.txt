@@ -1,0 +1,233 @@
+-------------------------------------------------
+GiiMote Version 2.6 - Apr XX, 2008 - Revision XX
+-------------------------------------------------
+
+New Functions:
+---------------
+wm_get_roll();
+wm_get_pitch();
+wm_get_yaw();
+wm_ir_display_get_x()
+wm_ir_display_get_y()
+wm_ir_window_get_x()
+wm_ir_window_get_y()
+wm_ir_dot_get_delta_x(dot)
+wm_ir_dot_get_delta_y(dot)
+wm_ir_dot_get_delta_rawx(dot)
+wm_ir_dot_get_delta_rawy(dot)
+wm_ir_dot_get_delta_midx()
+wm_ir_dot_get_delta_midy()
+wm_ir_dot_get_delta_rawmidx()
+wm_ir_dot_get_delta_rawmidy()
+wm_get_altitude()
+wm_set_report_type(report_type)
+wm_get_report_type()
+
+Fixes:
+-------
+Changed button constants to be unique values.
+Fixed a memory leak where where multiple events were created if you connected and disconnected multiple times
+
+New Constants:
+----------------
+rt_auto
+rt_buttons
+rt_buttonsaccel
+rt_buttonsextension
+rt_extensionaccel
+rt_iraccel
+rt_irextensionaccel
+rt_readdata
+rt_status
+
+
+
+
+-------------------------------------------------
+GiiMote Version 2.5 - Mar 08, 2008 - Revision 75
+-------------------------------------------------
+
+Revisions:
+-------------
+Version 2.51 was released on 03/14/08 to update all new function definitions in the GEX.
+
+Breaking Changes:
+------------------
+wm_set_dead_zone has been removed and replaced with 16 other functions.
+
+New Functions:
+---------------
+wm_set_accel_dead_zone_x()
+wm_set_accel_dead_zone_y()
+wm_set_accel_dead_zone_z()
+wm_get_accel_dead_zone_x()
+wm_get_accel_dead_zone_y()
+wm_get_accel_dead_zone_z()
+wm_nunchuck_set_accel_dead_zone_x()
+wm_nunchuck_set_accel_dead_zone_y()
+wm_nunchuck_set_accel_dead_zone_z()
+wm_nunchuck_get_accel_dead_zone_x()
+wm_nunchuck_get_accel_dead_zone_y()
+wm_nunchuck_get_accel_dead_zone_z()
+wm_set_joystick_dead_zone()
+wm_get_joystick_dead_zone()
+wm_set_trigger_dead_zone()
+wm_get_trigger_dead_zone()
+
+Fixes:
+-------
+wm_set_calibration functions now work properly.
+wm_disconnect now returns -1 on error.
+
+Other:
+-------
+Added XML comment headers to all functions, variables, classes and namespaces in the source.
+Created a new help file documenting the internals of the library. It can be downloaded from the website.
+Fixed all mentions of the "Microsoft Permissive License" which does not exist. (It's "Public")
+
+
+
+
+-------------------------------------------------
+GiiMote Version 2.4 - Jan 29, 2008 - Revision 57
+-------------------------------------------------
+
+Fixes:
+-------
+Functions relating to joystick pressure now return the proper values.
+
+Other:
+-------
+All IR sensor functions now support dots 1, 2, 3, and 4.
+
+
+
+-------------------------------------------------
+GiiMote Version 2.3 - Dec 22, 2007 - Revision 49
+-------------------------------------------------
+
+Breaking Changes:
+------------------
+The joystick direction functions (wm_nunchuck_direction and wm_classic_direction) now
+return degree values like the help file says.
+
+New Functions:
+---------------
+wm_nunchuck_pressure()
+wm_classic_pressure()
+
+Other:
+-------
+The change log now gives the SVN revision number corresponding to the GiiMote build.
+
+
+
+
+------------------------------------
+GiiMote Version 2.2 - Dec 01, 2007
+------------------------------------
+
+Revisions:
+-------------
+Version 2.21 was released shortly after the release of version 2.2 to fix the help file.
+An old copy of the help file that did not document the new features was previously found
+in the version 2.2 package. GiiMote itself was not changed.
+
+Breaking Changes:
+------------------
+Several functions are now less error tolerant to make them easier to debug in GM.
+
+Fixes:
+-------
+Most functions now return -1 instead of throwing an exception if something goes wrong.
+The wm_connected method now detects the connection status even if the connection has been dropped.
+Fixed several small memory leaks involving Mii Data.
+wm_classic_direction now returns the proper error code if an invalid joystick argument is supplied.
+The joystick functions now handle improper joystick arguments correctly and return -1.
+wm_check_extension now returns -2 if the extension check fails.
+
+New Functions:
+---------------
+wm_exists()
+wm_get_status()
+wm_set_calibration_x0(val);
+wm_set_calibration_xg(val);
+wm_set_calibration_y0(val);
+wm_set_calibration_yg(val);
+wm_set_calibration_z0(val);
+wm_set_calibration_zg(val);
+wm_classic_set_calibration_maxtrigger(trigger,val);
+wm_classic_set_calibration_mintrigger(trigger,val);
+wm_classic_set_calibration_maxx(joystick,val);
+wm_classic_set_calibration_minx(joystick,val);
+wm_classic_set_calibration_midx(joystick,val);
+wm_classic_set_calibration_midy(joystick,val);
+wm_classic_set_calibration_maxy(joystick,val);
+wm_classic_set_calibration_miny(joystick,val);
+wm_nunchuck_set_calibration_x0(val);
+wm_nunchuck_set_calibration_xg(val);
+wm_nunchuck_set_calibration_y0(val);
+wm_nunchuck_set_calibration_yg(val);
+wm_nunchuck_set_calibration_z0(val);
+wm_nunchuck_set_calibration_zg(val);
+wm_nunchuck_set_calibration_maxx(val);
+wm_nunchuck_set_calibration_maxy(val);
+wm_nunchuck_set_calibration_midx(val);
+wm_nunchuck_set_calibration_midy(val);
+wm_nunchuck_set_calibration_minx(val);
+wm_nunchuck_set_calibration_miny(val);
+
+Other:
+-------
+wm_mii_data_inject and wm_mii_data_dump now have optional third arguments for dumping/injecting individual Mii's.
+Cleaned up the source a bit more.
+
+
+
+
+------------------------------------
+GiiMote Version 2.1 - Nov 21, 2007
+------------------------------------
+
+Fixes:
+-------
+Fixed a small memory leak that would never have occurred.
+
+New Functions:
+---------------
+wm_set_leds_int(leds)
+wm_mii_get_address(mii,block)
+
+Other:
+-------
+Cleaned up the source code a great deal to make it easier to manage and read.
+
+
+
+
+----------------------
+GiiMote Version 2.0
+----------------------
+
+Breaking Changes:
+------------------
+wm_connect now auto-detects the write method, no argument is required.
+
+Fixes:
+-------
+Extensions inserted before connected are now handled properly.
+When injecting Mii's the CRC is now automatically updated on the Wii Remote.
+wm_get_led now returns the proper value
+
+New Functions:
+----------------
+wm_set_write_method
+wm_ir_dot_get_midx
+wm_ir_dot_get_midy
+wm_ir_dot_get_rawmidx
+wm_ir_dot_get_rawmidy
+wm_mii_update_crc
+wm_mii_dump
+wm_mii_inject
+wm_set_dead_zone
+   Types: dz_trigger, dz_joystick, dz_accel
