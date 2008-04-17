@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GiiMote", "GiiMote\GiiMote.vcproj", "{220A20AE-8B29-4B1E-82F1-52F745BE6479}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{220A20AE-8B29-4B1E-82F1-52F745BE6479}.Debug|Win32.ActiveCfg = Debug|Win32
+		{220A20AE-8B29-4B1E-82F1-52F745BE6479}.Debug|Win32.Build.0 = Debug|Win32
+		{220A20AE-8B29-4B1E-82F1-52F745BE6479}.Release|Win32.ActiveCfg = Release|Win32
+		{220A20AE-8B29-4B1E-82F1-52F745BE6479}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
