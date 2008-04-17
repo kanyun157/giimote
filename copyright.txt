@@ -1,0 +1,7 @@
+GiiMote
+Copyright 2007 Leif902
+http://www.greenmangames.vze.com/
+http://giimote.googlecode.com/
+
+Licensed under the terms of the Microsoft Public License (Ms-Pl).
+See license.txt for details.
