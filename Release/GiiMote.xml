@@ -424,15 +424,15 @@ Gets the zero point of the accelerometer
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_yaw">
             <summary>The yaw of the Wii Remote</summary>
-            <returns>Yaw in degrees</returns>
+            <returns>Yaw in degrees or -1000 on error</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_pitch">
             <summary>The pitch of the Wii Remote</summary>
-            <returns>Pitch in degrees</returns>
+            <returns>Pitch in degrees or -1000 on error</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_roll">
             <summary>The roll of the Wii Remote</summary>
-            <returns>Roll in degrees</returns>
+            <returns>Roll in degrees or -1000 on error.</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_dead_zone_z">
             <summary>Gets the dead-zone value</summary>
