@@ -14,7 +14,14 @@ namespace GiiMoteLib {
 
 		try
 		{
-			roll = -Math::Atan2(double(wmState->AccelState.X), Math::Sqrt( Math::Pow(double(wmState->AccelState.Y), 2) + Math::Pow(double(wmState->AccelState.Z), 2)) ) - Math::PI/2;
+			if ( Math::Abs(this->wmState->AccelState.X + this->wmState->AccelState.Y + this->wmState->AccelState.Z) <= 1.5 )
+			{
+				roll = -Math::Atan2(double(this->wmState->AccelState.X), Math::Sqrt( Math::Pow(double(this->wmState->AccelState.Y), 2) + Math::Pow(double(this->wmState->AccelState.Z), 2)) ) - Math::PI/2;
+			}
+			else
+			{
+				throw ( 0 );
+			}
 		}
 		catch(...)
 		{
@@ -59,7 +66,6 @@ namespace GiiMoteLib {
 		{
 			if (this->wmState->IRState.Found1 && this->wmState->IRState.Found2)
 			{
-				// This is not right at all...
 				double ax = ((double)this->wmState->IRState.RawX1 + (double)this->wmState->IRState.RawX2) / 2;
 				double z = 1023 - Math::Sqrt(Math::Pow((double)this->wmState->IRState.RawX2 - (double)this->wmState->IRState.RawX2, 2) + Math::Pow((double)this->wmState->IRState.RawY2 - (double)this->wmState->IRState.RawY2, 2));
 				yaw = Math::Atan2((ax - 512) * (z / 1024), z);
