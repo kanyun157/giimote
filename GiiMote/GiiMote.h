@@ -118,6 +118,8 @@ namespace GiiMoteLib {
 
 		/// <summary>The report type of the Wii Remote</summary>
 		int report_type;
+		/// <summary>Report continuously or on update?</summary>
+		bool continuous;
 
 		/// <summary>The change in an infrared point's x value</summary>
 		cli::array<float>^ ir_last_x;
@@ -172,6 +174,8 @@ namespace GiiMoteLib {
 
 			// Default the report type to rt_auto
 			this->report_type = rtAuto;
+			// Default to continuous reporting
+			this->continuous = 1;
 		}
 		/// <summary>Default destructor</summary>
 		/// <remarks>
@@ -197,7 +201,7 @@ namespace GiiMoteLib {
 		{
 			if (this->report_type == rtAuto)
 			{
-				wm_set_report_type(rtAuto);
+				wm_set_report_type(rtAuto, this->continuous);
 			}
 		}
 
@@ -279,8 +283,9 @@ public:
 		double wm_set_write_method(double alt_write_method);
 		double wm_connected();
 		double wm_disconnect();
-		double wm_set_report_type(double report_type);
+		double wm_set_report_type(double report_type, double continuous);
 		double wm_get_report_type();
+		double wm_get_report_interval();
 
 		// LED Functions
 		double wm_get_led(double led_num);

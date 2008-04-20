@@ -56,7 +56,7 @@ namespace GiiMoteLib {
 				this->wm->WiimoteChanged += (gcnew WiimoteChangedEventHandler(this,&GiiMote::wm_OnWiimoteChanged));
 				this->wm->WiimoteExtensionChanged += (gcnew WiimoteExtensionChangedEventHandler(this,&GiiMote::wm_OnWiimoteExtensionChanged));
 				this->wm->Connect();
-				wm_set_report_type(this->report_type);
+				wm_set_report_type(this->report_type, this->continuous);
 			}
 			catch( ... )
 			{
@@ -81,7 +81,7 @@ namespace GiiMoteLib {
 	}
 
 	/// <summary>Checks to see if a Wii Remote exists</summary>
-	/// <remarks>Same as seeing if <see>wm_connect()</see> fails</remarks>
+	/// <remarks>Same as seeing if wm_connect() fails</remarks>
 	/// <returns>
 	/// <list type="table">
 	///     <listheader>
@@ -218,34 +218,16 @@ namespace GiiMoteLib {
 	///     </item>
 	/// </list>	
 	/// </param>
+	/// <param name="continuous">Report continuously</param>
 	/// <returns>Success</returns>
-	double GiiMote::wm_set_report_type(double report_type)
+	double GiiMote::wm_set_report_type(double report_type, double continuous)
 	{
+		#pragma warning( disable : 4800 ) // Suppress warning 4800 (Conversion from double to bool)
 		if (!wm_connected())
 		{
 			this->report_type = int(report_type);
+			this->continuous  = bool(continuous);
 			return ( 1 );
-		}
-
-		if (report_type == rtAuto)
-		{
-			try
-			{
-				if (this->wm->WiimoteState->Extension)
-				{
-					this->wm->SetReportType(Wiimote::InputReport::IRExtensionAccel, true);
-				}
-				else
-				{
-					this->wm->SetReportType(Wiimote::InputReport::IRAccel, true);
-				}
-			}
-			catch(...)
-			{
-				return ( 0 );
-			}
-
-			this->report_type = rtAuto;
 		}
 		else
 		{
@@ -254,28 +236,38 @@ namespace GiiMoteLib {
 				switch ( int(report_type) )
 				{
 				case rtButtons:
-					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::Buttons, true);
+					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::Buttons, bool(continuous));
 					break;
 				case rtButtonsAccel:
-					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::ButtonsAccel, true);
+					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::ButtonsAccel, bool(continuous));
 					break;
 				case rtButtonsExtension:
-					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::ButtonsExtension, true);
+					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::ButtonsExtension, bool(continuous));
 					break;
 				case rtExtensionAccel:
-					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::ExtensionAccel, true);
+					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::ExtensionAccel, bool(continuous));
 					break;
 				case rtIRAccel:
-					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::IRAccel, true);
+					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::IRAccel, bool(continuous));
 					break;
 				case rtIRExtensionAccel:
-					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::IRExtensionAccel, true);
+					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::IRExtensionAccel, bool(continuous));
 					break;
 				case rtReadData:
-					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::ReadData, true);
+					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::ReadData, bool(continuous));
 					break;
 				case rtStatus:
-					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::Status, true);
+					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::Status, bool(continuous));
+					break;
+				case rtAuto:
+					if (this->wm->WiimoteState->Extension)
+					{
+						this->wm->SetReportType(Wiimote::InputReport::IRExtensionAccel, bool(continuous));
+					}
+					else
+					{
+						this->wm->SetReportType(Wiimote::InputReport::IRAccel, bool(continuous));
+					}
 					break;
 				default:
 					return ( 0 );
@@ -286,11 +278,10 @@ namespace GiiMoteLib {
 			{
 				return ( 0 );
 			}
-
-			this->report_type = (int)report_type;
 		}
 
 		return ( 1 );
+		#pragma warning( default : 4800 ) // Re-enable warning 4800
 	}
 
 	/// <summary>Gets the current report type of the Wii Remote</summary>
@@ -340,7 +331,29 @@ namespace GiiMoteLib {
 	/// </returns>
 	double GiiMote::wm_get_report_type()
 	{
-		return ( this->report_type );
+		return ( double(this->report_type) );
+	}
+
+	/// <summary>Gets the current report interval of the Wii Remote</summary>
+	/// <returns>
+	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Value</term>
+	///         <description>Report Type</description>
+	///     </listheader>
+	///     <item>
+	///			<term>1</term>
+	///         <description>Reporting continuously</description>
+	///     </item>
+	///     <item>
+	///			<term>0</term>
+	///         <description>Reporting on update</description>
+	///     </item>
+	/// </list>
+	/// </returns>
+	double GiiMote::wm_get_report_interval()
+	{
+		return ( double(this->continuous) );
 	}
 
 	/////////////////////////

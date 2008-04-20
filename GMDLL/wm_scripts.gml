@@ -157,8 +157,9 @@ kind dll-cdecl
 hfunction gm_init():real
 function wm_connect():real
 function wm_get_status():real
-function wm_set_report_type(report_type:real):real
+function wm_set_report_type(report_type:real, continuous:real):real
 function wm_get_report_type():real
+function wm_get_report_interval():real
 function wm_exists():real
 hfunction wm_set_write_method(alt_write_method:real):real
 function wm_disconnect():real
@@ -597,6 +598,8 @@ layer_function(global.gm_class,"wm_get_battery",ty_real,0);
 #define wm_get_led
 // argument0 - Led number (1-4)
 layer_function(global.gm_class,"wm_get_led",ty_real,1,argument0);
+#define wm_get_report_interval
+layer_function(global.gm_class,"wm_get_report_interval",ty_real);
 #define wm_get_report_type
 layer_function(global.gm_class,"wm_get_report_type",ty_real);
 #define wm_get_rumble
@@ -622,7 +625,7 @@ layer_function(global.gm_class,"wm_set_leds",ty_real,4,argument0,argument1,argum
 // argument0 - Leds as Integer
 layer_function(global.gm_class,"wm_set_leds_int",ty_real,1,argument0);
 #define wm_set_report_type
-layer_function(global.gm_class,"wm_set_report_type",ty_real,1,argument0);
+layer_function(global.gm_class,"wm_set_report_type",ty_real,2,argument0,argument1);
 #define wm_set_rumble
 // argument0 - rumbling
 layer_function(global.gm_class,"wm_set_rumble",ty_real,1,argument0);
