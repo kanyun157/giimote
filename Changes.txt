@@ -20,8 +20,9 @@ wm_ir_dot_get_delta_midy()
 wm_ir_dot_get_delta_rawmidx()
 wm_ir_dot_get_delta_rawmidy()
 wm_get_altitude()
-wm_set_report_type(report_type)
+wm_set_report_type(report_type, continuous)
 wm_get_report_type()
+wm_get_report_interval()
 
 Fixes:
 -------

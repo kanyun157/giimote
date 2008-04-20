@@ -798,6 +798,25 @@ Current extension:
             <param name="led_num">The LED to get the state of (1-4)</param>
             <returns>The state of the LED</returns>
         </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_get_report_interval">
+            <summary>Gets the current report interval of the Wii Remote</summary>
+            <returns>
+                <list type="bullet">
+                    <listheader>
+                        <term>Value</term>
+                        <description>Report Type</description>
+                    </listheader>
+                    <item>
+                        <term>1</term>
+                        <description>Reporting continuously</description>
+                    </item>
+                    <item>
+                        <term>0</term>
+                        <description>Reporting on update</description>
+                    </item>
+                </list>
+            </returns>
+        </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_report_type">
             <summary>Gets the current report type of the Wii Remote</summary>
             <returns>
@@ -845,7 +864,7 @@ Current extension:
                 </list>
             </returns>
         </member>
-        <member name="M:GiiMoteLib.GiiMote.wm_set_report_type(System.Double)">
+        <member name="M:GiiMoteLib.GiiMote.wm_set_report_type(System.Double,System.Double)">
             <summary>Changes the report type of the Wii Remote</summary>
             <param name="report_type">
                 <list type="bullet">
@@ -891,6 +910,7 @@ Current extension:
                     </item>
                 </list>
             </param>
+            <param name="continuous">Report continuously</param>
             <returns>Success</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_disconnect">
@@ -905,7 +925,7 @@ Current extension:
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_exists">
             <summary>Checks to see if a Wii Remote exists</summary>
-            <remarks>Same as seeing if <see>wm_connect()</see> fails</remarks>
+            <remarks>Same as seeing if wm_connect() fails</remarks>
             <returns>
                 <list type="table">
                     <listheader>
@@ -1045,6 +1065,9 @@ you will need to make the destructor bind late using the keyword "virtual."
         </member>
         <member name="F:GiiMoteLib.GiiMote.ir_last_x">
             <summary>The change in an infrared point's x value</summary>
+        </member>
+        <member name="F:GiiMoteLib.GiiMote.continuous">
+            <summary>Report continuously or on update?</summary>
         </member>
         <member name="F:GiiMoteLib.GiiMote.report_type">
             <summary>The report type of the Wii Remote</summary>
