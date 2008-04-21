@@ -199,10 +199,7 @@ namespace GiiMoteLib {
 		/// <param name="args">Current extension status</param>
 		void wm_OnWiimoteExtensionChanged(System::Object^ sender, WiimoteExtensionChangedEventArgs^ args)
 		{
-			if (this->report_type == rtAuto)
-			{
-				wm_set_report_type(rtAuto, this->continuous);
-			}
+			wm_set_report_type(this->report_type, this->continuous);
 		}
 
 		/// <summary>Wii Remote state change event</summary>
