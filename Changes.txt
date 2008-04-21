@@ -27,7 +27,7 @@ wm_get_report_interval()
 Fixes:
 -------
 Changed button constants to be unique values.
-Fixed a memory leak where where multiple events were created if you connected and disconnected multiple times
+Fixed a memory leak where multiple events were created if you connected and disconnected multiple times
 
 New Constants:
 ----------------
