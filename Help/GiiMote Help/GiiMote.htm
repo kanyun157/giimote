@@ -108,7 +108,10 @@ The following button key codes exist for use in any function that requires a but
 	<tt><b><a name="wm_nunchuck_get_accel_y">wm_nunchuck_get_accel_y()</a></b></tt><br>
 	<tt><b><a name="wm_nunchuck_get_accel_z">wm_nunchuck_get_accel_z()</a></b></tt><br>
 </blockquote>
-<p>Please note that when you set the remote on a flat surface a value of approximately 1 will be returned&nbsp;on the Z axis. This is because the table is exerting an upwards force on your Wii Remote equal to 1G against the force of gravity. When the remote is in free fall this value will fall to near zero.</p>
+<p>Please note that when you set the remote on a flat surface a value of approximately 1 will be returned&nbsp;on the Z axis. This is because the table is exerting an upwards force on your Wii Remote equal to 1G against the force of gravity. When the remote is in free fall this value will fall to near zero.<br>GiiMote also provides limited higher level functionality which utilizes the accelerometers.</p>
+<blockquote>
+	<tt><b><a name="wm_get_moving">wm_get_moving()</a></b> Checks to see if the Wii Remote is moving or not</tt><br>
+</blockquote>
 <h2><a name="dead_zone">Dead Zone's</a></h2>
 <p>With any joystick, pressure sensitive trigger, or accelerometer differences in calibration can cause slight deviations from zero. For instance, a joystick centered at (0,0) may return (0.1,0) instead, or, an accelerometer sitting still may feel a slight tremor and read 0.01 when the user intended it to be 0. To address this issue one must define a &quot;dead zone,&quot; or, an amount of tolerance under which no change of value will occur. To set the tolerance level for all joysticks, triggers, and/or accelerometers&nbsp;the
 following functions may be called (default for all&nbsp;is no-tolerance):</p>
@@ -169,8 +172,9 @@ its orientation relative to the sensor bar. The following functions exist to use
 </blockquote>
 <p>The Wii Remote provides several different methods of feedback which can be utilized by the user. To save battery power, not all of these methods need to be turned on all the time. For instance, if we are not using the infrared capabilities of the Wii Remote it would save power to turn off the infrared camera. To do this we must change the report type of the Wii Remote. The following functions exist to deal with the various report types:</p>
 <blockquote>
-	<tt><b><a name="wm_set_report_type">wm_set_report_type(report_type)</a></b></tt> Sets the report type of the Wii Remote.<br>
-	<tt><b><a name="wm_get_report_type">wm_set_report_type()</a></b></tt> Returns the report type of the Wii Remote.<br>
+	<tt><b><a name="wm_set_report_type">wm_set_report_type(report_type,continuous)</a></b></tt> Sets the report type of the Wii Remote. If continuous is false the Wii Remote only sends reports when it undergoes a status change.<br>
+	<tt><b><a name="wm_get_report_type">wm_get_report_type()</a></b></tt> Returns the report type of the Wii Remote.<br>
+	<tt><b><a name="wm_get_report_continuous">wm_get_report_continuous()</a></b></tt> Returns true if the Wii Remote is set to update continuously and false otherwise.<br>
 </blockquote>
 <p>The report type can be set using any of the following constants. Please note that the status of the Wii Remote's buttons is included in every report type and that only supported report types are listed here.</p>
 <blockquote>

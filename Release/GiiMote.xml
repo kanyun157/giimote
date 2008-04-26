@@ -388,35 +388,35 @@ Gets the zero point of the accelerometer
             <summary>Raw Y value of the given dot</summary>
             <remarks>Domain: [0,1023]</remarks>
             <param name="dot_number">Dot 1-4</param>
-            <returns>Y value of the given dot from 0 to 1023</returns>
+            <returns>Y value of the given dot from 0 to 1023 or -1 on error</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_ir_dot_get_rawx(System.Double)">
             <summary>Raw X value of the given dot</summary>
             <remarks>Domain: [0,1023]</remarks>
             <param name="dot_number">Dot 1-4</param>
-            <returns>X value of the given dot from 0 to 1023</returns>
+            <returns>X value of the given dot from 0 to 1023 or -1 on error</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_ir_dot_get_y(System.Double)">
             <summary>Normalized Y value of the given dot</summary>
             <remarks>Domain: [0.0,1.0]</remarks>
             <param name="dot_number">Dot 1-4</param>
-            <returns>Y value of given dot as double from 0.0 to 1.0</returns>
+            <returns>Y value of given dot from 0.0 to 1.0 or -1 on error</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_ir_dot_get_x(System.Double)">
             <summary>Normalized X value of the given dot</summary>
             <remarks>Domain: [0.0,1.0]</remarks>
             <param name="dot_number">Dot 1-4</param>
-            <returns>X value of given dot as double from 0.0 to 1.0</returns>
+            <returns>X value of given dot from 0.0 to 1.0 or -1 on error</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_ir_dot_size(System.Double)">
             <summary>Checks the size of the given IR dot</summary>
             <param name="dot_number">Dot 1-4</param>
-            <returns>Dot size</returns>
+            <returns>Dot size from 0 to 15 or -1 on error</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_ir_found_dot(System.Double)">
             <summary>Checks to see if the given IR dot is visible</summary>
             <param name="dot_number">Dot 1-4</param>
-            <returns>Dot found as bool</returns>
+            <returns>Dot found as bool or -1 on error</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_altitude">
             <summary>Distance of the Wii Remote from the sensor bar</summary>
@@ -433,6 +433,13 @@ Gets the zero point of the accelerometer
         <member name="M:GiiMoteLib.GiiMote.wm_get_roll">
             <summary>The roll of the Wii Remote</summary>
             <returns>Roll in degrees or -1000 on error.</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_get_moving">
+            <summary>Is the Wii Remote moving?</summary>
+            <returns>
+True if the cummulative scalar force acting on the Wii Remote is greater than G, false otherwise.
+-1 on error.
+</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_dead_zone_z">
             <summary>Gets the dead-zone value</summary>
@@ -705,32 +712,32 @@ The button to check
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_set_calibration_zg(System.Double)">
             <summary>Sets the gravity at rest of the accelerometer</summary>
-            <param name="val">ZG Value</param>
+            <param name="val">ZG Value as byte</param>
             <returns>Success</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_set_calibration_z0(System.Double)">
             <summary>Sets the zero point of the accelerometer</summary>
-            <param name="val">Z0 Value</param>
+            <param name="val">Z0 Value as byte</param>
             <returns>Success</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_set_calibration_yg(System.Double)">
             <summary>Sets the gravity at rest of the accelerometer</summary>
-            <param name="val">YG Value</param>
+            <param name="val">YG Value as byte</param>
             <returns>Success</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_set_calibration_y0(System.Double)">
             <summary>Sets the zero point of the accelerometer</summary>
-            <param name="val">Y0 Value</param>
+            <param name="val">Y0 Value as byte</param>
             <returns>Success</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_set_calibration_xg(System.Double)">
             <summary>Sets the gravity at rest of the accelerometer</summary>
-            <param name="val">XG Value</param>
+            <param name="val">XG Value as byte</param>
             <returns>Success</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_set_calibration_x0(System.Double)">
             <summary>Sets the zero point of the accelerometer</summary>
-            <param name="val">X0 Value</param>
+            <param name="val">X0 Value as byte</param>
             <returns>Success</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_calibration_zg">
@@ -773,12 +780,12 @@ Current extension:
 <list type="table"><listheader><term>Code</term><description>Extension</description></listheader><item><term>1</term><description>extClassic</description></item><item><term>2</term><description>extNunchuck</description></item><item><term>0</term><description>extNone</description></item><item><term>-1</term><description>extUnknown</description></item><item><term>-2</term><description>Error</description></item></list></returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_status">
-            <summary>Updates the Wii Remote status</summary>
+            <summary>Updates the Wii Remote's status</summary>
             <returns>Success</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_battery">
             <summary>Gets the current battery level</summary>
-            <returns>The current battery level</returns>
+            <returns>The current battery level between 0 and 200</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_set_leds_int(System.Double)">
             <summary>Sets the LEDS on the Wii Remote</summary>
@@ -798,7 +805,7 @@ Current extension:
             <param name="led_num">The LED to get the state of (1-4)</param>
             <returns>The state of the LED</returns>
         </member>
-        <member name="M:GiiMoteLib.GiiMote.wm_get_report_interval">
+        <member name="M:GiiMoteLib.GiiMote.wm_get_report_continuous">
             <summary>Gets the current report interval of the Wii Remote</summary>
             <returns>
                 <list type="bullet">

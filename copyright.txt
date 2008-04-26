@@ -1,5 +1,5 @@
 GiiMote
-Copyright 2007 Leif902
+Copyright 2007 Sam Whited
 http://www.greenmangames.vze.com/
 http://giimote.googlecode.com/
 

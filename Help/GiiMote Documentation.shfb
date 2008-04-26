@@ -18,7 +18,7 @@
     <OutputPath>.\GiiMote Documentation\</OutputPath>
     <SandcastlePath path="" />
     <WorkingPath path="" />
-    <CleanIntermediates>False</CleanIntermediates>
+    <CleanIntermediates>True</CleanIntermediates>
     <KeepLogFile>False</KeepLogFile>
     <HelpFileFormat>HtmlHelp1x</HelpFileFormat>
     <PurgeDuplicateTopics>True</PurgeDuplicateTopics>
