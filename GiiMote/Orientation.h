@@ -6,6 +6,30 @@ namespace GiiMoteLib {
     // Wii Remote
     /////////////////////////
 
+	/// <summary>Is the Wii Remote moving?</summary>
+	/// <returns>
+	/// True if the cummulative scalar force acting on the Wii Remote is greater than G, false otherwise.
+	/// -1 on error.
+	/// </returns>
+	double GiiMote::wm_get_moving()
+	{
+		try
+		{
+			if ( Math::Abs(this->wmState->AccelState.X + this->wmState->AccelState.Y + this->wmState->AccelState.Z) > 1.5 )
+			{
+				return ( 1 );
+			}
+			else
+			{
+				return ( 0 );
+			}
+		}
+		catch(...)
+		{
+			return ( -1 );
+		}
+	}
+
     /// <summary>The roll of the Wii Remote</summary>
     /// <returns>Roll in degrees or -1000 on error.</returns>
     double GiiMote::wm_get_roll()
@@ -14,7 +38,7 @@ namespace GiiMoteLib {
 
 		try
 		{
-			if ( Math::Abs(this->wmState->AccelState.X + this->wmState->AccelState.Y + this->wmState->AccelState.Z) <= 1.5 )
+			if ( !wm_get_moving() )
 			{
 				roll = -Math::Atan2(double(this->wmState->AccelState.X), Math::Sqrt( Math::Pow(double(this->wmState->AccelState.Y), 2) + Math::Pow(double(this->wmState->AccelState.Z), 2)) ) - Math::PI/2;
 			}
@@ -46,7 +70,14 @@ namespace GiiMoteLib {
 
 		try
 		{
-			pitch = -Math::Atan2( double(wmState->AccelState.Y), Math::Sqrt( Math::Pow(double(wmState->AccelState.X), 2) + Math::Pow(double(wmState->AccelState.Z), 2)) );
+			if ( !wm_get_moving() )
+			{
+				pitch = -Math::Atan2( double(wmState->AccelState.Y), Math::Sqrt( Math::Pow(double(wmState->AccelState.X), 2) + Math::Pow(double(wmState->AccelState.Z), 2)) );
+			}
+			else
+			{
+				throw ( 0 );
+			}
 		}
 		catch(...)
 		{

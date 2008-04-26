@@ -272,9 +272,19 @@
 		<param name="Local" value="GiiMote.htm#MISC">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_get_moving()">
+		<param name="Name" value="Acceleromter Data">
+		<param name="Local" value="GiiMote.htm#accel">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_get_pitch()">
 		<param name="Name" value="Orientation">
 		<param name="Local" value="GiiMote.htm#orientation">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_get_report_continuous()">
+		<param name="Name" value="Feedback">
+		<param name="Local" value="GiiMote.htm#MISC">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_get_report_type()">

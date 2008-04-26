@@ -22,12 +22,14 @@ wm_ir_dot_get_delta_rawmidy()
 wm_get_altitude()
 wm_set_report_type(report_type, continuous)
 wm_get_report_type()
-wm_get_report_interval()
+wm_get_report_continuous()
+wm_get_moving()
 
 Fixes:
 -------
-Changed button constants to be unique values.
+Changed button constants to be unique values
 Fixed a memory leak where multiple events were created if you connected and disconnected multiple times
+wm_ir_dot_size and other IR functions now return -1 on error
 
 New Constants:
 ----------------

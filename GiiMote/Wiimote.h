@@ -223,13 +223,7 @@ namespace GiiMoteLib {
 	double GiiMote::wm_set_report_type(double report_type, double continuous)
 	{
 		#pragma warning( disable : 4800 ) // Suppress warning 4800 (Conversion from double to bool)
-		if (!wm_connected())
-		{
-			this->report_type = int(report_type);
-			this->continuous  = bool(continuous);
-			return ( 1 );
-		}
-		else
+		if (wm_connected())
 		{
 			try
 			{
@@ -278,6 +272,11 @@ namespace GiiMoteLib {
 			{
 				return ( 0 );
 			}
+		}
+		else
+		{
+			this->report_type = int(report_type);
+			this->continuous  = bool(continuous);
 		}
 
 		return ( 1 );
@@ -351,7 +350,7 @@ namespace GiiMoteLib {
 	///     </item>
 	/// </list>
 	/// </returns>
-	double GiiMote::wm_get_report_interval()
+	double GiiMote::wm_get_report_continuous()
 	{
 		return ( double(this->continuous) );
 	}
@@ -441,12 +440,13 @@ namespace GiiMoteLib {
 	/////////////////////////
 
 	/// <summary>Gets the current battery level</summary>
-	/// <returns>The current battery level</returns>
+	/// <returns>The current battery level between 0 and 200</returns>
 	double GiiMote::wm_get_battery()
 	{
 		double battery_state;
 		try
 		{
+			this->wm->GetStatus();
 			battery_state = (double)this->wmState->Battery;
 		}
 		catch(...)
@@ -456,7 +456,7 @@ namespace GiiMoteLib {
 		return ( battery_state );
 	}
 
-	/// <summary>Updates the Wii Remote status</summary>
+	/// <summary>Updates the Wii Remote's status</summary>
 	/// <returns>Success</returns>
 	double GiiMote::wm_get_status()
 	{
@@ -509,13 +509,13 @@ namespace GiiMoteLib {
 		{
 			switch(this->wmState->ExtensionType)
 			{
-			case WiimoteLib::ExtensionType::ClassicController:
+			case (WiimoteLib::ExtensionType::ClassicController):
 				extension_type = extClassic;
 				break;
-			case WiimoteLib::ExtensionType::Nunchuk:
+			case (WiimoteLib::ExtensionType::Nunchuk):
 				extension_type = extNunchuck;
 				break;
-			case WiimoteLib::ExtensionType::None:
+			case (WiimoteLib::ExtensionType::None):
 				extension_type = extNone;
 				break;
 			default:
@@ -538,18 +538,7 @@ namespace GiiMoteLib {
 	{
 		try
 		{
-			switch ((int)rumbling)
-			{
-			case 0:
-				this->wm->SetRumble(false);
-				break;
-			case 1:
-				this->wm->SetRumble(true);
-				break;
-			default:
-				throw (0);
-				break;
-			}
+			this->wm->SetRumble( rumbling > 0.5 );
 		}
 		catch(...)
 		{
@@ -568,7 +557,7 @@ namespace GiiMoteLib {
 		}
 		catch (...)
 		{
-			rumbling = -1;
+			return ( -1 );
 		}
 
 		return ( rumbling );
@@ -616,7 +605,7 @@ namespace GiiMoteLib {
 	}
 	// Set
 	/// <summary>Sets the zero point of the accelerometer</summary>
-	/// <param name="val">X0 Value</param>
+	/// <param name="val">X0 Value as byte</param>
 	/// <returns>Success</returns>
 	double GiiMote::wm_set_calibration_x0(double val)
 	{
@@ -631,7 +620,7 @@ namespace GiiMoteLib {
 		return ( 1 );
 	}
 	/// <summary>Sets the gravity at rest of the accelerometer</summary>
-	/// <param name="val">XG Value</param>
+	/// <param name="val">XG Value as byte</param>
 	/// <returns>Success</returns>
 	double GiiMote::wm_set_calibration_xg(double val)
 	{
@@ -646,7 +635,7 @@ namespace GiiMoteLib {
 		return ( 1 );
 	}
 	/// <summary>Sets the zero point of the accelerometer</summary>
-	/// <param name="val">Y0 Value</param>
+	/// <param name="val">Y0 Value as byte</param>
 	/// <returns>Success</returns>
 	double GiiMote::wm_set_calibration_y0(double val)
 	{
@@ -661,7 +650,7 @@ namespace GiiMoteLib {
 		return ( 1 );
 	}
 	/// <summary>Sets the gravity at rest of the accelerometer</summary>
-	/// <param name="val">YG Value</param>
+	/// <param name="val">YG Value as byte</param>
 	/// <returns>Success</returns>
 	double GiiMote::wm_set_calibration_yg(double val)
 	{
@@ -676,7 +665,7 @@ namespace GiiMoteLib {
 		return ( 1 );
 	}
 	/// <summary>Sets the zero point of the accelerometer</summary>
-	/// <param name="val">Z0 Value</param>
+	/// <param name="val">Z0 Value as byte</param>
 	/// <returns>Success</returns>
 	double GiiMote::wm_set_calibration_z0(double val)
 	{
@@ -691,7 +680,7 @@ namespace GiiMoteLib {
 		return ( 1 );
 	}
 	/// <summary>Sets the gravity at rest of the accelerometer</summary>
-	/// <param name="val">ZG Value</param>
+	/// <param name="val">ZG Value as byte</param>
 	/// <returns>Success</returns>
 	double GiiMote::wm_set_calibration_zg(double val)
 	{

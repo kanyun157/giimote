@@ -4,53 +4,68 @@ namespace GiiMoteLib {
 	
 	/// <summary>Checks to see if the given IR dot is visible</summary>
 	/// <param name="dot_number">Dot 1-4</param>
-	/// <returns>Dot found as bool</returns>
+	/// <returns>Dot found as bool or -1 on error</returns>
 	double GiiMote::wm_ir_found_dot(double dot_number)
 	{
 		bool found_dot = 0;
-		switch ((int)dot_number)
+		try
 		{
-		case 1:
-			found_dot = this->wmState->IRState.Found1;
-			break;
-		case 2:
-			found_dot = this->wmState->IRState.Found2;
-			break;
-		case 3:
-			found_dot = this->wmState->IRState.Found3;
-			break;
-		case 4:
-			found_dot = this->wmState->IRState.Found4;
-			break;
-		default:
-			return ( -1 );
-			break;
+			switch ((int)dot_number)
+			{
+			case 1:
+				found_dot = this->wmState->IRState.Found1;
+				break;
+			case 2:
+				found_dot = this->wmState->IRState.Found2;
+				break;
+			case 3:
+				found_dot = this->wmState->IRState.Found3;
+				break;
+			case 4:
+				found_dot = this->wmState->IRState.Found4;
+				break;
+			default:
+				return ( -1 );
+				break;
+			}
 		}
-	return ( (double)found_dot );
+		catch(...)
+		{
+			return ( -1 );
+		}
+		return ( (double)found_dot );
 	}
 
 	/// <summary>Checks the size of the given IR dot</summary>
 	/// <param name="dot_number">Dot 1-4</param>
-	/// <returns>Dot size</returns>
+	/// <returns>Dot size from 0 to 15 or -1 on error</returns>
 	double GiiMote::wm_ir_dot_size(double dot_number)
 	{
-		int size = 0;
-		switch ((int)dot_number)
+		int size = -1;
+		try
 		{
-		case 1:
-			size = this->wmState->IRState.Size1;
-			break;
-		case 2:
-			size = this->wmState->IRState.Size2;
-			break;
-		case 3:
-			size = this->wmState->IRState.Size3;
-			break;
-		case 4:
-			size = this->wmState->IRState.Size4;
-			break;
-		default:
-			break;
+			switch ((int)dot_number)
+			{
+			case 1:
+				size = this->wmState->IRState.Size1;
+				break;
+			case 2:
+				size = this->wmState->IRState.Size2;
+				break;
+			case 3:
+				size = this->wmState->IRState.Size3;
+				break;
+			case 4:
+				size = this->wmState->IRState.Size4;
+				break;
+			default:
+				// Do nothing (return -1)
+				break;
+			}
+		}
+		catch(...)
+		{
+			// Do nothing (return -1)
 		}
 		return ( (double)size );
 	}
@@ -58,26 +73,34 @@ namespace GiiMoteLib {
 	/// <summary>Normalized X value of the given dot</summary>
 	/// <remarks>Domain: [0.0,1.0]</remarks>
 	/// <param name="dot_number">Dot 1-4</param>
-	/// <returns>X value of given dot as double from 0.0 to 1.0</returns>
+	/// <returns>X value of given dot from 0.0 to 1.0 or -1 on error</returns>
 	double GiiMote::wm_ir_dot_get_x(double dot_number)
 	{
 		float xx = -1.0;
-		switch ((int)dot_number)
+		try
 		{
-		case 1:
-			xx = this->wmState->IRState.X1;
-			break;
-		case 2:
-			xx = this->wmState->IRState.X2;
-			break;
-		case 3:
-			xx = this->wmState->IRState.X3;
-			break;
-		case 4:
-			xx = this->wmState->IRState.X4;
-			break;
-		default:
-			break;
+			switch ((int)dot_number)
+			{
+			case 1:
+				xx = this->wmState->IRState.X1;
+				break;
+			case 2:
+				xx = this->wmState->IRState.X2;
+				break;
+			case 3:
+				xx = this->wmState->IRState.X3;
+				break;
+			case 4:
+				xx = this->wmState->IRState.X4;
+				break;
+			default:
+				// Do nothing (return -1)
+				break;
+			}
+		}
+		catch(...)
+		{
+			// Do nothing (return -1)
 		}
 		return ( (double)xx );
 	}
@@ -85,26 +108,34 @@ namespace GiiMoteLib {
 	/// <summary>Normalized Y value of the given dot</summary>
 	/// <remarks>Domain: [0.0,1.0]</remarks>
 	/// <param name="dot_number">Dot 1-4</param>
-	/// <returns>Y value of given dot as double from 0.0 to 1.0</returns>
+	/// <returns>Y value of given dot from 0.0 to 1.0 or -1 on error</returns>
 	double GiiMote::wm_ir_dot_get_y(double dot_number)
 	{
 		float yy = -1.0;
-		switch ((int)dot_number)
+		try
 		{
-		case 1:
-			yy = this->wmState->IRState.Y1;
-			break;
-		case 2:
-			yy = this->wmState->IRState.Y2;
-			break;
-		case 3:
-			yy = this->wmState->IRState.Y3;
-			break;
-		case 4:
-			yy = this->wmState->IRState.Y4;
-			break;
-		default:
-			break;
+			switch ((int)dot_number)
+			{
+			case 1:
+				yy = this->wmState->IRState.Y1;
+				break;
+			case 2:
+				yy = this->wmState->IRState.Y2;
+				break;
+			case 3:
+				yy = this->wmState->IRState.Y3;
+				break;
+			case 4:
+				yy = this->wmState->IRState.Y4;
+				break;
+			default:
+				// Do nothing (return -1)
+				break;
+			}
+		}
+		catch(...)
+		{
+			// Do nothing (return -1)
 		}
 		return ( (double)yy );
 	}
@@ -112,26 +143,34 @@ namespace GiiMoteLib {
 	/// <summary>Raw X value of the given dot</summary>
 	/// <remarks>Domain: [0,1023]</remarks>
 	/// <param name="dot_number">Dot 1-4</param>
-	/// <returns>X value of the given dot from 0 to 1023</returns>
+	/// <returns>X value of the given dot from 0 to 1023 or -1 on error</returns>
 	double GiiMote::wm_ir_dot_get_rawx(double dot_number)
 	{
 		int xx = -1;
-		switch ((int)dot_number)
+		try
 		{
-		case 1:
-			xx = this->wmState->IRState.RawX1;
-			break;
-		case 2:
-			xx = this->wmState->IRState.RawX2;
-			break;
-		case 3:
-			xx = this->wmState->IRState.RawX3;
-			break;
-		case 4:
-			xx = this->wmState->IRState.RawX4;
-			break;
-		default:
-			break;
+			switch ((int)dot_number)
+			{
+			case 1:
+				xx = this->wmState->IRState.RawX1;
+				break;
+			case 2:
+				xx = this->wmState->IRState.RawX2;
+				break;
+			case 3:
+				xx = this->wmState->IRState.RawX3;
+				break;
+			case 4:
+				xx = this->wmState->IRState.RawX4;
+				break;
+			default:
+				// Do nothing (return -1)
+				break;
+			}
+		}
+		catch(...)
+		{
+			// Do nothing (return -1)
 		}
 		return ( (double)xx );
 	}
@@ -139,26 +178,34 @@ namespace GiiMoteLib {
 	/// <summary>Raw Y value of the given dot</summary>
 	/// <remarks>Domain: [0,1023]</remarks>
 	/// <param name="dot_number">Dot 1-4</param>
-	/// <returns>Y value of the given dot from 0 to 1023</returns>
+	/// <returns>Y value of the given dot from 0 to 1023 or -1 on error</returns>
 	double GiiMote::wm_ir_dot_get_rawy(double dot_number)
 	{
 		int yy = -1;
-		switch ((int)dot_number)
+		try
 		{
-		case 1:
-			yy = this->wmState->IRState.RawY1;
-			break;
-		case 2:
-			yy = this->wmState->IRState.RawY2;
-			break;
-		case 3:
-			yy = this->wmState->IRState.RawY3;
-			break;
-		case 4:
-			yy = this->wmState->IRState.RawY4;
-			break;
-		default:
-			break;
+			switch ((int)dot_number)
+			{
+			case 1:
+				yy = this->wmState->IRState.RawY1;
+				break;
+			case 2:
+				yy = this->wmState->IRState.RawY2;
+				break;
+			case 3:
+				yy = this->wmState->IRState.RawY3;
+				break;
+			case 4:
+				yy = this->wmState->IRState.RawY4;
+				break;
+			default:
+				// Do nothing (return -1)
+				break;
+			}
+		}
+		catch(...)
+		{
+			// Do nothing (return -1)
 		}
 		return ( (double)yy );
 	}
@@ -198,24 +245,31 @@ namespace GiiMoteLib {
 	/// <returns>Delta x</returns>
 	double GiiMote::wm_ir_dot_get_delta_x(double dot_number)
 	{
-		float result;
-		switch ((int)dot_number)
+		float result = -1.0;
+		try
 		{
-		case 1:
-			result = this->wmState->IRState.X1 - ir_last_x[0];
-			break;
-		case 2:
-			result = this->wmState->IRState.X2 - ir_last_x[1];
-			break;
-		case 3:
-			result = this->wmState->IRState.X3 - ir_last_x[2];
-			break;
-		case 4:
-			result = this->wmState->IRState.X4 - ir_last_x[3];
-			break;
-		default:
-			result = 0;
-			break;
+			switch ((int)dot_number)
+			{
+			case 1:
+				result = this->wmState->IRState.X1 - ir_last_x[0];
+				break;
+			case 2:
+				result = this->wmState->IRState.X2 - ir_last_x[1];
+				break;
+			case 3:
+				result = this->wmState->IRState.X3 - ir_last_x[2];
+				break;
+			case 4:
+				result = this->wmState->IRState.X4 - ir_last_x[3];
+				break;
+			default:
+				// Do nothing (return -1)
+				break;
+			}
+		}
+		catch(...)
+		{
+			// Do nothing (return -1)
 		}
 		return ( double(result) );
 	}
@@ -226,24 +280,31 @@ namespace GiiMoteLib {
 	/// <returns>Delta y</returns>
 	double GiiMote::wm_ir_dot_get_delta_y(double dot_number)
 	{
-		float result;
-		switch ((int)dot_number)
+		float result = -1.0;
+		try
 		{
-		case 1:
-			result = this->wmState->IRState.Y1 - ir_last_y[0];
-			break;
-		case 2:
-			result = this->wmState->IRState.Y2 - ir_last_y[1];
-			break;
-		case 3:
-			result = this->wmState->IRState.Y3 - ir_last_y[2];
-			break;
-		case 4:
-			result = this->wmState->IRState.Y4 - ir_last_y[3];
-			break;
-		default:
-			result = 0;
-			break;
+			switch ((int)dot_number)
+			{
+			case 1:
+				result = this->wmState->IRState.Y1 - ir_last_y[0];
+				break;
+			case 2:
+				result = this->wmState->IRState.Y2 - ir_last_y[1];
+				break;
+			case 3:
+				result = this->wmState->IRState.Y3 - ir_last_y[2];
+				break;
+			case 4:
+				result = this->wmState->IRState.Y4 - ir_last_y[3];
+				break;
+			default:
+				// Do nothing (return -1)
+				break;
+			}
+		}
+		catch(...)
+		{
+			// Do nothing (return -1)
 		}
 		return ( double(result) );
 	}
@@ -254,24 +315,31 @@ namespace GiiMoteLib {
 	/// <returns>Delta rawx</returns>
 	double GiiMote::wm_ir_dot_get_delta_rawx(double dot_number)
 	{
-		int result;
-		switch ((int)dot_number)
+		int result = -1;
+		try
 		{
-		case 1:
-			result = this->wmState->IRState.RawX1 - ir_last_rawx[0];
-			break;
-		case 2:
-			result = this->wmState->IRState.RawX2 - ir_last_rawx[1];
-			break;
-		case 3:
-			result = this->wmState->IRState.RawX3 - ir_last_rawx[2];
-			break;
-		case 4:
-			result = this->wmState->IRState.RawX4 - ir_last_rawx[3];
-			break;
-		default:
-			result = 0;
-			break;
+			switch ((int)dot_number)
+			{
+			case 1:
+				result = this->wmState->IRState.RawX1 - ir_last_rawx[0];
+				break;
+			case 2:
+				result = this->wmState->IRState.RawX2 - ir_last_rawx[1];
+				break;
+			case 3:
+				result = this->wmState->IRState.RawX3 - ir_last_rawx[2];
+				break;
+			case 4:
+				result = this->wmState->IRState.RawX4 - ir_last_rawx[3];
+				break;
+			default:
+				// Do nothing (return -1)
+				break;
+			}
+		}
+		catch(...)
+		{
+			// Do nothing (return -1)
 		}
 		return ( double(result) );
 	}
@@ -282,24 +350,31 @@ namespace GiiMoteLib {
 	/// <returns>Delta rawy</returns>
 	double GiiMote::wm_ir_dot_get_delta_rawy(double dot_number)
 	{
-		int result;
-		switch ((int)dot_number)
+		int result = -1;
+		try
 		{
-		case 1:
-			result = this->wmState->IRState.RawY1 - ir_last_rawy[0];
-			break;
-		case 2:
-			result = this->wmState->IRState.RawY2 - ir_last_rawy[1];
-			break;
-		case 3:
-			result = this->wmState->IRState.RawY3 - ir_last_rawy[2];
-			break;
-		case 4:
-			result = this->wmState->IRState.RawY4 - ir_last_rawy[3];
-			break;
-		default:
-			result = 0;
-			break;
+			switch ((int)dot_number)
+			{
+			case 1:
+				result = this->wmState->IRState.RawY1 - ir_last_rawy[0];
+				break;
+			case 2:
+				result = this->wmState->IRState.RawY2 - ir_last_rawy[1];
+				break;
+			case 3:
+				result = this->wmState->IRState.RawY3 - ir_last_rawy[2];
+				break;
+			case 4:
+				result = this->wmState->IRState.RawY4 - ir_last_rawy[3];
+				break;
+			default:
+				// Do nothing (return -1)
+				break;
+			}
+		}
+		catch(...)
+		{
+			// Do nothing (return -1)
 		}
 		return ( double(result) );
 	}

@@ -199,6 +199,8 @@ namespace GiiMoteLib {
 		/// <param name="args">Current extension status</param>
 		void wm_OnWiimoteExtensionChanged(System::Object^ sender, WiimoteExtensionChangedEventArgs^ args)
 		{
+			// When an extension is plugged in or unplugged all reporting stops
+			// until we update the report type
 			wm_set_report_type(this->report_type, this->continuous);
 		}
 
@@ -282,7 +284,7 @@ public:
 		double wm_disconnect();
 		double wm_set_report_type(double report_type, double continuous);
 		double wm_get_report_type();
-		double wm_get_report_interval();
+		double wm_get_report_continuous();
 
 		// LED Functions
 		double wm_get_led(double led_num);
@@ -297,6 +299,7 @@ public:
 		double wm_get_rumble();
 
 		// Orientation
+		double wm_get_moving();
 		double wm_get_roll();
 		double wm_get_pitch();
 		double wm_get_yaw();
