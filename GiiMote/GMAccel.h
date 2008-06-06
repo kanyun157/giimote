@@ -31,21 +31,21 @@ namespace GiiMoteLib {
 	/// <returns>Normalized acceleration</returns>
 	double GiiMote::wm_get_accel_x()
 	{
-		return ( wm_calc_accel(this->wmState->AccelState.X, 0) );
+		return ( wm_calc_accel(this->wmState->AccelState.Values.X, 0) );
 	}
 	/// <summary>Normalized accelerometer data</summary>
 	/// <remarks>Force in G's</remarks>
 	/// <returns>Normalized acceleration</returns>
 	double GiiMote::wm_get_accel_y()
 	{
-		return ( wm_calc_accel(this->wmState->AccelState.Y, 1) );
+		return ( wm_calc_accel(this->wmState->AccelState.Values.Y, 1) );
 	}
 	/// <summary>Normalized accelerometer data</summary>
 	/// <remarks>Force in G's</remarks>
 	/// <returns>Normalized acceleration</returns>
 	double GiiMote::wm_get_accel_z()
 	{
-		return ( wm_calc_accel(this->wmState->AccelState.Z, 2) );
+		return ( wm_calc_accel(this->wmState->AccelState.Values.Z, 2) );
 	}
 	// Raw Data
 	/// <summary>Raw accelerometer data</summary>
@@ -53,21 +53,21 @@ namespace GiiMoteLib {
 	/// <returns>Raw acceleration</returns>
 	double GiiMote::wm_get_accel_rawx()
 	{
-		return ( (double)this->wmState->AccelState.RawX );
+		return ( (double)this->wmState->AccelState.RawValues.X );
 	}
 	/// <summary>Raw accelerometer data</summary>
 	/// <remarks>Domain: [0,255]</remarks>
 	/// <returns>Raw acceleration</returns>
 	double GiiMote::wm_get_accel_rawy()
 	{
-		return ( (double)this->wmState->AccelState.RawY );
+		return ( (double)this->wmState->AccelState.RawValues.Y );
 	}
 	/// <summary>Raw accelerometer data</summary>
 	/// <remarks>Domain: [0,255]</remarks>
 	/// <returns>Raw acceleration</returns>
 	double GiiMote::wm_get_accel_rawz()
 	{
-		return ( (double)this->wmState->AccelState.RawZ );
+		return ( (double)this->wmState->AccelState.RawValues.Z );
 	}
 	/// <summary>Sets the dead-zone value</summary>
 	/// <remarks>Domain: [0,Infinity]</remarks>
@@ -114,99 +114,5 @@ namespace GiiMoteLib {
 	{
 		return ( accel_dead_zone[2] );
 	}
-	/////////////////////////
-	// Nunchuck
-	/////////////////////////
-	// Normalized Data
-	/// <summary>Normalized accelerometer data</summary>
-	/// <remarks>Domain: [0,?)</remarks>
-	/// <returns>Normalized acceleration</returns>
-	double GiiMote::wm_nunchuck_get_accel_x()
-	{
-		return ( wm_calc_accel(this->wmState->AccelState.X, 3) );
-	}
-	/// <summary>Normalized accelerometer data</summary>
-	/// <remarks>Domain: [0,?)</remarks>
-	/// <returns>Normalized acceleration</returns>
-	double GiiMote::wm_nunchuck_get_accel_y()
-	{
-		return ( wm_calc_accel(this->wmState->NunchukState.AccelState.Y, 4) );
-	}
-	/// <summary>Normalized accelerometer data</summary>
-	/// <remarks>Domain: [0,?)</remarks>
-	/// <returns>Normalized acceleration</returns>
-	double GiiMote::wm_nunchuck_get_accel_z()
-	{
-		return ( wm_calc_accel(this->wmState->NunchukState.AccelState.Z, 5) );
-	}
-	// Raw Data
-	/// <summary>Raw accelerometer data</summary>
-	/// <remarks>Domain: [0,255]</remarks>
-	/// <returns>Raw acceleration</returns>
-	double GiiMote::wm_nunchuck_get_accel_rawx()
-	{
-		return ( (double)this->wmState->NunchukState.AccelState.RawX );
-	}
-	/// <summary>Raw accelerometer data</summary>
-	/// <remarks>Domain: [0,255]</remarks>
-	/// <returns>Raw acceleration</returns>
-	double GiiMote::wm_nunchuck_get_accel_rawy()
-	{
-		return ( (double)this->wmState->NunchukState.AccelState.RawY );
-	}
-	/// <summary>Raw accelerometer data</summary>
-	/// <remarks>Domain: [0,255]</remarks>
-	/// <returns>Raw acceleration</returns>
-	double GiiMote::wm_nunchuck_get_accel_rawz()
-	{
-		return ( (double)this->wmState->NunchukState.AccelState.RawZ );
-	}
-	/// <summary>Sets the dead-zone value</summary>
-	/// <remarks>Domain: [0,Infinity]</remarks>
-	/// <param name="val">The dead-zone value</param>
-	/// <returns>1</returns>
-	double GiiMote::wm_nunchuck_set_accel_dead_zone_x(double val)
-	{
-		accel_dead_zone[3] = in_domain(val, 0, -1);
-		return ( 1 );
-	}
-	/// <summary>Sets the dead-zone value</summary>
-	/// <remarks>Domain: [0,Infinity]</remarks>
-	/// <param name="val">The dead-zone value</param>
-	/// <returns>1</returns>
-	double GiiMote::wm_nunchuck_set_accel_dead_zone_y(double val)
-	{
-		accel_dead_zone[4] = in_domain(val, 0, -1);
-		return ( 1 );
-	}
-	/// <summary>Sets the dead-zone value</summary>
-	/// <remarks>Domain: [0,Infinity]</remarks>
-	/// <param name="val">The dead-zone value</param>
-	/// <returns>1</returns>
-	double GiiMote::wm_nunchuck_set_accel_dead_zone_z(double val)
-	{
-		accel_dead_zone[5] = in_domain(val, 0, -1);
-		return ( 1 );
-	}
-	/// <summary>Gets the dead-zone value</summary>
-	/// <returns>X-axis dead zone</returns>
-	double GiiMote::wm_nunchuck_get_accel_dead_zone_x()
-	{
-		return ( accel_dead_zone[3] );
-	}
-	/// <summary>Gets the dead-zone value</summary>
-	/// <returns>Y-axis dead zone</returns>
-	double GiiMote::wm_nunchuck_get_accel_dead_zone_y()
-	{
-		return ( accel_dead_zone[4] );
-	}
-	/// <summary>Gets the dead-zone value</summary>
-	/// <returns>Z-axis dead zone</returns>
-	double GiiMote::wm_nunchuck_get_accel_dead_zone_z()
-	{
-		return ( accel_dead_zone[5] );
-	}
-
-
 
 } // namespace GiiMoteLib

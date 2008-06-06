@@ -1,10 +1,259 @@
 // Nunchuck.h - Contains functions that deal with the Nunchuck.
-//				For functions having to do with the six-axis accelerometer
-//				see "GMAccel.h". For joystick functions, see "Joystick.h".
-//				For button checking, see "GMButtons.h".
 
 namespace GiiMoteLib {
-	
+
+	// Normalized Data
+	/// <summary>Normalized accelerometer data</summary>
+	/// <remarks>Domain: [0,?)</remarks>
+	/// <returns>Normalized acceleration</returns>
+	double GiiMote::wm_nunchuck_get_accel_x()
+	{
+		return ( wm_calc_accel(this->wmState->AccelState.Values.X, 3) );
+	}
+
+	/// <summary>Normalized accelerometer data</summary>
+	/// <remarks>Domain: [0,?)</remarks>
+	/// <returns>Normalized acceleration</returns>
+	double GiiMote::wm_nunchuck_get_accel_y()
+	{
+		return ( wm_calc_accel(this->wmState->NunchukState.AccelState.Values.Y, 4) );
+	}
+
+	/// <summary>Normalized accelerometer data</summary>
+	/// <remarks>Domain: [0,?)</remarks>
+	/// <returns>Normalized acceleration</returns>
+	double GiiMote::wm_nunchuck_get_accel_z()
+	{
+		return ( wm_calc_accel(this->wmState->NunchukState.AccelState.Values.Z, 5) );
+	}
+
+	// Raw Data
+	/// <summary>Raw accelerometer data</summary>
+	/// <remarks>Domain: [0,255]</remarks>
+	/// <returns>Raw acceleration</returns>
+	double GiiMote::wm_nunchuck_get_accel_rawx()
+	{
+		return ( (double)this->wmState->NunchukState.AccelState.RawValues.X );
+	}
+
+	/// <summary>Raw accelerometer data</summary>
+	/// <remarks>Domain: [0,255]</remarks>
+	/// <returns>Raw acceleration</returns>
+	double GiiMote::wm_nunchuck_get_accel_rawy()
+	{
+		return ( (double)this->wmState->NunchukState.AccelState.RawValues.Y );
+	}
+
+	/// <summary>Raw accelerometer data</summary>
+	/// <remarks>Domain: [0,255]</remarks>
+	/// <returns>Raw acceleration</returns>
+	double GiiMote::wm_nunchuck_get_accel_rawz()
+	{
+		return ( (double)this->wmState->NunchukState.AccelState.RawValues.Z );
+	}
+
+	/// <summary>Sets the dead-zone value</summary>
+	/// <remarks>Domain: [0,Infinity]</remarks>
+	/// <param name="val">The dead-zone value</param>
+	/// <returns>1</returns>
+	double GiiMote::wm_nunchuck_set_accel_dead_zone_x(double val)
+	{
+		accel_dead_zone[3] = in_domain(val, 0, -1);
+		return ( 1 );
+	}
+
+	/// <summary>Sets the dead-zone value</summary>
+	/// <remarks>Domain: [0,Infinity]</remarks>
+	/// <param name="val">The dead-zone value</param>
+	/// <returns>1</returns>
+	double GiiMote::wm_nunchuck_set_accel_dead_zone_y(double val)
+	{
+		accel_dead_zone[4] = in_domain(val, 0, -1);
+		return ( 1 );
+	}
+
+	/// <summary>Sets the dead-zone value</summary>
+	/// <remarks>Domain: [0,Infinity]</remarks>
+	/// <param name="val">The dead-zone value</param>
+	/// <returns>1</returns>
+	double GiiMote::wm_nunchuck_set_accel_dead_zone_z(double val)
+	{
+		accel_dead_zone[5] = in_domain(val, 0, -1);
+		return ( 1 );
+	}
+
+	/// <summary>Gets the dead-zone value</summary>
+	/// <returns>X-axis dead zone</returns>
+	double GiiMote::wm_nunchuck_get_accel_dead_zone_x()
+	{
+		return ( accel_dead_zone[3] );
+	}
+
+	/// <summary>Gets the dead-zone value</summary>
+	/// <returns>Y-axis dead zone</returns>
+	double GiiMote::wm_nunchuck_get_accel_dead_zone_y()
+	{
+		return ( accel_dead_zone[4] );
+	}
+
+	/// <summary>Gets the dead-zone value</summary>
+	/// <returns>Z-axis dead zone</returns>
+	double GiiMote::wm_nunchuck_get_accel_dead_zone_z()
+	{
+		return ( accel_dead_zone[5] );
+	}
+
+	/// <summary>
+	/// Checks the state of a button
+	/// </summary>
+	/// <param name="key_code">
+	/// The button to check
+	/// <list type="bullet">
+	///     <listheader>
+	///         <term>Key Code</term>
+	///         <description>Button</description>
+	///     </listheader>
+	///     <item>
+	///			<term>btnC</term>
+	///         <description>C Button</description>
+	///     </item>
+	///     <item>
+	///			<term>btnZ</term>
+	///         <description>Z Button</description>
+	///     </item>
+	/// </list>
+	/// </param>
+	/// <returns>Button pressed</returns>
+	double GiiMote::wm_nunchuck_check_button(double key_code)
+	{
+		bool is_pressed = 0;
+		switch ((int)key_code)
+		{
+		case btnC:
+			is_pressed = this->wmState->NunchukState.C;
+			break;
+		case btnZ:
+			is_pressed = this->wmState->NunchukState.Z;
+			break;
+		default:
+			is_pressed = false;
+			break;
+		}
+		
+		return ((double)is_pressed);
+	}
+
+	// Normalized Functions
+	/// <summary>Normalized joystick position</summary>
+	/// <remarks>Domain: [-0.5,0.5]</remarks>
+	/// <returns>The normalized X-position of the joystick</returns>
+	double GiiMote::wm_nunchuck_xpos()
+	{
+		double xx;
+		try
+		{
+			xx = (double)this->wmState->NunchukState.Joystick.X;
+		}
+		catch(...)
+		{
+			return ( -1 );
+		}
+		if ( System::Math::Abs(xx) < (this->joystick_dead_zone) )
+		{
+			xx = 0;
+		}
+		return ( xx );
+	}
+
+	/// <summary>Normalized joystick position</summary>
+	/// <remarks>Domain: [-0.5,0.5]</remarks>
+	/// <returns>The normalized Y-position of the joystick</returns>
+	double GiiMote::wm_nunchuck_ypos()
+	{
+		double yy;
+		try
+		{
+			yy = (double)this->wmState->NunchukState.Joystick.Y;
+		}
+		catch(...)
+		{
+			return ( -1 );
+		}
+		if ( System::Math::Abs(yy) < (this->joystick_dead_zone) )
+		{
+			yy = 0;
+		}	
+		return ( yy );
+	}
+
+	/// <summary>Joystick direction</summary>
+	/// <returns>The direction of the joystick in degrees</returns>
+	double GiiMote::wm_nunchuck_direction()
+	{
+		double xx = wm_nunchuck_xpos();
+		double yy = wm_nunchuck_ypos();
+		if (xx == -1 || yy == -1)
+		{
+			return ( -1 );
+		}
+		else
+		{
+			return ( joystick_direction(xx,yy) );
+		}
+	}
+
+	/// <summary>Joystick pressure</summary>
+	/// <returns>The pressure on the joystick</returns>
+	double GiiMote::wm_nunchuck_pressure()
+	{
+		double xx = wm_nunchuck_xpos();
+		double yy = wm_nunchuck_ypos();
+		if (xx == -1 || yy == -1)
+		{
+			return ( -1 );
+		}
+		else
+		{
+			return ( joystick_pressure(xx,yy) );
+		}
+	}
+
+	// Raw Functions
+	/// <summary>Raw joystick X-position</summary>
+	/// <remarks>Domain: [0,255]</remarks>
+	/// <returns>Raw joystick X-position</returns>
+	double GiiMote::wm_nunchuck_rawx()
+	{
+		double rawX;
+		try
+		{
+			rawX = (double)this->wmState->NunchukState.RawJoystick.X;
+		}
+		catch(...)
+		{
+			return ( -1 );
+		}
+
+		return ( rawX );
+	}
+	/// <summary>Raw joystick Y-position</summary>
+	/// <remarks>Domain: [0,255]</remarks>
+	/// <returns>Raw joystick Y-position</returns>
+	double GiiMote::wm_nunchuck_rawy()
+	{
+		double rawY;
+		try
+		{
+			rawY = (double)this->wmState->NunchukState.RawJoystick.Y;
+		}
+		catch(...)
+		{
+			return ( -1 );
+		}
+
+		return ( rawY );
+	}
+
 	// Calibration Reading Functions
 	/// <summary>
 	/// Gets the zero point of the accelerometer

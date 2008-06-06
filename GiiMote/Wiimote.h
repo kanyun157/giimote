@@ -12,7 +12,9 @@ namespace GiiMoteLib {
 	{
 		try
 		{
-			wm->GetStatus();
+			/// TODO: Fix this to read from a valid address.
+#pragma message("Fix this to read from a valid address.")
+			this->wm->ReadData(0x0008,1);
 		}
 		catch(...)
 		{
@@ -53,8 +55,8 @@ namespace GiiMoteLib {
 		{
 			try
 			{
-				this->wm->WiimoteChanged += (gcnew WiimoteChangedEventHandler(this,&GiiMote::wm_OnWiimoteChanged));
-				this->wm->WiimoteExtensionChanged += (gcnew WiimoteExtensionChangedEventHandler(this,&GiiMote::wm_OnWiimoteExtensionChanged));
+				this->wm->WiimoteChanged += (gcnew System::EventHandler<WiimoteChangedEventArgs^>(this,&GiiMote::wm_OnWiimoteChanged));
+				this->wm->WiimoteExtensionChanged += (gcnew System::EventHandler<WiimoteExtensionChangedEventArgs^>(this,&GiiMote::wm_OnWiimoteExtensionChanged));
 				this->wm->Connect();
 				wm_set_report_type(this->report_type, this->continuous);
 			}
@@ -126,33 +128,6 @@ namespace GiiMoteLib {
 		return ( 1 );
 	}
 
-	/// <summary>Manually set the bluetooth write method</summary>
-	/// <remarks>Has no effect if called after connection</remarks>
-	/// <param name="alt_write_method">Use alternate write method</param>
-	/// <returns>Success</returns>
-	double GiiMote::wm_set_write_method(double alt_write_method)
-	{
-		try
-		{
-			switch ((int)alt_write_method)
-			{
-			case 0:
-				this->wm->AltWriteMethod = 0;
-				break;
-			case 1:
-				this->wm->AltWriteMethod = 1;
-				break;
-			default:
-				throw ( 0 );
-				break;
-			}
-		}
-		catch (...)
-		{
-			return ( 0 );
-		}
-		return ( 1 );
-	}
 	/// <summary>Disconnect from the Wii Remote</summary>
 	/// <returns>Success</returns>
 	double GiiMote::wm_disconnect()
@@ -230,37 +205,37 @@ namespace GiiMoteLib {
 				switch ( int(report_type) )
 				{
 				case rtButtons:
-					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::Buttons, bool(continuous));
+					this->wm->SetReportType(WiimoteLib::InputReport::Buttons, this->ir_sensitivity, bool(continuous));
 					break;
 				case rtButtonsAccel:
-					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::ButtonsAccel, bool(continuous));
+					this->wm->SetReportType(WiimoteLib::InputReport::ButtonsAccel, this->ir_sensitivity, bool(continuous));
 					break;
 				case rtButtonsExtension:
-					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::ButtonsExtension, bool(continuous));
+					this->wm->SetReportType(WiimoteLib::InputReport::ButtonsExtension, this->ir_sensitivity, bool(continuous));
 					break;
 				case rtExtensionAccel:
-					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::ExtensionAccel, bool(continuous));
+					this->wm->SetReportType(WiimoteLib::InputReport::ExtensionAccel, this->ir_sensitivity, bool(continuous));
 					break;
 				case rtIRAccel:
-					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::IRAccel, bool(continuous));
+					this->wm->SetReportType(WiimoteLib::InputReport::IRAccel, this->ir_sensitivity, bool(continuous));
 					break;
 				case rtIRExtensionAccel:
-					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::IRExtensionAccel, bool(continuous));
+					this->wm->SetReportType(WiimoteLib::InputReport::IRExtensionAccel, this->ir_sensitivity, bool(continuous));
 					break;
 				case rtReadData:
-					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::ReadData, bool(continuous));
+					this->wm->SetReportType(WiimoteLib::InputReport::ReadData, this->ir_sensitivity, bool(continuous));
 					break;
 				case rtStatus:
-					this->wm->SetReportType(WiimoteLib::Wiimote::InputReport::Status, bool(continuous));
+					this->wm->SetReportType(WiimoteLib::InputReport::Status, this->ir_sensitivity, bool(continuous));
 					break;
 				case rtAuto:
 					if (this->wm->WiimoteState->Extension)
 					{
-						this->wm->SetReportType(Wiimote::InputReport::IRExtensionAccel, bool(continuous));
+						this->wm->SetReportType(WiimoteLib::InputReport::IRExtensionAccel, this->ir_sensitivity, bool(continuous));
 					}
 					else
 					{
-						this->wm->SetReportType(Wiimote::InputReport::IRAccel, bool(continuous));
+						this->wm->SetReportType(WiimoteLib::InputReport::IRAccel, this->ir_sensitivity, bool(continuous));
 					}
 					break;
 				default:
@@ -489,6 +464,10 @@ namespace GiiMoteLib {
 	///         <description>extNunchuck</description>
 	///     </item>
 	///     <item>
+	///         <term>3</term>
+	///         <description>extGuitar</description>
+	///     </item>
+	///     <item>
 	///         <term>0</term>
 	///         <description>extNone</description>
 	///     </item>
@@ -514,6 +493,9 @@ namespace GiiMoteLib {
 				break;
 			case (WiimoteLib::ExtensionType::Nunchuk):
 				extension_type = extNunchuck;
+				break;
+			case (WiimoteLib::ExtensionType::Guitar):
+				extension_type = extGuitar;
 				break;
 			case (WiimoteLib::ExtensionType::None):
 				extension_type = extNone;

@@ -15,7 +15,7 @@ namespace GiiMoteLib {
 	{
 		try
 		{
-			if ( Math::Abs(this->wmState->AccelState.X + this->wmState->AccelState.Y + this->wmState->AccelState.Z) > 1.5 )
+			if ( Math::Abs( this->wmState->AccelState.Values.X + this->wmState->AccelState.Values.Y + this->wmState->AccelState.Values.Z ) > 1.5 )
 			{
 				return ( 1 );
 			}
@@ -40,7 +40,7 @@ namespace GiiMoteLib {
 		{
 			if ( !wm_get_moving() )
 			{
-				roll = -Math::Atan2(double(this->wmState->AccelState.X), Math::Sqrt( Math::Pow(double(this->wmState->AccelState.Y), 2) + Math::Pow(double(this->wmState->AccelState.Z), 2)) ) - Math::PI/2;
+				roll = -Math::Atan2(double(this->wmState->AccelState.Values.X), Math::Sqrt( Math::Pow(double(this->wmState->AccelState.Values.Y), 2) + Math::Pow(double(this->wmState->AccelState.Values.Z), 2)) ) - Math::PI/2;
 			}
 			else
 			{
@@ -50,9 +50,9 @@ namespace GiiMoteLib {
 		catch(...)
 		{
 			// If the Wii Remote is accelerating, use the IR.
-			if (this->wmState->IRState.Found1 && this->wmState->IRState.Found2)
+			if (this->wmState->IRState.IRSensors[0].Found && this->wmState->IRState.IRSensors[1].Found)
 			{
-				Math::Atan2(this->wmState->IRState.Y2 - this->wmState->IRState.Y1, this->wmState->IRState.X2 - this->wmState->IRState.X1);
+				Math::Atan2(this->wmState->IRState.IRSensors[1].Position.Y - this->wmState->IRState.IRSensors[0].Position.Y, this->wmState->IRState.IRSensors[1].Position.X - this->wmState->IRState.IRSensors[0].Position.X);
 			}
 			else
 			{
@@ -72,7 +72,7 @@ namespace GiiMoteLib {
 		{
 			if ( !wm_get_moving() )
 			{
-				pitch = -Math::Atan2( double(wmState->AccelState.Y), Math::Sqrt( Math::Pow(double(wmState->AccelState.X), 2) + Math::Pow(double(wmState->AccelState.Z), 2)) );
+				pitch = -Math::Atan2( double(wmState->AccelState.Values.Y), Math::Sqrt( Math::Pow(double(wmState->AccelState.Values.X), 2) + Math::Pow(double(wmState->AccelState.Values.Z), 2)) );
 			}
 			else
 			{
@@ -95,10 +95,10 @@ namespace GiiMoteLib {
 
 		try
 		{
-			if (this->wmState->IRState.Found1 && this->wmState->IRState.Found2)
+			if (this->wmState->IRState.IRSensors[0].Found && this->wmState->IRState.IRSensors[1].Found)
 			{
-				double ax = ((double)this->wmState->IRState.RawX1 + (double)this->wmState->IRState.RawX2) / 2;
-				double z = 1023 - Math::Sqrt(Math::Pow((double)this->wmState->IRState.RawX2 - (double)this->wmState->IRState.RawX2, 2) + Math::Pow((double)this->wmState->IRState.RawY2 - (double)this->wmState->IRState.RawY2, 2));
+				double ax = ((double)Math::Abs(this->wmState->IRState.IRSensors[0].RawPosition.X) + (double)Math::Abs(this->wmState->IRState.IRSensors[1].RawPosition.X)) / 2;
+				double z = 1023 - Math::Sqrt(Math::Pow((double)this->wmState->IRState.IRSensors[1].RawPosition.X - (double)Math::Abs(this->wmState->IRState.IRSensors[1].RawPosition.X), 2) + Math::Pow((double)Math::Abs(this->wmState->IRState.IRSensors[0].RawPosition.Y) - (double)Math::Abs(this->wmState->IRState.IRSensors[1].RawPosition.Y), 2));
 				yaw = Math::Atan2((ax - 512) * (z / 1024), z);
 				// yaw = Math::Atan2(512 - this->wmState->IRState.RawX1, 600);
 			}
@@ -115,10 +115,10 @@ namespace GiiMoteLib {
 	/// <returns>Distance in meters</returns>
 	double GiiMote::wm_get_altitude()
 	{
-		if (this->wmState->IRState.Found1 && this->wmState->IRState.Found2)
+		if (this->wmState->IRState.IRSensors[0].Found && this->wmState->IRState.IRSensors[1].Found)
 		{
 			// return ( ( -54 * Math::Abs(this->wmState->IRState.X2 - this->wmState->IRState.X1) + 77 ) * 100 );
-			return ( 264 / Math::Abs(this->wmState->IRState.RawX1 - this->wmState->IRState.RawX2) );
+			return ( 264 / Math::Abs(this->wmState->IRState.IRSensors[0].RawPosition.X - this->wmState->IRState.IRSensors[1].RawPosition.X) );
 		}
 		else
 		{

@@ -9,6 +9,7 @@
 
 #define extClassic 1
 #define extNunchuck 2
+#define extGuitar 3
 #define extNone 0
 #define extUnknown -1
 
@@ -39,6 +40,15 @@
 // Nunchuck Specific
 #define btnC 19
 #define btnZ 20
+
+// Guitar Specific
+#define btnBlue 21
+#define btnGreen 22
+#define btnOrange 23
+#define btnRed 24
+#define btnYellow 25
+#define btnStrumDown 26
+#define btnStrumUp 27
 
 // Report Types
 #define rtAuto 0
@@ -71,10 +81,8 @@ namespace GiiMoteLib {
 		/// <summary>The width of the current display</summary>
 		int display_width;
 
-		/// <summary>The X position on the screen the Wii Remote is pointing at</summary>
-		int ir_screen_x;
-		/// <summary>The Y position on the screen the Wii Remote is pointing at</summary>
-		int ir_screen_y;
+		/// <summary>The position on the screen the Wii Remote is pointing at</summary>
+		System::Drawing::Point ir_screen_pos;
 		
 		// Dead Zone's
 		/// <summary>Joystick dead-zone value</summary>
@@ -120,23 +128,17 @@ namespace GiiMoteLib {
 		int report_type;
 		/// <summary>Report continuously or on update?</summary>
 		bool continuous;
+		/// <summary>The IR camera's sensitivity</summary>
+		IRSensitivity ir_sensitivity;
 
-		/// <summary>The change in an infrared point's x value</summary>
-		cli::array<float>^ ir_last_x;
-		/// <summary>The change in an infrared point's y value</summary>
-		cli::array<float>^ ir_last_y;
-		/// <summary>The change in an infrared point's raw x value</summary>
-		cli::array<int>^ ir_last_rawx;
-		/// <summary>The change in an infrared point's raw y value</summary>
-		cli::array<int>^ ir_last_rawy;
-		/// <summary>The change in the infrared midpoint's x value</summary>
-		float ir_last_midx;
-		/// <summary>The change in the infrared midpoint's y value</summary>
-		float ir_last_midy;
-		/// <summary>The change in the infrared midpoint's raw x value</summary>
-		int ir_last_rawmidx;
-		/// <summary>The change in the infrared midpoint's raw y value</summary>
-		int ir_last_rawmidy;
+		/// <summary>The change in an infrared point's coordinates</summary>
+		cli::array<System::Drawing::PointF^>^ ir_last_pos;
+		/// <summary>The change in an infrared point's raw coordinates</summary>
+		cli::array<System::Drawing::Point^>^ ir_last_raw_pos;
+		/// <summary>The change in the infrared midpoint's coordinates</summary>
+		System::Drawing::PointF^ ir_last_mid_pos;
+		/// <summary>The change in the infrared midpoint's raw coordinates</summary>
+		System::Drawing::Point^ ir_last_rawmid_pos;
 
 		 //////////////////
 		// Constructors //
@@ -148,14 +150,10 @@ namespace GiiMoteLib {
 		{
 			this->wm = gcnew Wiimote;
 
-			ir_last_x = gcnew cli::array<float>(4);
-			ir_last_y = gcnew cli::array<float>(4);
-			ir_last_rawx = gcnew cli::array<int>(4);
-			ir_last_rawy = gcnew cli::array<int>(4);
-			ir_last_midx = 0;
-			ir_last_midy = 0;
-			ir_last_rawmidx = 0;
-			ir_last_rawmidy = 0;
+			ir_last_pos = gcnew cli::array<System::Drawing::PointF^>(4);
+			ir_last_raw_pos = gcnew cli::array<System::Drawing::Point^>(4);
+			ir_last_mid_pos = System::Drawing::PointF(0.0, 0.0);
+			ir_last_rawmid_pos = System::Drawing::Point(0, 0);
 
 			// Default dead-zones to 0
 			this->accel_dead_zone->Resize(this->accel_dead_zone, 6);
@@ -170,12 +168,15 @@ namespace GiiMoteLib {
 			this->display_width	 = System::Windows::Forms::Screen::PrimaryScreen->Bounds.Width;
 
 			// Set the current X and Y position on the display to 0
-			this->ir_screen_x = this->ir_screen_y = 0;
+			this->ir_screen_pos.X = 0;
+			this->ir_screen_pos.Y = 0;
 
 			// Default the report type to rt_auto
 			this->report_type = rtAuto;
 			// Default to continuous reporting
 			this->continuous = 1;
+			// Default to level 3 sensitivity
+			this->ir_sensitivity = IRSensitivity::WiiLevel3;
 		}
 		/// <summary>Default destructor</summary>
 		/// <remarks>
@@ -187,10 +188,8 @@ namespace GiiMoteLib {
 		~GiiMote()
 		{
 			wm_disconnect();
-			delete ir_last_x;
-			delete ir_last_y;
-			delete ir_last_rawx;
-			delete ir_last_rawy;
+			delete ir_last_pos;
+			delete ir_last_raw_pos;
 			delete (wm);
 		}
 
@@ -211,24 +210,24 @@ namespace GiiMoteLib {
 		{
 			this->wmState = args->WiimoteState;
 
-			if (this->wmState->IRState.Found1 && this->wmState->IRState.Found2)
+			if (this->wmState->IRState.IRSensors[0].Found && this->wmState->IRState.IRSensors[1].Found)
 			{
-				this->ir_screen_x = display_width - (int)domain_rescale(this->wmState->IRState.RawMidX, 0, 1023, 0, display_width);
-				this->ir_screen_y = (int)domain_rescale(this->wmState->IRState.RawMidY, 0, 767, 0, display_height);
+				this->ir_screen_pos.X = display_width - (int)domain_rescale(this->wmState->IRState.RawMidpoint.X, 0, 1023, 0, display_width);
+				this->ir_screen_pos.Y = (int)domain_rescale(this->wmState->IRState.RawMidpoint.Y, 0, 767, 0, display_height);
 			}
 			else
 			{
-				if (this->wmState->IRState.Found1)
+				if (this->wmState->IRState.IRSensors[0].Found)
 				{
-					this->ir_screen_x -= (int)domain_rescale(wm_ir_dot_get_delta_rawx(1), 0, 1023, 0, display_width);
-					this->ir_screen_y -= (int)domain_rescale(wm_ir_dot_get_delta_rawy(1), 0, 767, 0, display_height);
+					this->ir_screen_pos.X -= (int)domain_rescale(wm_ir_dot_get_delta_rawx(1), 0, 1023, 0, display_width);
+					this->ir_screen_pos.Y -= (int)domain_rescale(wm_ir_dot_get_delta_rawy(1), 0, 767, 0, display_height);
 				}
 				else
 				{
-					if (this->wmState->IRState.Found2)
+					if (this->wmState->IRState.IRSensors[1].Found)
 					{
-						this->ir_screen_x -= (int)domain_rescale(wm_ir_dot_get_delta_rawx(2), 0, 1023, 0, display_width);
-						this->ir_screen_y -= (int)domain_rescale(wm_ir_dot_get_delta_rawy(2), 0, 767, 0, display_height);
+						this->ir_screen_pos.X -= (int)domain_rescale(wm_ir_dot_get_delta_rawx(2), 0, 1023, 0, display_width);
+						this->ir_screen_pos.Y -= (int)domain_rescale(wm_ir_dot_get_delta_rawy(2), 0, 767, 0, display_height);
 					}
 					else
 					{
@@ -239,37 +238,24 @@ namespace GiiMoteLib {
 						// position. However, if the IR is not visible that most likely
 						// means we are not facing the screen anyways, and integrating the acceleration
 						// is not very accurate.
-						this->ir_screen_x = -1;
-						this->ir_screen_y = -1;
+						this->ir_screen_pos.X = -1;
+						this->ir_screen_pos.Y = -1;
 					}
 				}
 			}
 
-			ir_last_x[0] = this->wmState->IRState.X1;
-			ir_last_x[1] = this->wmState->IRState.X2;
-			ir_last_x[2] = this->wmState->IRState.X3;
-			ir_last_x[3] = this->wmState->IRState.X4;
+			for(int i = 0; i < 4; i++)
+			{
+				ir_last_pos[i]->X = this->wmState->IRState.IRSensors[i].Position.X;
+				ir_last_pos[i]->Y = this->wmState->IRState.IRSensors[i].Position.Y;
+				ir_last_raw_pos[i]->X = this->wmState->IRState.IRSensors[i].RawPosition.X;
+				ir_last_raw_pos[i]->Y = this->wmState->IRState.IRSensors[i].RawPosition.Y;
+			}
 
-			ir_last_y[0] = this->wmState->IRState.Y1;
-			ir_last_y[1] = this->wmState->IRState.Y2;
-			ir_last_y[2] = this->wmState->IRState.Y3;
-			ir_last_y[3] = this->wmState->IRState.Y4;
-
-
-			ir_last_rawx[0] = this->wmState->IRState.RawX1;
-			ir_last_rawx[1] = this->wmState->IRState.RawX2;
-			ir_last_rawx[2] = this->wmState->IRState.RawX3;
-			ir_last_rawx[3] = this->wmState->IRState.RawX4;
-
-			ir_last_rawy[0] = this->wmState->IRState.RawY1;
-			ir_last_rawy[1] = this->wmState->IRState.RawY2;
-			ir_last_rawy[2] = this->wmState->IRState.RawY3;
-			ir_last_rawy[3] = this->wmState->IRState.RawY4;
-
-			ir_last_midx = this->wmState->IRState.MidX;
-			ir_last_midy = this->wmState->IRState.MidX;
-			ir_last_rawmidx = this->wmState->IRState.RawMidX;
-			ir_last_rawmidy = this->wmState->IRState.RawMidX;
+			ir_last_mid_pos->X = this->wmState->IRState.Midpoint.X;
+			ir_last_mid_pos->Y = this->wmState->IRState.Midpoint.Y;
+			ir_last_rawmid_pos->X = this->wmState->IRState.RawMidpoint.X;
+			ir_last_rawmid_pos->Y = this->wmState->IRState.RawMidpoint.Y;
 		}
 
 public:
@@ -279,7 +265,6 @@ public:
 		// Connection Functions
 		double wm_connect();
 		double wm_exists();
-		double wm_set_write_method(double alt_write_method);
 		double wm_connected();
 		double wm_disconnect();
 		double wm_set_report_type(double report_type, double continuous);
@@ -319,6 +304,7 @@ public:
 // Buttons, Joysticks, and Triggers
 ////////////////////////////////////////////
 		// Buttons
+		double wm_guitar_check_button(double key_code);
 		double wm_nunchuck_check_button(double key_code);
 		double wm_classic_check_button(double key_code);
 		double wm_check_button(double key_code);
@@ -345,6 +331,14 @@ public:
 		double wm_classic_direction(double stick);
 		double wm_classic_pressure(double stick);
 
+		// Joysticks (Guitar)
+		double wm_guitar_xpos();
+		double wm_guitar_ypos();
+		double wm_guitar_direction();
+		double wm_guitar_pressure();
+		double wm_guitar_rawx();
+		double wm_guitar_rawy();
+
 		// Triggers (General)
 		double wm_set_trigger_dead_zone(double val);
 		double wm_get_trigger_dead_zone();
@@ -352,6 +346,10 @@ public:
 		// Triggers (Classic Controller)
 		double wm_classic_trigger_pressure(double trigger);
 		double wm_classic_trigger_raw(double trigger);
+
+		// Whammy Bar (Guitar)
+		double wm_guitar_whammybar_pos();
+		double wm_guitar_whammybar_rawpos();
 
 ////////////////////////////////////////////
 // Accelerometers and IR
@@ -388,6 +386,8 @@ public:
 		double wm_nunchuck_get_accel_dead_zone_z();
 
 		// Infrared
+		double wm_ir_set_sensitivity(double sensitivity);
+		double wm_ir_get_sensitivity();
 		double wm_ir_found_dot(double dot_number);
 		double wm_ir_dot_size(double dot_number);
 		double wm_ir_dot_get_x(double dot_number);

@@ -24,15 +24,16 @@ namespace GiiMoteLib {
 	/// <param name="fName">The file name</param>
 	/// <param name="miiBlock">The mii block to dump from (1 or 2)</param>
 	/// <param name="miiNumber">The mii number to dump (1-10, use 0 for entire block)</param>
-	/// <returns>Success (or -1 on error)</returns>
+	/// <returns>Success</returns>
 	double GiiMote::wm_mii_data_dump(System::String^ fName, double miiBlock, double miiNumber)
 	{
 		int start, end;
-		unsigned char tData;
+		// unsigned char tData;
+		int iReturn = 0;
 		int miiNum = (int)miiNumber;
 		if (miiNum < 0 || miiNum > 10 || miiBlock < 0 || miiBlock > 2)
 		{
-			return ( -1 );
+			return ( 0 );
 		}
 		int miiLoc = ((MII_LENGTH * (miiNum-1))*(miiNum!=0));
 		int blockStart = MII_DATA_START + (MII_BLOCK_SIZE * (miiBlock==2));
@@ -46,31 +47,41 @@ namespace GiiMoteLib {
 			end = start + MII_LENGTH;
 		}
 		System::IO::FileStream^ miiFile = gcnew System::IO::FileStream(fName,System::IO::FileMode::Create);
-		for(int i = start; i < end; i++)
+		try
+		{
+			miiFile->Write(wm->ReadData(start, end - start), 0, end - start);
+		}
+		catch (...)
+		{
+			iReturn = 0;
+		}
+		/*for(int i = start; i < end; i++)
 		{
 			try {
 				tData = wm->ReadData(i,1)[0];
 			}
 			catch (...) {
+				delete miiFile;
 				return ( -1 );
 			}
 			try {
 				miiFile->WriteByte(tData);
 			}
 			catch (...) {
+				delete miiFile;
 				return ( 0 );
 			}
-		}
+		}*/
 		miiFile->Close();
 		delete miiFile;
-		return ( 1 );
+		return ( (double)iReturn );
 	}
 
 	/// <summary>Injects mii data to the Wii Remote</summary>
 	/// <param name="fName">The file name</param>
 	/// <param name="miiBlock">The mii block to inject to</param>
 	/// <param name="miiNumber">The mii number to inject (1-10)</param>
-	/// <returns>Success (or -1 on error)</returns>
+	/// <returns>Success</returns>
 	double GiiMote::wm_mii_data_inject(System::String^ fName,double miiBlock, double miiNumber)
 	{
 		cli::array<unsigned char,1>^ miiBuffer;
@@ -78,7 +89,7 @@ namespace GiiMoteLib {
 		// Detect invalid arguments
 		if (miiNum > 10 || miiNum < 0 || miiBlock < 0 || miiBlock > 2)
 		{
-			return ( -1 );
+			return ( 0 );
 		}
 		System::IO::FileStream^ miiFile = gcnew System::IO::FileStream(fName,System::IO::FileMode::Open);
 		miiBuffer->Resize(miiBuffer,0);
@@ -105,9 +116,12 @@ namespace GiiMoteLib {
 			miiFile->Read(miiBuffer,0,MII_BLOCK_SIZE);
 			break;
 		default:
-			return (-1);
+			miiFile->Close();
+			delete miiFile;
+			return ( 0 );
 			break;
 		}
+
 		miiFile->Close();
 		delete miiFile;
 
@@ -140,7 +154,8 @@ namespace GiiMoteLib {
 		case MII_BLOCK_SIZE:
 			if (miiNum == 0)
 			{
-				for(int c=0;c<MII_BLOCK_SIZE;c++)
+
+				/*for(int c=0;c<MII_BLOCK_SIZE;c++)
 				{
 					try {
 						this->wm->WriteData(start + c,miiBuffer[c]);
@@ -148,13 +163,21 @@ namespace GiiMoteLib {
 					catch(...) {
 						return ( 0 );
 					}
+				}*/
+				try
+				{
+					this->wm->WriteData(start, sizeof(unsigned char), miiBuffer);
 				}
-				//this->wm->WriteData(start, 500, miiBuffer);
+				catch(...)
+				{
+					delete miiBuffer;
+					return ( 0 );
+				}
 			}
 			else
 			{
 				// Write the individual Mii from the file.
-				for(int c=0;c<MII_LENGTH;c++)
+				/*for(int c=0;c<MII_LENGTH;c++)
 				{
 					try {
 						this->wm->WriteData(start + c,miiBuffer[((miiNum-1)*MII_LENGTH)+c]);
@@ -162,13 +185,29 @@ namespace GiiMoteLib {
 					catch(...) {
 						return ( 0 );
 					}
+				}*/
+
+				try
+				{
+					cli::array<unsigned char>^ individualMiiBuffer;
+					cli::array<unsigned char>::ConstrainedCopy(miiBuffer, ((miiNum-1)*MII_LENGTH), individualMiiBuffer, 0, MII_LENGTH);
+					this->wm->WriteData(start, sizeof(unsigned char), individualMiiBuffer );
+					delete individualMiiBuffer;
+				}
+				catch(...)
+				{
+					delete miiBuffer;
+					return ( 0 );
 				}
 				// Update the CRC on the Wii Remote
-				try {
+				try
+				{
 					this->wm->WriteData(blockStart+MII_BLOCK_SIZE-2,miiBuffer[MII_BLOCK_SIZE-2]);
 					this->wm->WriteData(blockStart+MII_BLOCK_SIZE-1,miiBuffer[MII_BLOCK_SIZE-1]);
 				}
-				catch(...) {
+				catch(...)
+				{
+					delete miiBuffer;
 					return ( 0 );
 				}
 			}
@@ -176,7 +215,7 @@ namespace GiiMoteLib {
 		case MII_DATA_LENGTH:
 			if (miiNum == 0)
 			{
-				for(int c=0;c<MII_DATA_LENGTH;c++)
+				/*for(int c=0;c<MII_DATA_LENGTH;c++)
 				{
 					try {
 						this->wm->WriteData(MII_DATA_START + c,miiBuffer[c]);
@@ -184,48 +223,79 @@ namespace GiiMoteLib {
 					catch(...) {
 						return ( 0 );
 					}
+				}*/
+				try
+				{
+					this->wm->WriteData(MII_DATA_START, sizeof(unsigned char), miiBuffer);
+				}
+				catch(...)
+				{
+					delete miiBuffer;
+					return ( 0 );
 				}
 			}
 			else // Update individual Mii on the Wii Remote
 			{
-				unsigned char wChar;
-				for(int c=0;c<MII_LENGTH;c++)
+				// unsigned char wChar;
+				/*for(int c=0;c<MII_LENGTH;c++)
 				{
 					wChar = miiBuffer[((miiNum-1)*MII_LENGTH)+c];
-					try {
+					try
+					{
 						this->wm->WriteData(MII_DATA_START + miiLoc + c,wChar);
 						this->wm->WriteData(MII_DATA_START + MII_BLOCK_SIZE + miiLoc  + c,wChar);
 					}
-					catch(...) {
+					catch(...)
+					{
 						return ( 0 );
 					}
+				}*/
+				cli::array<unsigned char>^ individualMiiBuffer;
+				cli::array<unsigned char>::ConstrainedCopy(miiBuffer, ((miiNum-1)*MII_LENGTH), individualMiiBuffer, 0, miiBuffer->Length);
+				try
+				{
+					this->wm->WriteData(MII_DATA_START + miiLoc, sizeof(unsigned char), individualMiiBuffer);
+					this->wm->WriteData(MII_DATA_START + MII_BLOCK_SIZE + miiLoc, sizeof(unsigned char), individualMiiBuffer);
 				}
+				catch(...)
+				{
+					delete individualMiiBuffer;
+					delete miiBuffer;
+					return ( 0 );
+				}
+				delete individualMiiBuffer;
 				// Update the CRC on the Wii Remote
 				// Use two separate try/catch statements so that if the first fails to write
 				// for some reason the second may still be written and be valid on the Wii Remote.
-				try {
+				try 
+				{
 					this->wm->WriteData(MII_DATA_START+MII_BLOCK_SIZE-2,miiBuffer[MII_BLOCK_SIZE-2]);
 					this->wm->WriteData(MII_DATA_START+MII_BLOCK_SIZE-1,miiBuffer[MII_BLOCK_SIZE-1]);
 				}
-				catch(...) {
+				catch(...)
+				{
 					// Do not return, try the next one first.
 					// Only one block is needed by the Wii Remote.
-					// return ( 0 );
 				}
-				try {
+				try
+				{
 					this->wm->WriteData(blockStart+(2*MII_BLOCK_SIZE)-2,miiBuffer[(2*MII_BLOCK_SIZE)-2]);
 					this->wm->WriteData(blockStart+(2*MII_BLOCK_SIZE)-1,miiBuffer[(2*MII_BLOCK_SIZE)-1]);
 				}
-				catch(...) {
+				catch(...)
+				{
+					delete miiBuffer;
 					return ( 0 );
 				}
 			}
 			break;
 		default:
+			delete miiBuffer;
 			return ( 0 );
 			break;
 		}
 
+		delete miiBuffer;
 		return ( 1 );
 	}
 

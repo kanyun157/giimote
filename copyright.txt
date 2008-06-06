@@ -1,6 +1,6 @@
 GiiMote
 Copyright 2007 Sam Whited
-http://www.greenmangames.vze.com/
+http://drowningdry.blogspot.com/
 http://giimote.googlecode.com/
 
 Licensed under the terms of the Microsoft Public License (Ms-Pl).

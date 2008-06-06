@@ -1,5 +1,5 @@
 Managed Library for Nintendo's Wiimote
-v1.2.0.0
+v1.4.0.0
 by Brian Peek (http://www.brianpeek.com/)
 
 For more information, please visit the associated article for this project at:
@@ -12,6 +12,38 @@ If all else fails, please contact me at the address above.  Enjoy!
 
 Changes
 =======
+
+v1.4.0.0
+--------
+	o Multiple Wiimotes supported!
+	o Slight change to ExtensionType enum for better extension detection
+	o Decided I didn't like the dependency on System.Drawing for the 2D point
+	  so am now using my own Point structs.  Sorry...
+	o WiimoteTest app updated to show multiple Wiimotes working
+
+v1.3.0.0
+--------
+	o SetReportType contains an overload taking a new IRSensitivity parameter
+	  which will set the IR camera sensitivity when using an IR report type
+	o Created new WiimoteException type which is now thrown by the library
+	o Moved InputReport enum to namespace level
+	o Events now using the generic EventHandler class instead of custom
+	  delegates
+	o Refactored the state structures to use Point/PointF and my own
+	  Point3/Point3F
+	o Refactored IR sensors to be an array
+	o Added support for the Guitar Hero controller
+	  (tested by Matthias Shapiro, Evan Jacovier)
+	o Test app will run without Wiimote connected (Andrea Leganza)
+	o ReadData now returns the proper amount of data for requests of more than
+	  16 bytes (reported by David Hawley)
+	o Test application updated with above changes
+	o Lots of breaking changes, but the survey on my site said most didn't care
+	  about backwards compatibility...  :)
+
+v1.2.1.0
+--------
+	o Added support for IR 3 and 4 (Johnny Lee)
 
 v1.2.0.0
 --------
@@ -43,7 +75,8 @@ v1.2.0.0
 	o OnWiimoteChanged renamed to WiimoteChanged
 	o OnWiimoteExtensionChanged renamed to WiimoteExtensionChanged
 	o CalibrationInfo renamed to AccelCalibrationInfo
-	o Event handlers renamed to WiimoteChangedEventHandler and WiimoteExtensionChangedEventHandler
+	o Event handlers renamed to WiimoteChangedEventHandler and
+	  WiimoteExtensionChangedEventHandler
 
 v1.1.0.0
 --------
