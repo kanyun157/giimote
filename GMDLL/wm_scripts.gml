@@ -81,6 +81,112 @@ layer_function(global.gm_class,"wm_classic_xpos",ty_real,1,argument0);
 #define wm_classic_ypos
 // argument0 - Joystick ID
 layer_function(global.gm_class,"wm_classic_ypos",ty_real,1,argument0);
+#define wm_guitar_check_button
+// argument0 - Button key code
+layer_function(global.gm_class,"wm_guitar_check_button",ty_real,1,argument0);
+#define wm_guitar_direction
+layer_function(global.gm_class,"wm_guitar_direction",ty_real,0);
+#define wm_guitar_pressure
+layer_function(global.gm_class,"wm_guitar_pressure",ty_real,0);
+#define wm_guitar_rawx
+layer_function(global.gm_class,"wm_guitar_rawx",ty_real,0);
+#define wm_guitar_rawy
+layer_function(global.gm_class,"wm_guitar_rawy",ty_real,0);
+#define wm_guitar_whammybar_pos
+layer_function(global.gm_class,"wm_guitar_whammybar_pos",ty_real,0);
+#define wm_guitar_whammybar_rawpos
+layer_function(global.gm_class,"wm_guitar_whammybar_rawpos",ty_real,0);
+#define wm_guitar_xpos
+layer_function(global.gm_class,"wm_guitar_xpos",ty_real,0);
+#define wm_guitar_ypos
+layer_function(global.gm_class,"wm_guitar_ypos",ty_real,0);
+#define wm_nunchuck_get_accel_dead_zone_x
+layer_function(global.gm_class,"wm_nunchuck_get_accel_dead_zone_x",ty_real,0);
+#define wm_nunchuck_get_accel_dead_zone_y
+layer_function(global.gm_class,"wm_nunchuck_get_accel_dead_zone_y",ty_real,0);
+#define wm_nunchuck_get_accel_dead_zone_z
+layer_function(global.gm_class,"wm_nunchuck_get_accel_dead_zone_z",ty_real,0);
+#define wm_nunchuck_get_accel_rawx
+layer_function(global.gm_class,"wm_nunchuck_get_accel_rawx",ty_real,0);
+#define wm_nunchuck_get_accel_rawy
+layer_function(global.gm_class,"wm_nunchuck_get_accel_rawy",ty_real,0);
+#define wm_nunchuck_get_accel_rawz
+layer_function(global.gm_class,"wm_nunchuck_get_accel_rawz",ty_real,0);
+#define wm_nunchuck_get_accel_x
+layer_function(global.gm_class,"wm_nunchuck_get_accel_x",ty_real,0);
+#define wm_nunchuck_get_accel_y
+layer_function(global.gm_class,"wm_nunchuck_get_accel_y",ty_real,0);
+#define wm_nunchuck_get_accel_z
+layer_function(global.gm_class,"wm_nunchuck_get_accel_z",ty_real,0);
+#define wm_nunchuck_set_accel_dead_zone_x
+layer_function(global.gm_class,"wm_nunchuck_set_accel_dead_zone_x",ty_real,1,argument0);
+#define wm_nunchuck_set_accel_dead_zone_y
+layer_function(global.gm_class,"wm_nunchuck_set_accel_dead_zone_y",ty_real,1,argument0);
+#define wm_nunchuck_set_accel_dead_zone_z
+layer_function(global.gm_class,"wm_nunchuck_set_accel_dead_zone_z",ty_real,1,argument0);
+#define wm_nunchuck_get_calibration_maxx
+layer_function(global.gm_class,"wm_nunchuck_get_calibration_maxx",ty_real,0);
+#define wm_nunchuck_get_calibration_maxy
+layer_function(global.gm_class,"wm_nunchuck_get_calibration_maxy",ty_real,0);
+#define wm_nunchuck_get_calibration_midx
+layer_function(global.gm_class,"wm_nunchuck_get_calibration_midx",ty_real,0);
+#define wm_nunchuck_get_calibration_midy
+layer_function(global.gm_class,"wm_nunchuck_get_calibration_midy",ty_real,0);
+#define wm_nunchuck_get_calibration_minx
+layer_function(global.gm_class,"wm_nunchuck_get_calibration_minx",ty_real,0);
+#define wm_nunchuck_get_calibration_miny
+layer_function(global.gm_class,"wm_nunchuck_get_calibration_miny",ty_real,0);
+#define wm_nunchuck_get_calibration_x0
+layer_function(global.gm_class,"wm_nunchuck_get_calibration_x0",ty_real,0);
+#define wm_nunchuck_get_calibration_xg
+layer_function(global.gm_class,"wm_nunchuck_get_calibration_xg",ty_real,0);
+#define wm_nunchuck_get_calibration_y0
+layer_function(global.gm_class,"wm_nunchuck_get_calibration_y0",ty_real,0);
+#define wm_nunchuck_get_calibration_yg
+layer_function(global.gm_class,"wm_nunchuck_get_calibration_yg",ty_real,0);
+#define wm_nunchuck_get_calibration_z0
+layer_function(global.gm_class,"wm_nunchuck_get_calibration_z0",ty_real,0);
+#define wm_nunchuck_get_calibration_zg
+layer_function(global.gm_class,"wm_nunchuck_get_calibration_zg",ty_real,0);
+#define wm_nunchuck_set_calibration_maxx
+layer_function(global.gm_class,"wm_nunchuck_set_calibration_maxx",ty_real,1,argument0);
+#define wm_nunchuck_set_calibration_maxy
+layer_function(global.gm_class,"wm_nunchuck_set_calibration_maxy",ty_real,1,argument0);
+#define wm_nunchuck_set_calibration_midx
+layer_function(global.gm_class,"wm_nunchuck_set_calibration_midx",ty_real,1,argument0);
+#define wm_nunchuck_set_calibration_midy
+layer_function(global.gm_class,"wm_nunchuck_set_calibration_midy",ty_real,1,argument0);
+#define wm_nunchuck_set_calibration_minx
+layer_function(global.gm_class,"wm_nunchuck_set_calibration_minx",ty_real,1,argument0);
+#define wm_nunchuck_set_calibration_miny
+layer_function(global.gm_class,"wm_nunchuck_set_calibration_miny",ty_real,1,argument0);
+#define wm_nunchuck_set_calibration_x0
+layer_function(global.gm_class,"wm_nunchuck_set_calibration_x0",ty_real,1,argument0);
+#define wm_nunchuck_set_calibration_xg
+layer_function(global.gm_class,"wm_nunchuck_set_calibration_xg",ty_real,1,argument0);
+#define wm_nunchuck_set_calibration_y0
+layer_function(global.gm_class,"wm_nunchuck_set_calibration_y0",ty_real,1,argument0);
+#define wm_nunchuck_set_calibration_yg
+layer_function(global.gm_class,"wm_nunchuck_set_calibration_yg",ty_real,1,argument0);
+#define wm_nunchuck_set_calibration_z0
+layer_function(global.gm_class,"wm_nunchuck_set_calibration_z0",ty_real,1,argument0);
+#define wm_nunchuck_set_calibration_zg
+layer_function(global.gm_class,"wm_nunchuck_set_calibration_zg",ty_real,1,argument0);
+#define wm_nunchuck_check_button
+// argument0 - Button key code
+layer_function(global.gm_class,"wm_nunchuck_check_button",ty_real,1,argument0);
+#define wm_nunchuck_direction
+layer_function(global.gm_class,"wm_nunchuck_direction",ty_real,0);
+#define wm_nunchuck_pressure
+layer_function(global.gm_class,"wm_nunchuck_pressure",ty_real,0);
+#define wm_nunchuck_rawx
+layer_function(global.gm_class,"wm_nunchuck_rawx",ty_real,0);
+#define wm_nunchuck_rawy
+layer_function(global.gm_class,"wm_nunchuck_rawy",ty_real,0);
+#define wm_nunchuck_xpos
+layer_function(global.gm_class,"wm_nunchuck_xpos",ty_real,0);
+#define wm_nunchuck_ypos
+layer_function(global.gm_class,"wm_nunchuck_ypos",ty_real,0);
 #define GED_Constants
 /*****************************************************************************
 
@@ -117,9 +223,19 @@ const wm_joy_right = 1
 const wm_c = 19
 const wm_z = 20
 
+// Guitar Specific Buttons
+const wm_blue       = 21
+const wm_green      = 22
+const wm_orange     = 23
+const wm_red        = 24
+const wm_yellow     = 25
+const wm_strum_down = 26
+const wm_strum_up   = 27
+
 // Extension Types
 const ext_classic  = 1
 const ext_nunchuck = 2
+const ext_guitar   = 3
 const ext_none     = 0
 const ext_unknown  = -1
 
@@ -209,6 +325,15 @@ function wm_get_rumble():real
 function wm_get_status():real
 function wm_get_trigger_dead_zone():real
 function wm_get_yaw():real
+function wm_guitar_check_button(wm_button:real):real
+function wm_guitar_direction():real
+function wm_guitar_pressure():real
+function wm_guitar_rawx():real
+function wm_guitar_rawy():real
+function wm_guitar_whammybar_pos():real
+function wm_guitar_whammybar_rawpos():real
+function wm_guitar_xpos():real
+function wm_guitar_ypos():real
 function wm_ir_display_get_x():real
 function wm_ir_display_get_y():real
 function wm_ir_dot_get_delta_midx():real
@@ -221,6 +346,8 @@ function wm_ir_dot_get_x(dot:real):real
 function wm_ir_dot_get_y(dot:real):real
 function wm_ir_dot_size(dot:real):real
 function wm_ir_found_dot(dot:real):real
+function wm_ir_get_sensitivity():real
+function wm_ir_set_sensitivity(sensitivity:real):real
 function wm_ir_window_get_x():real
 function wm_ir_window_get_y():real
 function wm_mii_data_dump(file:string,block:real,mii:real):real
@@ -301,9 +428,12 @@ hfunction wm_nunchuck_get_accel_rawy():real
 hfunction wm_nunchuck_get_accel_rawz():real
 hfunction wm_nunchuck_rawx():real
 hfunction wm_nunchuck_rawy():real
-hfunction wm_set_write_method(alt_write_method:real):real
 
 *****************************************************************************/
+#define wm_ir_set_sensitivity
+layer_function(global.gm_class,"wm_ir_set_sensitivity",ty_real,1,argument0);
+#define wm_ir_get_sensitivity
+layer_function(global.gm_class,"wm_ir_get_sensitivity",ty_real);
 #define wm_ir_dot_get_delta_midx
 layer_function(global.gm_class,"wm_ir_dot_get_delta_midx",ty_real);
 #define wm_ir_dot_get_delta_midy
@@ -333,116 +463,21 @@ layer_function(global.gm_class,"wm_ir_dot_get_midx",ty_real);
 #define wm_ir_dot_get_midy
 layer_function(global.gm_class,"wm_ir_dot_get_midy",ty_real);
 #define wm_ir_dot_get_rawmidx
-// argument0 - Dot number (1 or 2)
 layer_function(global.gm_class,"wm_ir_dot_get_rawmidx",ty_real);
 #define wm_ir_dot_get_rawmidy
-// argument0 - Dot number (1 or 2)
 layer_function(global.gm_class,"wm_ir_dot_get_rawmidy",ty_real);
 #define wm_ir_dot_get_rawx
-// argument0 - Dot number (1 or 2)
 layer_function(global.gm_class,"wm_ir_dot_get_rawx",ty_real,1,argument0);
 #define wm_ir_dot_get_rawy
-// argument0 - Dot number (1 or 2)
 layer_function(global.gm_class,"wm_ir_dot_get_rawy",ty_real,1,argument0);
 #define wm_ir_dot_get_x
-// argument0 - Dot number
 layer_function(global.gm_class,"wm_ir_dot_get_x",ty_real,1,argument0);
 #define wm_ir_dot_get_y
-// argument0 - Dot number (1 or 2)
 layer_function(global.gm_class,"wm_ir_dot_get_y",ty_real,1,argument0);
 #define wm_ir_dot_size
-// argument0 - Dot number (1 or 2)
 layer_function(global.gm_class,"wm_ir_dot_size",ty_real,1,argument0);
 #define wm_ir_found_dot
-// argument0 - Dot number (1 or 2)
 layer_function(global.gm_class,"wm_ir_found_dot",ty_real,1,argument0);
-#define wm_nunchuck_get_calibration_maxx
-layer_function(global.gm_class,"wm_nunchuck_get_calibration_maxx",ty_real,0);
-#define wm_nunchuck_get_calibration_maxy
-layer_function(global.gm_class,"wm_nunchuck_get_calibration_maxy",ty_real,0);
-#define wm_nunchuck_get_calibration_midx
-layer_function(global.gm_class,"wm_nunchuck_get_calibration_midx",ty_real,0);
-#define wm_nunchuck_get_calibration_midy
-layer_function(global.gm_class,"wm_nunchuck_get_calibration_midy",ty_real,0);
-#define wm_nunchuck_get_calibration_minx
-layer_function(global.gm_class,"wm_nunchuck_get_calibration_minx",ty_real,0);
-#define wm_nunchuck_get_calibration_miny
-layer_function(global.gm_class,"wm_nunchuck_get_calibration_miny",ty_real,0);
-#define wm_nunchuck_get_calibration_x0
-layer_function(global.gm_class,"wm_nunchuck_get_calibration_x0",ty_real,0);
-#define wm_nunchuck_get_calibration_xg
-layer_function(global.gm_class,"wm_nunchuck_get_calibration_xg",ty_real,0);
-#define wm_nunchuck_get_calibration_y0
-layer_function(global.gm_class,"wm_nunchuck_get_calibration_y0",ty_real,0);
-#define wm_nunchuck_get_calibration_yg
-layer_function(global.gm_class,"wm_nunchuck_get_calibration_yg",ty_real,0);
-#define wm_nunchuck_get_calibration_z0
-layer_function(global.gm_class,"wm_nunchuck_get_calibration_z0",ty_real,0);
-#define wm_nunchuck_get_calibration_zg
-layer_function(global.gm_class,"wm_nunchuck_get_calibration_zg",ty_real,0);
-#define wm_nunchuck_set_calibration_maxx
-layer_function(global.gm_class,"wm_nunchuck_set_calibration_maxx",ty_real,1,argument0);
-#define wm_nunchuck_set_calibration_maxy
-layer_function(global.gm_class,"wm_nunchuck_set_calibration_maxy",ty_real,1,argument0);
-#define wm_nunchuck_set_calibration_midx
-layer_function(global.gm_class,"wm_nunchuck_set_calibration_midx",ty_real,1,argument0);
-#define wm_nunchuck_set_calibration_midy
-layer_function(global.gm_class,"wm_nunchuck_set_calibration_midy",ty_real,1,argument0);
-#define wm_nunchuck_set_calibration_minx
-layer_function(global.gm_class,"wm_nunchuck_set_calibration_minx",ty_real,1,argument0);
-#define wm_nunchuck_set_calibration_miny
-layer_function(global.gm_class,"wm_nunchuck_set_calibration_miny",ty_real,1,argument0);
-#define wm_nunchuck_set_calibration_x0
-layer_function(global.gm_class,"wm_nunchuck_set_calibration_x0",ty_real,1,argument0);
-#define wm_nunchuck_set_calibration_xg
-layer_function(global.gm_class,"wm_nunchuck_set_calibration_xg",ty_real,1,argument0);
-#define wm_nunchuck_set_calibration_y0
-layer_function(global.gm_class,"wm_nunchuck_set_calibration_y0",ty_real,1,argument0);
-#define wm_nunchuck_set_calibration_yg
-layer_function(global.gm_class,"wm_nunchuck_set_calibration_yg",ty_real,1,argument0);
-#define wm_nunchuck_set_calibration_z0
-layer_function(global.gm_class,"wm_nunchuck_set_calibration_z0",ty_real,1,argument0);
-#define wm_nunchuck_set_calibration_zg
-layer_function(global.gm_class,"wm_nunchuck_set_calibration_zg",ty_real,1,argument0);
-#define wm_nunchuck_check_button
-// argument0 - Button key code
-layer_function(global.gm_class,"wm_nunchuck_check_button",ty_real,1,argument0);
-#define wm_nunchuck_direction
-layer_function(global.gm_class,"wm_nunchuck_direction",ty_real,0);
-#define wm_nunchuck_get_accel_dead_zone_x
-layer_function(global.gm_class,"wm_nunchuck_get_accel_dead_zone_x",ty_real,0);
-#define wm_nunchuck_get_accel_dead_zone_y
-layer_function(global.gm_class,"wm_nunchuck_get_accel_dead_zone_y",ty_real,0);
-#define wm_nunchuck_get_accel_dead_zone_z
-layer_function(global.gm_class,"wm_nunchuck_get_accel_dead_zone_z",ty_real,0);
-#define wm_nunchuck_get_accel_rawx
-layer_function(global.gm_class,"wm_nunchuck_get_accel_rawx",ty_real,0);
-#define wm_nunchuck_get_accel_rawy
-layer_function(global.gm_class,"wm_nunchuck_get_accel_rawy",ty_real,0);
-#define wm_nunchuck_get_accel_rawz
-layer_function(global.gm_class,"wm_nunchuck_get_accel_rawz",ty_real,0);
-#define wm_nunchuck_get_accel_x
-layer_function(global.gm_class,"wm_nunchuck_get_accel_x",ty_real,0);
-#define wm_nunchuck_get_accel_y
-layer_function(global.gm_class,"wm_nunchuck_get_accel_y",ty_real,0);
-#define wm_nunchuck_get_accel_z
-layer_function(global.gm_class,"wm_nunchuck_get_accel_z",ty_real,0);
-#define wm_nunchuck_pressure
-layer_function(global.gm_class,"wm_nunchuck_pressure",ty_real,0);
-#define wm_nunchuck_rawx
-layer_function(global.gm_class,"wm_nunchuck_rawx",ty_real,0);
-#define wm_nunchuck_rawy
-layer_function(global.gm_class,"wm_nunchuck_rawy",ty_real,0);
-#define wm_nunchuck_set_accel_dead_zone_x
-layer_function(global.gm_class,"wm_nunchuck_set_accel_dead_zone_x",ty_real,1,argument0);
-#define wm_nunchuck_set_accel_dead_zone_y
-layer_function(global.gm_class,"wm_nunchuck_set_accel_dead_zone_y",ty_real,1,argument0);
-#define wm_nunchuck_set_accel_dead_zone_z
-layer_function(global.gm_class,"wm_nunchuck_set_accel_dead_zone_z",ty_real,1,argument0);
-#define wm_nunchuck_xpos
-layer_function(global.gm_class,"wm_nunchuck_xpos",ty_real,0);
-#define wm_nunchuck_ypos
-layer_function(global.gm_class,"wm_nunchuck_ypos",ty_real,0);
 #define gm_init
 layer_init();
 global.gm_dll = layer_loaddll(temp_directory+'/temp756/GiiMote.dll');
@@ -478,8 +513,6 @@ layer_function(global.gm_class,"wm_get_trigger_dead_zone",ty_real,0);
 layer_function(global.gm_class,"wm_set_joystick_dead_zone",ty_real,1,argument0);
 #define wm_set_trigger_dead_zone
 layer_function(global.gm_class,"wm_set_trigger_dead_zone",ty_real,1,argument0);
-#define wm_set_write_method
-layer_function(global.gm_class,"wm_set_write_method",ty_real,1,argument0);
 #define wm_get_accel_dead_zone_x
 layer_function(global.gm_class,"wm_get_accel_dead_zone_x",ty_real,0);
 #define wm_get_accel_dead_zone_y

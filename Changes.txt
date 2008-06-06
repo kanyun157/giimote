@@ -1,12 +1,17 @@
 -------------------------------------------------
-GiiMote Version 2.6 - Apr XX, 2008 - Revision XX
+GiiMote Version 2.6 - June 04, 2008 - Revision XX
 -------------------------------------------------
+
+Breaking Changes:
+------------------
+wm_set_write_method() has been removed
 
 New Functions:
 ---------------
-wm_get_roll();
-wm_get_pitch();
-wm_get_yaw();
+wm_get_roll()
+wm_get_pitch()
+wm_get_yaw()
+wm_get_altitude()
 wm_ir_display_get_x()
 wm_ir_display_get_y()
 wm_ir_window_get_x()
@@ -19,17 +24,28 @@ wm_ir_dot_get_delta_midx()
 wm_ir_dot_get_delta_midy()
 wm_ir_dot_get_delta_rawmidx()
 wm_ir_dot_get_delta_rawmidy()
-wm_get_altitude()
+wm_ir_get_sensitivity()
+wm_ir_set_sensitivity()
 wm_set_report_type(report_type, continuous)
-wm_get_report_type()
 wm_get_report_continuous()
+wm_get_report_type()
 wm_get_moving()
+wm_guitar_check_button()
+wm_guitar_direction()
+wm_guitar_pressure()
+wm_guitar_rawx()
+wm_guitar_rawy()
+wm_guitar_whammybar_pos()
+wm_guitar_whammybar_rawpos()
+wm_guitar_xpos()
+wm_guitar_ypos()
 
 Fixes:
 -------
 Changed button constants to be unique values
 Fixed a memory leak where multiple events were created if you connected and disconnected multiple times
 wm_ir_dot_size and other IR functions now return -1 on error
+Fixed a memory leak where Mii files remained in memory after a failed read
 
 New Constants:
 ----------------
@@ -42,6 +58,21 @@ rt_iraccel
 rt_irextensionaccel
 rt_readdata
 rt_status
+ext_guitar
+wm_blue
+wm_green
+wm_orange
+wm_red
+wm_yellow
+wm_strum_down
+wm_strum_up
+
+Other:
+-------
+Moved all extension controller functions into extension controller source files (ex. wm_nunchuck functions to "Nunchuck.h")
+Changed event handlers to use generic event handler class instead of Brian Peek's custom delegates (Which were removed in version 1.3 of WiimoteLib)
+read/write functions now do so in a single read/write (instead of byte-wise)
+Changed the way wm_connected() works to be compatible with the latest version of WiimoteLib
 
 
 

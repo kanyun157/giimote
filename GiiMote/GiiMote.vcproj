@@ -121,6 +121,7 @@
 				GenerateXMLDocumentationFiles="true"
 				XMLDocumentationFileName="$(IntDir)\"
 				WarningLevel="3"
+				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -181,8 +182,8 @@
 			MinFrameworkVersion="131072"
 		/>
 		<AssemblyReference
-			RelativePath=".\WiimoteLib.dll"
-			AssemblyName="WiimoteLib, Version=1.2.1.0, processorArchitecture=MSIL"
+			RelativePath="..\WiimoteLib\WiimoteLib.dll"
+			AssemblyName="WiimoteLib, Version=1.3.0.0, processorArchitecture=MSIL"
 			MinFrameworkVersion="131072"
 		/>
 		<AssemblyReference
@@ -245,14 +246,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\mii.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Orientation.h"
-				>
-			</File>
-			<File
 				RelativePath=".\resource.h"
 				>
 			</File>
@@ -261,7 +254,7 @@
 				>
 			</File>
 			<Filter
-				Name="Hardware"
+				Name="Wii Remote"
 				>
 				<File
 					RelativePath=".\GMAccel.h"
@@ -280,6 +273,14 @@
 					>
 				</File>
 				<File
+					RelativePath=".\mii.h"
+					>
+				</File>
+				<File
+					RelativePath=".\Orientation.h"
+					>
+				</File>
+				<File
 					RelativePath=".\Wiimote.h"
 					>
 				</File>
@@ -289,6 +290,10 @@
 				>
 				<File
 					RelativePath=".\Classic.h"
+					>
+				</File>
+				<File
+					RelativePath=".\Guitar.h"
 					>
 				</File>
 				<File

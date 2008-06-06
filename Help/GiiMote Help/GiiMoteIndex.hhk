@@ -317,6 +317,36 @@
 		<param name="Local" value="GiiMote.htm#orientation">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_guitar_check_button()">
+		<param name="Name" value="Buttons">
+		<param name="Local" value="GiiMote.htm#buttons">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_guitar_direction()">
+		<param name="Name" value="Joystick Positions">
+		<param name="Local" value="GiiMote.htm#joystick">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_guitar_pressure()">
+		<param name="Name" value="Joystick Positions">
+		<param name="Local" value="GiiMote.htm#joystick">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_guitar_whammybar_pos()">
+		<param name="Name" value="Buttons">
+		<param name="Local" value="GiiMote.htm#buttons">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_guitar_xpos()">
+		<param name="Name" value="Joystick Positions">
+		<param name="Local" value="GiiMote.htm#joystick">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_guitar_ypos()">
+		<param name="Name" value="Joystick Positions">
+		<param name="Local" value="GiiMote.htm#joystick">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_ir_display_get_x()">
 		<param name="Name" value="Infrared Readout">
 		<param name="Local" value="GiiMote.htm#IR">
@@ -394,6 +424,16 @@
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_ir_found_dot()">
 		<param name="Name" value="Infrared">
+		<param name="Local" value="GiiMote.htm#IR">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_ir_get_sensitivity()">
+		<param name="Name" value="Infrared Readout">
+		<param name="Local" value="GiiMote.htm#IR">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_ir_set_sensitivity()">
+		<param name="Name" value="Infrared Readout">
 		<param name="Local" value="GiiMote.htm#IR">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
