@@ -9,22 +9,22 @@ namespace GiiMoteLib {
 		switch ((int)sensitivity)
 		{
 		case 1:
-			this->ir_sensitivity = IRSensitivity::WiiLevel1;
+			this->ir_sensitivity[wmIndex] = IRSensitivity::WiiLevel1;
 			break;
 		case 2:
-			this->ir_sensitivity = IRSensitivity::WiiLevel2;
+			this->ir_sensitivity[wmIndex] = IRSensitivity::WiiLevel2;
 			break;
 		case 3:
-			this->ir_sensitivity = IRSensitivity::WiiLevel3;
+			this->ir_sensitivity[wmIndex] = IRSensitivity::WiiLevel3;
 			break;
 		case 4:
-			this->ir_sensitivity = IRSensitivity::WiiLevel4;
+			this->ir_sensitivity[wmIndex] = IRSensitivity::WiiLevel4;
 			break;
 		case 5:
-			this->ir_sensitivity = IRSensitivity::WiiLevel5;
+			this->ir_sensitivity[wmIndex] = IRSensitivity::WiiLevel5;
 			break;
 		case 6:
-			this->ir_sensitivity = IRSensitivity::Maximum;
+			this->ir_sensitivity[wmIndex] = IRSensitivity::Maximum;
 			break;
 		default:
 			return ( 0 );
@@ -32,7 +32,7 @@ namespace GiiMoteLib {
 		}
 		if (wm_connected())
 		{
-			return (wm_set_report_type(this->report_type, this->continuous));
+			return (wm_set_report_type(this->report_type[wmIndex], this->continuous[wmIndex]));
 		}
 		else
 		{
@@ -43,7 +43,7 @@ namespace GiiMoteLib {
 	/// <returns>The IR camera's sensitivity level (1-6)</returns>
 	double GiiMote::wm_ir_get_sensitivity()
 	{
-		return ( (double)this->ir_sensitivity );
+		return ( (double)this->ir_sensitivity[wmIndex] );
 	}
 	/// <summary>Checks to see if the given IR dot is visible</summary>
 	/// <param name="dot_number">Dot 1-4</param>
@@ -52,7 +52,7 @@ namespace GiiMoteLib {
 	{
 		try
 		{
-			return (this->wmState->IRState.IRSensors[((int)dot_number) - 1].Found);
+			return (this->wc[wmIndex]->WiimoteState->IRState.IRSensors[((int)dot_number) - 1].Found);
 		}
 		catch(...)
 		{
@@ -67,7 +67,7 @@ namespace GiiMoteLib {
 	{
 		try
 		{
-			return ((double)this->wmState->IRState.IRSensors[((int)dot_number) - 1].Size);
+			return ((double)this->wc[wmIndex]->WiimoteState->IRState.IRSensors[((int)dot_number) - 1].Size);
 		}
 		catch(...)
 		{
@@ -83,7 +83,7 @@ namespace GiiMoteLib {
 	{
 		try
 		{
-			return ((double)this->wmState->IRState.IRSensors[((int)dot_number) - 1].Position.X);
+			return ((double)this->wc[wmIndex]->WiimoteState->IRState.IRSensors[((int)dot_number) - 1].Position.X);
 		}
 		catch(...)
 		{
@@ -99,7 +99,7 @@ namespace GiiMoteLib {
 	{
 		try
 		{
-			return ((double)this->wmState->IRState.IRSensors[((int)dot_number) - 1].Position.Y);
+			return ((double)this->wc[wmIndex]->WiimoteState->IRState.IRSensors[((int)dot_number) - 1].Position.Y);
 		}
 		catch(...)
 		{
@@ -115,7 +115,7 @@ namespace GiiMoteLib {
 	{
 		try
 		{
-			return ((double)this->wmState->IRState.IRSensors[((int)dot_number) - 1].RawPosition.X);
+			return ((double)this->wc[wmIndex]->WiimoteState->IRState.IRSensors[((int)dot_number) - 1].RawPosition.X);
 		}
 		catch(...)
 		{
@@ -131,7 +131,7 @@ namespace GiiMoteLib {
 	{
 		try
 		{
-			return ((double)this->wmState->IRState.IRSensors[((int)dot_number) - 1].RawPosition.Y);
+			return ((double)this->wc[wmIndex]->WiimoteState->IRState.IRSensors[((int)dot_number) - 1].RawPosition.Y);
 		}
 		catch(...)
 		{
@@ -144,14 +144,14 @@ namespace GiiMoteLib {
 	/// <returns>Normalized X Midpoint</returns>
 	double GiiMote::wm_ir_dot_get_midx()
 	{
-		return( (double)this->wmState->IRState.Midpoint.X );
+		return( (double)this->wc[wmIndex]->WiimoteState->IRState.Midpoint.X );
 	}
 	/// <summary>Normalized midpoint of IR sensors 1 and 2 only along the Y-axis</summary>
 	/// <remarks>Domain: [0.0,1.0]</remarks>
 	/// <returns>Normalized Y Midpoint</returns>
 	double GiiMote::wm_ir_dot_get_midy()
 	{
-		return( (double)this->wmState->IRState.Midpoint.Y );
+		return( (double)this->wc[wmIndex]->WiimoteState->IRState.Midpoint.Y );
 	}
 
 	/// <summary>Raw midpoint of IR sensors 1 and 2 only along the X-axis</summary>
@@ -159,7 +159,7 @@ namespace GiiMoteLib {
 	/// <returns>Raw X Midpoint</returns>
 	double GiiMote::wm_ir_dot_get_rawmidx()
 	{
-		return ( (double)this->wmState->IRState.RawMidpoint.X );
+		return ( (double)this->wc[wmIndex]->WiimoteState->IRState.RawMidpoint.X );
 	}
 
 	/// <summary>Raw midpoint of IR sensors 1 and 2 only along the Y-axis</summary>
@@ -167,7 +167,7 @@ namespace GiiMoteLib {
 	/// <returns>Raw Y Midpoint</returns>
 	double GiiMote::wm_ir_dot_get_rawmidy()
 	{
-		return ( (double)this->wmState->IRState.RawMidpoint.Y );
+		return ( (double)this->wc[wmIndex]->WiimoteState->IRState.RawMidpoint.Y );
 	}
 
 	/// <summary>Change in x value of the given dot</summary>
@@ -179,7 +179,7 @@ namespace GiiMoteLib {
 		int dot = (int)dot_number - 1;
 		try
 		{
-			return (this->wmState->IRState.IRSensors[dot].Position.X - ir_last_pos[dot]->X);
+			return (this->wc[wmIndex]->WiimoteState->IRState.IRSensors[dot].Position.X - ir_last_pos[wmIndex, dot].X);
 		}
 		catch(...)
 		{
@@ -196,7 +196,7 @@ namespace GiiMoteLib {
 		int dot = (int)dot_number - 1;
 		try
 		{
-			return (this->wmState->IRState.IRSensors[dot].Position.Y - ir_last_pos[dot]->Y);
+			return (this->wc[wmIndex]->WiimoteState->IRState.IRSensors[dot].Position.Y - ir_last_pos[wmIndex, dot].Y);
 		}
 		catch(...)
 		{
@@ -213,7 +213,7 @@ namespace GiiMoteLib {
 		int dot = (int)dot_number - 1;
 		try
 		{	
-			return (this->wmState->IRState.IRSensors[dot].RawPosition.X - ir_last_raw_pos[dot]->X);
+			return (this->wc[wmIndex]->WiimoteState->IRState.IRSensors[dot].RawPosition.X - ir_last_raw_pos[wmIndex, dot].X);
 		}
 		catch(...)
 		{
@@ -230,7 +230,7 @@ namespace GiiMoteLib {
 		int dot = (int)dot_number - 1;
 		try
 		{	
-			return (this->wmState->IRState.IRSensors[dot].RawPosition.Y - ir_last_raw_pos[dot]->Y);
+			return (this->wc[wmIndex]->WiimoteState->IRState.IRSensors[dot].RawPosition.Y - ir_last_raw_pos[wmIndex, dot].Y);
 		}
 		catch(...)
 		{
@@ -243,7 +243,7 @@ namespace GiiMoteLib {
 	/// <returns>Delta midx</returns>
 	double GiiMote::wm_ir_dot_get_delta_midx()
 	{
-		return ( double(this->wmState->IRState.Midpoint.X - ir_last_mid_pos->X) );
+		return ( double(this->wc[wmIndex]->WiimoteState->IRState.Midpoint.X - ir_last_mid_pos[wmIndex].X) );
 	}
 
 	/// <summary>Change in midy value</summary>
@@ -251,7 +251,7 @@ namespace GiiMoteLib {
 	/// <returns>Delta midy</returns>
 	double GiiMote::wm_ir_dot_get_delta_midy()
 	{
-		return ( double(this->wmState->IRState.Midpoint.Y - ir_last_mid_pos->Y) );
+		return ( double(this->wc[wmIndex]->WiimoteState->IRState.Midpoint.Y - ir_last_mid_pos[wmIndex].Y) );
 	}
 
 	/// <summary>Change in raw midx value</summary>
@@ -259,7 +259,7 @@ namespace GiiMoteLib {
 	/// <returns>Delta raw midx</returns>
 	double GiiMote::wm_ir_dot_get_delta_rawmidx()
 	{
-		return ( double(this->wmState->IRState.RawMidpoint.X - ir_last_rawmid_pos->X) );
+		return ( double(this->wc[wmIndex]->WiimoteState->IRState.RawMidpoint.X - ir_last_rawmid_pos[wmIndex].X) );
 	}
 
 	/// <summary>Change in raw midy value</summary>
@@ -267,21 +267,21 @@ namespace GiiMoteLib {
 	/// <returns>Delta raw midy</returns>
 	double GiiMote::wm_ir_dot_get_delta_rawmidy()
 	{
-		return ( double(this->wmState->IRState.RawMidpoint.Y - ir_last_rawmid_pos->Y) );
+		return ( double(this->wc[wmIndex]->WiimoteState->IRState.RawMidpoint.Y - ir_last_rawmid_pos[wmIndex].Y) );
 	}
 
 	/// <summary>X coordinate of the screen that the Wii Remote is pointing at</summary>
 	/// <returns>X coordinate relative to screen</returns>
 	double GiiMote::wm_ir_display_get_x()
 	{
-		return ((double)this->ir_screen_pos.X);
+		return ((double)this->ir_screen_pos[wmIndex].X);
 	}
 
 	/// <summary>Y coordinate of the screen that the Wii Remote is pointing at</summary>
 	/// <returns>Y coordinate relative to screen</returns>
 	double GiiMote::wm_ir_display_get_y()
 	{
-		return ((double)this->ir_screen_pos.Y);
+		return ((double)this->ir_screen_pos[wmIndex].Y);
 	}
 
 } // namespace GiiMoteLib

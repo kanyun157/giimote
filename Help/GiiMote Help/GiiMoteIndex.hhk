@@ -207,6 +207,11 @@
 		<param name="Local" value="GiiMote.htm#setup">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_connect_all()">
+		<param name="Name" value="Setup">
+		<param name="Local" value="GiiMote.htm#setup">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_connected()">
 		<param name="Name" value="Setup">
 		<param name="Local" value="GiiMote.htm#setup">
@@ -217,7 +222,17 @@
 		<param name="Local" value="GiiMote.htm#setup">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_disconnect_all()">
+		<param name="Name" value="Setup">
+		<param name="Local" value="GiiMote.htm#setup">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_exists()">
+		<param name="Name" value="Setup">
+		<param name="Local" value="GiiMote.htm#setup">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_find_all()">
 		<param name="Name" value="Setup">
 		<param name="Local" value="GiiMote.htm#setup">
 		</OBJECT>
@@ -260,6 +275,21 @@
 		<param name="Name" value="wm_get_battery()">
 		<param name="Name" value="Misc. Data">
 		<param name="Local" value="GiiMote.htm#MISC">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_get_guid()">
+		<param name="Name" value="Setup">
+		<param name="Local" value="GiiMote.htm#setup">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_get_id()">
+		<param name="Name" value="Setup">
+		<param name="Local" value="GiiMote.htm#setup">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_get_index()">
+		<param name="Name" value="Setup">
+		<param name="Local" value="GiiMote.htm#setup">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_get_joystick_dead_zone()">
@@ -585,6 +615,11 @@
 		<param name="Name" value="wm_set_trigger_dead_zone(l)">
 		<param name="Name" value="Dead Zone's">
 		<param name="Local" value="GiiMote.htm#dead_zone">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_set_wm()">
+		<param name="Name" value="Setup">
+		<param name="Local" value="GiiMote.htm#setup">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_set_write_method()">

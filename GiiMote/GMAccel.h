@@ -15,7 +15,7 @@ namespace GiiMoteLib {
     double GiiMote::wm_calc_accel(float accel, int dz_index)
     {
             double val = (double)accel;
-            if ( System::Math::Abs(val) < this->accel_dead_zone[dz_index] )
+            if ( System::Math::Abs(val) < this->accel_dead_zone[wmIndex, dz_index] )
             {
                     val = 0;
             }
@@ -31,21 +31,21 @@ namespace GiiMoteLib {
 	/// <returns>Normalized acceleration</returns>
 	double GiiMote::wm_get_accel_x()
 	{
-		return ( wm_calc_accel(this->wmState->AccelState.Values.X, 0) );
+		return ( wm_calc_accel(this->wc[wmIndex]->WiimoteState->AccelState.Values.X, 0) );
 	}
 	/// <summary>Normalized accelerometer data</summary>
 	/// <remarks>Force in G's</remarks>
 	/// <returns>Normalized acceleration</returns>
 	double GiiMote::wm_get_accel_y()
 	{
-		return ( wm_calc_accel(this->wmState->AccelState.Values.Y, 1) );
+		return ( wm_calc_accel(this->wc[wmIndex]->WiimoteState->AccelState.Values.Y, 1) );
 	}
 	/// <summary>Normalized accelerometer data</summary>
 	/// <remarks>Force in G's</remarks>
 	/// <returns>Normalized acceleration</returns>
 	double GiiMote::wm_get_accel_z()
 	{
-		return ( wm_calc_accel(this->wmState->AccelState.Values.Z, 2) );
+		return ( wm_calc_accel(this->wc[wmIndex]->WiimoteState->AccelState.Values.Z, 2) );
 	}
 	// Raw Data
 	/// <summary>Raw accelerometer data</summary>
@@ -53,21 +53,21 @@ namespace GiiMoteLib {
 	/// <returns>Raw acceleration</returns>
 	double GiiMote::wm_get_accel_rawx()
 	{
-		return ( (double)this->wmState->AccelState.RawValues.X );
+		return ( (double)this->wc[wmIndex]->WiimoteState->AccelState.RawValues.X );
 	}
 	/// <summary>Raw accelerometer data</summary>
 	/// <remarks>Domain: [0,255]</remarks>
 	/// <returns>Raw acceleration</returns>
 	double GiiMote::wm_get_accel_rawy()
 	{
-		return ( (double)this->wmState->AccelState.RawValues.Y );
+		return ( (double)this->wc[wmIndex]->WiimoteState->AccelState.RawValues.Y );
 	}
 	/// <summary>Raw accelerometer data</summary>
 	/// <remarks>Domain: [0,255]</remarks>
 	/// <returns>Raw acceleration</returns>
 	double GiiMote::wm_get_accel_rawz()
 	{
-		return ( (double)this->wmState->AccelState.RawValues.Z );
+		return ( (double)this->wc[wmIndex]->WiimoteState->AccelState.RawValues.Z );
 	}
 	/// <summary>Sets the dead-zone value</summary>
 	/// <remarks>Domain: [0,Infinity]</remarks>
@@ -75,7 +75,7 @@ namespace GiiMoteLib {
 	/// <returns>1</returns>
 	double GiiMote::wm_set_accel_dead_zone_x(double val)
 	{
-		accel_dead_zone[0] = in_domain(val, 0, -1);
+		accel_dead_zone[wmIndex, 0] = in_domain(val, 0, -1);
 		return ( 1 );
 	}
 	/// <summary>Sets the dead-zone value</summary>
@@ -84,7 +84,7 @@ namespace GiiMoteLib {
 	/// <returns>1</returns>
 	double GiiMote::wm_set_accel_dead_zone_y(double val)
 	{
-		accel_dead_zone[1] = in_domain(val, 0, -1);
+		accel_dead_zone[wmIndex, 1] = in_domain(val, 0, -1);
 		return ( 1 );
 	}
 	/// <summary>Sets the dead-zone value</summary>
@@ -93,26 +93,26 @@ namespace GiiMoteLib {
 	/// <returns>1</returns>
 	double GiiMote::wm_set_accel_dead_zone_z(double val)
 	{
-		accel_dead_zone[2] = in_domain(val, 0, -1);
+		accel_dead_zone[wmIndex, 2] = in_domain(val, 0, -1);
 		return ( 1 );
 	}
 	/// <summary>Gets the dead-zone value</summary>
 	/// <returns>X-axis dead zone</returns>
 	double GiiMote::wm_get_accel_dead_zone_x()
 	{
-		return ( accel_dead_zone[0] );
+		return ( accel_dead_zone[wmIndex, 0] );
 	}
 	/// <summary>Gets the dead-zone value</summary>
 	/// <returns>Y-axis dead zone</returns>
 	double GiiMote::wm_get_accel_dead_zone_y()
 	{
-		return ( accel_dead_zone[1] );
+		return ( accel_dead_zone[wmIndex, 1] );
 	}
 	/// <summary>Gets the dead-zone value</summary>
 	/// <returns>Z-axis dead zone</returns>
 	double GiiMote::wm_get_accel_dead_zone_z()
 	{
-		return ( accel_dead_zone[2] );
+		return ( accel_dead_zone[wmIndex, 2] );
 	}
 
 } // namespace GiiMoteLib

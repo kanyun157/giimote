@@ -1,5 +1,5 @@
 -------------------------------------------------
-GiiMote Version 2.6 - June 04, 2008 - Revision XX
+GiiMote Version 2.6 - June XX, 2008 - Revision XX
 -------------------------------------------------
 
 Breaking Changes:
@@ -8,6 +8,13 @@ wm_set_write_method() has been removed
 
 New Functions:
 ---------------
+wm_set_wm()
+wm_find_all()
+wm_connect_all()
+wm_disconnect_all()
+wm_get_id()
+wm_get_guid()
+wm_get_index()
 wm_get_roll()
 wm_get_pitch()
 wm_get_yaw()
@@ -46,6 +53,7 @@ Changed button constants to be unique values
 Fixed a memory leak where multiple events were created if you connected and disconnected multiple times
 wm_ir_dot_size and other IR functions now return -1 on error
 Fixed a memory leak where Mii files remained in memory after a failed read
+Fixed a bug where the report type and continuous reporting values were not saved or returned properly (never in a released build)
 
 New Constants:
 ----------------
@@ -72,7 +80,9 @@ Other:
 Moved all extension controller functions into extension controller source files (ex. wm_nunchuck functions to "Nunchuck.h")
 Changed event handlers to use generic event handler class instead of Brian Peek's custom delegates (Which were removed in version 1.3 of WiimoteLib)
 read/write functions now do so in a single read/write (instead of byte-wise)
-Changed the way wm_connected() works to be compatible with the latest version of WiimoteLib
+Changed the way wm_connected() works to be compatible with the latest version of WiimoteLib (it now performs a dummy byte-read)
+Removed the status check from the function wm_get_battery
+Changed the way wm_exists() works to be compatible with multiple Wii Remotes (it now returns weather or not wm_find_all() is greater than 0)
 
 
 

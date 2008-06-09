@@ -8,7 +8,7 @@ namespace GiiMoteLib {
 	/// <returns>Normalized acceleration</returns>
 	double GiiMote::wm_nunchuck_get_accel_x()
 	{
-		return ( wm_calc_accel(this->wmState->AccelState.Values.X, 3) );
+		return ( wm_calc_accel(this->wc[wmIndex]->WiimoteState->AccelState.Values.X, 3) );
 	}
 
 	/// <summary>Normalized accelerometer data</summary>
@@ -16,7 +16,7 @@ namespace GiiMoteLib {
 	/// <returns>Normalized acceleration</returns>
 	double GiiMote::wm_nunchuck_get_accel_y()
 	{
-		return ( wm_calc_accel(this->wmState->NunchukState.AccelState.Values.Y, 4) );
+		return ( wm_calc_accel(this->wc[wmIndex]->WiimoteState->NunchukState.AccelState.Values.Y, 4) );
 	}
 
 	/// <summary>Normalized accelerometer data</summary>
@@ -24,7 +24,7 @@ namespace GiiMoteLib {
 	/// <returns>Normalized acceleration</returns>
 	double GiiMote::wm_nunchuck_get_accel_z()
 	{
-		return ( wm_calc_accel(this->wmState->NunchukState.AccelState.Values.Z, 5) );
+		return ( wm_calc_accel(this->wc[wmIndex]->WiimoteState->NunchukState.AccelState.Values.Z, 5) );
 	}
 
 	// Raw Data
@@ -33,7 +33,7 @@ namespace GiiMoteLib {
 	/// <returns>Raw acceleration</returns>
 	double GiiMote::wm_nunchuck_get_accel_rawx()
 	{
-		return ( (double)this->wmState->NunchukState.AccelState.RawValues.X );
+		return ( (double)this->wc[wmIndex]->WiimoteState->NunchukState.AccelState.RawValues.X );
 	}
 
 	/// <summary>Raw accelerometer data</summary>
@@ -41,7 +41,7 @@ namespace GiiMoteLib {
 	/// <returns>Raw acceleration</returns>
 	double GiiMote::wm_nunchuck_get_accel_rawy()
 	{
-		return ( (double)this->wmState->NunchukState.AccelState.RawValues.Y );
+		return ( (double)this->wc[wmIndex]->WiimoteState->NunchukState.AccelState.RawValues.Y );
 	}
 
 	/// <summary>Raw accelerometer data</summary>
@@ -49,7 +49,7 @@ namespace GiiMoteLib {
 	/// <returns>Raw acceleration</returns>
 	double GiiMote::wm_nunchuck_get_accel_rawz()
 	{
-		return ( (double)this->wmState->NunchukState.AccelState.RawValues.Z );
+		return ( (double)this->wc[wmIndex]->WiimoteState->NunchukState.AccelState.RawValues.Z );
 	}
 
 	/// <summary>Sets the dead-zone value</summary>
@@ -58,7 +58,7 @@ namespace GiiMoteLib {
 	/// <returns>1</returns>
 	double GiiMote::wm_nunchuck_set_accel_dead_zone_x(double val)
 	{
-		accel_dead_zone[3] = in_domain(val, 0, -1);
+		accel_dead_zone[wmIndex, 3] = in_domain(val, 0, -1);
 		return ( 1 );
 	}
 
@@ -68,7 +68,7 @@ namespace GiiMoteLib {
 	/// <returns>1</returns>
 	double GiiMote::wm_nunchuck_set_accel_dead_zone_y(double val)
 	{
-		accel_dead_zone[4] = in_domain(val, 0, -1);
+		accel_dead_zone[wmIndex, 4] = in_domain(val, 0, -1);
 		return ( 1 );
 	}
 
@@ -78,7 +78,7 @@ namespace GiiMoteLib {
 	/// <returns>1</returns>
 	double GiiMote::wm_nunchuck_set_accel_dead_zone_z(double val)
 	{
-		accel_dead_zone[5] = in_domain(val, 0, -1);
+		accel_dead_zone[wmIndex, 5] = in_domain(val, 0, -1);
 		return ( 1 );
 	}
 
@@ -86,21 +86,21 @@ namespace GiiMoteLib {
 	/// <returns>X-axis dead zone</returns>
 	double GiiMote::wm_nunchuck_get_accel_dead_zone_x()
 	{
-		return ( accel_dead_zone[3] );
+		return ( accel_dead_zone[wmIndex, 3] );
 	}
 
 	/// <summary>Gets the dead-zone value</summary>
 	/// <returns>Y-axis dead zone</returns>
 	double GiiMote::wm_nunchuck_get_accel_dead_zone_y()
 	{
-		return ( accel_dead_zone[4] );
+		return ( accel_dead_zone[wmIndex, 4] );
 	}
 
 	/// <summary>Gets the dead-zone value</summary>
 	/// <returns>Z-axis dead zone</returns>
 	double GiiMote::wm_nunchuck_get_accel_dead_zone_z()
 	{
-		return ( accel_dead_zone[5] );
+		return ( accel_dead_zone[wmIndex, 5] );
 	}
 
 	/// <summary>
@@ -130,10 +130,10 @@ namespace GiiMoteLib {
 		switch ((int)key_code)
 		{
 		case btnC:
-			is_pressed = this->wmState->NunchukState.C;
+			is_pressed = this->wc[wmIndex]->WiimoteState->NunchukState.C;
 			break;
 		case btnZ:
-			is_pressed = this->wmState->NunchukState.Z;
+			is_pressed = this->wc[wmIndex]->WiimoteState->NunchukState.Z;
 			break;
 		default:
 			is_pressed = false;
@@ -152,13 +152,13 @@ namespace GiiMoteLib {
 		double xx;
 		try
 		{
-			xx = (double)this->wmState->NunchukState.Joystick.X;
+			xx = (double)this->wc[wmIndex]->WiimoteState->NunchukState.Joystick.X;
 		}
 		catch(...)
 		{
 			return ( -1 );
 		}
-		if ( System::Math::Abs(xx) < (this->joystick_dead_zone) )
+		if ( System::Math::Abs(xx) < (this->joystick_dead_zone[wmIndex]) )
 		{
 			xx = 0;
 		}
@@ -173,13 +173,13 @@ namespace GiiMoteLib {
 		double yy;
 		try
 		{
-			yy = (double)this->wmState->NunchukState.Joystick.Y;
+			yy = (double)this->wc[wmIndex]->WiimoteState->NunchukState.Joystick.Y;
 		}
 		catch(...)
 		{
 			return ( -1 );
 		}
-		if ( System::Math::Abs(yy) < (this->joystick_dead_zone) )
+		if ( System::Math::Abs(yy) < (this->joystick_dead_zone[wmIndex]) )
 		{
 			yy = 0;
 		}	
@@ -227,7 +227,7 @@ namespace GiiMoteLib {
 		double rawX;
 		try
 		{
-			rawX = (double)this->wmState->NunchukState.RawJoystick.X;
+			rawX = (double)this->wc[wmIndex]->WiimoteState->NunchukState.RawJoystick.X;
 		}
 		catch(...)
 		{
@@ -244,7 +244,7 @@ namespace GiiMoteLib {
 		double rawY;
 		try
 		{
-			rawY = (double)this->wmState->NunchukState.RawJoystick.Y;
+			rawY = (double)this->wc[wmIndex]->WiimoteState->NunchukState.RawJoystick.Y;
 		}
 		catch(...)
 		{
@@ -261,7 +261,7 @@ namespace GiiMoteLib {
 	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_nunchuck_get_calibration_x0()
 	{
-		return ( (double)this->wmState->NunchukState.CalibrationInfo.AccelCalibration.X0 );
+		return ( (double)this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.AccelCalibration.X0 );
 	}
 	/// <summary>
 	/// Gets the gravity at rest of the accelerometer
@@ -269,7 +269,7 @@ namespace GiiMoteLib {
 	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_nunchuck_get_calibration_xg()
 	{
-		return ( (double)this->wmState->NunchukState.CalibrationInfo.AccelCalibration.XG );
+		return ( (double)this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.AccelCalibration.XG );
 	}
 	// Calibration Reading Functions
 	/// <summary>
@@ -278,7 +278,7 @@ namespace GiiMoteLib {
 	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_nunchuck_get_calibration_y0()
 	{
-		return ( (double)this->wmState->NunchukState.CalibrationInfo.AccelCalibration.Y0 );
+		return ( (double)this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.AccelCalibration.Y0 );
 	}
 	/// <summary>
 	/// Gets the gravity at rest of the accelerometer
@@ -286,7 +286,7 @@ namespace GiiMoteLib {
 	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_nunchuck_get_calibration_yg()
 	{
-		return ( (double)this->wmState->NunchukState.CalibrationInfo.AccelCalibration.YG );
+		return ( (double)this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.AccelCalibration.YG );
 	}
 	/// <summary>
 	/// Gets the zero point of the accelerometer
@@ -294,7 +294,7 @@ namespace GiiMoteLib {
 	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_nunchuck_get_calibration_z0()
 	{
-		return ( (double)this->wmState->NunchukState.CalibrationInfo.AccelCalibration.Z0 );
+		return ( (double)this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.AccelCalibration.Z0 );
 	}
 	/// <summary>
 	/// Gets the gravity at rest of the accelerometer
@@ -302,7 +302,7 @@ namespace GiiMoteLib {
 	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_nunchuck_get_calibration_zg()
 	{
-		return ( (double)this->wmState->NunchukState.CalibrationInfo.AccelCalibration.ZG );
+		return ( (double)this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.AccelCalibration.ZG );
 	}
 	/// <summary>
 	/// Gets the joystick X-axis calibration
@@ -310,7 +310,7 @@ namespace GiiMoteLib {
 	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_nunchuck_get_calibration_maxx()
 	{
-		return ( (double)this->wmState->NunchukState.CalibrationInfo.MaxX );
+		return ( (double)this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.MaxX );
 	}
 	/// <summary>
 	/// Gets the joystick Y-axis calibration
@@ -318,7 +318,7 @@ namespace GiiMoteLib {
 	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_nunchuck_get_calibration_maxy()
 	{
-		return ( (double)this->wmState->NunchukState.CalibrationInfo.MaxY );
+		return ( (double)this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.MaxY );
 	}
 	/// <summary>
 	/// Gets the joystick X-axis calibration
@@ -326,7 +326,7 @@ namespace GiiMoteLib {
 	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_nunchuck_get_calibration_midx()
 	{
-		return ( (double)this->wmState->NunchukState.CalibrationInfo.MidX );
+		return ( (double)this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.MidX );
 	}
 	/// <summary>
 	/// Gets the joystick Y-axis calibration
@@ -334,7 +334,7 @@ namespace GiiMoteLib {
 	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_nunchuck_get_calibration_midy()
 	{
-		return ( (double)this->wmState->NunchukState.CalibrationInfo.MidY );
+		return ( (double)this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.MidY );
 	}
 	/// <summary>
 	/// Gets the joystick X-axis calibration
@@ -342,7 +342,7 @@ namespace GiiMoteLib {
 	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_nunchuck_get_calibration_minx()
 	{
-		return ( (double)this->wmState->NunchukState.CalibrationInfo.MinX );
+		return ( (double)this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.MinX );
 	}
 	/// <summary>
 	/// Gets the joystick Y-axis calibration
@@ -350,7 +350,7 @@ namespace GiiMoteLib {
 	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_nunchuck_get_calibration_miny()
 	{
-		return ( (double)this->wmState->NunchukState.CalibrationInfo.MinY );
+		return ( (double)this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.MinY );
 	}
 	// Calibration Writing Functions
 	/// <summary>
@@ -363,7 +363,7 @@ namespace GiiMoteLib {
 		unsigned char calData = (unsigned char)val;
 		try
 		{
-			this->wmState->NunchukState.CalibrationInfo.AccelCalibration.X0 = calData;
+			this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.AccelCalibration.X0 = calData;
 		}
 		catch(...)
 		{
@@ -381,7 +381,7 @@ namespace GiiMoteLib {
 		unsigned char calData = (unsigned char)val;
 		try
 		{
-			this->wmState->NunchukState.CalibrationInfo.AccelCalibration.XG = calData;
+			this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.AccelCalibration.XG = calData;
 		}
 		catch(...)
 		{
@@ -399,7 +399,7 @@ namespace GiiMoteLib {
 		unsigned char calData = (unsigned char)val;
 		try
 		{
-			this->wmState->NunchukState.CalibrationInfo.AccelCalibration.Y0 = calData;
+			this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.AccelCalibration.Y0 = calData;
 		}
 		catch(...)
 		{
@@ -417,7 +417,7 @@ namespace GiiMoteLib {
 		unsigned char calData = (unsigned char)val;
 		try
 		{
-			this->wmState->NunchukState.CalibrationInfo.AccelCalibration.YG = calData;
+			this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.AccelCalibration.YG = calData;
 		}
 		catch(...)
 		{
@@ -435,7 +435,7 @@ namespace GiiMoteLib {
 		unsigned char calData = (unsigned char)val;
 		try
 		{
-			this->wmState->NunchukState.CalibrationInfo.AccelCalibration.Z0 = calData;
+			this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.AccelCalibration.Z0 = calData;
 		}
 		catch(...)
 		{
@@ -453,7 +453,7 @@ namespace GiiMoteLib {
 		unsigned char calData = (unsigned char)val;
 		try
 		{
-			this->wmState->NunchukState.CalibrationInfo.AccelCalibration.ZG = calData;
+			this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.AccelCalibration.ZG = calData;
 		}
 		catch(...)
 		{
@@ -471,7 +471,7 @@ namespace GiiMoteLib {
 		unsigned char calData = (unsigned char)val;
 		try
 		{
-			this->wmState->NunchukState.CalibrationInfo.MaxX = calData;
+			this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.MaxX = calData;
 		}
 		catch(...)
 		{
@@ -489,7 +489,7 @@ namespace GiiMoteLib {
 		unsigned char calData = (unsigned char)val;
 		try
 		{
-			this->wmState->NunchukState.CalibrationInfo.MaxY = calData;
+			this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.MaxY = calData;
 		}
 		catch(...)
 		{
@@ -507,7 +507,7 @@ namespace GiiMoteLib {
 		unsigned char calData = (unsigned char)val;
 		try
 		{
-			this->wmState->NunchukState.CalibrationInfo.MidX = calData;
+			this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.MidX = calData;
 		}
 		catch(...)
 		{
@@ -525,7 +525,7 @@ namespace GiiMoteLib {
 		unsigned char calData = (unsigned char)val;
 		try
 		{
-			this->wmState->NunchukState.CalibrationInfo.MidY = calData;
+			this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.MidY = calData;
 		}
 		catch(...)
 		{
@@ -543,7 +543,7 @@ namespace GiiMoteLib {
 		unsigned char calData = (unsigned char)val;
 		try
 		{
-			this->wmState->NunchukState.CalibrationInfo.MinX = calData;
+			this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.MinX = calData;
 		}
 		catch(...)
 		{
@@ -561,7 +561,7 @@ namespace GiiMoteLib {
 		unsigned char calData = (unsigned char)val;
 		try
 		{
-			this->wmState->NunchukState.CalibrationInfo.MinY = calData;
+			this->wc[wmIndex]->WiimoteState->NunchukState.CalibrationInfo.MinY = calData;
 		}
 		catch(...)
 		{

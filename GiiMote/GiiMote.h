@@ -71,10 +71,12 @@ namespace GiiMoteLib {
 	public ref class GiiMote
 	{
 	public:
-		/// <summary>The Wii Remote</summary>
-		Wiimote^ wm;
-		/// <summary>The current state of the Wii Remote</summary>
-		WiimoteState^ wmState;
+		/// <summary>A collection of all the Wii Remotes attatched to the system</summary>
+		WiimoteCollection^ wc;
+		/// <summary>The number of the current Wii Remote</summary>
+		int wmIndex;
+		/// <summary>The GUID of the current Wii Remote</summary>
+		System::Guid^ wmGUID;
 
 		/// <summary>The height of the current display</summary>
 		int display_height;
@@ -82,13 +84,13 @@ namespace GiiMoteLib {
 		int display_width;
 
 		/// <summary>The position on the screen the Wii Remote is pointing at</summary>
-		System::Drawing::Point ir_screen_pos;
+		cli::array<Point>^ ir_screen_pos;
 		
 		// Dead Zone's
 		/// <summary>Joystick dead-zone value</summary>
-		double joystick_dead_zone;
+		cli::array<double>^ joystick_dead_zone;
 		/// <summary>Trigger dead-zone value</summary>
-		double trigger_dead_zone;
+		cli::array<double>^ trigger_dead_zone;
 		/// <summary>Accelerometer dead-zone values</summary>
 		/// <remarks>
 		/// <list type="bullet">
@@ -122,23 +124,23 @@ namespace GiiMoteLib {
 		///     </item>
 		/// </list>
 		/// </remarks>
-		cli::array<double>^ accel_dead_zone;
+		cli::array<double, 2>^ accel_dead_zone;
 
 		/// <summary>The report type of the Wii Remote</summary>
-		int report_type;
+		cli::array<int>^ report_type;
 		/// <summary>Report continuously or on update?</summary>
-		bool continuous;
+		cli::array<bool>^ continuous;
 		/// <summary>The IR camera's sensitivity</summary>
-		IRSensitivity ir_sensitivity;
+		cli::array<IRSensitivity>^ ir_sensitivity;
 
 		/// <summary>The change in an infrared point's coordinates</summary>
-		cli::array<System::Drawing::PointF^>^ ir_last_pos;
+		cli::array<PointF, 2>^ ir_last_pos;
 		/// <summary>The change in an infrared point's raw coordinates</summary>
-		cli::array<System::Drawing::Point^>^ ir_last_raw_pos;
+		cli::array<Point, 2>^ ir_last_raw_pos;
 		/// <summary>The change in the infrared midpoint's coordinates</summary>
-		System::Drawing::PointF^ ir_last_mid_pos;
+		cli::array<PointF>^ ir_last_mid_pos;
 		/// <summary>The change in the infrared midpoint's raw coordinates</summary>
-		System::Drawing::Point^ ir_last_rawmid_pos;
+		cli::array<Point>^ ir_last_rawmid_pos;
 
 		 //////////////////
 		// Constructors //
@@ -148,35 +150,22 @@ namespace GiiMoteLib {
 		/// <returns>Nothing</returns>
 		GiiMote()
 		{
-			this->wm = gcnew Wiimote;
-
-			ir_last_pos = gcnew cli::array<System::Drawing::PointF^>(4);
-			ir_last_raw_pos = gcnew cli::array<System::Drawing::Point^>(4);
-			ir_last_mid_pos = System::Drawing::PointF(0.0, 0.0);
-			ir_last_rawmid_pos = System::Drawing::Point(0, 0);
-
-			// Default dead-zones to 0
-			this->accel_dead_zone->Resize(this->accel_dead_zone, 6);
-			for(int i = 0; i <= 5; i++)
+			this->wmIndex = 0;
+			this->wc = gcnew WiimoteCollection();
+			if (this->wc->Count > 0)
 			{
-				this->accel_dead_zone[i] = 0;
+				this->wmGUID = this->wc[wmIndex]->ID;
 			}
-			this->joystick_dead_zone = this->trigger_dead_zone = 0;
+
+			ir_last_pos = gcnew cli::array<PointF, 2>(0, 4);
+			ir_last_raw_pos = gcnew cli::array<Point, 2>(0, 4);
+			accel_dead_zone = gcnew cli::array<double, 2>(0, 6);
+
+			wm_find_all();
 
 			// Get the width and height of the primary display
 			this->display_height = System::Windows::Forms::Screen::PrimaryScreen->Bounds.Height;
 			this->display_width	 = System::Windows::Forms::Screen::PrimaryScreen->Bounds.Width;
-
-			// Set the current X and Y position on the display to 0
-			this->ir_screen_pos.X = 0;
-			this->ir_screen_pos.Y = 0;
-
-			// Default the report type to rt_auto
-			this->report_type = rtAuto;
-			// Default to continuous reporting
-			this->continuous = 1;
-			// Default to level 3 sensitivity
-			this->ir_sensitivity = IRSensitivity::WiiLevel3;
 		}
 		/// <summary>Default destructor</summary>
 		/// <remarks>
@@ -187,10 +176,11 @@ namespace GiiMoteLib {
 		/// <returns>Nothing</returns>
 		~GiiMote()
 		{
-			wm_disconnect();
+			wm_disconnect_all();
 			delete ir_last_pos;
 			delete ir_last_raw_pos;
-			delete (wm);
+			delete accel_dead_zone;
+			delete (wc);
 		}
 
 		/// <summary>Wii Remote extension state change event</summary>
@@ -200,7 +190,7 @@ namespace GiiMoteLib {
 		{
 			// When an extension is plugged in or unplugged all reporting stops
 			// until we update the report type
-			wm_set_report_type(this->report_type, this->continuous);
+			wm_set_report_type(this->report_type[this->wmIndex], this->continuous[this->wmIndex]);
 		}
 
 		/// <summary>Wii Remote state change event</summary>
@@ -208,26 +198,42 @@ namespace GiiMoteLib {
 		/// <param name="args">Current Wii Remote state</param>
 		void wm_OnWiimoteChanged(System::Object^ sender, WiimoteChangedEventArgs^ args)
 		{
-			this->wmState = args->WiimoteState;
-
-			if (this->wmState->IRState.IRSensors[0].Found && this->wmState->IRState.IRSensors[1].Found)
+			int Index = -1;
+			int Hash = args->WiimoteState->GetHashCode();
+			for (int i = 0; i < this->wc->Count; i++)
 			{
-				this->ir_screen_pos.X = display_width - (int)domain_rescale(this->wmState->IRState.RawMidpoint.X, 0, 1023, 0, display_width);
-				this->ir_screen_pos.Y = (int)domain_rescale(this->wmState->IRState.RawMidpoint.Y, 0, 767, 0, display_height);
+				int tHash;
+				tHash = this->wc[i]->WiimoteState->GetHashCode();
+				if (tHash == Hash)
+				{
+					Index = i;
+					break;
+				}
+			}
+
+			if (Index = -1)
+			{
+				throw "It's still -1. Do it again.";
+			}
+
+			if (args->WiimoteState->IRState.IRSensors[0].Found && args->WiimoteState->IRState.IRSensors[1].Found)
+			{
+				this->ir_screen_pos[Index].X = display_width - (int)domain_rescale(this->wc[Index]->WiimoteState->IRState.RawMidpoint.X, 0, 1023, 0, display_width);
+				this->ir_screen_pos[Index].Y = (int)domain_rescale(this->wc[Index]->WiimoteState->IRState.RawMidpoint.Y, 0, 767, 0, display_height);
 			}
 			else
 			{
-				if (this->wmState->IRState.IRSensors[0].Found)
+				if (args->WiimoteState->IRState.IRSensors[0].Found)
 				{
-					this->ir_screen_pos.X -= (int)domain_rescale(wm_ir_dot_get_delta_rawx(1), 0, 1023, 0, display_width);
-					this->ir_screen_pos.Y -= (int)domain_rescale(wm_ir_dot_get_delta_rawy(1), 0, 767, 0, display_height);
+					this->ir_screen_pos[Index].X -= (int)domain_rescale(wm_ir_dot_get_delta_rawx(1), 0, 1023, 0, display_width);
+					this->ir_screen_pos[Index].Y -= (int)domain_rescale(wm_ir_dot_get_delta_rawy(1), 0, 767, 0, display_height);
 				}
 				else
 				{
-					if (this->wmState->IRState.IRSensors[1].Found)
+					if (this->wc[Index]->WiimoteState->IRState.IRSensors[1].Found)
 					{
-						this->ir_screen_pos.X -= (int)domain_rescale(wm_ir_dot_get_delta_rawx(2), 0, 1023, 0, display_width);
-						this->ir_screen_pos.Y -= (int)domain_rescale(wm_ir_dot_get_delta_rawy(2), 0, 767, 0, display_height);
+						this->ir_screen_pos[Index].X -= (int)domain_rescale(wm_ir_dot_get_delta_rawx(2), 0, 1023, 0, display_width);
+						this->ir_screen_pos[Index].Y -= (int)domain_rescale(wm_ir_dot_get_delta_rawy(2), 0, 767, 0, display_height);
 					}
 					else
 					{
@@ -238,24 +244,24 @@ namespace GiiMoteLib {
 						// position. However, if the IR is not visible that most likely
 						// means we are not facing the screen anyways, and integrating the acceleration
 						// is not very accurate.
-						this->ir_screen_pos.X = -1;
-						this->ir_screen_pos.Y = -1;
+						this->ir_screen_pos[Index].X = -1;
+						this->ir_screen_pos[Index].Y = -1;
 					}
 				}
 			}
 
 			for(int i = 0; i < 4; i++)
 			{
-				ir_last_pos[i]->X = this->wmState->IRState.IRSensors[i].Position.X;
-				ir_last_pos[i]->Y = this->wmState->IRState.IRSensors[i].Position.Y;
-				ir_last_raw_pos[i]->X = this->wmState->IRState.IRSensors[i].RawPosition.X;
-				ir_last_raw_pos[i]->Y = this->wmState->IRState.IRSensors[i].RawPosition.Y;
+				ir_last_pos[Index, i].X = this->wc[Index]->WiimoteState->IRState.IRSensors[i].Position.X;
+				ir_last_pos[Index, i].Y = this->wc[Index]->WiimoteState->IRState.IRSensors[i].Position.Y;
+				ir_last_raw_pos[Index, i].X = this->wc[Index]->WiimoteState->IRState.IRSensors[i].RawPosition.X;
+				ir_last_raw_pos[Index, i].Y = this->wc[Index]->WiimoteState->IRState.IRSensors[i].RawPosition.Y;
 			}
 
-			ir_last_mid_pos->X = this->wmState->IRState.Midpoint.X;
-			ir_last_mid_pos->Y = this->wmState->IRState.Midpoint.Y;
-			ir_last_rawmid_pos->X = this->wmState->IRState.RawMidpoint.X;
-			ir_last_rawmid_pos->Y = this->wmState->IRState.RawMidpoint.Y;
+			ir_last_mid_pos[Index].X = this->wc[Index]->WiimoteState->IRState.Midpoint.X;
+			ir_last_mid_pos[Index].Y = this->wc[Index]->WiimoteState->IRState.Midpoint.Y;
+			ir_last_rawmid_pos[Index].X = this->wc[Index]->WiimoteState->IRState.RawMidpoint.X;
+			ir_last_rawmid_pos[Index].Y = this->wc[Index]->WiimoteState->IRState.RawMidpoint.Y;
 		}
 
 public:
@@ -263,13 +269,22 @@ public:
 // Wii Remote Functions
 ////////////////////////////////////////////
 		// Connection Functions
-		double wm_connect();
-		double wm_exists();
-		double wm_connected();
-		double wm_disconnect();
-		double wm_set_report_type(double report_type, double continuous);
-		double wm_get_report_type();
-		double wm_get_report_continuous();
+		double  wm_find_all();
+		double  wm_set_wm(double wm);
+		double  wm_set_wm(System::String^ wm);
+		double  wm_connect();
+		double  wm_connect_all();
+		double  wm_exists();
+		double  wm_connected();
+		double  wm_disconnect();
+		double  wm_disconnect_all();
+		double  wm_set_report_type(double report_type, double continuous);
+		double  wm_get_report_type();
+		double  wm_get_report_continuous();
+		double  wm_get_id();
+		String^ wm_get_guid();
+		double  wm_get_index(System::String^ guid);
+		double  wm_get_index(double id);
 
 		// LED Functions
 		double wm_get_led(double led_num);

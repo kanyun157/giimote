@@ -31,7 +31,7 @@ namespace GiiMoteLib {
 	/// <returns>1</returns>
 	double GiiMote::wm_set_joystick_dead_zone(double val)
 	{
-		this->joystick_dead_zone = in_domain(val, 0, 0.5);
+		this->joystick_dead_zone[wmIndex] = in_domain(val, 0, 0.5);
 		return ( 1 );
 	}
 
@@ -39,7 +39,7 @@ namespace GiiMoteLib {
 	/// <returns>Joystick dead-zone value</returns>
 	double GiiMote::wm_get_joystick_dead_zone()
 	{
-		return ( this->joystick_dead_zone );
+		return ( this->joystick_dead_zone[wmIndex] );
 	}
 
 } // namespace GiiMoteLib
