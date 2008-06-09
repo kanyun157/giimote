@@ -156,10 +156,19 @@ namespace GiiMoteLib {
 			{
 				this->wmGUID = this->wc[wmIndex]->ID;
 			}
-
+			
+			// Create all arrays on the heap
+			ir_screen_pos = gcnew cli::array<Point>(0);
+			joystick_dead_zone = gcnew cli::array<double>(0);
+			trigger_dead_zone = gcnew cli::array<double>(0);
+			accel_dead_zone = gcnew cli::array<double, 2>(0, 6);
+			report_type = gcnew cli::array<int>(0);
+			continuous = gcnew cli::array<bool>(0);
+			ir_sensitivity = gcnew cli::array<IRSensitivity>(0);
 			ir_last_pos = gcnew cli::array<PointF, 2>(0, 4);
 			ir_last_raw_pos = gcnew cli::array<Point, 2>(0, 4);
-			accel_dead_zone = gcnew cli::array<double, 2>(0, 6);
+			ir_last_mid_pos = gcnew cli::array<PointF>(0);
+			ir_last_rawmid_pos = gcnew cli::array<Point>(0);
 
 			wm_find_all();
 
@@ -177,9 +186,17 @@ namespace GiiMoteLib {
 		~GiiMote()
 		{
 			wm_disconnect_all();
+			delete ir_screen_pos;
+			delete joystick_dead_zone;
+			delete trigger_dead_zone;
+			delete accel_dead_zone;
+			delete report_type;
+			delete continuous;
+			delete ir_sensitivity;
 			delete ir_last_pos;
 			delete ir_last_raw_pos;
-			delete accel_dead_zone;
+			delete ir_last_mid_pos;
+			delete ir_last_rawmid_pos;
 			delete (wc);
 		}
 
