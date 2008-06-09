@@ -30,9 +30,30 @@ To pair your Wii Remote with your computer follow these steps:</p>
 </ol>
 <p>
 <h2><a name="setup">Setting Up and Tearing Down GiiMote</a></h2>
-<p>Once we have our Wii Remote paired successfully with our computer, we can use it in our game. To check if the Wii Remote is paired correctly you may call the function <b><a name="wm_exists">wm_exists()</a></b>. To connect to the Wii Remote you can call <b><a name="wm_connect">wm_connect()</a></b> which will return either 1 if successful, 0 if the connection failed, or -1 if a Wii Remote is already connected. When we
-are done we can call <b><a name="wm_connect">wm_disconnect()</a></b>
-to release the Wii Remote. Please note that this does not stop the Wii Remote from being paired with your computer! You must disconnect the Wii Remote manually to stop it from using its battery power (Press the power button on the Wii Remote or disconnect via your bluetooth stack). We can also check to see if the Wii Remote is currently connected to our application by using <b><a name="wm_connected">wm_connected()</a></b>. After the Wii Remote is connected,
+<p>Once we have our Wii Remote(s) paired successfully with our computer, we can use it 
+    or them in our game. To check if any Wii Remotes are paired correctly you may call the function <b><a name="wm_exists">wm_exists()</a></b> or 
+    you may use <b><a name="wm_find_all">wm_find_all()</a></b> to see the number of available Wii Remotes. 
+    Each function will only work on a single Wii Remote; to change the active Wii 
+    Remote you may call the function <b><a name="wm_set_wm">wm_set_wm(wm)</a></b> where wm is the index or GUID of the Wii Remote to use for future function calls. 
+    Each Wii Remote attatched to the system has two unique values which may be used 
+    to identify it, the index, which may change as other Wii Remotes are 
+    disconnected, and the GUID which can be expressed either as a string, or, 
+    numerically. The index is an integer between 0 and the number of connected Wii 
+    Remotes - 1, so the first Wii Remote always has an index of 0. The GUID is a 
+    128-bit integer so be warned, using it to much can result in large ammounts of 
+    overhead. To get the index or GUID of a Wii Remote, the following functions may 
+    be used:</p>
+<blockquote>
+	<tt><b><a name="wm_get_index">wm_get_index(guid)</a></b></tt>
+		Gets the index of the Wii Remote with the given guid or numerical guid.<br>
+	<tt><b><a name="wm_get_index">wm_get_guid(index)</a></b></tt>
+		Gets the guid of the Wii Remote with the given index.<br>
+	<tt><b><a name="wm_get_index">wm_get_id(index)</a></b></tt>
+		Gets the numerical guid of the Wii Remote with the given index.<br>
+</blockquote>
+<p>To connect to a single Wii Remote you can call <b><a name="wm_connect">wm_connect()</a></b> which will return either 1 if successful, 0 if the connection failed, or -1 if a Wii Remote is already connected. To connect all discovered Wii Remotes at once you may use <b><a name="wm_connect_all">wm_connect_all()</a></b>. When you are done using the Wii Remote
+you can call <b><a name="wm_disconnect">wm_disconnect()</a></b>
+to release the Wii Remote or <b><a name="wm_disconnect">wm_disconnect_all()</a></b> to release all connected Wii Remotes. Please note that these functions do not stop the Wii Remote(s) from being paired with your computer! You must disconnect the Wii Remote manually to stop it from using its battery power (Press the power button on the Wii Remote or disconnect via your bluetooth stack). We can also check to see if the active Wii Remote is currently connected to our application by using <b><a name="wm_connected">wm_connected()</a></b>. After the Wii Remote is connected,
 we can find out information about the currently plugged in extension (if any) by
 calling <b><a name="wm_check_extension">wm_check_extension()</a></b>. This will return one of the following constants:</p>
 <blockquote>
@@ -42,8 +63,11 @@ calling <b><a name="wm_check_extension">wm_check_extension()</a></b>. This will 
 	<tt><b><a name="ext_none">ext_none</a></b></tt><br>
 	<tt><b><a name="ext_unknown">ext_unknown</a></b></tt><br>
 </blockquote>
-<p>GiiMote stores data about the Wii Remote inside the extension. Anytime you press a button, check the battery life, or change the status of the Wii Remote in any way (by pressing the &quot;A&quot; button for instance) this data is updated and when you call a function which returns some data (wm_check_button for instance) it checks this data, not the Wii Remote directly. Most of the time this information is up to date, but sometimes it is still useful to update the status of the Wii Remote manually.
-This can be accomplished by calling <b><a name="wm_get_status">wm_get_status()</a></b>. This function sends a request to the Wii Remote which will then send back the current status of all its hardware. The function returns weather or not the update was
+<p>GiiMote stores data about the Wii Remote inside the extension. Anytime you set 
+    the rumble, check the battery life, or change the status of the Wii Remote in any way (by 
+    turning off an LED for instance) this data is updated and when you call a function which returns some data (wm_get_rumble for instance) it checks this data, not the Wii Remote directly. Most of the time this information is up to date, but sometimes it is still useful to update the status of the Wii Remote manually.
+This can be accomplished by calling <b><a name="wm_get_status">wm_get_status()</a></b>. This function sends a request to the Wii Remote which will then send back 
+    its current status. The function returns weather or not the update was
 a success.</p>
 <h2><a name="buttons">Reading Buttons</a></h2>
 <p>You can find the status of buttons on the Wii Remote and supported expansion controllers by calling the following functions:</p>

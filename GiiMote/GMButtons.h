@@ -67,37 +67,37 @@ namespace GiiMoteLib {
 		switch ((int)key_code)
 		{
 		case btnA:
-			is_pressed = this->wmState->ButtonState.A;
+			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.A;
 			break;
 		case btnB:
-			is_pressed = this->wmState->ButtonState.B;
+			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.B;
 			break;
 		case btnUp:
-			is_pressed = this->wmState->ButtonState.Up;
+			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.Up;
 			break;
 		case btnDown:
-			is_pressed = this->wmState->ButtonState.Down;
+			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.Down;
 			break;
 		case btnRight:
-			is_pressed = this->wmState->ButtonState.Right;
+			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.Right;
 			break;
 		case btnLeft:
-			is_pressed = this->wmState->ButtonState.Left;
+			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.Left;
 			break;
 		case btnOne:
-			is_pressed = this->wmState->ButtonState.One;
+			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.One;
 			break;
 		case btnTwo:
-			is_pressed = this->wmState->ButtonState.Two;
+			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.Two;
 			break;
 		case btnPlus:
-			is_pressed = this->wmState->ButtonState.Plus;
+			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.Plus;
 			break;
 		case btnMinus:
-			is_pressed = this->wmState->ButtonState.Minus;
+			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.Minus;
 			break;
 		case btnHome:
-			is_pressed = this->wmState->ButtonState.Home;
+			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.Home;
 			break;
 		default:
 			is_pressed = false;

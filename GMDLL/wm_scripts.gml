@@ -297,9 +297,12 @@ function wm_classic_trigger_pressure(trigger:real):real
 function wm_classic_xpos(wm_joystick:real):real
 function wm_classic_ypos(wm_joystick:real):real
 function wm_connect():real
+function wm_connect_all():real
 function wm_connected():real
 function wm_disconnect():real
+function wm_disconnect_all();
 function wm_exists():real
+function wm_find_all():real
 function wm_get_accel_dead_zone_x():real
 function wm_get_accel_dead_zone_y():real
 function wm_get_accel_dead_zone_z():real
@@ -314,6 +317,9 @@ function wm_get_calibration_y0():real
 function wm_get_calibration_yg():real
 function wm_get_calibration_z0():real
 function wm_get_calibration_zg():real
+function wm_get_guid(index:real):string
+function wm_get_id(index:real):real
+function wm_get_index(guid):real
 function wm_get_joystick_dead_zone():real
 function wm_get_led(led:real):real
 function wm_get_moving():real
@@ -408,6 +414,7 @@ function wm_set_leds_int(leds:real):real
 function wm_set_report_type(report_type:real, continuous:real):real
 function wm_set_rumble(rumbling:real):real
 function wm_set_trigger_dead_zone(val:real):real
+function wm_set_wm(wm:real):real
 hfunction gm_init():real
 hfunction wm_classic_rawx(wm_joystick:real):real
 hfunction wm_classic_rawy(wm_joystick:real):real
@@ -478,6 +485,14 @@ layer_function(global.gm_class,"wm_ir_dot_get_y",ty_real,1,argument0);
 layer_function(global.gm_class,"wm_ir_dot_size",ty_real,1,argument0);
 #define wm_ir_found_dot
 layer_function(global.gm_class,"wm_ir_found_dot",ty_real,1,argument0);
+#define wm_get_joystick_dead_zone
+layer_function(global.gm_class,"wm_get_joystick_dead_zone",ty_real,0);
+#define wm_get_trigger_dead_zone
+layer_function(global.gm_class,"wm_get_trigger_dead_zone",ty_real,0);
+#define wm_set_joystick_dead_zone
+layer_function(global.gm_class,"wm_set_joystick_dead_zone",ty_real,1,argument0);
+#define wm_set_trigger_dead_zone
+layer_function(global.gm_class,"wm_set_trigger_dead_zone",ty_real,1,argument0);
 #define gm_init
 layer_init();
 global.gm_dll = layer_loaddll(temp_directory+'/temp756/GiiMote.dll');
@@ -486,33 +501,35 @@ if (global.gm_class == 0)
 {
     show_error("Error! GiiMote.dll not found or link failed.",true);
 }
-// layer_function(global.gm_class,"gm_init",ty_real,0);
 #define wm_check_extension
 layer_function(global.gm_class,"wm_check_extension",ty_real,0);
 #define wm_connect
-// The alternate writing method has been depricated, the
-// write method is now automatically detected. You can
-// still set it (if you really have to) by using wm_set_write_method
-// before connecting.
 layer_function(global.gm_class,"wm_connect",ty_real,0);
+#define wm_connect_all
+layer_function(global.gm_class,"wm_connect_all",ty_real,0);
 #define wm_connected
 layer_function(global.gm_class,"wm_connected",ty_real,0);
 #define wm_disconnect
 layer_function(global.gm_class,"wm_disconnect",ty_real,0);
+#define wm_disconnect_all
+layer_function(global.gm_class,"wm_disconnect_all",ty_real,0);
 #define wm_exists
 layer_function(global.gm_class,"wm_exists",ty_real,0);
-#define wm_get_joystick_dead_zone
-layer_function(global.gm_class,"wm_get_joystick_dead_zone",ty_real,0);
+#define wm_find_all
+layer_function(global.gm_class,"wm_find_all",ty_real,0);
 #define wm_get_status
 // Updates the Wii Remote and ensures that the other functions have
 // the latest data.
 layer_function(global.gm_class,"wm_get_status",ty_real,0);
-#define wm_get_trigger_dead_zone
-layer_function(global.gm_class,"wm_get_trigger_dead_zone",ty_real,0);
-#define wm_set_joystick_dead_zone
-layer_function(global.gm_class,"wm_set_joystick_dead_zone",ty_real,1,argument0);
-#define wm_set_trigger_dead_zone
-layer_function(global.gm_class,"wm_set_trigger_dead_zone",ty_real,1,argument0);
+#define wm_set_wm
+if (is_string(argument0))
+{
+    layer_function(global.gm_class,"wm_set_wm",ty_string,1,argument0);
+}
+else
+{
+    layer_function(global.gm_class,"wm_set_wm",ty_real,1,argument0);
+}
 #define wm_get_accel_dead_zone_x
 layer_function(global.gm_class,"wm_get_accel_dead_zone_x",ty_real,0);
 #define wm_get_accel_dead_zone_y
@@ -561,6 +578,19 @@ layer_function(global.gm_class,"wm_set_calibration_yg",ty_real,1,argument0);
 layer_function(global.gm_class,"wm_set_calibration_z0",ty_real,1,argument0);
 #define wm_set_calibration_zg
 layer_function(global.gm_class,"wm_set_calibration_zg",ty_real,1,argument0);
+#define wm_get_guid
+layer_function(global.gm_class,"wm_get_guid",ty_string);
+#define wm_get_id
+layer_function(global.gm_class,"wm_get_id",ty_real);
+#define wm_get_index
+if (is_string(argument0))
+{
+    layer_function(global.gm_class,"wm_get_index",ty_string,1,argument0);
+}
+else
+{
+    layer_function(global.gm_class,"wm_get_index",ty_real,1,argument0);
+}
 #define wm_bin_read_byte
 // argument0 - Address
 layer_function(global.gm_class,"wm_bin_read_byte",ty_real,1,argument0);

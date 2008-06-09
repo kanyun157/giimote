@@ -859,6 +859,22 @@ Current extension:
             <param name="led_num">The LED to get the state of (1-4)</param>
             <returns>The state of the LED</returns>
         </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_get_index(System.Double)">
+            <summary>Gets the index of the given Wii Remote</summary>
+            <returns>Index</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_get_index(System.String)">
+            <summary>Gets the index of the given Wii Remote</summary>
+            <returns>Index</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_get_id">
+            <summary>Gets the GUID of the given Wii Remote</summary>
+            <returns>GUID as Double</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_get_guid">
+            <summary>Gets the GUID of the given Wii Remote</summary>
+            <returns>GUID as String</returns>
+        </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_report_continuous">
             <summary>Gets the current report interval of the Wii Remote</summary>
             <returns>
@@ -974,33 +990,22 @@ Current extension:
             <param name="continuous">Report continuously</param>
             <returns>Success</returns>
         </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_disconnect_all">
+            <summary>Disconnects all paired Wii Remotes</summary>
+            <returns>Number of Wii Remotes disconnected</returns>
+        </member>
         <member name="M:GiiMoteLib.GiiMote.wm_disconnect">
             <summary>Disconnect from the Wii Remote</summary>
-            <returns>Success</returns>
+            <returns>Wii Remote connected</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_exists">
-            <summary>Checks to see if a Wii Remote exists</summary>
-            <remarks>Same as seeing if wm_connect() fails</remarks>
-            <returns>
-                <list type="table">
-                    <listheader>
-                        <term>Return Code</term>
-                        <description>Description</description>
-                    </listheader>
-                    <item>
-                        <term>-1</term>
-                        <description>Wii Remote detected but an error occured</description>
-                    </item>
-                    <item>
-                        <term>0</term>
-                        <description>No Wii Remote detected</description>
-                    </item>
-                    <item>
-                        <term>1</term>
-                        <description>Wii Remote detected</description>
-                    </item>
-                </list>
-            </returns>
+            <summary>Checks to see if any Wii Remotes exist</summary>
+            <remarks>Same as checking if wm_find_all is greater than 0</remarks>
+            <returns>Wii Remote detected</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_connect_all">
+            <summary>Connects all paired Wii Remotes</summary>
+            <returns>Number of Wii Remotes connected</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_connect">
             <summary>Connect to Wii Remote</summary>
@@ -1030,8 +1035,20 @@ Current extension:
             </returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_connected">
-            <summary>If the Wii Remote is connected</summary>
+            <summary>If the current Wii Remote is connected</summary>
             <returns>Wii Remote connected</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_set_wm(System.String)">
+            <summary>Sets the current Wii Remote to use by GUID</summary>
+            <returns>Success</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_set_wm(System.Double)">
+            <summary>Sets the current Wii Remote to use by index or numerical GUID</summary>
+            <returns>Success</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_find_all">
+            <summary>Finds all paired Wii Remotes</summary>
+            <returns>Number of Wii Remotes found</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.domain_rescale(System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>Rescales a value from one domain to another</summary>
@@ -1168,11 +1185,14 @@ you will need to make the destructor bind late using the keyword "virtual."
         <member name="F:GiiMoteLib.GiiMote.display_height">
             <summary>The height of the current display</summary>
         </member>
-        <member name="F:GiiMoteLib.GiiMote.wmState">
-            <summary>The current state of the Wii Remote</summary>
+        <member name="F:GiiMoteLib.GiiMote.wmGUID">
+            <summary>The GUID of the current Wii Remote</summary>
         </member>
-        <member name="F:GiiMoteLib.GiiMote.wm">
-            <summary>The Wii Remote</summary>
+        <member name="F:GiiMoteLib.GiiMote.wmIndex">
+            <summary>The number of the current Wii Remote</summary>
+        </member>
+        <member name="F:GiiMoteLib.GiiMote.wc">
+            <summary>A collection of all the Wii Remotes attatched to the system</summary>
         </member>
         <member name="T:GiiMoteLib.GiiMote">
             <summary>The class embodying GiiMote</summary>

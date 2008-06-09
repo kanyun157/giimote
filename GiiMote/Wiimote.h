@@ -6,15 +6,122 @@ namespace GiiMoteLib {
 	// Connection Functions
 	/////////////////////////
 
-	/// <summary>If the Wii Remote is connected</summary>
+	/// <summary>Finds all paired Wii Remotes</summary>
+	/// <returns>Number of Wii Remotes found</returns>
+	double GiiMote::wm_find_all()
+	{
+		this->wc->FindAllWiimotes();
+
+		cli::array<PointF, 2>^ temp_ir_last_pos     = ir_last_pos;
+		cli::array<Point, 2>^ temp_ir_last_raw_pos  = ir_last_raw_pos;
+		cli::array<double, 2>^ temp_accel_dead_zone = accel_dead_zone;
+
+		delete ir_last_pos;
+		delete ir_last_raw_pos;
+		delete accel_dead_zone;
+
+		ir_last_pos     = gcnew cli::array<PointF, 2>(this->wc->Count, 4);
+		ir_last_raw_pos = gcnew cli::array<Point, 2>(this->wc->Count, 4);
+		accel_dead_zone = gcnew cli::array<double, 2>(this->wc->Count, 6);
+		
+		cli::array<PointF>::ConstrainedCopy(temp_ir_last_pos, 0, ir_last_pos, 0, temp_ir_last_pos->Length);
+		cli::array<Point>::ConstrainedCopy(temp_ir_last_raw_pos, 0, ir_last_raw_pos, 0, temp_ir_last_raw_pos->Length);
+		cli::array<double>::ConstrainedCopy(temp_accel_dead_zone, 0, accel_dead_zone, 0, temp_accel_dead_zone->Length);
+
+		cli::array<PointF>::Resize(this->ir_last_mid_pos, wc->Count);
+		cli::array<Point>::Resize(this->ir_last_rawmid_pos, wc->Count);
+		cli::array<Point>::Resize(this->ir_screen_pos, wc->Count);
+
+		cli::array<int>::Resize(this->report_type, wc->Count);
+		cli::array<bool>::Resize(this->continuous, wc->Count);
+		cli::array<IRSensitivity>::Resize(this->ir_sensitivity, wc->Count);
+		cli::array<double>::Resize(this->trigger_dead_zone, wc->Count);
+		cli::array<double>::Resize(this->joystick_dead_zone, wc->Count);
+
+		// Default the report type to rt_auto
+		// with continuous reporting and level 3 IR sensitivity.
+		int tIndex = wmIndex;
+		for(int i = 0; i < wc->Count; i++)
+		{
+			wmIndex = i;
+			if (!wm_connected())
+			{
+				this->report_type[i] = rtAuto;
+				this->continuous[i] = 1;
+				this->ir_sensitivity[i] = IRSensitivity::WiiLevel3;
+				this->joystick_dead_zone[i] = this->trigger_dead_zone[i] = 0;
+				// Set the current X and Y position on the display to 0
+				this->ir_screen_pos[i].X = 0;
+				this->ir_screen_pos[i].Y = 0;
+			}
+		}
+		wmIndex = tIndex;
+
+		if (wmIndex >= this->wc->Count)
+		{
+			int tIndex = (int)wm_get_index(wmGUID->ToString());
+			if (tIndex != -1)
+			{
+				wmIndex = tIndex;
+			}
+			else
+			{
+				wmIndex = 0;
+				wmGUID  = this->wc[wmIndex]->ID;
+			}
+		}
+		return ( (double)this->wc->Count );
+	}
+
+	/// <summary>Sets the current Wii Remote to use by index or numerical GUID</summary>
+	/// <returns>Success</returns>
+	double GiiMote::wm_set_wm(double wm)
+	{
+		if (this->wc->Count > 0)
+		{
+			if (wm < this->wc->Count && wm >= 0)
+			{
+				wmIndex = (int)wm;
+				wmGUID  = this->wc[wmIndex]->ID;
+				return ( 1 );
+			}
+			else
+			{
+				int i = (int)wm_get_index(wm);
+				if (i != -1)
+				{
+					wmIndex = i;
+					wmGUID  = this->wc[wmIndex]->ID;
+					return ( 1 );
+				}
+			}
+		}
+
+		return ( 0 );
+	}
+
+	/// <summary>Sets the current Wii Remote to use by GUID</summary>
+	/// <returns>Success</returns>
+	double GiiMote::wm_set_wm(System::String^ guid)
+	{
+		int i = (int)wm_get_index(guid);
+		if (this->wc->Count > 0 && i != -1)
+		{
+			wmIndex = i;
+			wmGUID  = this->wc[wmIndex]->ID;
+			return ( 1 );
+		}
+
+		return ( 0 );
+	}
+
+	/// <summary>If the current Wii Remote is connected</summary>
 	/// <returns>Wii Remote connected</returns>
 	double GiiMote::wm_connected()
 	{
 		try
 		{
-			/// TODO: Fix this to read from a valid address.
-#pragma message("Fix this to read from a valid address.")
-			this->wm->ReadData(0x0008,1);
+			this->wc[wmIndex]->ReadData(0x0016,1);
 		}
 		catch(...)
 		{
@@ -55,10 +162,10 @@ namespace GiiMoteLib {
 		{
 			try
 			{
-				this->wm->WiimoteChanged += (gcnew System::EventHandler<WiimoteChangedEventArgs^>(this,&GiiMote::wm_OnWiimoteChanged));
-				this->wm->WiimoteExtensionChanged += (gcnew System::EventHandler<WiimoteExtensionChangedEventArgs^>(this,&GiiMote::wm_OnWiimoteExtensionChanged));
-				this->wm->Connect();
-				wm_set_report_type(this->report_type, this->continuous);
+				this->wc[wmIndex]->WiimoteChanged += (gcnew System::EventHandler<WiimoteChangedEventArgs^>(this,&GiiMote::wm_OnWiimoteChanged));
+				this->wc[wmIndex]->WiimoteExtensionChanged += (gcnew System::EventHandler<WiimoteExtensionChangedEventArgs^>(this,&GiiMote::wm_OnWiimoteExtensionChanged));
+				this->wc[wmIndex]->Connect();
+				wm_set_report_type(this->report_type[wmIndex], this->continuous[wmIndex]);
 			}
 			catch( ... )
 			{
@@ -66,13 +173,12 @@ namespace GiiMoteLib {
 			}
 			try
 			{
-				this->wm->SetLEDs(false, false, false, false);
+				this->wc[wmIndex]->SetLEDs(false, false, false, false);
 			}
 			catch(...)
 			{
 				return ( -2 );
 			}
-			// wm->GetStatus(); - This is covered in wm_connected().
 		}
 		else
 		{
@@ -82,63 +188,44 @@ namespace GiiMoteLib {
 		return (1);
 	}
 
-	/// <summary>Checks to see if a Wii Remote exists</summary>
-	/// <remarks>Same as seeing if wm_connect() fails</remarks>
-	/// <returns>
-	/// <list type="table">
-	///     <listheader>
-	///         <term>Return Code</term>
-	///         <description>Description</description>
-	///     </listheader>
-	///     <item>
-	///         <term>-1</term>
-	///         <description>Wii Remote detected but an error occured</description>
-	///     </item>
-	///     <item>
-	///         <term>0</term>
-	///         <description>No Wii Remote detected</description>
-	///     </item>
-	///     <item>
-	///         <term>1</term>
-	///         <description>Wii Remote detected</description>
-	///     </item>
-	/// </list>
-	/// </returns>
-	double GiiMote::wm_exists()
+	/// <summary>Connects all paired Wii Remotes</summary>
+	/// <returns>Number of Wii Remotes connected</returns>
+	double GiiMote::wm_connect_all()
 	{
-		if (!wm_connected())
+		int tIndex = wmIndex;
+		int count  = 0;
+		for(int i = 0; i < this->wc->Count; i++)
 		{
-			try
+			wmIndex = i;
+			if (wm_connect() == 1)
 			{
-				this->wm->Connect();
-			}
-			catch(...)
-			{
-				return ( 0 );
-			}
-			try
-			{
-				this->wm->Disconnect();
-			}
-			catch(...)
-			{
-				return ( -1 );
+				count += 1;
 			}
 		}
-		return ( 1 );
+		wmIndex = tIndex;
+
+		return ( count );
+	}
+
+	/// <summary>Checks to see if any Wii Remotes exist</summary>
+	/// <remarks>Same as checking if wm_find_all is greater than 0</remarks>
+	/// <returns>Wii Remote detected</returns>
+	double GiiMote::wm_exists()
+	{
+		return (double(wm_find_all() > 0));
 	}
 
 	/// <summary>Disconnect from the Wii Remote</summary>
-	/// <returns>Success</returns>
+	/// <returns>Wii Remote connected</returns>
 	double GiiMote::wm_disconnect()
 	{
 		if (wm_connected())
 		{
 			try
 			{
-				delete (this->wm->WiimoteChanged);
-				delete (this->wm->WiimoteExtensionChanged);
-				this->wm->Disconnect();
+				delete (this->wc[wmIndex]->WiimoteChanged);
+				delete (this->wc[wmIndex]->WiimoteExtensionChanged);
+				this->wc[wmIndex]->Disconnect();
 			}
 			catch (...)
 			{
@@ -146,6 +233,25 @@ namespace GiiMoteLib {
 			}
 		}
 		return ( 1 );
+	}
+
+	/// <summary>Disconnects all paired Wii Remotes</summary>
+	/// <returns>Number of Wii Remotes disconnected</returns>
+	double GiiMote::wm_disconnect_all()
+	{
+		int tIndex = wmIndex;
+		int count  = 0;
+		for(int i = 0; i < this->wc->Count; i++)
+		{
+			wmIndex = i;
+			if (wm_disconnect() == 1)
+			{
+				count += 1;
+			}
+		}
+		wmIndex = tIndex;
+
+		return ( count );
 	}
 
 	/// <summary>Changes the report type of the Wii Remote</summary>
@@ -205,37 +311,37 @@ namespace GiiMoteLib {
 				switch ( int(report_type) )
 				{
 				case rtButtons:
-					this->wm->SetReportType(WiimoteLib::InputReport::Buttons, this->ir_sensitivity, bool(continuous));
+					this->wc[wmIndex]->SetReportType(WiimoteLib::InputReport::Buttons, this->ir_sensitivity[wmIndex], bool(continuous));
 					break;
 				case rtButtonsAccel:
-					this->wm->SetReportType(WiimoteLib::InputReport::ButtonsAccel, this->ir_sensitivity, bool(continuous));
+					this->wc[wmIndex]->SetReportType(WiimoteLib::InputReport::ButtonsAccel, this->ir_sensitivity[wmIndex], bool(continuous));
 					break;
 				case rtButtonsExtension:
-					this->wm->SetReportType(WiimoteLib::InputReport::ButtonsExtension, this->ir_sensitivity, bool(continuous));
+					this->wc[wmIndex]->SetReportType(WiimoteLib::InputReport::ButtonsExtension, this->ir_sensitivity[wmIndex], bool(continuous));
 					break;
 				case rtExtensionAccel:
-					this->wm->SetReportType(WiimoteLib::InputReport::ExtensionAccel, this->ir_sensitivity, bool(continuous));
+					this->wc[wmIndex]->SetReportType(WiimoteLib::InputReport::ExtensionAccel, this->ir_sensitivity[wmIndex], bool(continuous));
 					break;
 				case rtIRAccel:
-					this->wm->SetReportType(WiimoteLib::InputReport::IRAccel, this->ir_sensitivity, bool(continuous));
+					this->wc[wmIndex]->SetReportType(WiimoteLib::InputReport::IRAccel, this->ir_sensitivity[wmIndex], bool(continuous));
 					break;
 				case rtIRExtensionAccel:
-					this->wm->SetReportType(WiimoteLib::InputReport::IRExtensionAccel, this->ir_sensitivity, bool(continuous));
+					this->wc[wmIndex]->SetReportType(WiimoteLib::InputReport::IRExtensionAccel, this->ir_sensitivity[wmIndex], bool(continuous));
 					break;
 				case rtReadData:
-					this->wm->SetReportType(WiimoteLib::InputReport::ReadData, this->ir_sensitivity, bool(continuous));
+					this->wc[wmIndex]->SetReportType(WiimoteLib::InputReport::ReadData, this->ir_sensitivity[wmIndex], bool(continuous));
 					break;
 				case rtStatus:
-					this->wm->SetReportType(WiimoteLib::InputReport::Status, this->ir_sensitivity, bool(continuous));
+					this->wc[wmIndex]->SetReportType(WiimoteLib::InputReport::Status, this->ir_sensitivity[wmIndex], bool(continuous));
 					break;
 				case rtAuto:
-					if (this->wm->WiimoteState->Extension)
+					if (this->wc[wmIndex]->WiimoteState->Extension)
 					{
-						this->wm->SetReportType(WiimoteLib::InputReport::IRExtensionAccel, this->ir_sensitivity, bool(continuous));
+						this->wc[wmIndex]->SetReportType(WiimoteLib::InputReport::IRExtensionAccel, this->ir_sensitivity[wmIndex], bool(continuous));
 					}
 					else
 					{
-						this->wm->SetReportType(WiimoteLib::InputReport::IRAccel, this->ir_sensitivity, bool(continuous));
+						this->wc[wmIndex]->SetReportType(WiimoteLib::InputReport::IRAccel, this->ir_sensitivity[wmIndex], bool(continuous));
 					}
 					break;
 				default:
@@ -248,11 +354,9 @@ namespace GiiMoteLib {
 				return ( 0 );
 			}
 		}
-		else
-		{
-			this->report_type = int(report_type);
-			this->continuous  = bool(continuous);
-		}
+
+		this->report_type[wmIndex] = int(report_type);
+		this->continuous[wmIndex]  = bool(continuous);
 
 		return ( 1 );
 		#pragma warning( default : 4800 ) // Re-enable warning 4800
@@ -305,7 +409,7 @@ namespace GiiMoteLib {
 	/// </returns>
 	double GiiMote::wm_get_report_type()
 	{
-		return ( double(this->report_type) );
+		return ( double(this->report_type[wmIndex]) );
 	}
 
 	/// <summary>Gets the current report interval of the Wii Remote</summary>
@@ -327,7 +431,70 @@ namespace GiiMoteLib {
 	/// </returns>
 	double GiiMote::wm_get_report_continuous()
 	{
-		return ( double(this->continuous) );
+		return ( double(this->continuous[wmIndex]) );
+	}
+
+	/// <summary>Gets the GUID of the given Wii Remote</summary>
+	/// <returns>GUID as String</returns>
+	String^ GiiMote::wm_get_guid()
+	{
+		return ( this->wc[wmIndex]->ID.ToString() );
+	}
+	/// <summary>Gets the GUID of the given Wii Remote</summary>
+	/// <returns>GUID as Double</returns>
+	double GiiMote::wm_get_id()
+	{
+		System::String^ guid = this->wc[wmIndex]->ID.ToString();
+		guid->Replace("{","");
+		guid->Replace("}","");
+		guid->Replace("-","");
+		double sum = 0;
+		int temp;
+
+		for (int i = 0; i < guid->Length; i++)
+		{
+			temp = (guid->Substring(1, 1)->ToCharArray()[0] & 0xF0U) >> 4;
+			sum = sum*16 + temp;
+			temp = (guid->Substring(1, 1)->ToCharArray()[0] & 0x0FU);
+			sum = sum*16 + temp;
+		}
+		return ( sum );
+	}
+
+	/// <summary>Gets the index of the given Wii Remote</summary>
+	/// <returns>Index</returns>
+	double GiiMote::wm_get_index(System::String^ guid)
+	{
+		System::String^ GUID = guid;
+		GUID->Replace("-","");
+		GUID->Replace("{","");
+		GUID->Replace("}","");
+		for (int i = 0; i < wc->Count; i++)
+		{
+			System::String^ temp = wm_get_guid();
+			temp->Replace("-","");
+			temp->Replace("{","");
+			temp->Replace("}","");
+			if (guid == temp)
+			{
+				return ( i );
+			}
+		}
+		return ( -1 );
+	}
+
+	/// <summary>Gets the index of the given Wii Remote</summary>
+	/// <returns>Index</returns>
+	double GiiMote::wm_get_index(double guid)
+	{
+		for (int i = 0; i < wc->Count; i++)
+		{
+			if (guid == wm_get_id())
+			{
+				return ( i );
+			}
+		}
+		return ( -1 );
 	}
 
 	/////////////////////////
@@ -344,16 +511,16 @@ namespace GiiMoteLib {
 			switch( (int)led_num )
 			{
 			case 1:
-				led = this->wmState->LEDState.LED1;
+				led = this->wc[wmIndex]->WiimoteState->LEDState.LED1;
 				break;
 			case 2:
-				led = this->wmState->LEDState.LED2;
+				led = this->wc[wmIndex]->WiimoteState->LEDState.LED2;
 				break;
 			case 3:
-				led = this->wmState->LEDState.LED3;
+				led = this->wc[wmIndex]->WiimoteState->LEDState.LED3;
 				break;
 			case 4:
-				led = this->wmState->LEDState.LED4;
+				led = this->wc[wmIndex]->WiimoteState->LEDState.LED4;
 				break;
 			default:
 				throw( 0 );
@@ -383,7 +550,7 @@ namespace GiiMoteLib {
 
 		try
 		{
-			this->wm->SetLEDs(bLed1,bLed2,bLed3,bLed4);
+			this->wc[wmIndex]->SetLEDs(bLed1,bLed2,bLed3,bLed4);
 		}
 		catch (...)
 		{
@@ -401,7 +568,7 @@ namespace GiiMoteLib {
 		int LEDs = (int)val;
 		try
 		{
-			this->wm->SetLEDs( LEDs );
+			this->wc[wmIndex]->SetLEDs( LEDs );
 		}
 		catch (...)
 		{
@@ -421,8 +588,7 @@ namespace GiiMoteLib {
 		double battery_state;
 		try
 		{
-			this->wm->GetStatus();
-			battery_state = (double)this->wmState->Battery;
+			battery_state = (double)this->wc[wmIndex]->WiimoteState->Battery;
 		}
 		catch(...)
 		{
@@ -437,7 +603,7 @@ namespace GiiMoteLib {
 	{
 		try
 		{
-			this->wm->GetStatus();
+			this->wc[wmIndex]->GetStatus();
 		}
 		catch(...)
 		{
@@ -486,7 +652,7 @@ namespace GiiMoteLib {
 		double extension_type;
 		try
 		{
-			switch(this->wmState->ExtensionType)
+			switch(this->wc[wmIndex]->WiimoteState->ExtensionType)
 			{
 			case (WiimoteLib::ExtensionType::ClassicController):
 				extension_type = extClassic;
@@ -520,7 +686,7 @@ namespace GiiMoteLib {
 	{
 		try
 		{
-			this->wm->SetRumble( rumbling > 0.5 );
+			this->wc[wmIndex]->SetRumble( rumbling > 0.5 );
 		}
 		catch(...)
 		{
@@ -535,7 +701,7 @@ namespace GiiMoteLib {
 		double rumbling;
 		try
 		{
-			rumbling = (double)this->wmState->Rumble;
+			rumbling = (double)this->wc[wmIndex]->WiimoteState->Rumble;
 		}
 		catch (...)
 		{
@@ -553,37 +719,37 @@ namespace GiiMoteLib {
 	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_get_calibration_x0()
 	{
-		return ( (double)this->wmState->AccelCalibrationInfo.X0 );
+		return ( (double)this->wc[wmIndex]->WiimoteState->AccelCalibrationInfo.X0 );
 	}
 	/// <summary>Gets the gravity at rest of the accelerometer</summary>
 	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_get_calibration_xg()
 	{
-		return ( (double)this->wmState->AccelCalibrationInfo.XG );
+		return ( (double)this->wc[wmIndex]->WiimoteState->AccelCalibrationInfo.XG );
 	}
 	/// <summary>Gets the zero point of the accelerometer</summary>
 	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_get_calibration_y0()
 	{
-		return ( (double)this->wmState->AccelCalibrationInfo.Y0 );
+		return ( (double)this->wc[wmIndex]->WiimoteState->AccelCalibrationInfo.Y0 );
 	}
 	/// <summary>Gets the gravity at rest of the accelerometer</summary>
 	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_get_calibration_yg()
 	{
-		return ( (double)this->wmState->AccelCalibrationInfo.YG );
+		return ( (double)this->wc[wmIndex]->WiimoteState->AccelCalibrationInfo.YG );
 	}
 	/// <summary>Gets the zero point of the accelerometer</summary>
 	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_get_calibration_z0()
 	{
-		return ( (double)this->wmState->AccelCalibrationInfo.Z0 );
+		return ( (double)this->wc[wmIndex]->WiimoteState->AccelCalibrationInfo.Z0 );
 	}
 	/// <summary>Gets the gravity at rest of the accelerometer</summary>
 	/// <returns>Normalized calibration data</returns>
 	double GiiMote::wm_get_calibration_zg()
 	{
-		return ( (double)this->wmState->AccelCalibrationInfo.ZG );
+		return ( (double)this->wc[wmIndex]->WiimoteState->AccelCalibrationInfo.ZG );
 	}
 	// Set
 	/// <summary>Sets the zero point of the accelerometer</summary>
@@ -593,7 +759,7 @@ namespace GiiMoteLib {
 	{
 		try
 		{
-			this->wmState->AccelCalibrationInfo.X0 = (unsigned char)val;
+			this->wc[wmIndex]->WiimoteState->AccelCalibrationInfo.X0 = (unsigned char)val;
 		}
 		catch(...)
 		{
@@ -608,7 +774,7 @@ namespace GiiMoteLib {
 	{
 		try
 		{
-			this->wmState->AccelCalibrationInfo.XG = (unsigned char)val;
+			this->wc[wmIndex]->WiimoteState->AccelCalibrationInfo.XG = (unsigned char)val;
 		}
 		catch(...)
 		{
@@ -623,7 +789,7 @@ namespace GiiMoteLib {
 	{
 		try
 		{
-			this->wmState->AccelCalibrationInfo.Y0 = (unsigned char)val;
+			this->wc[wmIndex]->WiimoteState->AccelCalibrationInfo.Y0 = (unsigned char)val;
 		}
 		catch(...)
 		{
@@ -638,7 +804,7 @@ namespace GiiMoteLib {
 	{
 		try
 		{
-			this->wmState->AccelCalibrationInfo.YG = (unsigned char)val;
+			this->wc[wmIndex]->WiimoteState->AccelCalibrationInfo.YG = (unsigned char)val;
 		}
 		catch(...)
 		{
@@ -653,7 +819,7 @@ namespace GiiMoteLib {
 	{
 		try
 		{
-			this->wmState->AccelCalibrationInfo.Z0 = (unsigned char)val;
+			this->wc[wmIndex]->WiimoteState->AccelCalibrationInfo.Z0 = (unsigned char)val;
 		}
 		catch(...)
 		{
@@ -668,7 +834,7 @@ namespace GiiMoteLib {
 	{
 		try
 		{
-			this->wmState->AccelCalibrationInfo.ZG = (unsigned char)val;
+			this->wc[wmIndex]->WiimoteState->AccelCalibrationInfo.ZG = (unsigned char)val;
 		}
 		catch(...)
 		{
@@ -690,7 +856,7 @@ namespace GiiMoteLib {
 		double value;
 		try
 		{
-			value = double( (this->wm->ReadData((int)address,1))[0] );
+			value = double( (this->wc[wmIndex]->ReadData((int)address,1))[0] );
 		}
 		catch(...)
 		{
@@ -705,7 +871,7 @@ namespace GiiMoteLib {
 	{
 		try
 		{
-			this->wm->WriteData((int)address,(unsigned char)value);
+			this->wc[wmIndex]->WriteData((int)address,(unsigned char)value);
 		}
 		catch(...)
 		{

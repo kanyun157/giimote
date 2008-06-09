@@ -49,7 +49,7 @@ namespace GiiMoteLib {
 		System::IO::FileStream^ miiFile = gcnew System::IO::FileStream(fName,System::IO::FileMode::Create);
 		try
 		{
-			miiFile->Write(wm->ReadData(start, end - start), 0, end - start);
+			miiFile->Write(wc[wmIndex]->ReadData(start, end - start), 0, end - start);
 		}
 		catch (...)
 		{
@@ -58,7 +58,7 @@ namespace GiiMoteLib {
 		/*for(int i = start; i < end; i++)
 		{
 			try {
-				tData = wm->ReadData(i,1)[0];
+				tData = wc[wmIndex]->ReadData(i,1)[0];
 			}
 			catch (...) {
 				delete miiFile;
@@ -158,7 +158,7 @@ namespace GiiMoteLib {
 				/*for(int c=0;c<MII_BLOCK_SIZE;c++)
 				{
 					try {
-						this->wm->WriteData(start + c,miiBuffer[c]);
+						this->wc[wmIndex]->WriteData(start + c,miiBuffer[c]);
 					}
 					catch(...) {
 						return ( 0 );
@@ -166,7 +166,7 @@ namespace GiiMoteLib {
 				}*/
 				try
 				{
-					this->wm->WriteData(start, sizeof(unsigned char), miiBuffer);
+					this->wc[wmIndex]->WriteData(start, sizeof(unsigned char), miiBuffer);
 				}
 				catch(...)
 				{
@@ -180,7 +180,7 @@ namespace GiiMoteLib {
 				/*for(int c=0;c<MII_LENGTH;c++)
 				{
 					try {
-						this->wm->WriteData(start + c,miiBuffer[((miiNum-1)*MII_LENGTH)+c]);
+						this->wc[wmIndex]->WriteData(start + c,miiBuffer[((miiNum-1)*MII_LENGTH)+c]);
 					}
 					catch(...) {
 						return ( 0 );
@@ -191,7 +191,7 @@ namespace GiiMoteLib {
 				{
 					cli::array<unsigned char>^ individualMiiBuffer;
 					cli::array<unsigned char>::ConstrainedCopy(miiBuffer, ((miiNum-1)*MII_LENGTH), individualMiiBuffer, 0, MII_LENGTH);
-					this->wm->WriteData(start, sizeof(unsigned char), individualMiiBuffer );
+					this->wc[wmIndex]->WriteData(start, sizeof(unsigned char), individualMiiBuffer );
 					delete individualMiiBuffer;
 				}
 				catch(...)
@@ -202,8 +202,8 @@ namespace GiiMoteLib {
 				// Update the CRC on the Wii Remote
 				try
 				{
-					this->wm->WriteData(blockStart+MII_BLOCK_SIZE-2,miiBuffer[MII_BLOCK_SIZE-2]);
-					this->wm->WriteData(blockStart+MII_BLOCK_SIZE-1,miiBuffer[MII_BLOCK_SIZE-1]);
+					this->wc[wmIndex]->WriteData(blockStart+MII_BLOCK_SIZE-2,miiBuffer[MII_BLOCK_SIZE-2]);
+					this->wc[wmIndex]->WriteData(blockStart+MII_BLOCK_SIZE-1,miiBuffer[MII_BLOCK_SIZE-1]);
 				}
 				catch(...)
 				{
@@ -218,7 +218,7 @@ namespace GiiMoteLib {
 				/*for(int c=0;c<MII_DATA_LENGTH;c++)
 				{
 					try {
-						this->wm->WriteData(MII_DATA_START + c,miiBuffer[c]);
+						this->wc[wmIndex]->WriteData(MII_DATA_START + c,miiBuffer[c]);
 					}
 					catch(...) {
 						return ( 0 );
@@ -226,7 +226,7 @@ namespace GiiMoteLib {
 				}*/
 				try
 				{
-					this->wm->WriteData(MII_DATA_START, sizeof(unsigned char), miiBuffer);
+					this->wc[wmIndex]->WriteData(MII_DATA_START, sizeof(unsigned char), miiBuffer);
 				}
 				catch(...)
 				{
@@ -242,8 +242,8 @@ namespace GiiMoteLib {
 					wChar = miiBuffer[((miiNum-1)*MII_LENGTH)+c];
 					try
 					{
-						this->wm->WriteData(MII_DATA_START + miiLoc + c,wChar);
-						this->wm->WriteData(MII_DATA_START + MII_BLOCK_SIZE + miiLoc  + c,wChar);
+						this->wc[wmIndex]->WriteData(MII_DATA_START + miiLoc + c,wChar);
+						this->wc[wmIndex]->WriteData(MII_DATA_START + MII_BLOCK_SIZE + miiLoc  + c,wChar);
 					}
 					catch(...)
 					{
@@ -254,8 +254,8 @@ namespace GiiMoteLib {
 				cli::array<unsigned char>::ConstrainedCopy(miiBuffer, ((miiNum-1)*MII_LENGTH), individualMiiBuffer, 0, miiBuffer->Length);
 				try
 				{
-					this->wm->WriteData(MII_DATA_START + miiLoc, sizeof(unsigned char), individualMiiBuffer);
-					this->wm->WriteData(MII_DATA_START + MII_BLOCK_SIZE + miiLoc, sizeof(unsigned char), individualMiiBuffer);
+					this->wc[wmIndex]->WriteData(MII_DATA_START + miiLoc, sizeof(unsigned char), individualMiiBuffer);
+					this->wc[wmIndex]->WriteData(MII_DATA_START + MII_BLOCK_SIZE + miiLoc, sizeof(unsigned char), individualMiiBuffer);
 				}
 				catch(...)
 				{
@@ -269,8 +269,8 @@ namespace GiiMoteLib {
 				// for some reason the second may still be written and be valid on the Wii Remote.
 				try 
 				{
-					this->wm->WriteData(MII_DATA_START+MII_BLOCK_SIZE-2,miiBuffer[MII_BLOCK_SIZE-2]);
-					this->wm->WriteData(MII_DATA_START+MII_BLOCK_SIZE-1,miiBuffer[MII_BLOCK_SIZE-1]);
+					this->wc[wmIndex]->WriteData(MII_DATA_START+MII_BLOCK_SIZE-2,miiBuffer[MII_BLOCK_SIZE-2]);
+					this->wc[wmIndex]->WriteData(MII_DATA_START+MII_BLOCK_SIZE-1,miiBuffer[MII_BLOCK_SIZE-1]);
 				}
 				catch(...)
 				{
@@ -279,8 +279,8 @@ namespace GiiMoteLib {
 				}
 				try
 				{
-					this->wm->WriteData(blockStart+(2*MII_BLOCK_SIZE)-2,miiBuffer[(2*MII_BLOCK_SIZE)-2]);
-					this->wm->WriteData(blockStart+(2*MII_BLOCK_SIZE)-1,miiBuffer[(2*MII_BLOCK_SIZE)-1]);
+					this->wc[wmIndex]->WriteData(blockStart+(2*MII_BLOCK_SIZE)-2,miiBuffer[(2*MII_BLOCK_SIZE)-2]);
+					this->wc[wmIndex]->WriteData(blockStart+(2*MII_BLOCK_SIZE)-1,miiBuffer[(2*MII_BLOCK_SIZE)-1]);
 				}
 				catch(...)
 				{
