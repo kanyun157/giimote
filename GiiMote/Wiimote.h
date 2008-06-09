@@ -79,7 +79,13 @@ namespace GiiMoteLib {
 	{
 		if (this->wc->Count > 0)
 		{
-			if (wm < this->wc->Count && wm >= 0)
+			// Error traps
+			if (wm < 0)
+			{
+				return ( 0 );
+			}
+
+			if (wm < this->wc->Count)
 			{
 				wmIndex = (int)wm;
 				wmGUID  = this->wc[wmIndex]->ID;
