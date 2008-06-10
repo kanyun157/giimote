@@ -174,10 +174,6 @@ namespace GiiMoteLib {
 			ir_last_rawmid_pos = gcnew cli::array<Point>(0);
 
 			wm_find_all();
-			if (this->wc->Count > 0)
-			{
-				this->wmGUID = this->wc[wmIndex]->ID;
-			}
 
 			// Get the width and height of the primary display
 			this->display_height = System::Windows::Forms::Screen::PrimaryScreen->Bounds.Height;
@@ -235,9 +231,9 @@ namespace GiiMoteLib {
 				}
 			}
 
-			if (Index = -1)
+			if (Index == -1)
 			{
-				throw "It's still -1. Do it again.";
+				return;
 			}
 
 			if (args->WiimoteState->IRState.IRSensors[0].Found && args->WiimoteState->IRState.IRSensors[1].Found)

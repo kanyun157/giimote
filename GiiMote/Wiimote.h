@@ -7,10 +7,22 @@ namespace GiiMoteLib {
 	/////////////////////////
 
 	/// <summary>Finds all paired Wii Remotes</summary>
-	/// <returns>Number of Wii Remotes found</returns>
+	/// <returns>Number of Wii Remotes found or -1 on error</returns>
 	double GiiMote::wm_find_all()
 	{
-		this->wc->FindAllWiimotes();
+		int return_code = -1;
+		try
+		{
+			this->wc->FindAllWiimotes();
+		}
+		catch(WiimoteLib::WiimoteNotFoundException^)
+		{
+			return_code = 0;
+		}
+		catch(...)
+		{
+			return_code = -1;
+		}
 
 		cli::array<PointF, 2>^ temp_ir_last_pos = ir_last_pos;
 		cli::array<Point, 2>^ temp_ir_last_raw_pos  = ir_last_raw_pos;
@@ -38,39 +50,44 @@ namespace GiiMoteLib {
 		cli::array<double>::Resize(this->trigger_dead_zone, wc->Count);
 		cli::array<double>::Resize(this->joystick_dead_zone, wc->Count);
 
-		// Default the report type to rt_auto
-		// with continuous reporting and level 3 IR sensitivity.
-		int tIndex = wmIndex;
-		for(int i = 0; i < wc->Count; i++)
+		if (this->wc->Count > 0)
 		{
-			wmIndex = i;
-			if (!wm_connected())
+			// Default the report type to rt_auto
+			// with continuous reporting and level 3 IR sensitivity.
+			int tIndex = wmIndex;
+			for(int i = 0; i < this->wc->Count; i++)
 			{
-				this->report_type[i] = rtAuto;
-				this->continuous[i] = 1;
-				this->ir_sensitivity[i] = IRSensitivity::WiiLevel3;
-				this->joystick_dead_zone[i] = this->trigger_dead_zone[i] = 0;
-				// Set the current X and Y position on the display to 0
-				this->ir_screen_pos[i].X = 0;
-				this->ir_screen_pos[i].Y = 0;
+				wmIndex = i;
+				if (!wm_connected())
+				{
+					this->report_type[i] = rtAuto;
+					this->continuous[i] = 1;
+					this->ir_sensitivity[i] = IRSensitivity::WiiLevel3;
+					this->joystick_dead_zone[i] = this->trigger_dead_zone[i] = 0;
+					// Set the current X and Y position on the display to 0
+					this->ir_screen_pos[i].X = 0;
+					this->ir_screen_pos[i].Y = 0;
+				}
 			}
-		}
-		wmIndex = tIndex;
+			wmIndex = tIndex;
+			wmGUID = this->wc[wmIndex]->ID;
 
-		if (wmIndex >= this->wc->Count)
-		{
-			int tIndex = (int)wm_get_index(wmGUID->ToString());
-			if (tIndex != -1)
+			if (wmIndex >= this->wc->Count)
 			{
-				wmIndex = tIndex;
+				int tIndex = (int)wm_get_index(wmGUID->ToString());
+				if (tIndex != -1)
+				{
+					wmIndex = tIndex;
+				}
+				else
+				{
+					wmIndex = 0;
+					wmGUID  = this->wc[wmIndex]->ID;
+				}
 			}
-			else
-			{
-				wmIndex = 0;
-				wmGUID  = this->wc[wmIndex]->ID;
-			}
+			return_code = this->wc->Count;
 		}
-		return ( (double)this->wc->Count );
+		return ( (double)return_code );
 	}
 
 	/// <summary>Sets the current Wii Remote to use by index or numerical GUID</summary>
@@ -177,6 +194,7 @@ namespace GiiMoteLib {
 			{
 				return ( 0 );
 			}
+
 			try
 			{
 				this->wc[wmIndex]->SetLEDs(false, false, false, false);
