@@ -183,7 +183,7 @@
 		/>
 		<AssemblyReference
 			RelativePath="..\WiimoteLib\WiimoteLib.dll"
-			AssemblyName="WiimoteLib, Version=1.4.0.0, processorArchitecture=MSIL"
+			AssemblyName="WiimoteLib, Version=1.5.0.0, processorArchitecture=MSIL"
 			MinFrameworkVersion="131072"
 		/>
 		<AssemblyReference
@@ -288,6 +288,10 @@
 			<Filter
 				Name="Extensions"
 				>
+				<File
+					RelativePath=".\BalanceBoard.h"
+					>
+				</File>
 				<File
 					RelativePath=".\Classic.h"
 					>

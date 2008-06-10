@@ -7,11 +7,12 @@
 
 #define export extern "C" __declspec( dllexport ) /*__cdecl*/
 
-#define extClassic 1
-#define extNunchuck 2
-#define extGuitar 3
-#define extNone 0
-#define extUnknown -1
+#define extClassic          1
+#define extNunchuck         2
+#define extGuitar           3
+#define extBalanceBoard     4
+#define extNone             0
+#define extUnknown         -1
 
 // Wii Remote specific buttons:
 #define btnA 0
@@ -49,6 +50,12 @@
 #define btnYellow 25
 #define btnStrumDown 26
 #define btnStrumUp 27
+
+// Balance Board Sensors
+#define btmLeft  0
+#define btmRight 1
+#define topLeft  2
+#define topRight 3
 
 // Report Types
 #define rtAuto 0
@@ -332,14 +339,21 @@ public:
 		double in_domain(double x, double d1, double d2);
 		double domain_rescale(double val, double minin, double maxin, double minout, double maxout);
 
-////////////////////////////////////////////
-// Buttons, Joysticks, and Triggers
-////////////////////////////////////////////
+///////////////////////////////////////////////
+// Buttons, Joysticks, Triggers, and Sensors
+///////////////////////////////////////////////
 		// Buttons
 		double wm_guitar_check_button(double key_code);
 		double wm_nunchuck_check_button(double key_code);
 		double wm_classic_check_button(double key_code);
 		double wm_check_button(double key_code);
+
+		// Sensors (Balance Board)
+		double wm_bb_get_weight_lbs();
+		double wm_bb_get_weight_kgs();
+		double wm_bb_get_sensor_raw(double sensor);
+		double wm_bb_get_sensor_kgs(double sensor);
+		double wm_bb_get_sensor_lbs(double sensor);
 
 		// Joysticks (General)
 		double joystick_direction(double xx, double yy);
@@ -502,6 +516,14 @@ public:
 		double wm_set_calibration_yg(double val);
 		double wm_set_calibration_z0(double val);
 		double wm_set_calibration_zg(double val);
+		// Balance Board Get
+		double wm_bb_get_calibration_kg0(double sensor);
+		double wm_bb_get_calibration_kg17(double sensor);
+		double wm_bb_get_calibration_kg34(double sensor);
+		// Balance Board Set
+		double wm_bb_set_calibration_kg0(double sensor, double val);
+		double wm_bb_set_calibration_kg17(double sensor, double val);
+		double wm_bb_set_calibration_kg34(double sensor, double val);
 
 ////////////////////////////////////////////
 // Mii Functions

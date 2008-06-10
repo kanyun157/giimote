@@ -11,6 +11,11 @@
 		<param name="Local" value="GiiMote.htm#accel">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Balance Board">
+		<param name="Name" value="Balance Board">
+		<param name="Local" value="GiiMote.htm#BB">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Calibration">
 		<param name="Name" value="Calibration">
 		<param name="Local" value="GiiMote.htm#calibration">
@@ -27,7 +32,17 @@
 		<param name="Local" value="GiiMote.htm#dead_zone">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Extensions">
+		<param name="Name" value="Setup">
+		<param name="Local" value="GiiMote.htm#setup">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Infrared">
+		<param name="Name" value="Infrared">
+		<param name="Local" value="GiiMote.htm#IR">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IR Sensitivity">
 		<param name="Name" value="Infrared">
 		<param name="Local" value="GiiMote.htm#IR">
 		</OBJECT>
@@ -57,6 +72,11 @@
 		<param name="Local" value="GiiMote.htm#fStream">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Report Types">
+		<param name="Name" value="Feedback">
+		<param name="Local" value="GiiMote.htm#MISC">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Rumble">
 		<param name="Name" value="Misc. Data">
 		<param name="Local" value="GiiMote.htm#MISC">
@@ -70,6 +90,61 @@
 		<param name="Name" value="Vibrate">
 		<param name="Name" value="Misc. Data">
 		<param name="Local" value="GiiMote.htm#MISC">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_bb_get_calibration_kg0()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_bb_get_calibration_kg17()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_bb_get_calibration_kg34()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_bb_get_sensor_kgs()">
+		<param name="Name" value="Balance Board">
+		<param name="Local" value="GiiMote.htm#BB">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_bb_get_sensor_lbs()">
+		<param name="Name" value="Balance Board">
+		<param name="Local" value="GiiMote.htm#BB">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_bb_get_sensor_raw()">
+		<param name="Name" value="Raw Data Functions">
+		<param name="Local" value="GiiMote.htm#hidden">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_bb_get_weight_kgs()">
+		<param name="Name" value="Balance Board">
+		<param name="Local" value="GiiMote.htm#BB">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_bb_get_weight_lbs()">
+		<param name="Name" value="Balance Board">
+		<param name="Local" value="GiiMote.htm#BB">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_bb_set_calibration_kg0()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_bb_set_calibration_kg17()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_bb_set_calibration_kg34()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_bin_read_byte()">
@@ -365,6 +440,11 @@
 		<param name="Name" value="wm_guitar_whammybar_pos()">
 		<param name="Name" value="Buttons">
 		<param name="Local" value="GiiMote.htm#buttons">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_guitar_whammybar_rawpos()">
+		<param name="Name" value="Raw Data Functions">
+		<param name="Local" value="GiiMote.htm#hidden">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_guitar_xpos()">

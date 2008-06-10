@@ -51,6 +51,10 @@
 			<param name="Local" value="GiiMote.htm#orientation">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Balance Board">
+			<param name="Local" value="GiiMote.htm#BB">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Mii Data">
 			<param name="Local" value="GiiMote.htm#MII">
 			</OBJECT>

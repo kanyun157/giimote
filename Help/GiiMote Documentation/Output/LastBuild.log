@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder GUI" version="1.7.0.0" projectFile="F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation.shfb" started="6/8/2008 19:34:15">
+<shfbBuild product="Sandcastle Help File Builder GUI" version="1.7.0.0" projectFile="F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation.shfb" started="6/9/2008 21:18:49">
 <buildStep step="Initializing">
+</buildStep>
+<buildStep step="ClearWorkFolder">
+Clearing working folder...
 </buildStep>
 <buildStep step="FindingTools">
 Finding tools...
@@ -14,12 +17,12 @@ Validating and copying documentation assembly information...
 </buildStep>
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
-    Last step completed in 00:00:00.4219
+    Last step completed in 00:00:00.5938
 </buildStep>
 <buildStep step="CopyDependencies">
 Copying documentation assembly dependencies...
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Release\WiimoteLib.dll -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\DLL\WiimoteLib.dll
-    Last step completed in 00:00:00.1719
+    Last step completed in 00:00:00.4688
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
@@ -31,23 +34,23 @@ Generating reflection information...
 MrefBuilder (v2.4.10520.1)
 Copyright c Microsoft 2006
 Info: Loaded 1 assemblies for reflection and 1 dependency assemblies.
-Info: Wrote information on 1 namespaces, 1 types, and 189 members
+Info: Wrote information on 1 namespaces, 1 types, and 200 members
         1 file(s) copied.
 XslTransform (v2.4.10520.1)
 Copyright c Microsoft 2005-2006
 Info: Applying XSL transformation 'F:\Program Files\Sandcastle\ProductionTransforms\MergeDuplicates.xsl'.
-    Last step completed in 00:00:08.3906
+    Last step completed in 00:00:07.9375
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00.0313
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="ApplyVisibilityProperties">
 Applying visibility properties to reflection information file
     0 attribute nodes removed
     0 explicit interface implementations removed
     0 local and base class EII elements removed
-    Last step completed in 00:00:00.1719
+    Last step completed in 00:00:00.2188
 </buildStep>
 <buildStep step="TransformReflectionInfo">
 Transforming reflection output...
@@ -59,12 +62,12 @@ Info: Applying XSL transformation 'F:\Program Files\Sandcastle\ProductionTransfo
 XslTransform (v2.4.10520.1)
 Copyright c Microsoft 2005-2006
 Info: Applying XSL transformation 'F:\Program Files\Sandcastle\ProductionTransforms\ReflectionToManifest.xsl'.
-    Last step completed in 00:00:09.8906
+    Last step completed in 00:00:12.1094
 </buildStep>
 <buildStep step="ModifyHelpTopicFilenames">
 Modifying help topic filenames in reflection information file
     No changes required
-    Last step completed in 00:00:00.0156
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="CopyStandardContent">
 Copying standard help content...
@@ -174,7 +177,7 @@ F:\Program Files\Sandcastle\Presentation\vs2005\scripts\script_manifold.js -&gt;
 F:\Program Files\Sandcastle\Presentation\vs2005\scripts\SplitScreen.js -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\scripts\SplitScreen.js
 F:\Program Files\Sandcastle\Presentation\vs2005\styles\Presentation.css -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\styles\Presentation.css
 F:\Program Files\Sandcastle\Presentation\vs2005\styles\Whidbey\presentation.css -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\styles\Whidbey\presentation.css
-    Last step completed in 00:00:05.3750
+    Last step completed in 00:00:06.4375
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
@@ -185,25 +188,26 @@ F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote
 Applying XSL transformation 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\vs2005.xsl' to 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\Lisence.topic'.
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Topics\Overview.topic -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\Overview.topic
 Applying XSL transformation 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\vs2005.xsl' to 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\Overview.topic'.
+F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Help\GiiMote.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\GiiMote.htm
 
 Loading site map 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\SiteMap.sitemap'
-    Last step completed in 00:00:01.1094
+    Last step completed in 00:00:01.5781
 </buildStep>
 <buildStep step="MergeTablesOfContent">
 Merging conceptual and additional tables of content...
-    Last step completed in 00:00:00.1094
+    Last step completed in 00:00:00.1406
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
     conceptual.config
-    Last step completed in 00:00:00.1563
+    Last step completed in 00:00:00.1719
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\sandcastle.config
     No additional help attributes defined.  The 'HTML Help 2 Attributes' component was not added.
-    Last step completed in 00:00:00.0625
+    Last step completed in 00:00:00.0781
 </buildStep>
 <buildStep step="BuildReferenceTopics">
 Building reference help topics...
@@ -215,7 +219,7 @@ Info: CopyFromFileComponent: Loading data file 'F:\Program Files\Sandcastle\Pres
 Info: CopyFromIndexComponent: Instantiating component.
 Info: CopyFromIndexComponent: Searching for files that match '*.xml'.
 Info: CopyFromIndexComponent: Searching for files that match 'reflection.xml'.
-Info: CopyFromIndexComponent: Indexed 170288 elements in 107 files.
+Info: CopyFromIndexComponent: Indexed 170299 elements in 107 files.
 Info: CopyFromIndexComponent: Loaded 0 copy components.
 Info: CopyFromIndexComponent: Instantiating component.
 Info: CopyFromIndexComponent: Loaded 0 copy components.
@@ -826,7 +830,7 @@ Warn: CopyFromIndexComponent: Entries for the key 'P:Microsoft.Build.Framework.T
 Warn: CopyFromIndexComponent: Entries for the key 'P:Microsoft.Build.Framework.TaskStartedEventArgs.TaskName' occur in both 'F:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\en\Microsoft.Build.Framework.xml' and 'F:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\Microsoft.Build.Framework.xml'. The last entry will be used.
 Warn: CopyFromIndexComponent: Entries for the key 'T:Microsoft.Build.Framework.TaskStartedEventHandler' occur in both 'F:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\en\Microsoft.Build.Framework.xml' and 'F:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\Microsoft.Build.Framework.xml'. The last entry will be used.
 Info: CopyFromIndexComponent: Searching for files that match 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\GiiMote.xml'.
-Info: CopyFromIndexComponent: Indexed 124725 elements in 103 files.
+Info: CopyFromIndexComponent: Indexed 124736 elements in 103 files.
 Info: CopyFromIndexComponent: Loaded 0 copy components.
 Info: ForEachComponent: Instantiating component.
 Info: ForEachComponent: Loading subcomponents.
@@ -901,7 +905,7 @@ Info: ResolveReferenceLinksComponent2: Instantiating component.
 Info: ResolveReferenceLinksComponent2: Creating MSDN URL resolver.
 Info: ResolveReferenceLinksComponent2: Searching directory 'F:\Program Files\Sandcastle\Data\Reflection' for targets files of the form '*.xml'.
 Info: ResolveReferenceLinksComponent2: Searching directory 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working' for targets files of the form 'reflection.xml'.
-Info: ResolveReferenceLinksComponent2: Loaded 170288 reference targets.
+Info: ResolveReferenceLinksComponent2: Loaded 170299 reference targets.
 Info: SaveComponent: Instantiating component.
 Info: BuildAssembler: Building topic N:GiiMoteLib
 Info: BuildAssembler: Building topic T:GiiMoteLib.GiiMote
@@ -953,6 +957,17 @@ Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.wc
 Warn: ResolveReferenceLinksComponent2: Unknown reference link target 'T:WiimoteLib.WiimoteCollection'.
 Warn: ResolveReferenceLinksComponent2: Unknown reference link target 'T:WiimoteLib.WiimoteCollection'.
 Warn: ResolveReferenceLinksComponent2: Unknown reference link target 'T:WiimoteLib.WiimoteCollection'.
+Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_get_calibration_kg0(System.Double)
+Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_get_calibration_kg17(System.Double)
+Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_get_calibration_kg34(System.Double)
+Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_get_sensor_kgs(System.Double)
+Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_get_sensor_lbs(System.Double)
+Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_get_sensor_raw(System.Double)
+Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_get_weight_kgs
+Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_get_weight_lbs
+Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_set_calibration_kg0(System.Double,System.Double)
+Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_set_calibration_kg17(System.Double,System.Double)
+Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_set_calibration_kg34(System.Double,System.Double)
 Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bin_read_byte(System.Double)
 Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bin_write_byte(System.Double,System.Double)
 Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_calc_accel(System.Single,System.Int32)
@@ -1129,8 +1144,8 @@ Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_wm(System.Doubl
 Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_wm(System.String)
 Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.wmGUID
 Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.wmIndex
-Info: Processed 197 topics
-    Last step completed in 00:03:08.4844
+Info: Processed 208 topics
+    Last step completed in 00:04:11.7031
 </buildStep>
 <buildStep step="GenerateIntermediateTableOfContent">
 Generating intermediate table of content file...
@@ -1140,7 +1155,7 @@ Copyright c Microsoft 2005-2006
 Info: Applying XSL transformation 'F:\Program Files\Sandcastle\ProductionTransforms\CreateVSToc.xsl'.
 
 Clearing any prior web output
-    Last step completed in 00:00:16.6563
+    Last step completed in 00:00:03.0938
 </buildStep>
 <buildStep step="ExtractingHtmlInfo">
 Extracting HTML info for Help 1.x and/or website...
@@ -1150,21 +1165,21 @@ Copyright c 2008, Eric Woodruff, All Rights Reserved
 E-Mail: Eric@EWoodruff.us
 
 Using LCID '1033', code page '65001', encoding charset 'UTF-8'.
-Processed 200 HTML files
+Processed 212 HTML files
 Sorting keywords and generating See Also indices
 Saving Help 1.x keyword index to F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Documentation.hhk
 Saving Help 1.x table of content to F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Documentation.hhc
 Saving website keyword index to F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\WebKI.xml
 Saving website table of content to F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\WebTOC.xml
-    Last step completed in 00:00:02.7500
+    Last step completed in 00:00:03.2344
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContent">
 Generating HTML Help 1.x table of content file...
-    Last step completed in 00:00:00.0000
+    Last step completed in 00:00:00.4375
 </buildStep>
 <buildStep step="UpdateTableOfContent">
 Updating table of content with additional content items and determining default topic...
-    Last step completed in 00:00:00.0469
+    Last step completed in 00:00:00.0781
 </buildStep>
 <buildStep step="GenerateHelpFileIndex">
 Generating HTML Help 1.x index file...
@@ -1172,7 +1187,7 @@ Generating HTML Help 1.x index file...
 </buildStep>
 <buildStep step="GenerateHelpProject">
 Generating HTML Help 1.x project file...
-    Last step completed in 00:00:00.0781
+    Last step completed in 00:00:00.1094
 </buildStep>
 <buildStep step="CompilingHelpFile">
 Compiling HTML Help 1.x file...
@@ -1187,13 +1202,13 @@ Compiling f:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projec
 
 
 
-Compile time: 0 minutes, 11 seconds
+Compile time: 0 minutes, 15 seconds
 
-202	Topics
+214	Topics
 
-2,330	Local links
+2,464	Local links
 
-1,237	Internet links
+1,329	Internet links
 
 0	Graphics
 
@@ -1201,29 +1216,30 @@ Compile time: 0 minutes, 11 seconds
 
 
 
-Created f:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\Documentation.chm, 335,391 bytes
+Created f:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\Documentation.chm, 365,749 bytes
 
-Compression decreased file by 2,384,669 bytes.
+Compression decreased file by 2,533,153 bytes.
 
-    Last step completed in 00:00:15.8281
+    Last step completed in 00:00:21.0469
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContent">
 Generating website table of content file...
-    Last step completed in 00:00:00.0156
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="UpdateTableOfContent">
 Updating table of content with additional content items and determining default topic...
-    Last step completed in 00:00:00.0313
+    Last step completed in 00:00:00.0938
 </buildStep>
 <buildStep step="GenerateFullTextIndex">
 Generating full-text index for the website...
 
-    Last step completed in 00:00:03.4531
+    Last step completed in 00:00:06.5781
 </buildStep>
 <buildStep step="CopyingWebsiteFiles">
 Copying website files to output folder...
 
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\Copyright.html -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Copyright.html
+F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\GiiMote.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\GiiMote.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\Lisence.html -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Lisence.html
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\Overview.html -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Overview.html
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\fti\FTI_100.bin -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\fti\FTI_100.bin
@@ -1256,6 +1272,7 @@ F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\02b8613b-4c79-da22-be68-3c1703d515b4.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\02b8613b-4c79-da22-be68-3c1703d515b4.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\051adb83-11f9-5bf2-bb4b-c288c3bb5548.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\051adb83-11f9-5bf2-bb4b-c288c3bb5548.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\065a7461-4f5b-0c3b-b258-1d5a2a6990c6.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\065a7461-4f5b-0c3b-b258-1d5a2a6990c6.htm
+F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\06cd6622-7ff8-b634-46d7-3e3a7e1b06a9.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\06cd6622-7ff8-b634-46d7-3e3a7e1b06a9.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\082458b3-286d-8cec-9876-3b6bb9e3a1f2.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\082458b3-286d-8cec-9876-3b6bb9e3a1f2.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\0dda9a78-3636-d520-71e2-58236468fff1.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\0dda9a78-3636-d520-71e2-58236468fff1.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\0e08e8ad-dedb-24e7-f31b-9bef25b29e7e.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\0e08e8ad-dedb-24e7-f31b-9bef25b29e7e.htm
@@ -1299,6 +1316,7 @@ F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\3a440b79-5770-63da-b8ba-88358fd7af43.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\3a440b79-5770-63da-b8ba-88358fd7af43.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\3aab9756-acbf-6d28-3f98-cd556428b1c2.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\3aab9756-acbf-6d28-3f98-cd556428b1c2.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\3b16027e-def7-32f1-1f95-c2fe688b83e1.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\3b16027e-def7-32f1-1f95-c2fe688b83e1.htm
+F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\3b3ab926-e926-60ec-51c2-5462696b4ad1.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\3b3ab926-e926-60ec-51c2-5462696b4ad1.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\431a5ef6-f7c2-b70a-5758-d51590d76980.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\431a5ef6-f7c2-b70a-5758-d51590d76980.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\4463e4a4-f044-63d6-9ac2-ad804d240755.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\4463e4a4-f044-63d6-9ac2-ad804d240755.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\46126167-bc24-8969-6c5b-5e1296161a79.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\46126167-bc24-8969-6c5b-5e1296161a79.htm
@@ -1308,6 +1326,7 @@ F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\51e533a7-fef8-cd6c-7916-b58da2cbda97.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\51e533a7-fef8-cd6c-7916-b58da2cbda97.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\53c583c4-ecb5-63f5-f1ec-870251d7df2c.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\53c583c4-ecb5-63f5-f1ec-870251d7df2c.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\56fa3fb9-56fc-4dbf-943a-759fe4222be4.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\56fa3fb9-56fc-4dbf-943a-759fe4222be4.htm
+F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\578ca024-1f58-a0d7-65da-b70f613b96c2.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\578ca024-1f58-a0d7-65da-b70f613b96c2.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\5b29925c-e47e-fa36-ba6f-b60dccddcb7f.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\5b29925c-e47e-fa36-ba6f-b60dccddcb7f.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\5c709571-9573-d57f-368e-33c1a2079b8b.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\5c709571-9573-d57f-368e-33c1a2079b8b.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\60b8cd88-9c42-e5ce-1e32-5e22d2560350.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\60b8cd88-9c42-e5ce-1e32-5e22d2560350.htm
@@ -1335,6 +1354,7 @@ F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\7cf504f9-d086-80f4-7543-32c97d56b71f.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\7cf504f9-d086-80f4-7543-32c97d56b71f.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\7fd72b82-74ab-5e49-ac1c-ce8ef5ea92ef.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\7fd72b82-74ab-5e49-ac1c-ce8ef5ea92ef.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\806e0429-408f-6b1b-32e0-a9aa37182a05.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\806e0429-408f-6b1b-32e0-a9aa37182a05.htm
+F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\8071648e-0457-de8d-cde4-a7353a491b06.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\8071648e-0457-de8d-cde4-a7353a491b06.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\8140d304-6646-8960-b206-dec7cc28f248.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\8140d304-6646-8960-b206-dec7cc28f248.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\81e6f67f-ac8e-a5db-6d5f-dbfa2d8a1bc3.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\81e6f67f-ac8e-a5db-6d5f-dbfa2d8a1bc3.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\81f08ade-5aa5-1d0a-4bac-37ec92d4953d.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\81f08ade-5aa5-1d0a-4bac-37ec92d4953d.htm
@@ -1344,6 +1364,7 @@ F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\879f2432-29e8-363d-4e69-7cfb72aec19c.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\879f2432-29e8-363d-4e69-7cfb72aec19c.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\8a316123-8c92-1774-fa4b-34e63332329f.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\8a316123-8c92-1774-fa4b-34e63332329f.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\8a650212-4624-d07a-cade-1a29ced06c71.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\8a650212-4624-d07a-cade-1a29ced06c71.htm
+F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\8afb2e59-241b-a593-d837-2df2241bfe65.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\8afb2e59-241b-a593-d837-2df2241bfe65.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\8d35a16c-df03-06ca-f582-65f54d268c47.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\8d35a16c-df03-06ca-f582-65f54d268c47.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\8deccb59-4d13-cbf2-c6e1-81e04bab48a4.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\8deccb59-4d13-cbf2-c6e1-81e04bab48a4.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\8e352633-3a09-e52a-41ff-62471be5fcd8.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\8e352633-3a09-e52a-41ff-62471be5fcd8.htm
@@ -1351,6 +1372,7 @@ F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\8fccfa96-d342-a015-f824-5207ea5d4914.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\8fccfa96-d342-a015-f824-5207ea5d4914.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\8ffbc40b-5832-845a-9618-45c97bf94cf6.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\8ffbc40b-5832-845a-9618-45c97bf94cf6.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\9213d8cb-b1eb-14c4-afff-9c504875e662.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\9213d8cb-b1eb-14c4-afff-9c504875e662.htm
+F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\92688678-3a1a-96e3-d69d-4ac704600985.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\92688678-3a1a-96e3-d69d-4ac704600985.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\927dc39d-e9f0-810e-cfc9-db4c5ab7b573.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\927dc39d-e9f0-810e-cfc9-db4c5ab7b573.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\93901fec-3e63-54ce-838a-f62b56c4cd9c.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\93901fec-3e63-54ce-838a-f62b56c4cd9c.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\939c3565-fd7c-9582-2d8c-afb6b5a33ce0.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\939c3565-fd7c-9582-2d8c-afb6b5a33ce0.htm
@@ -1388,9 +1410,12 @@ F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\b64cbbb1-11cf-edf7-2ad1-c2b8f6ac5447.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\b64cbbb1-11cf-edf7-2ad1-c2b8f6ac5447.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\b79b7dbe-001e-dd04-2aa2-ba642392f947.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\b79b7dbe-001e-dd04-2aa2-ba642392f947.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\b7bc759e-8e58-00f6-9e7a-98603e08557c.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\b7bc759e-8e58-00f6-9e7a-98603e08557c.htm
+F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\b881d1ef-5b86-302b-fe21-0cda8a39956d.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\b881d1ef-5b86-302b-fe21-0cda8a39956d.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\b88a6db9-9a66-a716-441e-496c4864168c.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\b88a6db9-9a66-a716-441e-496c4864168c.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\b8d8476d-77de-0a9e-6892-0a7ed4b21b1c.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\b8d8476d-77de-0a9e-6892-0a7ed4b21b1c.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\b9175649-666c-7161-5355-15de8c4a3098.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\b9175649-666c-7161-5355-15de8c4a3098.htm
+F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\b9bb50b4-6e57-b1dc-808b-7c5801dc0a81.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\b9bb50b4-6e57-b1dc-808b-7c5801dc0a81.htm
+F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\b9e0ebc3-cf09-4aa7-1e7f-32ef0892f98c.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\b9e0ebc3-cf09-4aa7-1e7f-32ef0892f98c.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\bcbcd429-c969-81d2-4bad-6fe7bf083c9e.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\bcbcd429-c969-81d2-4bad-6fe7bf083c9e.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\bf5afb9e-5535-c5f7-a750-332b344ca096.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\bf5afb9e-5535-c5f7-a750-332b344ca096.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\c0d95eff-32ca-5022-71b9-ee2bddc8ba02.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\c0d95eff-32ca-5022-71b9-ee2bddc8ba02.htm
@@ -1431,6 +1456,7 @@ F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\e169a6c3-0933-0e29-67a2-f1ed0d1fedfb.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\e169a6c3-0933-0e29-67a2-f1ed0d1fedfb.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\e40a692b-85f9-ce32-4c48-679b8200105e.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\e40a692b-85f9-ce32-4c48-679b8200105e.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\e422c503-e3c0-a1d9-6ca3-239ea9c02bbf.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\e422c503-e3c0-a1d9-6ca3-239ea9c02bbf.htm
+F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\e554cef2-c1db-feda-a14b-05b41539153e.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\e554cef2-c1db-feda-a14b-05b41539153e.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\e55cac58-06bb-8b24-b14b-abfabb3bc2a5.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\e55cac58-06bb-8b24-b14b-abfabb3bc2a5.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\e76bb1d4-470f-9724-d6dd-48d772bac2e0.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\e76bb1d4-470f-9724-d6dd-48d772bac2e0.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\ec1d31dd-3eae-2e8a-2cc8-26db11cb31fb.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\ec1d31dd-3eae-2e8a-2cc8-26db11cb31fb.htm
@@ -1442,6 +1468,7 @@ F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\effff59b-fd4c-b1ca-1e71-77ea502ae550.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\effff59b-fd4c-b1ca-1e71-77ea502ae550.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\f1a7c069-bdad-bc59-a7f3-d99a3ee6bb0a.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\f1a7c069-bdad-bc59-a7f3-d99a3ee6bb0a.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\f21cd4ef-b3fb-6023-6863-7c307371f399.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\f21cd4ef-b3fb-6023-6863-7c307371f399.htm
+F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\f3d3d03d-cd38-e216-e08e-2c11b7dddd25.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\f3d3d03d-cd38-e216-e08e-2c11b7dddd25.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\f41e07cd-a2f8-bb8a-5987-d94efb9af75c.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\f41e07cd-a2f8-bb8a-5987-d94efb9af75c.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\f43a6372-2d96-3629-423f-8dbbc3012ccd.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\f43a6372-2d96-3629-423f-8dbbc3012ccd.htm
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\html\f7f39762-71a5-cb89-01c7-e1e22d034bd8.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\html\f7f39762-71a5-cb89-01c7-e1e22d034bd8.htm
@@ -1554,15 +1581,15 @@ F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\scripts\SplitScreen.js -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\scripts\SplitScreen.js
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\styles\Presentation.css -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\styles\Presentation.css
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\Working\Output\styles\Whidbey\presentation.css -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Output\styles\Whidbey\presentation.css
-    Last step completed in 00:00:18.4375
+    Last step completed in 00:00:22.0781
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:18.0625
+    Last step completed in 00:00:27.5000
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully.  Total time: 00:04:51.0625
+Build completed successfully.  Total time: 00:06:17.5156
 
 </buildStep>
 </shfbBuild>

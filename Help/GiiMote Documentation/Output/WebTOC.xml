@@ -4,11 +4,12 @@
   <HelpTOCNode Url="Overview.html" Title="Overview" />
 <HelpTOCNode Url="Copyright.html" Title="Copyright" />
 <HelpTOCNode Url="Lisence.html" Title="License (Ms-PL)" />
-<HelpTOCNode Id="3c207656-4e51-4d12-9185-c1d77aa6df35" Title="GiiMoteLib Namespace" Url="html/ac38eb20-598d-a504-e454-c6b53ab608d4.htm">
-    <HelpTOCNode Id="5551663a-c39c-4d89-a0ce-671362c50089" Title="GiiMote Class" Url="html/065a7461-4f5b-0c3b-b258-1d5a2a6990c6.htm">
+<HelpTOCNode Url="GiiMote.htm" Title="Extension Help" />
+<HelpTOCNode Id="dc826818-30f0-4586-b43c-2c1f51956cfe" Title="GiiMoteLib Namespace" Url="html/ac38eb20-598d-a504-e454-c6b53ab608d4.htm">
+    <HelpTOCNode Id="3d2f1962-e54c-4b37-beed-f48ccb2ce6d7" Title="GiiMote Class" Url="html/065a7461-4f5b-0c3b-b258-1d5a2a6990c6.htm">
       <HelpTOCNode Title="GiiMote Members" Url="html/646250d7-54a2-da0b-d328-08d01d6dcbbd.htm" />
       <HelpTOCNode Title="GiiMote Constructor " Url="html/da1ae5d2-f908-84df-50a9-3cabb18fae93.htm" />
-      <HelpTOCNode Id="51682ecb-89a2-4fd9-b9e8-e20593c16992" Title="GiiMote Fields" Url="html/34949fb8-f767-f900-8a07-a5006ddd4ec1.htm">
+      <HelpTOCNode Id="6c977686-a785-4fe3-b7de-59f2004e2b65" Title="GiiMote Fields" Url="html/34949fb8-f767-f900-8a07-a5006ddd4ec1.htm">
         <HelpTOCNode Title="accel_dead_zone Field" Url="html/b27a5cc9-e671-fc8c-6e60-7dda37703386.htm" />
         <HelpTOCNode Title="continuous Field" Url="html/87926fba-367e-283e-113c-d9717963531d.htm" />
         <HelpTOCNode Title="display_height Field" Url="html/205171b9-f9a7-d5a0-754e-f8f0e941865a.htm" />
@@ -26,8 +27,8 @@
         <HelpTOCNode Title="wmGUID Field" Url="html/e55cac58-06bb-8b24-b14b-abfabb3bc2a5.htm" />
         <HelpTOCNode Title="wmIndex Field" Url="html/b07d4377-4137-b497-c902-e4abeca14fcb.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="e137035c-e0e4-4154-8d17-ea36e79f59b8" Title="GiiMote Methods " Url="html/b7bc759e-8e58-00f6-9e7a-98603e08557c.htm">
-        <HelpTOCNode Id="1b4b481b-32f0-4505-9310-2d0ecac7e352" Title="Dispose Method " Url="html/35026460-afe9-b721-8544-361aa0e349ee.htm">
+      <HelpTOCNode Id="d0866e89-9507-48c8-95b1-0fca844e4f52" Title="GiiMote Methods " Url="html/b7bc759e-8e58-00f6-9e7a-98603e08557c.htm">
+        <HelpTOCNode Id="1ebbdb5c-177a-4705-aff6-db4181f83eb0" Title="Dispose Method " Url="html/35026460-afe9-b721-8544-361aa0e349ee.htm">
           <HelpTOCNode Title="Dispose Method " Url="html/6b35db78-baf4-7a4d-1a51-833a4364d163.htm" />
           <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/24212940-6203-bd83-5cd3-48c6837d4175.htm" />
         </HelpTOCNode>
@@ -35,6 +36,17 @@
         <HelpTOCNode Title="in_domain Method " Url="html/f1a7c069-bdad-bc59-a7f3-d99a3ee6bb0a.htm" />
         <HelpTOCNode Title="joystick_direction Method " Url="html/8a650212-4624-d07a-cade-1a29ced06c71.htm" />
         <HelpTOCNode Title="joystick_pressure Method " Url="html/99d735ec-f904-bcac-c70d-5177ef408436.htm" />
+        <HelpTOCNode Title="wm_bb_get_calibration_kg0 Method " Url="html/578ca024-1f58-a0d7-65da-b70f613b96c2.htm" />
+        <HelpTOCNode Title="wm_bb_get_calibration_kg17 Method " Url="html/3b3ab926-e926-60ec-51c2-5462696b4ad1.htm" />
+        <HelpTOCNode Title="wm_bb_get_calibration_kg34 Method " Url="html/b9bb50b4-6e57-b1dc-808b-7c5801dc0a81.htm" />
+        <HelpTOCNode Title="wm_bb_get_sensor_kgs Method " Url="html/8071648e-0457-de8d-cde4-a7353a491b06.htm" />
+        <HelpTOCNode Title="wm_bb_get_sensor_lbs Method " Url="html/8afb2e59-241b-a593-d837-2df2241bfe65.htm" />
+        <HelpTOCNode Title="wm_bb_get_sensor_raw Method " Url="html/92688678-3a1a-96e3-d69d-4ac704600985.htm" />
+        <HelpTOCNode Title="wm_bb_get_weight_kgs Method " Url="html/06cd6622-7ff8-b634-46d7-3e3a7e1b06a9.htm" />
+        <HelpTOCNode Title="wm_bb_get_weight_lbs Method " Url="html/f3d3d03d-cd38-e216-e08e-2c11b7dddd25.htm" />
+        <HelpTOCNode Title="wm_bb_set_calibration_kg0 Method " Url="html/e554cef2-c1db-feda-a14b-05b41539153e.htm" />
+        <HelpTOCNode Title="wm_bb_set_calibration_kg17 Method " Url="html/b9e0ebc3-cf09-4aa7-1e7f-32ef0892f98c.htm" />
+        <HelpTOCNode Title="wm_bb_set_calibration_kg34 Method " Url="html/b881d1ef-5b86-302b-fe21-0cda8a39956d.htm" />
         <HelpTOCNode Title="wm_bin_read_byte Method " Url="html/170c88bf-71b9-b041-bd66-06a8fb12027f.htm" />
         <HelpTOCNode Title="wm_bin_write_byte Method " Url="html/7aea9fb6-bf55-6db2-4078-8d5e30eeabc3.htm" />
         <HelpTOCNode Title="wm_calc_accel Method " Url="html/c78c42c2-5679-3d11-1dcc-d0e44708d657.htm" />
@@ -91,7 +103,7 @@
         <HelpTOCNode Title="wm_get_calibration_zg Method " Url="html/dba68964-cc06-a782-b3d0-1b137d8440c5.htm" />
         <HelpTOCNode Title="wm_get_guid Method " Url="html/c5afe8df-8af3-f6ab-3b04-378559126f92.htm" />
         <HelpTOCNode Title="wm_get_id Method " Url="html/27d86e62-089f-e58e-16c8-a28164e1d12e.htm" />
-        <HelpTOCNode Id="24dceb78-8b70-4955-9835-eb8e3ed9851f" Title="wm_get_index Method " Url="html/cab30ba0-91af-93a3-9159-620a77a7a769.htm">
+        <HelpTOCNode Id="006d06f6-71f8-4801-a519-59fcaf2ea7d9" Title="wm_get_index Method " Url="html/cab30ba0-91af-93a3-9159-620a77a7a769.htm">
           <HelpTOCNode Title="wm_get_index Method (Double)" Url="html/96f48ef7-63f0-d178-d0db-f52174748970.htm" />
           <HelpTOCNode Title="wm_get_index Method (String)" Url="html/8f75f80b-44c7-0af3-3000-25289571322b.htm" />
         </HelpTOCNode>
@@ -201,7 +213,7 @@
         <HelpTOCNode Title="wm_set_report_type Method " Url="html/6c984a10-464c-3d66-b047-8d6f988fb346.htm" />
         <HelpTOCNode Title="wm_set_rumble Method " Url="html/afb449ae-2c68-9782-1011-b76c3fc9285b.htm" />
         <HelpTOCNode Title="wm_set_trigger_dead_zone Method " Url="html/2b8a7820-e30e-5c61-0bcc-3df10230d294.htm" />
-        <HelpTOCNode Id="a4568aa8-591b-4e03-9e90-30f709233dcd" Title="wm_set_wm Method " Url="html/ec1d31dd-3eae-2e8a-2cc8-26db11cb31fb.htm">
+        <HelpTOCNode Id="cef33ae8-fed4-4bf9-bdaa-48d195aa9224" Title="wm_set_wm Method " Url="html/ec1d31dd-3eae-2e8a-2cc8-26db11cb31fb.htm">
           <HelpTOCNode Title="wm_set_wm Method (Double)" Url="html/d19f09a6-60ed-095a-37d2-966066f0e2e0.htm" />
           <HelpTOCNode Title="wm_set_wm Method (String)" Url="html/a3ca3ecf-ab1d-1d4f-7425-49786a782a40.htm" />
         </HelpTOCNode>

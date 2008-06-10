@@ -15,7 +15,8 @@ namespace GiiMoteLib {
 	{
 		try
 		{
-			if ( Math::Abs( this->wc[wmIndex]->WiimoteState->AccelState.Values.X + this->wc[wmIndex]->WiimoteState->AccelState.Values.Y + this->wc[wmIndex]->WiimoteState->AccelState.Values.Z ) > 1.5 )
+			float csf = Math::Abs( this->wc[wmIndex]->WiimoteState->AccelState.Values.X + this->wc[wmIndex]->WiimoteState->AccelState.Values.Y + this->wc[wmIndex]->WiimoteState->AccelState.Values.Z );
+			if (  csf > 1.5 || csf < 0.5 )
 			{
 				return ( 1 );
 			}

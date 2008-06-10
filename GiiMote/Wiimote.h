@@ -669,6 +669,9 @@ namespace GiiMoteLib {
 			case (WiimoteLib::ExtensionType::Guitar):
 				extension_type = extGuitar;
 				break;
+			case (WiimoteLib::ExtensionType::BalanceBoard):
+				extension_type = extBalanceBoard;
+				break;
 			case (WiimoteLib::ExtensionType::None):
 				extension_type = extNone;
 				break;
