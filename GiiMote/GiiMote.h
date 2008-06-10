@@ -159,10 +159,6 @@ namespace GiiMoteLib {
 		{
 			this->wmIndex = 0;
 			this->wc = gcnew WiimoteCollection();
-			if (this->wc->Count > 0)
-			{
-				this->wmGUID = this->wc[wmIndex]->ID;
-			}
 			
 			// Create all arrays on the heap
 			ir_screen_pos = gcnew cli::array<Point>(0);
@@ -178,6 +174,10 @@ namespace GiiMoteLib {
 			ir_last_rawmid_pos = gcnew cli::array<Point>(0);
 
 			wm_find_all();
+			if (this->wc->Count > 0)
+			{
+				this->wmGUID = this->wc[wmIndex]->ID;
+			}
 
 			// Get the width and height of the primary display
 			this->display_height = System::Windows::Forms::Screen::PrimaryScreen->Bounds.Height;

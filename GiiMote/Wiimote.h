@@ -12,13 +12,9 @@ namespace GiiMoteLib {
 	{
 		this->wc->FindAllWiimotes();
 
-		cli::array<PointF, 2>^ temp_ir_last_pos     = ir_last_pos;
+		cli::array<PointF, 2>^ temp_ir_last_pos = ir_last_pos;
 		cli::array<Point, 2>^ temp_ir_last_raw_pos  = ir_last_raw_pos;
 		cli::array<double, 2>^ temp_accel_dead_zone = accel_dead_zone;
-
-		delete ir_last_pos;
-		delete ir_last_raw_pos;
-		delete accel_dead_zone;
 
 		ir_last_pos     = gcnew cli::array<PointF, 2>(this->wc->Count, 4);
 		ir_last_raw_pos = gcnew cli::array<Point, 2>(this->wc->Count, 4);
@@ -27,6 +23,10 @@ namespace GiiMoteLib {
 		cli::array<PointF>::ConstrainedCopy(temp_ir_last_pos, 0, ir_last_pos, 0, temp_ir_last_pos->Length);
 		cli::array<Point>::ConstrainedCopy(temp_ir_last_raw_pos, 0, ir_last_raw_pos, 0, temp_ir_last_raw_pos->Length);
 		cli::array<double>::ConstrainedCopy(temp_accel_dead_zone, 0, accel_dead_zone, 0, temp_accel_dead_zone->Length);
+
+		delete temp_ir_last_pos;
+		delete temp_ir_last_raw_pos;
+		delete temp_accel_dead_zone;
 
 		cli::array<PointF>::Resize(this->ir_last_mid_pos, wc->Count);
 		cli::array<Point>::Resize(this->ir_last_rawmid_pos, wc->Count);
