@@ -1,5 +1,5 @@
 Managed Library for Nintendo's Wiimote
-v1.4.0.0
+v1.5.0.0
 by Brian Peek (http://www.brianpeek.com/)
 
 For more information, please visit the associated article for this project at:
@@ -13,12 +13,18 @@ If all else fails, please contact me at the address above.  Enjoy!
 Changes
 =======
 
+v1.5.0.0
+--------
+	o Wii Fit Balance Board support
+	o The GetStatus() method now waits for a response from the Wiimote before continuing
+	o Bug fix for ButtonsExtension report type (0x34)
+
 v1.4.0.0
 --------
 	o Multiple Wiimotes supported!
 	o Slight change to ExtensionType enum for better extension detection
 	o Decided I didn't like the dependency on System.Drawing for the 2D point
-	  so am now using my own Point structs.  Sorry...
+      so am now using my own Point structs.  Sorry...
 	o WiimoteTest app updated to show multiple Wiimotes working
 
 v1.3.0.0

@@ -36,6 +36,17 @@
   <HelpKINode Title="GiiMote.report_type field" Url="html/ca656282-530d-8db7-9d59-30c595b5bb8f.htm" />
   <HelpKINode Title="GiiMote.trigger_dead_zone field" Url="html/78f9eefa-f28f-bcb1-6d0d-48e47c24bc19.htm" />
   <HelpKINode Title="GiiMote.wc field" Url="html/60b8cd88-9c42-e5ce-1e32-5e22d2560350.htm" />
+  <HelpKINode Title="GiiMote.wm_bb_get_calibration_kg0 method" Url="html/578ca024-1f58-a0d7-65da-b70f613b96c2.htm" />
+  <HelpKINode Title="GiiMote.wm_bb_get_calibration_kg17 method" Url="html/3b3ab926-e926-60ec-51c2-5462696b4ad1.htm" />
+  <HelpKINode Title="GiiMote.wm_bb_get_calibration_kg34 method" Url="html/b9bb50b4-6e57-b1dc-808b-7c5801dc0a81.htm" />
+  <HelpKINode Title="GiiMote.wm_bb_get_sensor_kgs method" Url="html/8071648e-0457-de8d-cde4-a7353a491b06.htm" />
+  <HelpKINode Title="GiiMote.wm_bb_get_sensor_lbs method" Url="html/8afb2e59-241b-a593-d837-2df2241bfe65.htm" />
+  <HelpKINode Title="GiiMote.wm_bb_get_sensor_raw method" Url="html/92688678-3a1a-96e3-d69d-4ac704600985.htm" />
+  <HelpKINode Title="GiiMote.wm_bb_get_weight_kgs method" Url="html/06cd6622-7ff8-b634-46d7-3e3a7e1b06a9.htm" />
+  <HelpKINode Title="GiiMote.wm_bb_get_weight_lbs method" Url="html/f3d3d03d-cd38-e216-e08e-2c11b7dddd25.htm" />
+  <HelpKINode Title="GiiMote.wm_bb_set_calibration_kg0 method" Url="html/e554cef2-c1db-feda-a14b-05b41539153e.htm" />
+  <HelpKINode Title="GiiMote.wm_bb_set_calibration_kg17 method" Url="html/b9e0ebc3-cf09-4aa7-1e7f-32ef0892f98c.htm" />
+  <HelpKINode Title="GiiMote.wm_bb_set_calibration_kg34 method" Url="html/b881d1ef-5b86-302b-fe21-0cda8a39956d.htm" />
   <HelpKINode Title="GiiMote.wm_bin_read_byte method" Url="html/170c88bf-71b9-b041-bd66-06a8fb12027f.htm" />
   <HelpKINode Title="GiiMote.wm_bin_write_byte method" Url="html/7aea9fb6-bf55-6db2-4078-8d5e30eeabc3.htm" />
   <HelpKINode Title="GiiMote.wm_calc_accel method" Url="html/c78c42c2-5679-3d11-1dcc-d0e44708d657.htm" />
@@ -218,6 +229,17 @@
   <HelpKINode Title="report_type field" Url="html/ca656282-530d-8db7-9d59-30c595b5bb8f.htm" />
   <HelpKINode Title="trigger_dead_zone field" Url="html/78f9eefa-f28f-bcb1-6d0d-48e47c24bc19.htm" />
   <HelpKINode Title="wc field" Url="html/60b8cd88-9c42-e5ce-1e32-5e22d2560350.htm" />
+  <HelpKINode Title="wm_bb_get_calibration_kg0 method" Url="html/578ca024-1f58-a0d7-65da-b70f613b96c2.htm" />
+  <HelpKINode Title="wm_bb_get_calibration_kg17 method" Url="html/3b3ab926-e926-60ec-51c2-5462696b4ad1.htm" />
+  <HelpKINode Title="wm_bb_get_calibration_kg34 method" Url="html/b9bb50b4-6e57-b1dc-808b-7c5801dc0a81.htm" />
+  <HelpKINode Title="wm_bb_get_sensor_kgs method" Url="html/8071648e-0457-de8d-cde4-a7353a491b06.htm" />
+  <HelpKINode Title="wm_bb_get_sensor_lbs method" Url="html/8afb2e59-241b-a593-d837-2df2241bfe65.htm" />
+  <HelpKINode Title="wm_bb_get_sensor_raw method" Url="html/92688678-3a1a-96e3-d69d-4ac704600985.htm" />
+  <HelpKINode Title="wm_bb_get_weight_kgs method" Url="html/06cd6622-7ff8-b634-46d7-3e3a7e1b06a9.htm" />
+  <HelpKINode Title="wm_bb_get_weight_lbs method" Url="html/f3d3d03d-cd38-e216-e08e-2c11b7dddd25.htm" />
+  <HelpKINode Title="wm_bb_set_calibration_kg0 method" Url="html/e554cef2-c1db-feda-a14b-05b41539153e.htm" />
+  <HelpKINode Title="wm_bb_set_calibration_kg17 method" Url="html/b9e0ebc3-cf09-4aa7-1e7f-32ef0892f98c.htm" />
+  <HelpKINode Title="wm_bb_set_calibration_kg34 method" Url="html/b881d1ef-5b86-302b-fe21-0cda8a39956d.htm" />
   <HelpKINode Title="wm_bin_read_byte method" Url="html/170c88bf-71b9-b041-bd66-06a8fb12027f.htm" />
   <HelpKINode Title="wm_bin_write_byte method" Url="html/7aea9fb6-bf55-6db2-4078-8d5e30eeabc3.htm" />
   <HelpKINode Title="wm_calc_accel method" Url="html/c78c42c2-5679-3d11-1dcc-d0e44708d657.htm" />

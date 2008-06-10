@@ -6,7 +6,7 @@
         <contentItem sourcePath=".\GiiMote Documentation\Topics\Copyright.topic" destPath="" excludeItems="False" />
         <contentItem sourcePath=".\GiiMote Documentation\Topics\Lisence.topic" destPath="" excludeItems="False" />
         <contentItem sourcePath=".\GiiMote Documentation\Topics\Overview.topic" destPath="" excludeItems="False" />
-        <contentItem sourcePath=".\GiiMote Documentation\.svn\*.*" destPath="" excludeItems="True" />
+        <contentItem sourcePath=".\GiiMote Help\GiiMote.htm" destPath="" excludeItems="False" />
     </additionalContent>
     <dependencies>
         <dependencyItem depPath="..\Release\WiimoteLib.dll" />

@@ -4,6 +4,50 @@
         "GiiMote"
     </assembly>
     <members>
+        <member name="M:GiiMoteLib.GiiMote.wm_bb_set_calibration_kg34(System.Double,System.Double)">
+            <summary>Sets 34kg calibration info for a given sensor</summary>
+            <return>Success</return>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_bb_set_calibration_kg17(System.Double,System.Double)">
+            <summary>Sets 17kg calibration info for a given sensor</summary>
+            <return>Success</return>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_bb_set_calibration_kg0(System.Double,System.Double)">
+            <summary>Sets 0kg calibration info for a given sensor</summary>
+            <return>Success</return>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_bb_get_calibration_kg34(System.Double)">
+            <summary>Gets calibration info for a given sensor</summary>
+            <return>Calibraiton info at 34kg</return>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_bb_get_calibration_kg17(System.Double)">
+            <summary>Gets calibration info for a given sensor</summary>
+            <return>Calibraiton info at 17kg</return>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_bb_get_calibration_kg0(System.Double)">
+            <summary>Gets calibration info for a given sensor</summary>
+            <return>Calibraiton info at 0kg</return>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_bb_get_sensor_lbs(System.Double)">
+            <summary>Returns the pounds on the specified sensor</summary>
+            <returns>Pounds</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_bb_get_sensor_kgs(System.Double)">
+            <summary>Returns the kilograms on the specified sensor</summary>
+            <returns>Kilograms</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_bb_get_sensor_raw(System.Double)">
+            <summary>Returns the raw value on the specified sensor</summary>
+            <returns>Raw weight</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_bb_get_weight_kgs">
+            <summary>Total kilograms on the balance board</summary>
+            <returns>Total mass in kilograms</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_bb_get_weight_lbs">
+            <summary>Total pounds on the balance board</summary>
+            <returns>Total weight in pounds</returns>
+        </member>
         <member name="M:GiiMoteLib.GiiMote.wm_classic_set_calibration_miny(System.Double,System.Double)">
             <summary>
 Sets Y-axis joystick calibration data

@@ -14,3 +14,4 @@
 #include "Guitar.h"
 #include "Nunchuck.h"
 #include "Classic.h"
+#include "BalanceBoard.h"

@@ -46,6 +46,17 @@ wm_guitar_whammybar_pos()
 wm_guitar_whammybar_rawpos()
 wm_guitar_xpos()
 wm_guitar_ypos()
+wm_bb_get_weight_kgs()
+wm_bb_get_weight_lbs()
+wm_bb_get_sensor_kgs(sensor)
+wm_bb_get_sensor_lbs(sensor)
+wm_bb_get_sensor_raw(sensor)
+wm_bb_get_calibration_kg0(sensor)
+wm_bb_get_calibration_kg17(sensor)
+wm_bb_get_calibration_kg34(sensor)
+wm_bb_set_calibration_kg0(sensor, val)
+wm_bb_set_calibration_kg17(sensor, val)
+wm_bb_set_calibration_kg34(sensor, val)
 
 Fixes:
 -------
@@ -66,6 +77,7 @@ rt_iraccel
 rt_irextensionaccel
 rt_readdata
 rt_status
+ext_balanceboard
 ext_guitar
 wm_blue
 wm_green
@@ -74,6 +86,10 @@ wm_red
 wm_yellow
 wm_strum_down
 wm_strum_up
+bb_btmleft
+bb_btmright
+bb_topleft
+bb_topright
 
 Other:
 -------
