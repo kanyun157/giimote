@@ -1092,7 +1092,7 @@ Current extension:
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_find_all">
             <summary>Finds all paired Wii Remotes</summary>
-            <returns>Number of Wii Remotes found</returns>
+            <returns>Number of Wii Remotes found or -1 on error</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.domain_rescale(System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>Rescales a value from one domain to another</summary>
