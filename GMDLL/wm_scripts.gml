@@ -232,12 +232,19 @@ const wm_yellow     = 25
 const wm_strum_down = 26
 const wm_strum_up   = 27
 
+// Balance Board Sensors
+const bb_btmleft  = 0
+const bb_btmright = 1
+const bb_topleft  = 2
+const bb_topright = 3
+
 // Extension Types
-const ext_classic  = 1
-const ext_nunchuck = 2
-const ext_guitar   = 3
-const ext_none     = 0
-const ext_unknown  = -1
+const ext_classic         = 1
+const ext_nunchuck        = 2
+const ext_guitar          = 3
+const ext_balanceboard    = 4
+const ext_none            = 0
+const ext_unknown         = -1
 
 // Report Types
 const rt_auto             = 0
