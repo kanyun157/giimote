@@ -40,6 +40,7 @@ namespace GiiMoteLib {
 	}
 
 	/// <summary>Returns the raw value on the specified sensor</summary>
+	/// <param name="sensor">The sensor to read from</param>
 	/// <returns>Raw weight</returns>
 	double GiiMote::wm_bb_get_sensor_raw(double sensor)
 	{
@@ -74,6 +75,7 @@ namespace GiiMoteLib {
 	}
 
 	/// <summary>Returns the kilograms on the specified sensor</summary>
+	/// <param name="sensor">The sensor to read from</param>
 	/// <returns>Kilograms</returns>
 	double GiiMote::wm_bb_get_sensor_kgs(double sensor)
 	{
@@ -108,6 +110,7 @@ namespace GiiMoteLib {
 	}
 
 	/// <summary>Returns the pounds on the specified sensor</summary>
+	/// <param name="sensor">The sensor to read from</param>
 	/// <returns>Pounds</returns>
 	double GiiMote::wm_bb_get_sensor_lbs(double sensor)
 	{
@@ -146,6 +149,7 @@ namespace GiiMoteLib {
 	//////////////////
 
 	/// <summary>Gets calibration info for a given sensor</summary>
+	/// <param name="sensor">The sensor to read from</param>
 	/// <return>Calibraiton info at 0kg</return>
 	double GiiMote::wm_bb_get_calibration_kg0(double sensor)
 	{
@@ -180,6 +184,7 @@ namespace GiiMoteLib {
 	}
 
 	/// <summary>Gets calibration info for a given sensor</summary>
+	/// <param name="sensor">The sensor to read from</param>
 	/// <return>Calibraiton info at 17kg</return>
 	double GiiMote::wm_bb_get_calibration_kg17(double sensor)
 	{
@@ -214,6 +219,7 @@ namespace GiiMoteLib {
 	}
 
 	/// <summary>Gets calibration info for a given sensor</summary>
+	/// <param name="sensor">The sensor to read from</param>
 	/// <return>Calibraiton info at 34kg</return>
 	double GiiMote::wm_bb_get_calibration_kg34(double sensor)
 	{
@@ -248,6 +254,8 @@ namespace GiiMoteLib {
 	}
 
 	/// <summary>Sets 0kg calibration info for a given sensor</summary>
+	/// <param name="sensor">The sensor to use</param>
+	/// <param name="val">The calibration data</param>
 	/// <return>Success</return>
 	double GiiMote::wm_bb_set_calibration_kg0(double sensor, double val)
 	{
@@ -281,6 +289,8 @@ namespace GiiMoteLib {
 	}
 
 	/// <summary>Sets 17kg calibration info for a given sensor</summary>
+	/// <param name="sensor">The sensor to use</param>
+	/// <param name="val">The calibration data</param>
 	/// <return>Success</return>
 	double GiiMote::wm_bb_set_calibration_kg17(double sensor, double val)
 	{
@@ -314,6 +324,8 @@ namespace GiiMoteLib {
 	}
 
 	/// <summary>Sets 34kg calibration info for a given sensor</summary>
+	/// <param name="sensor">The sensor to use</param>
+	/// <param name="val">The calibration data</param>
 	/// <return>Success</return>
 	double GiiMote::wm_bb_set_calibration_kg34(double sensor, double val)
 	{

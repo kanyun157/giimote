@@ -324,7 +324,7 @@ namespace GiiMoteLib {
 	/// </list>	
 	/// </param>
 	/// <param name="continuous">Report continuously</param>
-	/// <returns>Success</returns>
+	/// <returns>Success or -1 on error</returns>
 	double GiiMote::wm_set_report_type(double report_type, double continuous)
 	{
 		#pragma warning( disable : 4800 ) // Suppress warning 4800 (Conversion from double to bool)
@@ -375,7 +375,7 @@ namespace GiiMoteLib {
 			}
 			catch(...)
 			{
-				return ( 0 );
+				return ( -1 );
 			}
 		}
 
@@ -458,34 +458,97 @@ namespace GiiMoteLib {
 		return ( double(this->continuous[wmIndex]) );
 	}
 
-	/// <summary>Gets the GUID of the given Wii Remote</summary>
-	/// <returns>GUID as String</returns>
+	/// <summary>Gets the guid of the current Wii Remote</summary>
+	/// <returns>Guid as string</returns>
 	String^ GiiMote::wm_get_guid()
 	{
 		return ( this->wc[wmIndex]->ID.ToString() );
 	}
-	/// <summary>Gets the GUID of the given Wii Remote</summary>
-	/// <returns>GUID as Double</returns>
+
+	/// <summary>Gets the guid of the given Wii Remote</summary>
+	/// <param name="val">The index or hashed guid of the Wii Remote</param>
+	/// <returns>guid as string or an empty string on error</returns>
+	String^ GiiMote::wm_get_guid(double val)
+	{
+		if (val < this->wc->Count)
+		{
+			String^ temp;
+			try
+			{
+				temp = this->wc[(int)val]->ID.ToString();
+			}
+			catch(...)
+			{
+				return ( "" );
+			}
+
+			return ( temp );
+		}
+		else
+		{
+			for (int i = 0; i < wc->Count; i++)
+			{
+				if (val == wm_get_id(i))
+				{
+					return ( wm_get_guid(i) );
+				}
+			}
+		}
+
+		return ( "" );
+	}
+
+	/// <summary>Hashes the guid of the current Wii Remote</summary>
+	/// <returns>Guid hash as double</returns>
 	double GiiMote::wm_get_id()
 	{
-		System::String^ guid = this->wc[wmIndex]->ID.ToString();
-		guid->Replace("{","");
-		guid->Replace("}","");
-		guid->Replace("-","");
-		double sum = 0;
-		int temp;
+		return ( (double)this->wc[wmIndex]->ID.GetHashCode() );
+	}
 
-		for (int i = 0; i < guid->Length; i++)
+	/// <summary>Hashes the guid of the given Wii Remote</summary>
+	/// <param name="index">The index of the Wii Remote</param>
+	/// <returns>Guid hash as double or -1 on error</returns>
+	double GiiMote::wm_get_id(double index)
+	{
+		int temp;
+		try
 		{
-			temp = (guid->Substring(1, 1)->ToCharArray()[0] & 0xF0U) >> 4;
-			sum = sum*16 + temp;
-			temp = (guid->Substring(1, 1)->ToCharArray()[0] & 0x0FU);
-			sum = sum*16 + temp;
+			temp = this->wc[(int)index]->ID.GetHashCode();
 		}
-		return ( sum );
+		catch(...)
+		{
+			return ( -1.0 );
+		}
+
+		return ( (double)temp );
+	}
+
+	/// <summary>Hashes the guid of the given Wii Remote</summary>
+	/// <param name="guid">The guid of the Wii Remote</param>
+	/// <returns>Guid hash as double or -1 on error</returns>
+	double GiiMote::wm_get_id(System::String^ guid)
+	{
+		System::String^ GUID = guid;
+		GUID->Replace("-","");
+		GUID->Replace("{","");
+		GUID->Replace("}","");
+		for (int i = 0; i < wc->Count; i++)
+		{
+			System::String^ temp = wm_get_guid();
+			temp->Replace("-","");
+			temp->Replace("{","");
+			temp->Replace("}","");
+			if (guid == temp)
+			{
+				return ( (double)this->wc[i]->ID.GetHashCode() );
+			}
+		}
+
+		return ( -1.0 );
 	}
 
 	/// <summary>Gets the index of the given Wii Remote</summary>
+	/// <param name="guid">The guid of the Wii Remote</param>
 	/// <returns>Index</returns>
 	double GiiMote::wm_get_index(System::String^ guid)
 	{
@@ -504,10 +567,11 @@ namespace GiiMoteLib {
 				return ( i );
 			}
 		}
-		return ( -1 );
+		return ( -1.0 );
 	}
 
 	/// <summary>Gets the index of the given Wii Remote</summary>
+	/// <param name="guid">The hashed guid of the Wii Remote</param>
 	/// <returns>Index</returns>
 	double GiiMote::wm_get_index(double guid)
 	{
@@ -519,6 +583,13 @@ namespace GiiMoteLib {
 			}
 		}
 		return ( -1 );
+	}
+
+	/// <summary>Gets the index of the current Wii Remote</summary>
+	/// <returns>Index</returns>
+	double GiiMote::wm_get_index()
+	{
+		return ( (double)wmIndex );
 	}
 
 	/////////////////////////

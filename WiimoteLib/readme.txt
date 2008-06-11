@@ -1,5 +1,5 @@
 Managed Library for Nintendo's Wiimote
-v1.5.0.0
+v1.5.1.0
 by Brian Peek (http://www.brianpeek.com/)
 
 For more information, please visit the associated article for this project at:
@@ -13,10 +13,16 @@ If all else fails, please contact me at the address above.  Enjoy!
 Changes
 =======
 
+v1.5.1.0
+--------
+	o Oops...a last minute change broke the one thing I was adding:  Balance
+	  Board support.  Should be working now...
+
 v1.5.0.0
 --------
 	o Wii Fit Balance Board support
-	o The GetStatus() method now waits for a response from the Wiimote before continuing
+	o The GetStatus() method now waits for a response from the Wiimote before
+	  continuing
 	o Bug fix for ButtonsExtension report type (0x34)
 
 v1.4.0.0

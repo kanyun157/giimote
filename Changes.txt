@@ -65,6 +65,7 @@ Fixed a memory leak where multiple events were created if you connected and disc
 wm_ir_dot_size and other IR functions now return -1 on error
 Fixed a memory leak where Mii files remained in memory after a failed read
 Fixed a bug where the report type and continuous reporting values were not saved or returned properly (never in a released build)
+IR values now only update when the camera is on
 
 New Constants:
 ----------------

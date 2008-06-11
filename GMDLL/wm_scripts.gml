@@ -324,9 +324,15 @@ function wm_get_calibration_y0():real
 function wm_get_calibration_yg():real
 function wm_get_calibration_z0():real
 function wm_get_calibration_zg():real
+function wm_get_guid():string
 function wm_get_guid(index:real):string
+function wm_get_guid(id:real):string
+function wm_get_id():real
+function wm_get_id(guid:string):real
 function wm_get_id(index:real):real
-function wm_get_index(guid):real
+function wm_get_index():real
+function wm_get_index(guid:string):real
+function wm_get_index(id:real):real
 function wm_get_joystick_dead_zone():real
 function wm_get_led(led:real):real
 function wm_get_moving():real
@@ -586,9 +592,30 @@ layer_function(global.gm_class,"wm_set_calibration_z0",ty_real,1,argument0);
 #define wm_set_calibration_zg
 layer_function(global.gm_class,"wm_set_calibration_zg",ty_real,1,argument0);
 #define wm_get_guid
-layer_function(global.gm_class,"wm_get_guid",ty_string);
+if (argument0 == 0)
+{
+    layer_function(global.gm_class,"wm_get_guid",ty_string);
+}
+else
+{
+    layer_function(global.gm_class,"wm_get_guid",ty_string,1,ty_real);
+}
 #define wm_get_id
-layer_function(global.gm_class,"wm_get_id",ty_real);
+if (is_string(argument0))
+{
+    layer_function(global.gm_class,"wm_get_id",ty_real,1,ty_string);
+}
+else
+{
+    if (argument0 == 0)
+    {
+        layer_function(global.gm_class,"wm_get_id",ty_real);
+    }
+    else
+    {
+        layer_function(global.gm_class,"wm_get_id",ty_real,1,ty_real);
+    }
+}
 #define wm_get_index
 if (is_string(argument0))
 {
@@ -596,7 +623,14 @@ if (is_string(argument0))
 }
 else
 {
-    layer_function(global.gm_class,"wm_get_index",ty_real,1,argument0);
+    if (argument0 == 0)
+    {
+        layer_function(global.gm_class,"wm_get_index",ty_real);
+    }
+    else
+    {
+        layer_function(global.gm_class,"wm_get_index",ty_real,1,argument0);
+    }
 }
 #define wm_bin_read_byte
 // argument0 - Address
