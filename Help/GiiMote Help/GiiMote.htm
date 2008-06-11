@@ -44,12 +44,24 @@ To pair your Wii Remote with your computer follow these steps:</p>
     overhead. To get the index or GUID of a Wii Remote, the following functions may 
     be used:</p>
 <blockquote>
+	<tt><b><a name="wm_get_index">wm_get_index()</a></b></tt>
+		Gets the index of the active Wii Remote.<br>
 	<tt><b><a name="wm_get_index">wm_get_index(guid)</a></b></tt>
-		Gets the index of the Wii Remote with the given guid or numerical guid.<br>
+		Gets the index of the Wii Remote with the given guid.<br>
+	<tt><b><a name="wm_get_index">wm_get_index(id)</a></b></tt>
+		Gets the index of the Wii Remote with the given ID.<br>
+	<tt><b><a name="wm_get_index">wm_get_guid()</a></b></tt>
+		Gets the unique guid of the active Wii Remote as a string.<br>
 	<tt><b><a name="wm_get_index">wm_get_guid(index)</a></b></tt>
-		Gets the guid of the Wii Remote with the given index.<br>
-	<tt><b><a name="wm_get_index">wm_get_id(index)</a></b></tt>
-		Gets the numerical guid of the Wii Remote with the given index.<br>
+		Gets the unique guid of the Wii Remote with the given index as a string.<br>
+	<tt><b><a name="wm_get_index">wm_get_guid(id)</a></b></tt>
+		Gets the unique guid of the Wii Remote with the given id as a string.<br>
+	<tt><b><a name="wm_get_id">wm_get_id()</a></b></tt>
+		Gets the unique ID of the active Wii Remote as a real value.<br>
+	<tt><b><a name="wm_get_id">wm_get_id(index)</a></b></tt>
+		Gets the unique ID of the Wii Remote with the given index as a real value.<br>
+	<tt><b><a name="wm_get_id">wm_get_id(guid)</a></b></tt>
+		Gets the unique ID of the Wii Remote with the given guid as a real value.<br>
 </blockquote>
 <p>To connect to a single Wii Remote you can call <b><a name="wm_connect">wm_connect()</a></b> which will return either 1 if successful, 0 if the connection failed, or -1 if a Wii Remote is already connected. To connect all discovered Wii Remotes at once you may use <b><a name="wm_connect_all">wm_connect_all()</a></b>. When you are done using the Wii Remote
 you can call <b><a name="wm_disconnect">wm_disconnect()</a></b>

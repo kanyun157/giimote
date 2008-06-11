@@ -6,38 +6,50 @@
     <members>
         <member name="M:GiiMoteLib.GiiMote.wm_bb_set_calibration_kg34(System.Double,System.Double)">
             <summary>Sets 34kg calibration info for a given sensor</summary>
+            <param name="sensor">The sensor to use</param>
+            <param name="val">The calibration data</param>
             <return>Success</return>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_bb_set_calibration_kg17(System.Double,System.Double)">
             <summary>Sets 17kg calibration info for a given sensor</summary>
+            <param name="sensor">The sensor to use</param>
+            <param name="val">The calibration data</param>
             <return>Success</return>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_bb_set_calibration_kg0(System.Double,System.Double)">
             <summary>Sets 0kg calibration info for a given sensor</summary>
+            <param name="sensor">The sensor to use</param>
+            <param name="val">The calibration data</param>
             <return>Success</return>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_bb_get_calibration_kg34(System.Double)">
             <summary>Gets calibration info for a given sensor</summary>
+            <param name="sensor">The sensor to read from</param>
             <return>Calibraiton info at 34kg</return>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_bb_get_calibration_kg17(System.Double)">
             <summary>Gets calibration info for a given sensor</summary>
+            <param name="sensor">The sensor to read from</param>
             <return>Calibraiton info at 17kg</return>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_bb_get_calibration_kg0(System.Double)">
             <summary>Gets calibration info for a given sensor</summary>
+            <param name="sensor">The sensor to read from</param>
             <return>Calibraiton info at 0kg</return>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_bb_get_sensor_lbs(System.Double)">
             <summary>Returns the pounds on the specified sensor</summary>
+            <param name="sensor">The sensor to read from</param>
             <returns>Pounds</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_bb_get_sensor_kgs(System.Double)">
             <summary>Returns the kilograms on the specified sensor</summary>
+            <param name="sensor">The sensor to read from</param>
             <returns>Kilograms</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_bb_get_sensor_raw(System.Double)">
             <summary>Returns the raw value on the specified sensor</summary>
+            <param name="sensor">The sensor to read from</param>
             <returns>Raw weight</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_bb_get_weight_kgs">
@@ -903,21 +915,42 @@ Current extension:
             <param name="led_num">The LED to get the state of (1-4)</param>
             <returns>The state of the LED</returns>
         </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_get_index">
+            <summary>Gets the index of the current Wii Remote</summary>
+            <returns>Index</returns>
+        </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_index(System.Double)">
             <summary>Gets the index of the given Wii Remote</summary>
+            <param name="guid">The hashed guid of the Wii Remote</param>
             <returns>Index</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_index(System.String)">
             <summary>Gets the index of the given Wii Remote</summary>
+            <param name="guid">The guid of the Wii Remote</param>
             <returns>Index</returns>
         </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_get_id(System.String)">
+            <summary>Hashes the guid of the given Wii Remote</summary>
+            <param name="guid">The guid of the Wii Remote</param>
+            <returns>Guid hash as double or -1 on error</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_get_id(System.Double)">
+            <summary>Hashes the guid of the given Wii Remote</summary>
+            <param name="index">The index of the Wii Remote</param>
+            <returns>Guid hash as double or -1 on error</returns>
+        </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_id">
-            <summary>Gets the GUID of the given Wii Remote</summary>
-            <returns>GUID as Double</returns>
+            <summary>Hashes the guid of the current Wii Remote</summary>
+            <returns>Guid hash as double</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_get_guid(System.Double)">
+            <summary>Gets the guid of the given Wii Remote</summary>
+            <param name="val">The index or hashed guid of the Wii Remote</param>
+            <returns>guid as string or an empty string on error</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_guid">
-            <summary>Gets the GUID of the given Wii Remote</summary>
-            <returns>GUID as String</returns>
+            <summary>Gets the guid of the current Wii Remote</summary>
+            <returns>Guid as string</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_get_report_continuous">
             <summary>Gets the current report interval of the Wii Remote</summary>
@@ -1032,7 +1065,7 @@ Current extension:
                 </list>
             </param>
             <param name="continuous">Report continuously</param>
-            <returns>Success</returns>
+            <returns>Success or -1 on error</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_disconnect_all">
             <summary>Disconnects all paired Wii Remotes</summary>

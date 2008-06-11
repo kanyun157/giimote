@@ -218,70 +218,73 @@ namespace GiiMoteLib {
 		/// <param name="args">Current Wii Remote state</param>
 		void wm_OnWiimoteChanged(System::Object^ sender, WiimoteChangedEventArgs^ args)
 		{
-			int Index = -1;
-			int Hash = args->WiimoteState->GetHashCode();
-			for (int i = 0; i < this->wc->Count; i++)
+			if (this->report_type[wmIndex] == rtAuto || this->report_type[wmIndex] == rtIRAccel || this->report_type[wmIndex] == rtIRExtensionAccel)
 			{
-				int tHash;
-				tHash = this->wc[i]->WiimoteState->GetHashCode();
-				if (tHash == Hash)
+				int Index = -1;
+				int Hash = args->WiimoteState->GetHashCode();
+				for (int i = 0; i < this->wc->Count; i++)
 				{
-					Index = i;
-					break;
+					int tHash;
+					tHash = this->wc[i]->WiimoteState->GetHashCode();
+					if (tHash == Hash)
+					{
+						Index = i;
+						break;
+					}
 				}
-			}
 
-			if (Index == -1)
-			{
-				return;
-			}
-
-			if (args->WiimoteState->IRState.IRSensors[0].Found && args->WiimoteState->IRState.IRSensors[1].Found)
-			{
-				this->ir_screen_pos[Index].X = display_width - (int)domain_rescale(this->wc[Index]->WiimoteState->IRState.RawMidpoint.X, 0, 1023, 0, display_width);
-				this->ir_screen_pos[Index].Y = (int)domain_rescale(this->wc[Index]->WiimoteState->IRState.RawMidpoint.Y, 0, 767, 0, display_height);
-			}
-			else
-			{
-				if (args->WiimoteState->IRState.IRSensors[0].Found)
+				if (Index == -1)
 				{
-					this->ir_screen_pos[Index].X -= (int)domain_rescale(wm_ir_dot_get_delta_rawx(1), 0, 1023, 0, display_width);
-					this->ir_screen_pos[Index].Y -= (int)domain_rescale(wm_ir_dot_get_delta_rawy(1), 0, 767, 0, display_height);
+					return;
+				}
+
+				if (args->WiimoteState->IRState.IRSensors[0].Found && args->WiimoteState->IRState.IRSensors[1].Found)
+				{
+					this->ir_screen_pos[Index].X = display_width - (int)domain_rescale(this->wc[Index]->WiimoteState->IRState.RawMidpoint.X, 0, 1023, 0, display_width);
+					this->ir_screen_pos[Index].Y = (int)domain_rescale(this->wc[Index]->WiimoteState->IRState.RawMidpoint.Y, 0, 767, 0, display_height);
 				}
 				else
 				{
-					if (this->wc[Index]->WiimoteState->IRState.IRSensors[1].Found)
+					if (args->WiimoteState->IRState.IRSensors[0].Found)
 					{
-						this->ir_screen_pos[Index].X -= (int)domain_rescale(wm_ir_dot_get_delta_rawx(2), 0, 1023, 0, display_width);
-						this->ir_screen_pos[Index].Y -= (int)domain_rescale(wm_ir_dot_get_delta_rawy(2), 0, 767, 0, display_height);
+						this->ir_screen_pos[Index].X -= (int)domain_rescale(wm_ir_dot_get_delta_rawx(1), 0, 1023, 0, display_width);
+						this->ir_screen_pos[Index].Y -= (int)domain_rescale(wm_ir_dot_get_delta_rawy(1), 0, 767, 0, display_height);
 					}
 					else
 					{
-						// When the sensor bar is not visible we have a few options...
-						// The Wii simply hides the cursor until the IR points are
-						// visible again. However, we could also double integrate
-						// the accelerometer data to estimate the change in
-						// position. However, if the IR is not visible that most likely
-						// means we are not facing the screen anyways, and integrating the acceleration
-						// is not very accurate.
-						this->ir_screen_pos[Index].X = -1;
-						this->ir_screen_pos[Index].Y = -1;
+						if (this->wc[Index]->WiimoteState->IRState.IRSensors[1].Found)
+						{
+							this->ir_screen_pos[Index].X -= (int)domain_rescale(wm_ir_dot_get_delta_rawx(2), 0, 1023, 0, display_width);
+							this->ir_screen_pos[Index].Y -= (int)domain_rescale(wm_ir_dot_get_delta_rawy(2), 0, 767, 0, display_height);
+						}
+						else
+						{
+							// When the sensor bar is not visible we have a few options...
+							// The Wii simply hides the cursor until the IR points are
+							// visible again. However, we could also double integrate
+							// the accelerometer data to estimate the change in
+							// position. However, if the IR is not visible that most likely
+							// means we are not facing the screen anyways, and integrating the acceleration
+							// is not very accurate.
+							this->ir_screen_pos[Index].X = -1;
+							this->ir_screen_pos[Index].Y = -1;
+						}
 					}
 				}
-			}
 
-			for(int i = 0; i < 4; i++)
-			{
-				ir_last_pos[Index, i].X = this->wc[Index]->WiimoteState->IRState.IRSensors[i].Position.X;
-				ir_last_pos[Index, i].Y = this->wc[Index]->WiimoteState->IRState.IRSensors[i].Position.Y;
-				ir_last_raw_pos[Index, i].X = this->wc[Index]->WiimoteState->IRState.IRSensors[i].RawPosition.X;
-				ir_last_raw_pos[Index, i].Y = this->wc[Index]->WiimoteState->IRState.IRSensors[i].RawPosition.Y;
-			}
+				for(int i = 0; i < 4; i++)
+				{
+					ir_last_pos[Index, i].X = this->wc[Index]->WiimoteState->IRState.IRSensors[i].Position.X;
+					ir_last_pos[Index, i].Y = this->wc[Index]->WiimoteState->IRState.IRSensors[i].Position.Y;
+					ir_last_raw_pos[Index, i].X = this->wc[Index]->WiimoteState->IRState.IRSensors[i].RawPosition.X;
+					ir_last_raw_pos[Index, i].Y = this->wc[Index]->WiimoteState->IRState.IRSensors[i].RawPosition.Y;
+				}
 
-			ir_last_mid_pos[Index].X = this->wc[Index]->WiimoteState->IRState.Midpoint.X;
-			ir_last_mid_pos[Index].Y = this->wc[Index]->WiimoteState->IRState.Midpoint.Y;
-			ir_last_rawmid_pos[Index].X = this->wc[Index]->WiimoteState->IRState.RawMidpoint.X;
-			ir_last_rawmid_pos[Index].Y = this->wc[Index]->WiimoteState->IRState.RawMidpoint.Y;
+				ir_last_mid_pos[Index].X = this->wc[Index]->WiimoteState->IRState.Midpoint.X;
+				ir_last_mid_pos[Index].Y = this->wc[Index]->WiimoteState->IRState.Midpoint.Y;
+				ir_last_rawmid_pos[Index].X = this->wc[Index]->WiimoteState->IRState.RawMidpoint.X;
+				ir_last_rawmid_pos[Index].Y = this->wc[Index]->WiimoteState->IRState.RawMidpoint.Y;
+			}
 		}
 
 public:
@@ -302,9 +305,13 @@ public:
 		double  wm_get_report_type();
 		double  wm_get_report_continuous();
 		double  wm_get_id();
+		double  wm_get_id(double index);
+		double  wm_get_id(System::String^ guid);
 		String^ wm_get_guid();
+		String^ wm_get_guid(double val);
 		double  wm_get_index(System::String^ guid);
-		double  wm_get_index(double id);
+		double  wm_get_index(double guid);
+		double  wm_get_index();
 
 		// LED Functions
 		double wm_get_led(double led_num);

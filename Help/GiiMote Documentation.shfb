@@ -16,13 +16,13 @@
     <VisibleItems>InheritedMembers, InheritedFrameworkMembers, Protected, SealedProtected</VisibleItems>
     <HtmlHelp1xCompilerPath path="" />
     <HtmlHelp2xCompilerPath path="" />
-    <OutputPath>.\GiiMote Documentation\Output\</OutputPath>
+    <OutputPath>.\GiiMote Documentation\</OutputPath>
     <SandcastlePath path="" />
     <WorkingPath path="" />
     <CleanIntermediates>True</CleanIntermediates>
     <KeepLogFile>True</KeepLogFile>
     <BuildLogFile path="" />
-    <HelpFileFormat>Help1xAndWebsite</HelpFileFormat>
+    <HelpFileFormat>HtmlHelp1x</HelpFileFormat>
     <CppCommentsFixup>False</CppCommentsFixup>
     <FrameworkVersion>3.5</FrameworkVersion>
     <IndentHtml>False</IndentHtml>
