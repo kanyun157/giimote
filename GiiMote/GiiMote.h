@@ -293,8 +293,9 @@ public:
 ////////////////////////////////////////////
 		// Connection Functions
 		double  wm_find_all();
-		double  wm_set_wm(double wm);
-		double  wm_set_wm(System::String^ wm);
+		double  wm_found();
+		double  wm_set_using(double wm);
+		double  wm_set_using(System::String^ wm);
 		double  wm_connect();
 		double  wm_connect_all();
 		double  wm_exists();

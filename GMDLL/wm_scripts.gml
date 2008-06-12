@@ -310,6 +310,7 @@ function wm_disconnect():real
 function wm_disconnect_all();
 function wm_exists():real
 function wm_find_all():real
+function wm_found():real
 function wm_get_accel_dead_zone_x():real
 function wm_get_accel_dead_zone_y():real
 function wm_get_accel_dead_zone_z():real
@@ -429,25 +430,25 @@ function wm_set_rumble(rumbling:real):real
 function wm_set_trigger_dead_zone(val:real):real
 function wm_set_wm(wm:real):real
 hfunction gm_init():real
-hfunction wm_classic_rawx(wm_joystick:real):real
-hfunction wm_classic_rawy(wm_joystick:real):real
-hfunction wm_classic_trigger_raw(trigger:real):real
-hfunction wm_get_accel_rawx():real
-hfunction wm_get_accel_rawy():real
-hfunction wm_get_accel_rawz():real
-hfunction wm_ir_dot_get_delta_rawmidx():real
-hfunction wm_ir_dot_get_delta_rawmidy():real
-hfunction wm_ir_dot_get_delta_rawx(dot:real):real
-hfunction wm_ir_dot_get_delta_rawy(dot:real):real
-hfunction wm_ir_dot_get_rawmidx():real
-hfunction wm_ir_dot_get_rawmidy():real
-hfunction wm_ir_dot_get_rawx(dot:real):real
-hfunction wm_ir_dot_get_rawy(dot:real):real
-hfunction wm_nunchuck_get_accel_rawx():real
-hfunction wm_nunchuck_get_accel_rawy():real
-hfunction wm_nunchuck_get_accel_rawz():real
-hfunction wm_nunchuck_rawx():real
-hfunction wm_nunchuck_rawy():real
+function wm_classic_rawx(wm_joystick:real):real
+function wm_classic_rawy(wm_joystick:real):real
+function wm_classic_trigger_raw(trigger:real):real
+function wm_get_accel_rawx():real
+function wm_get_accel_rawy():real
+function wm_get_accel_rawz():real
+function wm_ir_dot_get_delta_rawmidx():real
+function wm_ir_dot_get_delta_rawmidy():real
+function wm_ir_dot_get_delta_rawx(dot:real):real
+function wm_ir_dot_get_delta_rawy(dot:real):real
+function wm_ir_dot_get_rawmidx():real
+function wm_ir_dot_get_rawmidy():real
+function wm_ir_dot_get_rawx(dot:real):real
+function wm_ir_dot_get_rawy(dot:real):real
+function wm_nunchuck_get_accel_rawx():real
+function wm_nunchuck_get_accel_rawy():real
+function wm_nunchuck_get_accel_rawz():real
+function wm_nunchuck_rawx():real
+function wm_nunchuck_rawy():real
 
 *****************************************************************************/
 #define wm_ir_set_sensitivity
@@ -530,19 +531,14 @@ layer_function(global.gm_class,"wm_disconnect_all",ty_real,0);
 layer_function(global.gm_class,"wm_exists",ty_real,0);
 #define wm_find_all
 layer_function(global.gm_class,"wm_find_all",ty_real,0);
+#define wm_found
+layer_function(global.gm_class,"wm_found",ty_real,0);
 #define wm_get_status
 // Updates the Wii Remote and ensures that the other functions have
 // the latest data.
 layer_function(global.gm_class,"wm_get_status",ty_real,0);
-#define wm_set_wm
-if (is_string(argument0))
-{
-    layer_function(global.gm_class,"wm_set_wm",ty_string,1,argument0);
-}
-else
-{
-    layer_function(global.gm_class,"wm_set_wm",ty_real,1,argument0);
-}
+#define wm_set_using
+layer_function(global.gm_class,"wm_set_using",ty_real,1,argument0);
 #define wm_get_accel_dead_zone_x
 layer_function(global.gm_class,"wm_get_accel_dead_zone_x",ty_real,0);
 #define wm_get_accel_dead_zone_y
@@ -594,43 +590,29 @@ layer_function(global.gm_class,"wm_set_calibration_zg",ty_real,1,argument0);
 #define wm_get_guid
 if (argument0 == 0)
 {
-    layer_function(global.gm_class,"wm_get_guid",ty_string);
+    layer_function(global.gm_class,"wm_get_guid",ty_string,0);
 }
 else
 {
-    layer_function(global.gm_class,"wm_get_guid",ty_string,1,ty_real);
+    layer_function(global.gm_class,"wm_get_guid",ty_string,1,argument0);
 }
 #define wm_get_id
-if (is_string(argument0))
+if (argument0 == 0)
 {
-    layer_function(global.gm_class,"wm_get_id",ty_real,1,ty_string);
+    layer_function(global.gm_class,"wm_get_id",ty_real,0);
 }
 else
 {
-    if (argument0 == 0)
-    {
-        layer_function(global.gm_class,"wm_get_id",ty_real);
-    }
-    else
-    {
-        layer_function(global.gm_class,"wm_get_id",ty_real,1,ty_real);
-    }
+    layer_function(global.gm_class,"wm_get_id",ty_real,1,argument0);
 }
 #define wm_get_index
-if (is_string(argument0))
+if (argument0 == 0)
 {
-    layer_function(global.gm_class,"wm_get_index",ty_string,1,argument0);
+    layer_function(global.gm_class,"wm_get_index",ty_real,0);
 }
 else
 {
-    if (argument0 == 0)
-    {
-        layer_function(global.gm_class,"wm_get_index",ty_real);
-    }
-    else
-    {
-        layer_function(global.gm_class,"wm_get_index",ty_real,1,argument0);
-    }
+    layer_function(global.gm_class,"wm_get_index",ty_real,1,argument0);
 }
 #define wm_bin_read_byte
 // argument0 - Address

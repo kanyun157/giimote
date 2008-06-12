@@ -90,9 +90,26 @@ namespace GiiMoteLib {
 		return ( (double)return_code );
 	}
 
+	/// <summary>Returns the number of currently discovered Wii Remotes</summary>
+	/// <returns>Number of paired Wii Remotes or -1 on error</returns>
+	double GiiMote::wm_found()
+	{
+		int num;
+		try
+		{
+			num = this->wc->Count;
+		}
+		catch(...)
+		{
+			num = -1;
+		}
+
+		return ( (double)num );
+	}
+
 	/// <summary>Sets the current Wii Remote to use by index or numerical GUID</summary>
 	/// <returns>Success</returns>
-	double GiiMote::wm_set_wm(double wm)
+	double GiiMote::wm_set_using(double wm)
 	{
 		if (this->wc->Count > 0)
 		{
@@ -125,7 +142,7 @@ namespace GiiMoteLib {
 
 	/// <summary>Sets the current Wii Remote to use by GUID</summary>
 	/// <returns>Success</returns>
-	double GiiMote::wm_set_wm(System::String^ guid)
+	double GiiMote::wm_set_using(System::String^ guid)
 	{
 		int i = (int)wm_get_index(guid);
 		if (this->wc->Count > 0 && i != -1)
@@ -232,11 +249,11 @@ namespace GiiMoteLib {
 	}
 
 	/// <summary>Checks to see if any Wii Remotes exist</summary>
-	/// <remarks>Same as checking if wm_find_all is greater than 0</remarks>
+	/// <remarks>Same as checking if wm_found is greater than 0</remarks>
 	/// <returns>Wii Remote detected</returns>
 	double GiiMote::wm_exists()
 	{
-		return (double(wm_find_all() > 0));
+		return (double(wm_found() > 0));
 	}
 
 	/// <summary>Disconnect from the Wii Remote</summary>

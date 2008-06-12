@@ -312,6 +312,11 @@
 		<param name="Local" value="GiiMote.htm#setup">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_found()">
+		<param name="Name" value="Setup">
+		<param name="Local" value="GiiMote.htm#setup">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_get_accel_dead_zone_x()">
 		<param name="Name" value="Dead Zone's">
 		<param name="Local" value="GiiMote.htm#dead_zone">
@@ -697,7 +702,7 @@
 		<param name="Local" value="GiiMote.htm#dead_zone">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="wm_set_wm()">
+		<param name="Name" value="wm_set_using()">
 		<param name="Name" value="Setup">
 		<param name="Local" value="GiiMote.htm#setup">
 		</OBJECT>
