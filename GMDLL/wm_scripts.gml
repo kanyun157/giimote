@@ -428,7 +428,7 @@ function wm_set_leds_int(leds:real):real
 function wm_set_report_type(report_type:real, continuous:real):real
 function wm_set_rumble(rumbling:real):real
 function wm_set_trigger_dead_zone(val:real):real
-function wm_set_wm(wm:real):real
+function wm_set_using(wm:real):real
 hfunction gm_init():real
 function wm_classic_rawx(wm_joystick:real):real
 function wm_classic_rawy(wm_joystick:real):real
