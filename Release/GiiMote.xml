@@ -1077,7 +1077,7 @@ Current extension:
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_exists">
             <summary>Checks to see if any Wii Remotes exist</summary>
-            <remarks>Same as checking if wm_find_all is greater than 0</remarks>
+            <remarks>Same as checking if wm_found is greater than 0</remarks>
             <returns>Wii Remote detected</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_connect_all">
@@ -1115,13 +1115,17 @@ Current extension:
             <summary>If the current Wii Remote is connected</summary>
             <returns>Wii Remote connected</returns>
         </member>
-        <member name="M:GiiMoteLib.GiiMote.wm_set_wm(System.String)">
+        <member name="M:GiiMoteLib.GiiMote.wm_set_using(System.String)">
             <summary>Sets the current Wii Remote to use by GUID</summary>
             <returns>Success</returns>
         </member>
-        <member name="M:GiiMoteLib.GiiMote.wm_set_wm(System.Double)">
+        <member name="M:GiiMoteLib.GiiMote.wm_set_using(System.Double)">
             <summary>Sets the current Wii Remote to use by index or numerical GUID</summary>
             <returns>Success</returns>
+        </member>
+        <member name="M:GiiMoteLib.GiiMote.wm_found">
+            <summary>Returns the number of currently discovered Wii Remotes</summary>
+            <returns>Number of paired Wii Remotes or -1 on error</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_find_all">
             <summary>Finds all paired Wii Remotes</summary>

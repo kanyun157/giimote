@@ -8,8 +8,9 @@ wm_set_write_method() has been removed
 
 New Functions:
 ---------------
-wm_set_wm()
+wm_set_using()
 wm_find_all()
+wm_found()
 wm_connect_all()
 wm_disconnect_all()
 wm_get_id()

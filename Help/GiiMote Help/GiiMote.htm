@@ -30,18 +30,17 @@ To pair your Wii Remote with your computer follow these steps:</p>
 </ol>
 <p>
 <h2><a name="setup">Setting Up and Tearing Down GiiMote</a></h2>
-<p>Once we have our Wii Remote(s) paired successfully with our computer, we can use it 
-    or them in our game. To check if any Wii Remotes are paired correctly you may call the function <b><a name="wm_exists">wm_exists()</a></b> or 
+<p>Once we have our Wii Remote(s) paired successfully with our computer, we can use them in our game. To check if any Wii Remotes are paired correctly you may call the function <b><a name="wm_exists">wm_exists()</a></b> or 
     you may use <b><a name="wm_find_all">wm_find_all()</a></b> to see the number of available Wii Remotes. 
+    After you have found all of the paired Wii Remotes you may use the function <b><a name="wm_found">wm_found()</a></b> to 
+    see how many Wii Remotes are currently recognized by the system.
     Each function will only work on a single Wii Remote; to change the active Wii 
-    Remote you may call the function <b><a name="wm_set_wm">wm_set_wm(wm)</a></b> where wm is the index or GUID of the Wii Remote to use for future function calls. 
+    Remote you may call the function <b><a name="wm_set_using">wm_set_using(wm)</a></b> where wm is the index, id, or guid of the Wii Remote to use for future function calls. 
     Each Wii Remote attatched to the system has two unique values which may be used 
     to identify it, the index, which may change as other Wii Remotes are 
-    disconnected, and the GUID which can be expressed either as a string, or, 
+    disconnected, and the guid which can be expressed either as a string, or, 
     numerically. The index is an integer between 0 and the number of connected Wii 
-    Remotes - 1, so the first Wii Remote always has an index of 0. The GUID is a 
-    128-bit integer so be warned, using it to much can result in large ammounts of 
-    overhead. To get the index or GUID of a Wii Remote, the following functions may 
+    Remotes - 1, so the first Wii Remote always has an index of 0. To get the index or guid of a Wii Remote, the following functions may 
     be used:</p>
 <blockquote>
 	<tt><b><a name="wm_get_index">wm_get_index()</a></b></tt>

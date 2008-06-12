@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder GUI" version="1.7.0.0" projectFile="F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation.shfb" started="6/11/2008 6:58:45">
+<shfbBuild product="Sandcastle Help File Builder GUI" version="1.7.0.0" projectFile="F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation.shfb" started="6/11/2008 21:03:48">
 <buildStep step="Initializing">
-</buildStep>
-<buildStep step="ClearWorkFolder">
-Clearing working folder...
 </buildStep>
 <buildStep step="FindingTools">
 Finding tools...
@@ -12,49 +9,49 @@ Found HTML 1.x help compiler in 'F:\Program Files\HTML Help Workshop\'
 </buildStep>
 <buildStep step="ValidatingAssemblies">
 Validating and copying documentation assembly information...
-    F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Release\GiiMote.dll -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\GiiMote.dll
-    F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Release\GiiMote.xml -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\GiiMote.xml
+    F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Release\GiiMote.dll -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\GiiMote.dll
+    F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Release\GiiMote.xml -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\GiiMote.xml
 </buildStep>
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
-    Last step completed in 00:00:00.1719
+    Last step completed in 00:00:00.4219
 </buildStep>
 <buildStep step="CopyDependencies">
 Copying documentation assembly dependencies...
-F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Release\WiimoteLib.dll -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\DLL\WiimoteLib.dll
+F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Release\WiimoteLib.dll -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\DLL\WiimoteLib.dll
     Last step completed in 00:00:00.0938
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00.0156
+    Last step completed in 00:00:00.0781
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
-[F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\GenerateRefInfo.bat]
+[F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\GenerateRefInfo.bat]
 MrefBuilder (v2.4.10520.1)
 Copyright c Microsoft 2006
 Info: Loaded 1 assemblies for reflection and 1 dependency assemblies.
-Info: Wrote information on 1 namespaces, 1 types, and 204 members
+Info: Wrote information on 1 namespaces, 1 types, and 205 members
         1 file(s) copied.
 XslTransform (v2.4.10520.1)
 Copyright c Microsoft 2005-2006
 Info: Applying XSL transformation 'F:\Program Files\Sandcastle\ProductionTransforms\MergeDuplicates.xsl'.
-    Last step completed in 00:00:06.1719
+    Last step completed in 00:00:05.8594
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00.0000
+    Last step completed in 00:00:00.0781
 </buildStep>
 <buildStep step="ApplyVisibilityProperties">
 Applying visibility properties to reflection information file
     0 attribute nodes removed
     0 explicit interface implementations removed
     0 local and base class EII elements removed
-    Last step completed in 00:00:00.3281
+    Last step completed in 00:00:00.1094
 </buildStep>
 <buildStep step="TransformReflectionInfo">
 Transforming reflection output...
-[F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\TransformManifest.bat]
+[F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\TransformManifest.bat]
 XslTransform (v2.4.10520.1)
 Copyright c Microsoft 2005-2006
 Info: Applying XSL transformation 'F:\Program Files\Sandcastle\ProductionTransforms\ApplyVSDocModel.xsl'.
@@ -62,136 +59,136 @@ Info: Applying XSL transformation 'F:\Program Files\Sandcastle\ProductionTransfo
 XslTransform (v2.4.10520.1)
 Copyright c Microsoft 2005-2006
 Info: Applying XSL transformation 'F:\Program Files\Sandcastle\ProductionTransforms\ReflectionToManifest.xsl'.
-    Last step completed in 00:00:10.5625
+    Last step completed in 00:00:20.6875
 </buildStep>
 <buildStep step="ModifyHelpTopicFilenames">
 Modifying help topic filenames in reflection information file
     No changes required
-    Last step completed in 00:00:00.0000
+    Last step completed in 00:00:00.0156
 </buildStep>
 <buildStep step="CopyStandardContent">
 Copying standard help content...
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\adm.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\adm.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\adm_arch.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\adm_arch.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\adm_dev.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\adm_dev.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\adm_dev_arch.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\adm_dev_arch.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\alert_caution.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\alert_caution.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\alert_note.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\alert_note.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\alert_security.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\alert_security.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\arch.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\arch.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\big_adm.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\big_adm.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\big_arch.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\big_arch.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\big_dev.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\big_dev.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\big_kw.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\big_kw.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\box.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\box.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\Caution.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\Caution.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\CFW.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\CFW.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\collall.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\collall.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\collapse.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\collapse.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\collapse_all.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\collapse_all.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\copycode.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\copycode.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\copycodeHighlight.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\copycodeHighlight.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\dev.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\dev.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\dev_arch.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\dev_arch.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\dropdown.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\dropdown.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\dropdownHover.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\dropdownHover.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\drpdown.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\drpdown.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\drpdown_orange.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\drpdown_orange.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\drpdown_orange_up.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\drpdown_orange_up.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\drpup.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\drpup.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\exp.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\exp.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\expall.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\expall.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\expand_all.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\expand_all.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\filter1a.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\filter1a.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\filter1c.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\filter1c.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\footer.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\footer.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\gradient.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\gradient.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\greencheck.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\greencheck.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\greychck.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\greychck.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\header_prev_next.jpg -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\header_prev_next.jpg
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\header_sql_tutorial_blank.jpg -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\header_sql_tutorial_blank.jpg
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\header_sql_tutorial_logo.GIF -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\header_sql_tutorial_logo.GIF
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\kw.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\kw.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\kw_adm.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\kw_adm.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\kw_adm_arch.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\kw_adm_arch.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\kw_adm_dev.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\kw_adm_dev.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\kw_adm_dev_arch.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\kw_adm_dev_arch.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\kw_arch.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\kw_arch.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\kw_dev.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\kw_dev.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\kw_dev_arch.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\kw_dev_arch.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\LastChild.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\LastChild.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\load.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\load.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\load_hover.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\load_hover.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\note.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\note.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\pencil.GIF -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\pencil.GIF
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\privclass.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\privclass.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\privdelegate.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\privdelegate.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\privenum.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\privenum.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\privenumeration.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\privenumeration.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\privevent.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\privevent.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\privextension.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\privextension.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\privfield.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\privfield.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\privinterface.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\privinterface.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\privmethod.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\privmethod.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\privproperty.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\privproperty.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\privstructure.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\privstructure.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\protclass.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\protclass.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\protdelegate.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\protdelegate.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\protenum.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\protenum.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\protenumeration.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\protenumeration.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\protevent.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\protevent.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\protextension.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\protextension.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\protfield.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\protfield.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\protinterface.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\protinterface.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\protmethod.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\protmethod.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\protoperator.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\protoperator.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\protproperty.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\protproperty.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\protstructure.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\protstructure.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubclass.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\pubclass.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubdelegate.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\pubdelegate.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubenum.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\pubenum.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubenumeration.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\pubenumeration.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubevent.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\pubevent.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubextension.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\pubextension.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubfield.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\pubfield.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubinterface.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\pubinterface.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubmethod.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\pubmethod.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\puboperator.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\puboperator.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubproperty.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\pubproperty.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubstructure.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\pubstructure.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\requirements1a.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\requirements1a.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\requirements1c.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\requirements1c.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\save.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\save.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\save_hover.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\save_hover.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\security.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\security.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\seealso1a.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\seealso1a.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\seealso1c.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\seealso1c.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\static.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\static.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\icons\xna.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\icons\xna.gif
-F:\Program Files\Sandcastle\Presentation\vs2005\scripts\CheckboxMenu.js -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\scripts\CheckboxMenu.js
-F:\Program Files\Sandcastle\Presentation\vs2005\scripts\CommonUtilities.js -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\scripts\CommonUtilities.js
-F:\Program Files\Sandcastle\Presentation\vs2005\scripts\Dropdown.js -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\scripts\Dropdown.js
-F:\Program Files\Sandcastle\Presentation\vs2005\scripts\EventUtilities.js -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\scripts\EventUtilities.js
-F:\Program Files\Sandcastle\Presentation\vs2005\scripts\script_feedBack.js -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\scripts\script_feedBack.js
-F:\Program Files\Sandcastle\Presentation\vs2005\scripts\script_manifold.js -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\scripts\script_manifold.js
-F:\Program Files\Sandcastle\Presentation\vs2005\scripts\SplitScreen.js -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\scripts\SplitScreen.js
-F:\Program Files\Sandcastle\Presentation\vs2005\styles\Presentation.css -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\styles\Presentation.css
-F:\Program Files\Sandcastle\Presentation\vs2005\styles\Whidbey\presentation.css -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\styles\Whidbey\presentation.css
-    Last step completed in 00:00:05.6563
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\adm.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\adm.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\adm_arch.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\adm_arch.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\adm_dev.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\adm_dev.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\adm_dev_arch.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\adm_dev_arch.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\alert_caution.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\alert_caution.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\alert_note.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\alert_note.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\alert_security.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\alert_security.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\arch.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\arch.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\big_adm.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\big_adm.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\big_arch.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\big_arch.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\big_dev.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\big_dev.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\big_kw.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\big_kw.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\box.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\box.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\Caution.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\Caution.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\CFW.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\CFW.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\collall.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\collall.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\collapse.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\collapse.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\collapse_all.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\collapse_all.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\copycode.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\copycode.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\copycodeHighlight.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\copycodeHighlight.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\dev.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\dev.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\dev_arch.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\dev_arch.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\dropdown.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\dropdown.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\dropdownHover.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\dropdownHover.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\drpdown.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\drpdown.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\drpdown_orange.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\drpdown_orange.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\drpdown_orange_up.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\drpdown_orange_up.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\drpup.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\drpup.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\exp.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\exp.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\expall.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\expall.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\expand_all.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\expand_all.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\filter1a.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\filter1a.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\filter1c.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\filter1c.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\footer.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\footer.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\gradient.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\gradient.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\greencheck.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\greencheck.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\greychck.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\greychck.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\header_prev_next.jpg -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\header_prev_next.jpg
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\header_sql_tutorial_blank.jpg -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\header_sql_tutorial_blank.jpg
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\header_sql_tutorial_logo.GIF -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\header_sql_tutorial_logo.GIF
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\kw.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\kw.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\kw_adm.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\kw_adm.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\kw_adm_arch.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\kw_adm_arch.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\kw_adm_dev.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\kw_adm_dev.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\kw_adm_dev_arch.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\kw_adm_dev_arch.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\kw_arch.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\kw_arch.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\kw_dev.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\kw_dev.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\kw_dev_arch.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\kw_dev_arch.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\LastChild.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\LastChild.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\load.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\load.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\load_hover.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\load_hover.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\note.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\note.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\pencil.GIF -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\pencil.GIF
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\privclass.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\privclass.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\privdelegate.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\privdelegate.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\privenum.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\privenum.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\privenumeration.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\privenumeration.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\privevent.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\privevent.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\privextension.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\privextension.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\privfield.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\privfield.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\privinterface.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\privinterface.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\privmethod.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\privmethod.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\privproperty.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\privproperty.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\privstructure.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\privstructure.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\protclass.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\protclass.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\protdelegate.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\protdelegate.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\protenum.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\protenum.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\protenumeration.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\protenumeration.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\protevent.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\protevent.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\protextension.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\protextension.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\protfield.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\protfield.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\protinterface.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\protinterface.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\protmethod.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\protmethod.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\protoperator.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\protoperator.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\protproperty.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\protproperty.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\protstructure.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\protstructure.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubclass.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\pubclass.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubdelegate.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\pubdelegate.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubenum.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\pubenum.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubenumeration.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\pubenumeration.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubevent.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\pubevent.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubextension.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\pubextension.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubfield.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\pubfield.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubinterface.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\pubinterface.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubmethod.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\pubmethod.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\puboperator.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\puboperator.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubproperty.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\pubproperty.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\pubstructure.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\pubstructure.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\requirements1a.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\requirements1a.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\requirements1c.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\requirements1c.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\save.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\save.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\save_hover.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\save_hover.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\security.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\security.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\seealso1a.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\seealso1a.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\seealso1c.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\seealso1c.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\static.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\static.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\icons\xna.gif -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\icons\xna.gif
+F:\Program Files\Sandcastle\Presentation\vs2005\scripts\CheckboxMenu.js -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\scripts\CheckboxMenu.js
+F:\Program Files\Sandcastle\Presentation\vs2005\scripts\CommonUtilities.js -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\scripts\CommonUtilities.js
+F:\Program Files\Sandcastle\Presentation\vs2005\scripts\Dropdown.js -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\scripts\Dropdown.js
+F:\Program Files\Sandcastle\Presentation\vs2005\scripts\EventUtilities.js -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\scripts\EventUtilities.js
+F:\Program Files\Sandcastle\Presentation\vs2005\scripts\script_feedBack.js -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\scripts\script_feedBack.js
+F:\Program Files\Sandcastle\Presentation\vs2005\scripts\script_manifold.js -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\scripts\script_manifold.js
+F:\Program Files\Sandcastle\Presentation\vs2005\scripts\SplitScreen.js -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\scripts\SplitScreen.js
+F:\Program Files\Sandcastle\Presentation\vs2005\styles\Presentation.css -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\styles\Presentation.css
+F:\Program Files\Sandcastle\Presentation\vs2005\styles\Whidbey\presentation.css -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\styles\Whidbey\presentation.css
+    Last step completed in 00:00:16.3594
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
-F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Topics\Copyright.topic -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\Copyright.topic
-F:\Program Files\EWSoftware\Sandcastle Help File Builder\Templates\vs2005.xsl -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\vs2005.xsl
-Applying XSL transformation 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\vs2005.xsl' to 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\Copyright.topic'.
-F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Topics\Lisence.topic -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\Lisence.topic
-Applying XSL transformation 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\vs2005.xsl' to 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\Lisence.topic'.
-F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Topics\Overview.topic -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\Overview.topic
-Applying XSL transformation 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\vs2005.xsl' to 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\Overview.topic'.
-F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Help\GiiMote.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\GiiMote.htm
+F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Topics\Copyright.topic -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\Copyright.topic
+F:\Program Files\EWSoftware\Sandcastle Help File Builder\Templates\vs2005.xsl -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\vs2005.xsl
+Applying XSL transformation 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\vs2005.xsl' to 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\Copyright.topic'.
+F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Topics\Lisence.topic -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\Lisence.topic
+Applying XSL transformation 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\vs2005.xsl' to 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\Lisence.topic'.
+F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Topics\Overview.topic -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\Overview.topic
+Applying XSL transformation 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\vs2005.xsl' to 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\Overview.topic'.
+F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Help\GiiMote.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\GiiMote.htm
 
 Loading site map 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\SiteMap.sitemap'
-    Last step completed in 00:00:01.1094
+    Last step completed in 00:00:01.6406
 </buildStep>
 <buildStep step="MergeTablesOfContent">
 Merging conceptual and additional tables of content...
@@ -201,17 +198,17 @@ Merging conceptual and additional tables of content...
 Creating Sandcastle configuration files...
     sandcastle.config
     conceptual.config
-    Last step completed in 00:00:00.3438
+    Last step completed in 00:00:00.2188
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
-F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\sandcastle.config
+F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\sandcastle.config
     No additional help attributes defined.  The 'HTML Help 2 Attributes' component was not added.
-    Last step completed in 00:00:00.0781
+    Last step completed in 00:00:00.2344
 </buildStep>
 <buildStep step="BuildReferenceTopics">
 Building reference help topics...
-[F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\BuildReferenceTopics.bat]
+[F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\BuildReferenceTopics.bat]
 BuildAssembler (v2.4.10520.1)
 Copyright c Microsoft 2006
 Info: CopyFromFileComponent: Instantiating component.
@@ -219,7 +216,7 @@ Info: CopyFromFileComponent: Loading data file 'F:\Program Files\Sandcastle\Pres
 Info: CopyFromIndexComponent: Instantiating component.
 Info: CopyFromIndexComponent: Searching for files that match '*.xml'.
 Info: CopyFromIndexComponent: Searching for files that match 'reflection.xml'.
-Info: CopyFromIndexComponent: Indexed 170305 elements in 107 files.
+Info: CopyFromIndexComponent: Indexed 170306 elements in 107 files.
 Info: CopyFromIndexComponent: Loaded 0 copy components.
 Info: CopyFromIndexComponent: Instantiating component.
 Info: CopyFromIndexComponent: Loaded 0 copy components.
@@ -829,8 +826,8 @@ Warn: CopyFromIndexComponent: Entries for the key 'P:Microsoft.Build.Framework.T
 Warn: CopyFromIndexComponent: Entries for the key 'P:Microsoft.Build.Framework.TaskStartedEventArgs.TaskFile' occur in both 'F:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\en\Microsoft.Build.Framework.xml' and 'F:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\Microsoft.Build.Framework.xml'. The last entry will be used.
 Warn: CopyFromIndexComponent: Entries for the key 'P:Microsoft.Build.Framework.TaskStartedEventArgs.TaskName' occur in both 'F:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\en\Microsoft.Build.Framework.xml' and 'F:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\Microsoft.Build.Framework.xml'. The last entry will be used.
 Warn: CopyFromIndexComponent: Entries for the key 'T:Microsoft.Build.Framework.TaskStartedEventHandler' occur in both 'F:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\en\Microsoft.Build.Framework.xml' and 'F:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\Microsoft.Build.Framework.xml'. The last entry will be used.
-Info: CopyFromIndexComponent: Searching for files that match 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\GiiMote.xml'.
-Info: CopyFromIndexComponent: Indexed 124740 elements in 103 files.
+Info: CopyFromIndexComponent: Searching for files that match 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\GiiMote.xml'.
+Info: CopyFromIndexComponent: Indexed 124741 elements in 103 files.
 Info: CopyFromIndexComponent: Loaded 0 copy components.
 Info: ForEachComponent: Instantiating component.
 Info: ForEachComponent: Loading subcomponents.
@@ -878,38 +875,37 @@ Info: SharedContentComponent: Searching for files that match 'F:\Program Files\S
 Info: SharedContentComponent: Loading shared content file 'F:\Program Files\Sandcastle\Presentation\vs2005\content\feedBack_content.xml'.
 Info: SharedContentComponent: Found 1 files in F:\Program Files\Sandcastle\Presentation\vs2005\content\feedback_content.xml.
 Info: SharedContentComponent: Searching for files that match 'SharedBuilderContent.xml'.
-Info: SharedContentComponent: Loading shared content file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\SharedBuilderContent.xml'.
-Info: SharedContentComponent: Overriding shared content item 'roottopictitle' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\SharedBuilderContent.xml'.
-Info: SharedContentComponent: Overriding shared content item 'rootlink' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\SharedBuilderContent.xml'.
-Info: SharedContentComponent: Overriding shared content item 'runningheadertext' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\SharedBuilderContent.xml'.
-Info: SharedContentComponent: Overriding shared content item 'locationinformation' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\SharedBuilderContent.xml'.
-Info: SharedContentComponent: Overriding shared content item 'assemblynameandmodule' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\SharedBuilderContent.xml'.
-Info: SharedContentComponent: Overriding shared content item 'copycode' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\SharedBuilderContent.xml'.
-Info: SharedContentComponent: Overriding shared content item 'locale' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\SharedBuilderContent.xml'.
+Info: SharedContentComponent: Loading shared content file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\SharedBuilderContent.xml'.
+Info: SharedContentComponent: Overriding shared content item 'roottopictitle' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\SharedBuilderContent.xml'.
+Info: SharedContentComponent: Overriding shared content item 'rootlink' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\SharedBuilderContent.xml'.
+Info: SharedContentComponent: Overriding shared content item 'runningheadertext' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\SharedBuilderContent.xml'.
+Info: SharedContentComponent: Overriding shared content item 'locationinformation' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\SharedBuilderContent.xml'.
+Info: SharedContentComponent: Overriding shared content item 'assemblynameandmodule' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\SharedBuilderContent.xml'.
+Info: SharedContentComponent: Overriding shared content item 'copycode' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\SharedBuilderContent.xml'.
+Info: SharedContentComponent: Overriding shared content item 'locale' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\SharedBuilderContent.xml'.
 Info: SharedContentComponent: Found 1 files in SharedBuilderContent.xml.
 Info: SharedContentComponent: Searching for files that match 'PresentationStyleBuilderContent.xml'.
-Info: SharedContentComponent: Loading shared content file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\PresentationStyleBuilderContent.xml'.
-Info: SharedContentComponent: Overriding shared content item 'header' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\PresentationStyleBuilderContent.xml'.
-Info: SharedContentComponent: Overriding shared content item 'footer' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\PresentationStyleBuilderContent.xml'.
-Info: SharedContentComponent: Overriding shared content item 'fb_alias' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\PresentationStyleBuilderContent.xml'.
-Info: SharedContentComponent: Overriding shared content item 'fb_product' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\PresentationStyleBuilderContent.xml'.
-Info: SharedContentComponent: Overriding shared content item 'fb_body' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\PresentationStyleBuilderContent.xml'.
-Info: SharedContentComponent: Overriding shared content item 'fb_send' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\PresentationStyleBuilderContent.xml'.
-Info: SharedContentComponent: Overriding shared content item 'fb_headerfeedback' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\PresentationStyleBuilderContent.xml'.
-Info: SharedContentComponent: Overriding shared content item 'feedback_alias' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\PresentationStyleBuilderContent.xml'.
-Info: SharedContentComponent: Overriding shared content item 'feedback_product' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\PresentationStyleBuilderContent.xml'.
-Info: SharedContentComponent: Overriding shared content item 'feedback_body' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\PresentationStyleBuilderContent.xml'.
+Info: SharedContentComponent: Loading shared content file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\PresentationStyleBuilderContent.xml'.
+Info: SharedContentComponent: Overriding shared content item 'header' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\PresentationStyleBuilderContent.xml'.
+Info: SharedContentComponent: Overriding shared content item 'footer' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\PresentationStyleBuilderContent.xml'.
+Info: SharedContentComponent: Overriding shared content item 'fb_alias' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\PresentationStyleBuilderContent.xml'.
+Info: SharedContentComponent: Overriding shared content item 'fb_product' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\PresentationStyleBuilderContent.xml'.
+Info: SharedContentComponent: Overriding shared content item 'fb_body' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\PresentationStyleBuilderContent.xml'.
+Info: SharedContentComponent: Overriding shared content item 'fb_send' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\PresentationStyleBuilderContent.xml'.
+Info: SharedContentComponent: Overriding shared content item 'fb_headerfeedback' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\PresentationStyleBuilderContent.xml'.
+Info: SharedContentComponent: Overriding shared content item 'feedback_alias' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\PresentationStyleBuilderContent.xml'.
+Info: SharedContentComponent: Overriding shared content item 'feedback_product' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\PresentationStyleBuilderContent.xml'.
+Info: SharedContentComponent: Overriding shared content item 'feedback_body' with value in file 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\PresentationStyleBuilderContent.xml'.
 Info: SharedContentComponent: Found 1 files in PresentationStyleBuilderContent.xml.
 Info: SharedContentComponent: Loaded 580 shared content items.
 Info: ResolveReferenceLinksComponent2: Instantiating component.
 Info: ResolveReferenceLinksComponent2: Creating MSDN URL resolver.
 Info: ResolveReferenceLinksComponent2: Searching directory 'F:\Program Files\Sandcastle\Data\Reflection' for targets files of the form '*.xml'.
-Info: ResolveReferenceLinksComponent2: Searching directory 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working' for targets files of the form 'reflection.xml'.
-Info: ResolveReferenceLinksComponent2: Loaded 170305 reference targets.
+Info: ResolveReferenceLinksComponent2: Searching directory 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working' for targets files of the form 'reflection.xml'.
+Info: ResolveReferenceLinksComponent2: Loaded 170306 reference targets.
 Info: SaveComponent: Instantiating component.
 Info: BuildAssembler: Building topic N:GiiMoteLib
 Info: BuildAssembler: Building topic T:GiiMoteLib.GiiMote
-Warn: ResolveReferenceLinksComponent2: MSDN URL not found for target 'T:System.IDisposable'.
 Info: BuildAssembler: Building topic AllMembers.T:GiiMoteLib.GiiMote
 Info: BuildAssembler: Building topic Methods.T:GiiMoteLib.GiiMote
 Info: BuildAssembler: Building topic Fields.T:GiiMoteLib.GiiMote
@@ -917,7 +913,7 @@ Info: BuildAssembler: Building topic Overload:GiiMoteLib.GiiMote.Dispose
 Info: BuildAssembler: Building topic Overload:GiiMoteLib.GiiMote.wm_get_guid
 Info: BuildAssembler: Building topic Overload:GiiMoteLib.GiiMote.wm_get_id
 Info: BuildAssembler: Building topic Overload:GiiMoteLib.GiiMote.wm_get_index
-Info: BuildAssembler: Building topic Overload:GiiMoteLib.GiiMote.wm_set_wm
+Info: BuildAssembler: Building topic Overload:GiiMoteLib.GiiMote.wm_set_using
 Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.#ctor
 Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.accel_dead_zone
 Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.continuous
@@ -1008,6 +1004,7 @@ Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_disconnect
 Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_disconnect_all
 Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_exists
 Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_find_all
+Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_found
 Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_accel_dead_zone_x
 Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_accel_dead_zone_y
 Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_accel_dead_zone_z
@@ -1147,59 +1144,59 @@ Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_leds_int(System
 Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_report_type(System.Double,System.Double)
 Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_rumble(System.Double)
 Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_trigger_dead_zone(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_wm(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_wm(System.String)
+Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_using(System.Double)
+Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_using(System.String)
 Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.wmGUID
 Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.wmIndex
-Info: Processed 214 topics
-    Last step completed in 00:05:37.0938
+Info: Processed 215 topics
+    Last step completed in 00:04:26.7656
 </buildStep>
 <buildStep step="GenerateIntermediateTableOfContent">
 Generating intermediate table of content file...
-[F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\GenerateIntermediateTOC.bat]
+[F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\GenerateIntermediateTOC.bat]
 XslTransform (v2.4.10520.1)
 Copyright c Microsoft 2005-2006
 Info: Applying XSL transformation 'F:\Program Files\Sandcastle\ProductionTransforms\CreateVSToc.xsl'.
-    Last step completed in 00:00:05.9375
+    Last step completed in 00:00:10.1875
 </buildStep>
 <buildStep step="ExtractingHtmlInfo">
 Extracting HTML info for Help 1.x and/or website...
-[F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\ExtractHtmlInfo.bat]
+[F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\ExtractHtmlInfo.bat]
 Sandcastle Help File Builder HTML Extract, version 1.7.0.0
 Copyright c 2008, Eric Woodruff, All Rights Reserved
 E-Mail: Eric@EWoodruff.us
 
 Using LCID '1033', code page '65001', encoding charset 'UTF-8'.
-Processed 218 HTML files
+Processed 219 HTML files
 Sorting keywords and generating See Also indices
-Saving Help 1.x keyword index to F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Documentation.hhk
-Saving Help 1.x table of content to F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Documentation.hhc
-    Last step completed in 00:00:03.9531
+Saving Help 1.x keyword index to F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Documentation.hhk
+Saving Help 1.x table of content to F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Documentation.hhc
+    Last step completed in 00:00:12.5469
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContent">
 Generating HTML Help 1.x table of content file...
-    Last step completed in 00:00:01.2031
+    Last step completed in 00:00:00.4375
 </buildStep>
 <buildStep step="UpdateTableOfContent">
 Updating table of content with additional content items and determining default topic...
-    Last step completed in 00:00:00.3594
+    Last step completed in 00:00:00.0625
 </buildStep>
 <buildStep step="GenerateHelpFileIndex">
 Generating HTML Help 1.x index file...
-    Last step completed in 00:00:00.0000
+    Last step completed in 00:00:00.0156
 </buildStep>
 <buildStep step="GenerateHelpProject">
 Generating HTML Help 1.x project file...
-    Last step completed in 00:00:00.2031
+    Last step completed in 00:00:00.0938
 </buildStep>
 <buildStep step="CompilingHelpFile">
 Compiling HTML Help 1.x file...
-[F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Build1xHelpFile.bat]
+[F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Build1xHelpFile.bat]
 Microsoft HTML Help Compiler 4.74.8702
 
 
 
-Compiling f:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\Documentation.chm
+Compiling f:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\Documentation.chm
 
 
 
@@ -1207,11 +1204,11 @@ Compiling f:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projec
 
 Compile time: 0 minutes, 11 seconds
 
-220	Topics
+221	Topics
 
-2,512	Local links
+2,524	Local links
 
-222	Internet links
+1,363	Internet links
 
 0	Graphics
 
@@ -1219,19 +1216,19 @@ Compile time: 0 minutes, 11 seconds
 
 
 
-Created f:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\Working\Output\Documentation.chm, 369,775 bytes
+Created f:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\Documentation.chm, 378,203 bytes
 
-Compression decreased file by 2,539,541 bytes.
+Compression decreased file by 2,601,383 bytes.
 
-    Last step completed in 00:00:17.7344
+    Last step completed in 00:00:15.1563
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:12.2188
+    Last step completed in 00:00:14.7188
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully.  Total time: 00:06:48.7500
+Build completed successfully.  Total time: 00:06:06.5781
 
 </buildStep>
 </shfbBuild>
