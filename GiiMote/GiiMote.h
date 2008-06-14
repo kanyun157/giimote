@@ -208,22 +208,17 @@ namespace GiiMoteLib {
 		/// <param name="args">Current extension status</param>
 		void wm_OnWiimoteExtensionChanged(System::Object^ sender, WiimoteExtensionChangedEventArgs^ args)
 		{
-			int Index = -1;
+			// Since I'm not sure how to identify which Wii Remote is triggering the event
+			// and this one doesn't happen often, update all of them.
+			int tIndex = wmIndex;
 			for(int i = 0; i < this->wc->Count; i++)
 			{
-				if (sender->GetHashCode() == this->wc[i]->GetHashCode())
-				{
-					Index = i;
-					break;
-				}
+				wmIndex = i;
+				// When an extension is plugged in or unplugged all reporting stops
+				// until we update the report type
+				wm_set_report_type(this->report_type[wmIndex], this->continuous[wmIndex]);
 			}
-			if (Index == -1)
-			{
-				return;
-			}
-			// When an extension is plugged in or unplugged all reporting stops
-			// until we update the report type
-			wm_set_report_type(this->report_type[Index], this->continuous[Index]);
+			wmIndex = tIndex;
 		}
 
 		/// <summary>Wii Remote state change event</summary>
@@ -231,10 +226,11 @@ namespace GiiMoteLib {
 		/// <param name="args">Current Wii Remote state</param>
 		void wm_OnWiimoteChanged(System::Object^ sender, WiimoteChangedEventArgs^ args)
 		{
+			// Update only the calling Wii Remote
 			int Index = -1;
 			for(int i = 0; i < this->wc->Count; i++)
 			{
-				if (sender->GetHashCode() == this->wc[i]->GetHashCode())
+				if (args->WiimoteState->GetHashCode() == this->wc[i]->WiimoteState->GetHashCode())
 				{
 					Index = i;
 					break;
