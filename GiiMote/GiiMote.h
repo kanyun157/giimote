@@ -208,9 +208,22 @@ namespace GiiMoteLib {
 		/// <param name="args">Current extension status</param>
 		void wm_OnWiimoteExtensionChanged(System::Object^ sender, WiimoteExtensionChangedEventArgs^ args)
 		{
+			int Index = -1;
+			for(int i = 0; i < this->wc->Count; i++)
+			{
+				if (sender->GetHashCode() == this->wc[i]->GetHashCode())
+				{
+					Index = i;
+					break;
+				}
+			}
+			if (Index == -1)
+			{
+				return;
+			}
 			// When an extension is plugged in or unplugged all reporting stops
 			// until we update the report type
-			wm_set_report_type(this->report_type[this->wmIndex], this->continuous[this->wmIndex]);
+			wm_set_report_type(this->report_type[Index], this->continuous[Index]);
 		}
 
 		/// <summary>Wii Remote state change event</summary>
@@ -218,25 +231,22 @@ namespace GiiMoteLib {
 		/// <param name="args">Current Wii Remote state</param>
 		void wm_OnWiimoteChanged(System::Object^ sender, WiimoteChangedEventArgs^ args)
 		{
-			if (this->report_type[wmIndex] == rtAuto || this->report_type[wmIndex] == rtIRAccel || this->report_type[wmIndex] == rtIRExtensionAccel)
+			int Index = -1;
+			for(int i = 0; i < this->wc->Count; i++)
 			{
-				int Index = -1;
-				int Hash = args->WiimoteState->GetHashCode();
-				for (int i = 0; i < this->wc->Count; i++)
+				if (sender->GetHashCode() == this->wc[i]->GetHashCode())
 				{
-					int tHash;
-					tHash = this->wc[i]->WiimoteState->GetHashCode();
-					if (tHash == Hash)
-					{
-						Index = i;
-						break;
-					}
+					Index = i;
+					break;
 				}
+			}
+			if (Index == -1)
+			{
+				return;
+			}
 
-				if (Index == -1)
-				{
-					return;
-				}
+			if (this->report_type[Index] == rtAuto || this->report_type[Index] == rtIRAccel || this->report_type[Index] == rtIRExtensionAccel)
+			{
 
 				if (args->WiimoteState->IRState.IRSensors[0].Found && args->WiimoteState->IRState.IRSensors[1].Found)
 				{
