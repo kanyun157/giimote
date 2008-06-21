@@ -1,5 +1,5 @@
 Managed Library for Nintendo's Wiimote
-v1.5.1.0
+v1.5.2.0
 by Brian Peek (http://www.brianpeek.com/)
 
 For more information, please visit the associated article for this project at:
@@ -13,10 +13,16 @@ If all else fails, please contact me at the address above.  Enjoy!
 Changes
 =======
 
+v1.5.2.0
+--------
+	o Ok, Balance Board support is *really* fixed this time
+	  (thanks to Manuel Schroeder and Alex Wilkinson for testing)
+	o LED checkboxes are properly set on the WiimoteTest tabs
+
 v1.5.1.0
 --------
 	o Oops...a last minute change broke the one thing I was adding:  Balance
-	  Board support.  Should be working now...
+	  Board support.  Should be working now...(identified by Manuel Schroeder)
 
 v1.5.0.0
 --------
