@@ -18,14 +18,12 @@
 
 #define poly 0x1021 // crc-ccitt mask
 
-namespace GiiMoteLib {
-
 	/// <summary>Dumps mii data from the Wii Remote</summary>
 	/// <param name="fName">The file name</param>
 	/// <param name="miiBlock">The mii block to dump from (1 or 2)</param>
 	/// <param name="miiNumber">The mii number to dump (1-10, use 0 for entire block)</param>
 	/// <returns>Success</returns>
-	double GiiMote::wm_mii_data_dump(System::String^ fName, double miiBlock, double miiNumber)
+	double wm_mii_data_dump(char* fName, double miiBlock, double miiNumber)
 	{
 		int start, end;
 		// unsigned char tData;
@@ -46,10 +44,12 @@ namespace GiiMoteLib {
 		{
 			end = start + MII_LENGTH;
 		}
-		System::IO::FileStream^ miiFile = gcnew System::IO::FileStream(fName,System::IO::FileMode::Create);
+		System::String^ temp = gcnew System::String(fName);
+		System::IO::FileStream^ miiFile = gcnew System::IO::FileStream(temp, System::IO::FileMode::Create);
+		delete temp;
 		try
 		{
-			miiFile->Write(wc[wmIndex]->ReadData(start, end - start), 0, end - start);
+			miiFile->Write(GiiMote::gm->wc[GiiMote::gm->wmIndex]->ReadData(start, end - start), 0, end - start);
 		}
 		catch (...)
 		{
@@ -58,7 +58,7 @@ namespace GiiMoteLib {
 		/*for(int i = start; i < end; i++)
 		{
 			try {
-				tData = wc[wmIndex]->ReadData(i,1)[0];
+				tData = wc[GiiMote::gm->wmIndex]->ReadData(i,1)[0];
 			}
 			catch (...) {
 				delete miiFile;
@@ -82,7 +82,7 @@ namespace GiiMoteLib {
 	/// <param name="miiBlock">The mii block to inject to</param>
 	/// <param name="miiNumber">The mii number to inject (1-10)</param>
 	/// <returns>Success</returns>
-	double GiiMote::wm_mii_data_inject(System::String^ fName,double miiBlock, double miiNumber)
+	double wm_mii_data_inject(char* fName,double miiBlock, double miiNumber)
 	{
 		cli::array<unsigned char,1>^ miiBuffer;
 		int miiNum = (int)miiNumber;
@@ -91,7 +91,9 @@ namespace GiiMoteLib {
 		{
 			return ( 0 );
 		}
-		System::IO::FileStream^ miiFile = gcnew System::IO::FileStream(fName,System::IO::FileMode::Open);
+		System::String^ temp = gcnew System::String(fName);
+		System::IO::FileStream^ miiFile = gcnew System::IO::FileStream(temp,System::IO::FileMode::Open);
+		delete temp;
 		miiBuffer->Resize(miiBuffer,0);
 		int miiLoc = (MII_LENGTH*(miiNum-1))*(miiNum!=0);
 		int blockStart = MII_DATA_START + (MII_BLOCK_SIZE*(miiBlock==2));
@@ -158,7 +160,7 @@ namespace GiiMoteLib {
 				/*for(int c=0;c<MII_BLOCK_SIZE;c++)
 				{
 					try {
-						this->wc[wmIndex]->WriteData(start + c,miiBuffer[c]);
+						GiiMote::gm->wc[GiiMote::gm->wmIndex]->WriteData(start + c,miiBuffer[c]);
 					}
 					catch(...) {
 						return ( 0 );
@@ -166,7 +168,7 @@ namespace GiiMoteLib {
 				}*/
 				try
 				{
-					this->wc[wmIndex]->WriteData(start, sizeof(unsigned char), miiBuffer);
+					GiiMote::gm->wc[GiiMote::gm->wmIndex]->WriteData(start, sizeof(unsigned char), miiBuffer);
 				}
 				catch(...)
 				{
@@ -180,7 +182,7 @@ namespace GiiMoteLib {
 				/*for(int c=0;c<MII_LENGTH;c++)
 				{
 					try {
-						this->wc[wmIndex]->WriteData(start + c,miiBuffer[((miiNum-1)*MII_LENGTH)+c]);
+						GiiMote::gm->wc[GiiMote::gm->wmIndex]->WriteData(start + c,miiBuffer[((miiNum-1)*MII_LENGTH)+c]);
 					}
 					catch(...) {
 						return ( 0 );
@@ -191,7 +193,7 @@ namespace GiiMoteLib {
 				{
 					cli::array<unsigned char>^ individualMiiBuffer;
 					cli::array<unsigned char>::ConstrainedCopy(miiBuffer, ((miiNum-1)*MII_LENGTH), individualMiiBuffer, 0, MII_LENGTH);
-					this->wc[wmIndex]->WriteData(start, sizeof(unsigned char), individualMiiBuffer );
+					GiiMote::gm->wc[GiiMote::gm->wmIndex]->WriteData(start, sizeof(unsigned char), individualMiiBuffer );
 					delete individualMiiBuffer;
 				}
 				catch(...)
@@ -202,8 +204,8 @@ namespace GiiMoteLib {
 				// Update the CRC on the Wii Remote
 				try
 				{
-					this->wc[wmIndex]->WriteData(blockStart+MII_BLOCK_SIZE-2,miiBuffer[MII_BLOCK_SIZE-2]);
-					this->wc[wmIndex]->WriteData(blockStart+MII_BLOCK_SIZE-1,miiBuffer[MII_BLOCK_SIZE-1]);
+					GiiMote::gm->wc[GiiMote::gm->wmIndex]->WriteData(blockStart+MII_BLOCK_SIZE-2,miiBuffer[MII_BLOCK_SIZE-2]);
+					GiiMote::gm->wc[GiiMote::gm->wmIndex]->WriteData(blockStart+MII_BLOCK_SIZE-1,miiBuffer[MII_BLOCK_SIZE-1]);
 				}
 				catch(...)
 				{
@@ -218,7 +220,7 @@ namespace GiiMoteLib {
 				/*for(int c=0;c<MII_DATA_LENGTH;c++)
 				{
 					try {
-						this->wc[wmIndex]->WriteData(MII_DATA_START + c,miiBuffer[c]);
+						GiiMote::gm->wc[GiiMote::gm->wmIndex]->WriteData(MII_DATA_START + c,miiBuffer[c]);
 					}
 					catch(...) {
 						return ( 0 );
@@ -226,7 +228,7 @@ namespace GiiMoteLib {
 				}*/
 				try
 				{
-					this->wc[wmIndex]->WriteData(MII_DATA_START, sizeof(unsigned char), miiBuffer);
+					GiiMote::gm->wc[GiiMote::gm->wmIndex]->WriteData(MII_DATA_START, sizeof(unsigned char), miiBuffer);
 				}
 				catch(...)
 				{
@@ -242,8 +244,8 @@ namespace GiiMoteLib {
 					wChar = miiBuffer[((miiNum-1)*MII_LENGTH)+c];
 					try
 					{
-						this->wc[wmIndex]->WriteData(MII_DATA_START + miiLoc + c,wChar);
-						this->wc[wmIndex]->WriteData(MII_DATA_START + MII_BLOCK_SIZE + miiLoc  + c,wChar);
+						GiiMote::gm->wc[GiiMote::gm->wmIndex]->WriteData(MII_DATA_START + miiLoc + c,wChar);
+						GiiMote::gm->wc[GiiMote::gm->wmIndex]->WriteData(MII_DATA_START + MII_BLOCK_SIZE + miiLoc  + c,wChar);
 					}
 					catch(...)
 					{
@@ -254,8 +256,8 @@ namespace GiiMoteLib {
 				cli::array<unsigned char>::ConstrainedCopy(miiBuffer, ((miiNum-1)*MII_LENGTH), individualMiiBuffer, 0, miiBuffer->Length);
 				try
 				{
-					this->wc[wmIndex]->WriteData(MII_DATA_START + miiLoc, sizeof(unsigned char), individualMiiBuffer);
-					this->wc[wmIndex]->WriteData(MII_DATA_START + MII_BLOCK_SIZE + miiLoc, sizeof(unsigned char), individualMiiBuffer);
+					GiiMote::gm->wc[GiiMote::gm->wmIndex]->WriteData(MII_DATA_START + miiLoc, sizeof(unsigned char), individualMiiBuffer);
+					GiiMote::gm->wc[GiiMote::gm->wmIndex]->WriteData(MII_DATA_START + MII_BLOCK_SIZE + miiLoc, sizeof(unsigned char), individualMiiBuffer);
 				}
 				catch(...)
 				{
@@ -269,8 +271,8 @@ namespace GiiMoteLib {
 				// for some reason the second may still be written and be valid on the Wii Remote.
 				try 
 				{
-					this->wc[wmIndex]->WriteData(MII_DATA_START+MII_BLOCK_SIZE-2,miiBuffer[MII_BLOCK_SIZE-2]);
-					this->wc[wmIndex]->WriteData(MII_DATA_START+MII_BLOCK_SIZE-1,miiBuffer[MII_BLOCK_SIZE-1]);
+					GiiMote::gm->wc[GiiMote::gm->wmIndex]->WriteData(MII_DATA_START+MII_BLOCK_SIZE-2,miiBuffer[MII_BLOCK_SIZE-2]);
+					GiiMote::gm->wc[GiiMote::gm->wmIndex]->WriteData(MII_DATA_START+MII_BLOCK_SIZE-1,miiBuffer[MII_BLOCK_SIZE-1]);
 				}
 				catch(...)
 				{
@@ -279,8 +281,8 @@ namespace GiiMoteLib {
 				}
 				try
 				{
-					this->wc[wmIndex]->WriteData(blockStart+(2*MII_BLOCK_SIZE)-2,miiBuffer[(2*MII_BLOCK_SIZE)-2]);
-					this->wc[wmIndex]->WriteData(blockStart+(2*MII_BLOCK_SIZE)-1,miiBuffer[(2*MII_BLOCK_SIZE)-1]);
+					GiiMote::gm->wc[GiiMote::gm->wmIndex]->WriteData(blockStart+(2*MII_BLOCK_SIZE)-2,miiBuffer[(2*MII_BLOCK_SIZE)-2]);
+					GiiMote::gm->wc[GiiMote::gm->wmIndex]->WriteData(blockStart+(2*MII_BLOCK_SIZE)-1,miiBuffer[(2*MII_BLOCK_SIZE)-1]);
 				}
 				catch(...)
 				{
@@ -302,9 +304,11 @@ namespace GiiMoteLib {
 	/// <summary>Updates the CRC checksum of a mii block file</summary>
 	/// <param name="fName">The file name</param>
 	/// <returns>1</returns>
-	double GiiMote::wm_mii_update_crc(System::String^ fName)
+	double wm_mii_update_crc(char* fName)
 	{
-		System::IO::FileStream^ miiFile = gcnew System::IO::FileStream(fName,System::IO::FileMode::Open);
+		System::String^ temp = gcnew System::String(fName);
+		System::IO::FileStream^ miiFile = gcnew System::IO::FileStream(temp, System::IO::FileMode::Open);
+		delete temp;
 		cli::array<unsigned char,1>^ miiBuffer;
 		miiBuffer->Resize(miiBuffer,(int)miiFile->Length);
 		miiFile->Read(miiBuffer,0,(int)miiFile->Length);
@@ -345,7 +349,7 @@ namespace GiiMoteLib {
 	/// <summary>Updates the given Mii data</summary>
 	/// <param name="miiData">The mii data to update</param>
 	/// <returns>Updated mii data</returns>
-	cli::array<unsigned char,1>^ GiiMote::wm_mii_data_update(cli::array<unsigned char,1>^ miiData)
+	cli::array<unsigned char,1>^ wm_mii_data_update(cli::array<unsigned char,1>^ miiData)
 	{
 		cli::array<unsigned char,1>^ text = miiData;
 		unsigned short st = 0x0000;
@@ -426,4 +430,3 @@ namespace GiiMoteLib {
 		return (text);
 	}
 
-} // Namespace GiiMoteLib
