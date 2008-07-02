@@ -95,6 +95,7 @@ bb_topright
 
 Other:
 -------
+Removed the dependency on the GM .NET Layer by restructuring the library and exporting all functions.
 Moved all extension controller functions into extension controller source files (ex. wm_nunchuck functions to "Nunchuck.h")
 Changed event handlers to use generic event handler class instead of Brian Peek's custom delegates (Which were removed in version 1.3 of WiimoteLib)
 read/write functions now do so in a single read/write (instead of byte-wise)

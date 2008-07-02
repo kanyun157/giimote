@@ -1,8 +1,5 @@
 // Guitar.h -  Contains functions that deal with the Guitar extension.
 
-
-namespace GiiMoteLib {
-
 	/// <summary>Checks the state of a button</summary>
 	/// <param name="key_code">
 	/// The button to check
@@ -50,37 +47,37 @@ namespace GiiMoteLib {
 	/// </list>
 	/// </param>
 	/// <returns>Button pressed</returns>
-	double GiiMote::wm_guitar_check_button(double key_code)
+	double wm_guitar_check_button(double key_code)
 	{
 		bool is_pressed = 0;
 		switch ((int)key_code)
 		{
 		case btnBlue:
-			is_pressed = this->wc[wmIndex]->WiimoteState->GuitarState.ButtonState.Blue;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.ButtonState.Blue;
 			break;
 		case btnGreen:
-			is_pressed = this->wc[wmIndex]->WiimoteState->GuitarState.ButtonState.Green;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.ButtonState.Green;
 			break;
 		case btnOrange:
-			is_pressed = this->wc[wmIndex]->WiimoteState->GuitarState.ButtonState.Orange;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.ButtonState.Orange;
 			break;
 		case btnRed:
-			is_pressed = this->wc[wmIndex]->WiimoteState->GuitarState.ButtonState.Red;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.ButtonState.Red;
 			break;
 		case btnYellow:
-			is_pressed = this->wc[wmIndex]->WiimoteState->GuitarState.ButtonState.Yellow;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.ButtonState.Yellow;
 			break;
 		case btnStrumDown:
-			is_pressed = this->wc[wmIndex]->WiimoteState->GuitarState.ButtonState.StrumDown;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.ButtonState.StrumDown;
 			break;
 		case btnStrumUp:
-			is_pressed = this->wc[wmIndex]->WiimoteState->GuitarState.ButtonState.StrumUp;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.ButtonState.StrumUp;
 			break;
 		case btnMinus:
-			is_pressed = this->wc[wmIndex]->WiimoteState->GuitarState.ButtonState.Minus;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.ButtonState.Minus;
 			break;
 		case btnPlus:
-			is_pressed = this->wc[wmIndex]->WiimoteState->GuitarState.ButtonState.Plus;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.ButtonState.Plus;
 			break;
 		default:
 			is_pressed = false;
@@ -93,18 +90,18 @@ namespace GiiMoteLib {
 	/// <summary>Normalized joystick position</summary>
 	/// <remarks>Domain: [-0.5,0.5]</remarks>
 	/// <returns>The normalized X-position of the joystick</returns>
-	double GiiMote::wm_guitar_xpos()
+	double wm_guitar_xpos()
 	{
 		double xx;
 		try
 		{
-			xx = (double)this->wc[wmIndex]->WiimoteState->GuitarState.Joystick.X;
+			xx = (double)GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.Joystick.X;
 		}
 		catch(...)
 		{
 			return ( -1 );
 		}
-		if ( System::Math::Abs(xx) < (this->joystick_dead_zone[wmIndex]) )
+		if ( System::Math::Abs(xx) < (GiiMote::gm->joystick_dead_zone[GiiMote::gm->wmIndex]) )
 		{
 			xx = 0;
 		}
@@ -114,18 +111,18 @@ namespace GiiMoteLib {
 	/// <summary>Normalized joystick position</summary>
 	/// <remarks>Domain: [-0.5,0.5]</remarks>
 	/// <returns>The normalized Y-position of the joystick</returns>
-	double GiiMote::wm_guitar_ypos()
+	double wm_guitar_ypos()
 	{
 		double yy;
 		try
 		{
-			yy = (double)this->wc[wmIndex]->WiimoteState->GuitarState.Joystick.Y;
+			yy = (double)GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.Joystick.Y;
 		}
 		catch(...)
 		{
 			return ( -1 );
 		}
-		if ( System::Math::Abs(yy) < (this->joystick_dead_zone[wmIndex]) )
+		if ( System::Math::Abs(yy) < (GiiMote::gm->joystick_dead_zone[GiiMote::gm->wmIndex]) )
 		{
 			yy = 0;
 		}	
@@ -134,7 +131,7 @@ namespace GiiMoteLib {
 
 	/// <summary>Joystick direction</summary>
 	/// <returns>The direction of the joystick in degrees</returns>
-	double GiiMote::wm_guitar_direction()
+	double wm_guitar_direction()
 	{
 		double xx = wm_guitar_xpos();
 		double yy = wm_guitar_ypos();
@@ -150,7 +147,7 @@ namespace GiiMoteLib {
 
 	/// <summary>Joystick pressure</summary>
 	/// <returns>The pressure on the joystick</returns>
-	double GiiMote::wm_guitar_pressure()
+	double wm_guitar_pressure()
 	{
 		double xx = wm_guitar_xpos();
 		double yy = wm_guitar_ypos();
@@ -167,12 +164,12 @@ namespace GiiMoteLib {
 	/// <summary>Raw joystick X-position</summary>
 	/// <remarks>Domain: [0,255]</remarks>
 	/// <returns>Raw joystick X-position</returns>
-	double GiiMote::wm_guitar_rawx()
+	double wm_guitar_rawx()
 	{
 		double rawX;
 		try
 		{
-			rawX = (double)this->wc[wmIndex]->WiimoteState->GuitarState.RawJoystick.X;
+			rawX = (double)GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.RawJoystick.X;
 		}
 		catch(...)
 		{
@@ -185,12 +182,12 @@ namespace GiiMoteLib {
 	/// <summary>Raw joystick Y-position</summary>
 	/// <remarks>Domain: [0,255]</remarks>
 	/// <returns>Raw joystick Y-position</returns>
-	double GiiMote::wm_guitar_rawy()
+	double wm_guitar_rawy()
 	{
 		double rawY;
 		try
 		{
-			rawY = (double)this->wc[wmIndex]->WiimoteState->GuitarState.RawJoystick.Y;
+			rawY = (double)GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.RawJoystick.Y;
 		}
 		catch(...)
 		{
@@ -203,16 +200,15 @@ namespace GiiMoteLib {
 	/// <summary>Whammy bar position</summary>
 	/// <remarks>Domain: [0.0,1.0]</remarks>
 	/// <returns>Whammy bar position</returns>
-	double GiiMote::wm_guitar_whammybar_pos()
+	double wm_guitar_whammybar_pos()
 	{
-		return (this->wc[wmIndex]->WiimoteState->GuitarState.WhammyBar);
+		return (GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.WhammyBar);
 	}
 
 	/// <summary>Raw whammy bar position</summary>
 	/// <remarks>Domain: [0,10]</remarks>
 	/// <returns>Raw whammy bar position</returns>
-	double GiiMote::wm_guitar_whammybar_rawpos()
+	double wm_guitar_whammybar_rawpos()
 	{
-		return (this->wc[wmIndex]->WiimoteState->GuitarState.RawWhammyBar);
+		return (GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.RawWhammyBar);
 	}
-}

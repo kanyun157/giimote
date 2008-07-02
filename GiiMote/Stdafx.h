@@ -3,3 +3,5 @@
 // but are changed infrequently
 
 #pragma once
+#define exp extern "C" __declspec( dllexport ) /*__cdecl*/
+

@@ -103,6 +103,9 @@
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
+				Description="Generating Release Packages"
+				CommandLine="cd &quot;%ProgramFiles%\Subversion\bin&quot;&#x0D;&#x0A;set TARGET=&quot;$(TargetDir)$(TargetName)&quot;&#x0D;&#x0A;set TRUNKDIR=&quot;$(TargetDir)trunk&quot;&#x0D;&#x0A;svn export &quot;$(SolutionDir)&quot; %TRUNKDIR%&#x0D;&#x0A;del /f /q &quot;%TARGET%.tar.gz&quot;&#x0D;&#x0A;tar -czf %TRUNKDIR% &quot;%TARGET%.tar.gz&quot;&#x0D;&#x0A;rd /s /q %TRUNKDIR%"
+				Outputs="$(TargetDir)$(TargetName).tar.gz"
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -183,7 +186,7 @@
 		/>
 		<AssemblyReference
 			RelativePath="..\WiimoteLib\WiimoteLib.dll"
-			AssemblyName="WiimoteLib, Version=1.5.0.0, processorArchitecture=MSIL"
+			AssemblyName="WiimoteLib, Version=1.5.2.0, processorArchitecture=MSIL"
 			MinFrameworkVersion="131072"
 		/>
 		<AssemblyReference

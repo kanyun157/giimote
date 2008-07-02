@@ -1,8 +1,6 @@
 // GMButtons.h - Contains information on the buttons and triggers
 //				 used by the Wii Remote and Expansions.
 
-namespace GiiMoteLib {
-
 ////////////////////////////////////////////
 // Buttons
 ////////////////////////////////////////////
@@ -61,43 +59,43 @@ namespace GiiMoteLib {
 	/// </list>
 	/// </param>
 	/// <returns>Button pressed</returns>
-	double GiiMote::wm_check_button(double key_code)
+	double wm_check_button(double key_code)
 	{
 		bool is_pressed = 0;
 		switch ((int)key_code)
 		{
 		case btnA:
-			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.A;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->ButtonState.A;
 			break;
 		case btnB:
-			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.B;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->ButtonState.B;
 			break;
 		case btnUp:
-			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.Up;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->ButtonState.Up;
 			break;
 		case btnDown:
-			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.Down;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->ButtonState.Down;
 			break;
 		case btnRight:
-			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.Right;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->ButtonState.Right;
 			break;
 		case btnLeft:
-			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.Left;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->ButtonState.Left;
 			break;
 		case btnOne:
-			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.One;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->ButtonState.One;
 			break;
 		case btnTwo:
-			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.Two;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->ButtonState.Two;
 			break;
 		case btnPlus:
-			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.Plus;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->ButtonState.Plus;
 			break;
 		case btnMinus:
-			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.Minus;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->ButtonState.Minus;
 			break;
 		case btnHome:
-			is_pressed = this->wc[wmIndex]->WiimoteState->ButtonState.Home;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->ButtonState.Home;
 			break;
 		default:
 			is_pressed = false;
@@ -106,5 +104,3 @@ namespace GiiMoteLib {
 
 		return ((double)is_pressed);
 	}
-
-} // namespace GiiMoteLib
