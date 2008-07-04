@@ -11,6 +11,7 @@ New Functions:
 wm_set_using()
 wm_find_all()
 wm_found()
+wm_num_exists()
 wm_connect_all()
 wm_disconnect_all()
 wm_get_id()
@@ -101,7 +102,6 @@ Changed event handlers to use generic event handler class instead of Brian Peek'
 read/write functions now do so in a single read/write (instead of byte-wise)
 Changed the way wm_connected() works to be compatible with the latest version of WiimoteLib (it now performs a dummy byte-read)
 Removed the status check from the function wm_get_battery
-Changed the way wm_exists() works to be compatible with multiple Wii Remotes (it now returns weather or not wm_find_all() is greater than 0)
 
 
 

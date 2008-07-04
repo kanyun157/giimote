@@ -582,6 +582,11 @@
 		<param name="Local" value="GiiMote.htm#MII">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_num_exists()">
+		<param name="Name" value="Setup">
+		<param name="Local" value="GiiMote.htm#setup">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_nunchuck_check_button()">
 		<param name="Name" value="Buttons">
 		<param name="Local" value="GiiMote.htm#buttons">

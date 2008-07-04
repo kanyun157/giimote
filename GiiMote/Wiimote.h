@@ -72,7 +72,7 @@
 
 			if (GiiMote::gm->wmIndex >= GiiMote::gm->wc->Count)
 			{
-				int tIndex = (int)wm_get_index(toCharArray(GiiMote::gm->wmGUID->ToString()));
+				int tIndex = (int)wm_get_index_guid(toCharArray(GiiMote::gm->wmGUID->ToString()));
 				if (tIndex != -1)
 				{
 					GiiMote::gm->wmIndex = tIndex;
@@ -89,7 +89,7 @@
 	}
 
 	/// <summary>Returns the number of currently discovered Wii Remotes</summary>
-	/// <returns>Number of paired Wii Remotes or -1 on error</returns>
+	/// <returns>Number of paired (not connected) Wii Remotes or -1 on error</returns>
 	double wm_found()
 	{
 		int num;
@@ -107,8 +107,22 @@
 
 	/// <summary>Sets the current Wii Remote to use by index or numerical GUID</summary>
 	/// <returns>Success</returns>
-	double wm_set_using(double wm)
+	double wm_set_using_val(double wm)
 	{
+		if (wm == -1)
+		{
+			double tIndex = GiiMote::gm->wmIndex;
+			for(int i = 0; i < GiiMote::gm->wc->Count; i++)
+			{
+				wm_set_using_val(i);
+				if (wm_exists())
+				{
+					return ( 1.0 );
+				}
+			}
+			wm_set_using_val(tIndex);
+		}
+
 		if (GiiMote::gm->wc->Count > 0)
 		{
 			// Error traps
@@ -125,7 +139,7 @@
 			}
 			else
 			{
-				int i = (int)wm_get_index(wm);
+				int i = (int)wm_get_index_id(wm);
 				if (i != -1)
 				{
 					GiiMote::gm->wmIndex = i;
@@ -140,9 +154,9 @@
 
 	/// <summary>Sets the current Wii Remote to use by GUID</summary>
 	/// <returns>Success</returns>
-	double wm_set_using(char* guid)
+	double wm_set_using_guid(char* guid)
 	{
-		int i = (int)wm_get_index(guid);
+		int i = (int)wm_get_index_guid(guid);
 		if (GiiMote::gm->wc->Count > 0 && i != -1)
 		{
 			GiiMote::gm->wmIndex = i;
@@ -246,12 +260,39 @@
 		return ( count );
 	}
 
-	/// <summary>Checks to see if any Wii Remotes exist</summary>
-	/// <remarks>Same as checking if wm_found is greater than 0</remarks>
-	/// <returns>Wii Remote detected</returns>
+	/// <summary>Checks to see if the current Wii Remote exists</summary>
+	/// <returns>Weather or not the current Wii Remote exists</returns>
 	double wm_exists()
 	{
-		return (double(wm_found() > 0));
+		double num = 1.0;
+		if (!wm_connected())
+		{
+			try
+			{
+				GiiMote::gm->wc[GiiMote::gm->wmIndex]->Connect();
+				GiiMote::gm->wc[GiiMote::gm->wmIndex]->Disconnect();
+			}
+			catch(...)
+			{
+				num = 0.0;
+			}
+		}
+		return ( double(num) );
+	}
+
+	/// <summary>Checks to see how many Wii Remotes exist</summary>
+	/// <returns>The number of existing Wii Remotes</returns>
+	double wm_num_exists()
+	{
+		int num = 0;
+		int current = GiiMote::gm->wmIndex;
+		for(int i = 0; i < GiiMote::gm->wc->Count; i++)
+		{
+			GiiMote::gm->wmIndex = i;
+			num += (int)wm_exists();
+		}
+		GiiMote::gm->wmIndex = current;
+		return ( double(num) );
 	}
 
 	/// <summary>Disconnect from the Wii Remote</summary>
@@ -475,38 +516,21 @@
 
 	/// <summary>Gets the guid of the current Wii Remote</summary>
 	/// <returns>Guid as char*</returns>
-	char* wm_get_guid()
+	char* wm_get_guid_current()
 	{
 		return ( toCharArray(GiiMote::gm->wc[GiiMote::gm->wmIndex]->ID.ToString()) );
 	}
 
 	/// <summary>Gets the guid of the given Wii Remote</summary>
-	/// <param name="val">The index or hashed guid of the Wii Remote</param>
+	/// <param name="val">The hashed guid of the Wii Remote</param>
 	/// <returns>guid as char* or an empty char* on error</returns>
-	char* wm_get_guid(double val)
+	char* wm_get_guid_id(double val)
 	{
-		if (val < GiiMote::gm->wc->Count)
+		for (int i = 0; i < GiiMote::gm->wc->Count; i++)
 		{
-			System::String^ temp;
-			try
+			if (val == GiiMote::gm->wc[i]->ID.GetHashCode())
 			{
-				temp = GiiMote::gm->wc[(int)val]->ID.ToString();
-			}
-			catch(...)
-			{
-				return ( "" );
-			}
-
-			return ( toCharArray(temp) );
-		}
-		else
-		{
-			for (int i = 0; i < GiiMote::gm->wc->Count; i++)
-			{
-				if (val == wm_get_id(i))
-				{
-					return ( wm_get_guid(i) );
-				}
+				return ( toCharArray(GiiMote::gm->wc[i]->ID.ToString()) );
 			}
 		}
 
@@ -515,33 +539,15 @@
 
 	/// <summary>Hashes the guid of the current Wii Remote</summary>
 	/// <returns>Guid hash as double</returns>
-	double wm_get_id()
+	double wm_get_id_current()
 	{
 		return ( (double)GiiMote::gm->wc[GiiMote::gm->wmIndex]->ID.GetHashCode() );
 	}
 
 	/// <summary>Hashes the guid of the given Wii Remote</summary>
-	/// <param name="index">The index of the Wii Remote</param>
-	/// <returns>Guid hash as double or -1 on error</returns>
-	double wm_get_id(double index)
-	{
-		int temp;
-		try
-		{
-			temp = GiiMote::gm->wc[(int)index]->ID.GetHashCode();
-		}
-		catch(...)
-		{
-			return ( -1.0 );
-		}
-
-		return ( (double)temp );
-	}
-
-	/// <summary>Hashes the guid of the given Wii Remote</summary>
 	/// <param name="guid">The guid of the Wii Remote</param>
 	/// <returns>Guid hash as double or -1 on error</returns>
-	double wm_get_id(char* guid)
+	double wm_get_id_guid(char* guid)
 	{
 		System::String^ GUID = gcnew System::String(guid);
 		GUID->Replace("-","");
@@ -549,7 +555,7 @@
 		GUID->Replace("}","");
 		for (int i = 0; i < GiiMote::gm->wc->Count; i++)
 		{
-			System::String^ temp = gcnew System::String(wm_get_guid());
+			System::String^ temp = gcnew System::String(wm_get_guid_current());
 			temp->Replace("-","");
 			temp->Replace("{","");
 			temp->Replace("}","");
@@ -568,7 +574,7 @@
 	/// <summary>Gets the index of the given Wii Remote</summary>
 	/// <param name="guid">The guid of the Wii Remote</param>
 	/// <returns>Index</returns>
-	double wm_get_index(char* guid)
+	double wm_get_index_guid(char* guid)
 	{
 		System::String^ GUID = gcnew System::String(guid);
 		GUID->Replace("-","");
@@ -576,7 +582,7 @@
 		GUID->Replace("}","");
 		for (int i = 0; i < GiiMote::gm->wc->Count; i++)
 		{
-			System::String^ temp = gcnew System::String(wm_get_guid());
+			System::String^ temp = GiiMote::gm->wc[i]->ID.ToString();
 			temp->Replace("-","");
 			temp->Replace("{","");
 			temp->Replace("}","");
@@ -595,11 +601,11 @@
 	/// <summary>Gets the index of the given Wii Remote</summary>
 	/// <param name="guid">The hashed guid of the Wii Remote</param>
 	/// <returns>Index</returns>
-	double wm_get_index(double guid)
+	double wm_get_index_id(double guid)
 	{
 		for (int i = 0; i < GiiMote::gm->wc->Count; i++)
 		{
-			if (guid == wm_get_id())
+			if (guid == GiiMote::gm->wc[i]->ID.GetHashCode())
 			{
 				return ( i );
 			}
@@ -609,7 +615,7 @@
 
 	/// <summary>Gets the index of the current Wii Remote</summary>
 	/// <returns>Index</returns>
-	double wm_get_index()
+	double wm_get_index_current()
 	{
 		return ( (double)GiiMote::gm->wmIndex);
 	}
