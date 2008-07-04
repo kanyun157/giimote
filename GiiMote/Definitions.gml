@@ -122,6 +122,7 @@ function wm_connected():real
 function wm_disconnect():real
 function wm_disconnect_all();
 function wm_exists():real
+function wm_num_exists():real
 function wm_find_all():real
 function wm_found():real
 function wm_get_accel_dead_zone_x():real
@@ -138,15 +139,13 @@ function wm_get_calibration_y0():real
 function wm_get_calibration_yg():real
 function wm_get_calibration_z0():real
 function wm_get_calibration_zg():real
-function wm_get_guid():string
-function wm_get_guid(index:real):string
-function wm_get_guid(id:real):string
-function wm_get_id():real
-function wm_get_id(guid:string):real
-function wm_get_id(index:real):real
-function wm_get_index():real
-function wm_get_index(guid:string):real
-function wm_get_index(id:real):real
+hfunction wm_get_guid_current():string
+hfunction wm_get_guid_id(val:real):string
+hfunction wm_get_id_current():real
+hfunction wm_get_id_guid(guid:string):real
+hfunction wm_get_index_current():real
+hfunction wm_get_index_guid(guid:string):real
+hfunction wm_get_index_id(id:real):real
 function wm_get_joystick_dead_zone():real
 function wm_get_led(led:real):real
 function wm_get_moving():real
@@ -241,7 +240,8 @@ function wm_set_leds_int(leds:real):real
 function wm_set_report_type(report_type:real, continuous:real):real
 function wm_set_rumble(rumbling:real):real
 function wm_set_trigger_dead_zone(val:real):real
-function wm_set_using(wm:real):real
+hfunction wm_set_using_guid(wm:string):real
+hfunction wm_set_using_val(wm:real):real
 function wm_classic_rawx(wm_joystick:real):real
 function wm_classic_rawy(wm_joystick:real):real
 function wm_classic_trigger_raw(trigger:real):real

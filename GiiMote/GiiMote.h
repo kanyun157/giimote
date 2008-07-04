@@ -84,25 +84,25 @@ char* toCharArray(System::String^ source)
 		// Connection Functions
 		exp double	wm_find_all();
 		exp double  wm_found();
-		exp double  wm_set_using(double wm);
-			double  wm_set_using(char* wm);
+		exp double  wm_exists();
+		exp double	wm_num_exists();
+		exp double  wm_set_using_val(double wm);
+		exp	double  wm_set_using_guid(char* wm);
 		exp double  wm_connect();
 		exp double  wm_connect_all();
-		exp double  wm_exists();
 		exp double  wm_connected();
 		exp double  wm_disconnect();
 		exp double  wm_disconnect_all();
 		exp double  wm_set_report_type(double report_type, double continuous);
 		exp double  wm_get_report_type();
 		exp double  wm_get_report_continuous();
-		exp double  wm_get_id();
-			double  wm_get_id(double index);
-			double  wm_get_id(char* guid);
-		exp char*	wm_get_guid(double val);
-			char*	wm_get_guid();
-		exp	double  wm_get_index(double guid);
-			double  wm_get_index();
-			double  wm_get_index(char* guid);
+		exp double  wm_get_id_current();
+		exp	double  wm_get_id_guid(char* guid);
+		exp char*	wm_get_guid_id(double val);
+		exp	char*	wm_get_guid_current();
+		exp	double  wm_get_index_id(double guid);
+		exp	double  wm_get_index_current();
+		exp	double  wm_get_index_guid(char* guid);
 
 		// LED Functions
 		exp double wm_get_led(double led_num);
@@ -434,6 +434,8 @@ namespace GiiMoteLib {
 			ir_last_rawmid_pos = gcnew cli::array<Point>(0);
 
 			wm_find_all();
+
+			wm_set_using_val(-1);
 
 			// Get the width and height of the primary display
 			this->display_height = System::Windows::Forms::Screen::PrimaryScreen->Bounds.Height;

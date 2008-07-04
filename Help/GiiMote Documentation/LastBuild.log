@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder GUI" version="1.7.0.0" projectFile="F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation.shfb" started="6/11/2008 21:03:48">
+<shfbBuild product="Sandcastle Help File Builder GUI" version="1.7.0.0" projectFile="F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation.shfb" started="7/4/2008 15:00:50">
 <buildStep step="Initializing">
 </buildStep>
 <buildStep step="FindingTools">
@@ -14,7 +14,7 @@ Validating and copying documentation assembly information...
 </buildStep>
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
-    Last step completed in 00:00:00.4219
+    Last step completed in 00:00:00.3281
 </buildStep>
 <buildStep step="CopyDependencies">
 Copying documentation assembly dependencies...
@@ -23,7 +23,7 @@ F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00.0781
+    Last step completed in 00:00:00.0313
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
@@ -31,16 +31,16 @@ Generating reflection information...
 MrefBuilder (v2.4.10520.1)
 Copyright c Microsoft 2006
 Info: Loaded 1 assemblies for reflection and 1 dependency assemblies.
-Info: Wrote information on 1 namespaces, 1 types, and 205 members
+Info: Wrote information on 1 namespaces, 1 types, and 22 members
         1 file(s) copied.
 XslTransform (v2.4.10520.1)
 Copyright c Microsoft 2005-2006
 Info: Applying XSL transformation 'F:\Program Files\Sandcastle\ProductionTransforms\MergeDuplicates.xsl'.
-    Last step completed in 00:00:05.8594
+    Last step completed in 00:00:05.2500
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00.0781
+    Last step completed in 00:00:00.0313
 </buildStep>
 <buildStep step="ApplyVisibilityProperties">
 Applying visibility properties to reflection information file
@@ -59,7 +59,7 @@ Info: Applying XSL transformation 'F:\Program Files\Sandcastle\ProductionTransfo
 XslTransform (v2.4.10520.1)
 Copyright c Microsoft 2005-2006
 Info: Applying XSL transformation 'F:\Program Files\Sandcastle\ProductionTransforms\ReflectionToManifest.xsl'.
-    Last step completed in 00:00:20.6875
+    Last step completed in 00:00:06.8750
 </buildStep>
 <buildStep step="ModifyHelpTopicFilenames">
 Modifying help topic filenames in reflection information file
@@ -174,7 +174,7 @@ F:\Program Files\Sandcastle\Presentation\vs2005\scripts\script_manifold.js -&gt;
 F:\Program Files\Sandcastle\Presentation\vs2005\scripts\SplitScreen.js -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\scripts\SplitScreen.js
 F:\Program Files\Sandcastle\Presentation\vs2005\styles\Presentation.css -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\styles\Presentation.css
 F:\Program Files\Sandcastle\Presentation\vs2005\styles\Whidbey\presentation.css -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\styles\Whidbey\presentation.css
-    Last step completed in 00:00:16.3594
+    Last step completed in 00:00:05.9844
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
@@ -188,23 +188,23 @@ Applying XSL transformation 'F:\Documents and Settings\Owner\My Documents\Visual
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Help\GiiMote.htm -&gt; F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\GiiMote.htm
 
 Loading site map 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\SiteMap.sitemap'
-    Last step completed in 00:00:01.6406
+    Last step completed in 00:00:01.2031
 </buildStep>
 <buildStep step="MergeTablesOfContent">
 Merging conceptual and additional tables of content...
-    Last step completed in 00:00:00.0938
+    Last step completed in 00:00:00.0625
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
     conceptual.config
-    Last step completed in 00:00:00.2188
+    Last step completed in 00:00:00.1563
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
 F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\sandcastle.config
     No additional help attributes defined.  The 'HTML Help 2 Attributes' component was not added.
-    Last step completed in 00:00:00.2344
+    Last step completed in 00:00:00.1875
 </buildStep>
 <buildStep step="BuildReferenceTopics">
 Building reference help topics...
@@ -216,7 +216,7 @@ Info: CopyFromFileComponent: Loading data file 'F:\Program Files\Sandcastle\Pres
 Info: CopyFromIndexComponent: Instantiating component.
 Info: CopyFromIndexComponent: Searching for files that match '*.xml'.
 Info: CopyFromIndexComponent: Searching for files that match 'reflection.xml'.
-Info: CopyFromIndexComponent: Indexed 170306 elements in 107 files.
+Info: CopyFromIndexComponent: Indexed 170119 elements in 107 files.
 Info: CopyFromIndexComponent: Loaded 0 copy components.
 Info: CopyFromIndexComponent: Instantiating component.
 Info: CopyFromIndexComponent: Loaded 0 copy components.
@@ -827,7 +827,7 @@ Warn: CopyFromIndexComponent: Entries for the key 'P:Microsoft.Build.Framework.T
 Warn: CopyFromIndexComponent: Entries for the key 'P:Microsoft.Build.Framework.TaskStartedEventArgs.TaskName' occur in both 'F:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\en\Microsoft.Build.Framework.xml' and 'F:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\Microsoft.Build.Framework.xml'. The last entry will be used.
 Warn: CopyFromIndexComponent: Entries for the key 'T:Microsoft.Build.Framework.TaskStartedEventHandler' occur in both 'F:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\en\Microsoft.Build.Framework.xml' and 'F:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\Microsoft.Build.Framework.xml'. The last entry will be used.
 Info: CopyFromIndexComponent: Searching for files that match 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\GiiMote.xml'.
-Info: CopyFromIndexComponent: Indexed 124741 elements in 103 files.
+Info: CopyFromIndexComponent: Indexed 124745 elements in 103 files.
 Info: CopyFromIndexComponent: Loaded 0 copy components.
 Info: ForEachComponent: Instantiating component.
 Info: ForEachComponent: Loading subcomponents.
@@ -902,7 +902,7 @@ Info: ResolveReferenceLinksComponent2: Instantiating component.
 Info: ResolveReferenceLinksComponent2: Creating MSDN URL resolver.
 Info: ResolveReferenceLinksComponent2: Searching directory 'F:\Program Files\Sandcastle\Data\Reflection' for targets files of the form '*.xml'.
 Info: ResolveReferenceLinksComponent2: Searching directory 'F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working' for targets files of the form 'reflection.xml'.
-Info: ResolveReferenceLinksComponent2: Loaded 170306 reference targets.
+Info: ResolveReferenceLinksComponent2: Loaded 170119 reference targets.
 Info: SaveComponent: Instantiating component.
 Info: BuildAssembler: Building topic N:GiiMoteLib
 Info: BuildAssembler: Building topic T:GiiMoteLib.GiiMote
@@ -910,10 +910,6 @@ Info: BuildAssembler: Building topic AllMembers.T:GiiMoteLib.GiiMote
 Info: BuildAssembler: Building topic Methods.T:GiiMoteLib.GiiMote
 Info: BuildAssembler: Building topic Fields.T:GiiMoteLib.GiiMote
 Info: BuildAssembler: Building topic Overload:GiiMoteLib.GiiMote.Dispose
-Info: BuildAssembler: Building topic Overload:GiiMoteLib.GiiMote.wm_get_guid
-Info: BuildAssembler: Building topic Overload:GiiMoteLib.GiiMote.wm_get_id
-Info: BuildAssembler: Building topic Overload:GiiMoteLib.GiiMote.wm_get_index
-Info: BuildAssembler: Building topic Overload:GiiMoteLib.GiiMote.wm_set_using
 Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.#ctor
 Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.accel_dead_zone
 Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.continuous
@@ -921,8 +917,7 @@ Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.display_height
 Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.display_width
 Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.Dispose
 Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.Dispose(System.Boolean)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.domain_rescale(System.Double,System.Double,System.Double,System.Double,System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.in_domain(System.Double,System.Double,System.Double)
+Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.gm
 Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.ir_last_mid_pos
 Warn: ResolveReferenceLinksComponent2: Unknown reference link target 'T:WiimoteLib.PointF'.
 Warn: ResolveReferenceLinksComponent2: Unknown reference link target 'T:WiimoteLib.PointF'.
@@ -948,177 +943,12 @@ Warn: ResolveReferenceLinksComponent2: Unknown reference link target 'T:WiimoteL
 Warn: ResolveReferenceLinksComponent2: Unknown reference link target 'T:WiimoteLib.IRSensitivity'.
 Warn: ResolveReferenceLinksComponent2: Unknown reference link target 'T:WiimoteLib.IRSensitivity'.
 Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.joystick_dead_zone
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.joystick_direction(System.Double,System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.joystick_pressure(System.Double,System.Double)
 Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.report_type
 Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.trigger_dead_zone
 Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.wc
 Warn: ResolveReferenceLinksComponent2: Unknown reference link target 'T:WiimoteLib.WiimoteCollection'.
 Warn: ResolveReferenceLinksComponent2: Unknown reference link target 'T:WiimoteLib.WiimoteCollection'.
 Warn: ResolveReferenceLinksComponent2: Unknown reference link target 'T:WiimoteLib.WiimoteCollection'.
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_get_calibration_kg0(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_get_calibration_kg17(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_get_calibration_kg34(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_get_sensor_kgs(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_get_sensor_lbs(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_get_sensor_raw(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_get_weight_kgs
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_get_weight_lbs
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_set_calibration_kg0(System.Double,System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_set_calibration_kg17(System.Double,System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bb_set_calibration_kg34(System.Double,System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bin_read_byte(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_bin_write_byte(System.Double,System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_calc_accel(System.Single,System.Int32)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_check_button(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_check_extension
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_check_button(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_direction(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_get_calibration_maxtrigger(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_get_calibration_maxx(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_get_calibration_maxy(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_get_calibration_midx(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_get_calibration_midy(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_get_calibration_mintrigger(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_get_calibration_minx(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_get_calibration_miny(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_pressure(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_rawx(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_rawy(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_set_calibration_maxtrigger(System.Double,System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_set_calibration_maxx(System.Double,System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_set_calibration_maxy(System.Double,System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_set_calibration_midx(System.Double,System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_set_calibration_midy(System.Double,System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_set_calibration_mintrigger(System.Double,System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_set_calibration_minx(System.Double,System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_set_calibration_miny(System.Double,System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_trigger_pressure(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_trigger_raw(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_xpos(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_classic_ypos(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_connect
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_connect_all
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_connected
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_disconnect
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_disconnect_all
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_exists
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_find_all
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_found
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_accel_dead_zone_x
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_accel_dead_zone_y
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_accel_dead_zone_z
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_accel_rawx
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_accel_rawy
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_accel_rawz
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_accel_x
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_accel_y
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_accel_z
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_altitude
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_battery
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_calibration_x0
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_calibration_xg
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_calibration_y0
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_calibration_yg
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_calibration_z0
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_calibration_zg
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_guid
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_guid(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_id
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_id(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_id(System.String)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_index
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_index(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_index(System.String)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_joystick_dead_zone
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_led(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_moving
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_pitch
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_report_continuous
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_report_type
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_roll
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_rumble
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_status
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_trigger_dead_zone
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_get_yaw
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_guitar_check_button(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_guitar_direction
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_guitar_pressure
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_guitar_rawx
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_guitar_rawy
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_guitar_whammybar_pos
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_guitar_whammybar_rawpos
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_guitar_xpos
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_guitar_ypos
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_display_get_x
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_display_get_y
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_midx
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_midy
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_rawmidx
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_rawmidy
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_rawx(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_rawy(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_x(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_dot_get_delta_y(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_dot_get_midx
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_dot_get_midy
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_dot_get_rawmidx
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_dot_get_rawmidy
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_dot_get_rawx(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_dot_get_rawy(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_dot_get_x(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_dot_get_y(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_dot_size(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_found_dot(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_get_sensitivity
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_ir_set_sensitivity(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_mii_data_dump(System.String,System.Double,System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_mii_data_inject(System.String,System.Double,System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_mii_data_update(System.Byte[])
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_mii_update_crc(System.String)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_check_button(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_direction
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_dead_zone_x
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_dead_zone_y
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_dead_zone_z
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_rawx
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_rawy
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_rawz
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_x
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_y
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_accel_z
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_maxx
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_maxy
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_midx
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_midy
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_minx
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_miny
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_x0
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_xg
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_y0
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_yg
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_z0
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_get_calibration_zg
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_pressure
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_rawx
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_rawy
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_set_accel_dead_zone_x(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_set_accel_dead_zone_y(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_set_accel_dead_zone_z(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_maxx(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_maxy(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_midx(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_midy(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_minx(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_miny(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_x0(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_xg(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_y0(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_yg(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_z0(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_set_calibration_zg(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_xpos
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_nunchuck_ypos
 Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_OnWiimoteChanged(System.Object,WiimoteLib.WiimoteChangedEventArgs)
 Warn: ResolveReferenceLinksComponent2: Unknown reference link target 'T:WiimoteLib.WiimoteChangedEventArgs'.
 Warn: ResolveReferenceLinksComponent2: Unknown reference link target 'T:WiimoteLib.WiimoteChangedEventArgs'.
@@ -1129,27 +959,10 @@ Warn: ResolveReferenceLinksComponent2: Unknown reference link target 'T:WiimoteL
 Warn: ResolveReferenceLinksComponent2: Unknown reference link target 'T:WiimoteLib.WiimoteExtensionChangedEventArgs'.
 Warn: ResolveReferenceLinksComponent2: Unknown reference link target 'T:WiimoteLib.WiimoteExtensionChangedEventArgs'.
 Warn: ResolveReferenceLinksComponent2: Unknown reference link target 'T:WiimoteLib.WiimoteExtensionChangedEventArgs'.
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_accel_dead_zone_x(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_accel_dead_zone_y(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_accel_dead_zone_z(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_calibration_x0(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_calibration_xg(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_calibration_y0(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_calibration_yg(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_calibration_z0(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_calibration_zg(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_joystick_dead_zone(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_leds(System.Double,System.Double,System.Double,System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_leds_int(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_report_type(System.Double,System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_rumble(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_trigger_dead_zone(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_using(System.Double)
-Info: BuildAssembler: Building topic M:GiiMoteLib.GiiMote.wm_set_using(System.String)
 Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.wmGUID
 Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.wmIndex
-Info: Processed 215 topics
-    Last step completed in 00:04:26.7656
+Info: Processed 28 topics
+    Last step completed in 00:02:58.7656
 </buildStep>
 <buildStep step="GenerateIntermediateTableOfContent">
 Generating intermediate table of content file...
@@ -1157,7 +970,7 @@ Generating intermediate table of content file...
 XslTransform (v2.4.10520.1)
 Copyright c Microsoft 2005-2006
 Info: Applying XSL transformation 'F:\Program Files\Sandcastle\ProductionTransforms\CreateVSToc.xsl'.
-    Last step completed in 00:00:10.1875
+    Last step completed in 00:00:05.6875
 </buildStep>
 <buildStep step="ExtractingHtmlInfo">
 Extracting HTML info for Help 1.x and/or website...
@@ -1167,15 +980,15 @@ Copyright c 2008, Eric Woodruff, All Rights Reserved
 E-Mail: Eric@EWoodruff.us
 
 Using LCID '1033', code page '65001', encoding charset 'UTF-8'.
-Processed 219 HTML files
+Processed 32 HTML files
 Sorting keywords and generating See Also indices
 Saving Help 1.x keyword index to F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Documentation.hhk
 Saving Help 1.x table of content to F:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Documentation.hhc
-    Last step completed in 00:00:12.5469
+    Last step completed in 00:00:01.9531
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContent">
 Generating HTML Help 1.x table of content file...
-    Last step completed in 00:00:00.4375
+    Last step completed in 00:00:00.0313
 </buildStep>
 <buildStep step="UpdateTableOfContent">
 Updating table of content with additional content items and determining default topic...
@@ -1183,11 +996,11 @@ Updating table of content with additional content items and determining default 
 </buildStep>
 <buildStep step="GenerateHelpFileIndex">
 Generating HTML Help 1.x index file...
-    Last step completed in 00:00:00.0156
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="GenerateHelpProject">
 Generating HTML Help 1.x project file...
-    Last step completed in 00:00:00.0938
+    Last step completed in 00:00:00.1094
 </buildStep>
 <buildStep step="CompilingHelpFile">
 Compiling HTML Help 1.x file...
@@ -1202,13 +1015,13 @@ Compiling f:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projec
 
 
 
-Compile time: 0 minutes, 11 seconds
+Compile time: 0 minutes, 8 seconds
 
-221	Topics
+34	Topics
 
-2,524	Local links
+323	Local links
 
-1,363	Internet links
+120	Internet links
 
 0	Graphics
 
@@ -1216,19 +1029,19 @@ Compile time: 0 minutes, 11 seconds
 
 
 
-Created f:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\Documentation.chm, 378,203 bytes
+Created f:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\Documentation.chm, 141,433 bytes
 
-Compression decreased file by 2,601,383 bytes.
+Compression decreased file by 422,103 bytes.
 
-    Last step completed in 00:00:15.1563
+    Last step completed in 00:00:12.7031
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:14.7188
+    Last step completed in 00:00:07.2813
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully.  Total time: 00:06:06.5781
+Build completed successfully.  Total time: 00:03:47.5313
 
 </buildStep>
 </shfbBuild>

@@ -104,7 +104,7 @@
 			<Tool
 				Name="VCCustomBuildTool"
 				Description="Generating Release Packages"
-				CommandLine="cd &quot;%ProgramFiles%\Subversion\bin&quot;&#x0D;&#x0A;set TARGET=&quot;$(TargetDir)$(TargetName)&quot;&#x0D;&#x0A;set TRUNKDIR=&quot;$(TargetDir)trunk&quot;&#x0D;&#x0A;svn export &quot;$(SolutionDir)&quot; %TRUNKDIR%&#x0D;&#x0A;del /f /q &quot;%TARGET%.tar.gz&quot;&#x0D;&#x0A;tar -czf %TRUNKDIR% &quot;%TARGET%.tar.gz&quot;&#x0D;&#x0A;rd /s /q %TRUNKDIR%"
+				CommandLine="cd &quot;%ProgramFiles%\Subversion\bin&quot;&#x0D;&#x0A;set TARGET=$(TargetDir)$(TargetName)&#x0D;&#x0A;set TRUNKDIR=$(TargetDir)trunk&#x0D;&#x0A;svn export --quiet --force &quot;$(SolutionDir)\&quot; &quot;%TRUNKDIR%&quot;&#x0D;&#x0A;cd $(TargetDir)&#x0D;&#x0A;tar -czf &quot;$(TargetName).tar.gz&quot; &quot;trunk&quot;"
 				Outputs="$(TargetDir)$(TargetName).tar.gz"
 			/>
 			<Tool
@@ -165,6 +165,9 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+				Description=""
+				CommandLine=""
+				ExcludedFromBuild="false"
 			/>
 		</Configuration>
 	</Configurations>

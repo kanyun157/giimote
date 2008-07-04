@@ -923,40 +923,35 @@ Current extension:
             <param name="led_num">The LED to get the state of (1-4)</param>
             <returns>The state of the LED</returns>
         </member>
-        <member name="M:wm_get_index">
+        <member name="M:wm_get_index_current">
             <summary>Gets the index of the current Wii Remote</summary>
             <returns>Index</returns>
         </member>
-        <member name="M:wm_get_index(System.Double)">
+        <member name="M:wm_get_index_id(System.Double)">
             <summary>Gets the index of the given Wii Remote</summary>
             <param name="guid">The hashed guid of the Wii Remote</param>
             <returns>Index</returns>
         </member>
-        <member name="M:wm_get_index(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte*)">
+        <member name="M:wm_get_index_guid(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte*)">
             <summary>Gets the index of the given Wii Remote</summary>
             <param name="guid">The guid of the Wii Remote</param>
             <returns>Index</returns>
         </member>
-        <member name="M:wm_get_id(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte*)">
+        <member name="M:wm_get_id_guid(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte*)">
             <summary>Hashes the guid of the given Wii Remote</summary>
             <param name="guid">The guid of the Wii Remote</param>
             <returns>Guid hash as double or -1 on error</returns>
         </member>
-        <member name="M:wm_get_id(System.Double)">
-            <summary>Hashes the guid of the given Wii Remote</summary>
-            <param name="index">The index of the Wii Remote</param>
-            <returns>Guid hash as double or -1 on error</returns>
-        </member>
-        <member name="M:wm_get_id">
+        <member name="M:wm_get_id_current">
             <summary>Hashes the guid of the current Wii Remote</summary>
             <returns>Guid hash as double</returns>
         </member>
-        <member name="M:wm_get_guid(System.Double)">
+        <member name="M:wm_get_guid_id(System.Double)">
             <summary>Gets the guid of the given Wii Remote</summary>
-            <param name="val">The index or hashed guid of the Wii Remote</param>
+            <param name="val">The hashed guid of the Wii Remote</param>
             <returns>guid as char* or an empty char* on error</returns>
         </member>
-        <member name="M:wm_get_guid">
+        <member name="M:wm_get_guid_current">
             <summary>Gets the guid of the current Wii Remote</summary>
             <returns>Guid as char*</returns>
         </member>
@@ -1083,10 +1078,13 @@ Current extension:
             <summary>Disconnect from the Wii Remote</summary>
             <returns>Wii Remote connected</returns>
         </member>
+        <member name="M:wm_num_exists">
+            <summary>Checks to see how many Wii Remotes exist</summary>
+            <returns>The number of existing Wii Remotes</returns>
+        </member>
         <member name="M:wm_exists">
-            <summary>Checks to see if any Wii Remotes exist</summary>
-            <remarks>Same as checking if wm_found is greater than 0</remarks>
-            <returns>Wii Remote detected</returns>
+            <summary>Checks to see if the current Wii Remote exists</summary>
+            <returns>Weather or not the current Wii Remote exists</returns>
         </member>
         <member name="M:wm_connect_all">
             <summary>Connects all paired Wii Remotes</summary>
@@ -1123,17 +1121,17 @@ Current extension:
             <summary>If the current Wii Remote is connected</summary>
             <returns>Wii Remote connected</returns>
         </member>
-        <member name="M:wm_set_using(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte*)">
+        <member name="M:wm_set_using_guid(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte*)">
             <summary>Sets the current Wii Remote to use by GUID</summary>
             <returns>Success</returns>
         </member>
-        <member name="M:wm_set_using(System.Double)">
+        <member name="M:wm_set_using_val(System.Double)">
             <summary>Sets the current Wii Remote to use by index or numerical GUID</summary>
             <returns>Success</returns>
         </member>
         <member name="M:wm_found">
             <summary>Returns the number of currently discovered Wii Remotes</summary>
-            <returns>Number of paired Wii Remotes or -1 on error</returns>
+            <returns>Number of paired (not connected) Wii Remotes or -1 on error</returns>
         </member>
         <member name="M:wm_find_all">
             <summary>Finds all paired Wii Remotes</summary>
