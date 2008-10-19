@@ -104,7 +104,7 @@
 			<Tool
 				Name="VCCustomBuildTool"
 				Description="Generating Release Packages"
-				CommandLine="cd &quot;%ProgramFiles%\Subversion\bin&quot;&#x0D;&#x0A;set TARGET=$(TargetDir)$(TargetName)&#x0D;&#x0A;set TRUNKDIR=$(TargetDir)trunk&#x0D;&#x0A;svn export --quiet --force &quot;$(SolutionDir)\&quot; &quot;%TRUNKDIR%&quot;&#x0D;&#x0A;cd $(TargetDir)&#x0D;&#x0A;tar -czf &quot;$(TargetName).tar.gz&quot; &quot;trunk&quot;"
+				CommandLine="cd &quot;%ProgramFiles%\Subversion\bin&quot;&#x0D;&#x0A;set TARGET=$(TargetDir)$(TargetName)&#x0D;&#x0A;set TRUNKDIR=$(TargetDir)trunk&#x0D;&#x0A;svn export --quiet --force &quot;$(SolutionDir)\&quot; &quot;%TRUNKDIR%&quot;&#x0D;&#x0A;cd $(TargetDir)&#x0D;&#x0A;tar -czf &quot;$(TargetName).tar.gz&quot; &quot;trunk&quot;&#x0D;&#x0A;RMDIR /S /Q &quot;%TRUNKDIR%&quot;"
 				Outputs="$(TargetDir)$(TargetName).tar.gz"
 			/>
 			<Tool
@@ -165,7 +165,86 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				Description=""
+				CommandLine=""
+				ExcludedFromBuild="false"
+			/>
+		</Configuration>
+		<Configuration
+			Name="MATLAB|Win32"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="2"
+			CharacterSet="1"
+			ManagedExtensions="1"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+				Description="Deploying to MATLAB Default Directory"
+				CommandLine="copy /Y /B &quot;$(TargetPath)&quot; &quot;%HOMEDRIVE%%HOMEPATH%\Documents\MATLAB\GiiMote&quot;&#x0D;&#x0A;copy /Y /B &quot;$(OutDir)\WiimoteLib.dll&quot; &quot;%HOMEDRIVE%%HOMEPATH%\Documents\MATLAB\GiiMote&quot;&#x0D;&#x0A;"
+				Outputs="%HOMEDRIVE%%HOMEPATH%\Documents\MATLAB\GiiMote\$(TargetFileName);%HOMEDRIVE%%HOMEPATH%\Documents\MATLAB\GiiMote\WiimoteLib.dll"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				PreprocessorDefinitions="WIN32;NDEBUG"
+				RuntimeLibrary="2"
+				UsePrecompiledHeader="2"
+				GenerateXMLDocumentationFiles="true"
+				XMLDocumentationFileName="$(IntDir)\"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="false"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="$(NoInherit)"
+				LinkIncremental="1"
+				GenerateDebugInformation="true"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
 				CommandLine=""
 				ExcludedFromBuild="false"
 			/>
@@ -230,6 +309,14 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="MATLAB|Win32"
 					>
 					<Tool
 						Name="VCCLCompilerTool"

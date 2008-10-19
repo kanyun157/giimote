@@ -66,6 +66,9 @@ const int rtIRExtensionAccel	= 6;
 const int rtReadData			= 7;
 const int rtStatus				= 8;
 
+/// <summary>True if an instance of GiiMote exists.</summary>
+bool initialized = 0;
+
 using namespace System;
 using namespace WiimoteLib;
 
@@ -82,6 +85,8 @@ char* toCharArray(System::String^ source)
 // Wii Remote Functions
 ////////////////////////////////////////////
 		// Connection Functions
+		exp double  gm_init();
+		exp double  gm_cleanup();
 		exp double	wm_find_all();
 		exp double  wm_found();
 		exp double  wm_exists();
@@ -557,3 +562,49 @@ namespace GiiMoteLib {
 
 	};
 }
+
+using namespace GiiMoteLib;
+
+/// <summary>Initializes GiiMote by creating a new instance of GiiMoteLib.GiiMote</summary>
+/// <returns>Success or -1 if already initialized</returns>
+double gm_init()
+{
+	if (!initialized)
+	{
+		System::Windows::Forms::MessageBox::Show("Mark 1");
+		try
+		{
+			gcnew GiiMote();
+			initialized = true;
+		}
+		catch(...)
+		{
+			initialized = false;
+		}
+	}
+	else
+	{
+		return ( -1.0 );
+	}
+	return ( (double)initialized );
+}
+
+/// <summary>Cleans up the heap when GiiMote exists gracefully</summary>
+/// <returns>Success</returns>
+double gm_cleanup()
+{
+	if (initialized)
+	{
+		try
+		{
+			delete GiiMote::gm;
+		}
+		catch(...)
+		{
+			initialized = 1;
+		}
+		initialized = false;
+	}
+	return ( !initialized );
+}
+

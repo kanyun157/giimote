@@ -4,14 +4,6 @@
         "GiiMote"
     </assembly>
     <members>
-        <member name="M:gm_cleanup">
-            <summary>Cleans up the heap when GiiMote exists gracefully</summary>
-            <returns>Success</returns>
-        </member>
-        <member name="M:gm_init">
-            <summary>Initializes GiiMote by creating a new instance of GiiMoteLib.GiiMote</summary>
-            <returns>Success or -1 if already initialized</returns>
-        </member>
         <member name="M:wm_bb_set_calibration_kg34(System.Double,System.Double)">
             <summary>Sets 34kg calibration info for a given sensor</summary>
             <param name="sensor">The sensor to use</param>
@@ -1177,6 +1169,14 @@ Current extension:
             <param name="miiBlock">The mii block to dump from (1 or 2)</param>
             <param name="miiNumber">The mii number to dump (1-10, use 0 for entire block)</param>
             <returns>Success</returns>
+        </member>
+        <member name="M:gm_cleanup">
+            <summary>Cleans up the heap when GiiMote exists gracefully</summary>
+            <returns>Success</returns>
+        </member>
+        <member name="M:gm_init">
+            <summary>Initializes GiiMote by creating a new instance of GiiMoteLib.GiiMote</summary>
+            <returns>Success or -1 if already initialized</returns>
         </member>
         <member name="M:GiiMoteLib.GiiMote.wm_OnWiimoteChanged(System.Object,WiimoteLib.WiimoteChangedEventArgs)">
             <summary>Wii Remote state change event</summary>
