@@ -571,7 +571,6 @@ double gm_init()
 {
 	if (!initialized)
 	{
-		System::Windows::Forms::MessageBox::Show("Mark 1");
 		try
 		{
 			gcnew GiiMote();
