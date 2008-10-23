@@ -104,7 +104,7 @@
 			<Tool
 				Name="VCCustomBuildTool"
 				Description="Generating Release Packages"
-				CommandLine="cd &quot;%ProgramFiles%\Subversion\bin&quot;&#x0D;&#x0A;set TARGET=$(TargetDir)$(TargetName)&#x0D;&#x0A;set TRUNKDIR=$(TargetDir)trunk&#x0D;&#x0A;svn export --quiet --force &quot;$(SolutionDir)\&quot; &quot;%TRUNKDIR%&quot;&#x0D;&#x0A;cd $(TargetDir)&#x0D;&#x0A;tar -czf &quot;$(TargetName).tar.gz&quot; &quot;%TRUNKDIR%&quot;&#x0D;&#x0A;RMDIR /S /Q &quot;%TRUNKDIR%&quot;&#x0D;&#x0A;"
+				CommandLine="cd &quot;%ProgramFiles%\Subversion\bin&quot;&#x0D;&#x0A;set TARGET=$(TargetDir)$(TargetName)&#x0D;&#x0A;set TRUNKDIR=$(TargetDir)trunk&#x0D;&#x0A;svn export --quiet --force &quot;$(SolutionDir)\&quot; &quot;%TRUNKDIR%&quot;&#x0D;&#x0A;cd $(TargetDir)&#x0D;&#x0A;tar -czf &quot;$(TargetName).tar.gz&quot; &quot;trunk&quot;&#x0D;&#x0A;RMDIR /S /Q &quot;%TRUNKDIR%&quot;&#x0D;&#x0A;"
 				Outputs="$(TargetDir)$(TargetName).tar.gz"
 			/>
 			<Tool
@@ -184,7 +184,7 @@
 			<Tool
 				Name="VCCustomBuildTool"
 				Description="Building Prototype M-File"
-				CommandLine="matlab -nosplash -nojvm -sd &quot;$(OutDir)&quot;  -r &quot;addpath(&apos;../Tools&apos;); buildPrototype(&apos;gmProto.m&apos;); exit;&quot;"
+				CommandLine="matlab -nosplash -nojvm -sd &quot;$(OutDir)&quot;  -r &quot;addpath(&apos;../Tools&apos;); buildPrototype(&apos;gmProto.m&apos;); exit;&quot;&#x0D;&#x0A;"
 				Outputs="$(OutDir)\gmProto.m"
 			/>
 			<Tool
