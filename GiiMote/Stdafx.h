@@ -4,4 +4,3 @@
 
 #pragma once
 #define exp extern "C" __declspec( dllexport ) /*__cdecl*/
-

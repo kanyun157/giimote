@@ -1,9 +1,10 @@
 -------------------------------------------------
-GiiMote Version 2.6 - June XX, 2008 - Revision XX
+GiiMote Version 3.0 - Nov XX, 2008 - Revision XX
 -------------------------------------------------
 
 Breaking Changes:
 ------------------
+GiiMote is now licensed under the GNU Lesser General Public License (see "COPYING")
 wm_set_write_method() has been removed
 
 New Functions:
@@ -102,6 +103,8 @@ Changed event handlers to use generic event handler class instead of Brian Peek'
 read/write functions now do so in a single read/write (instead of byte-wise)
 Changed the way wm_connected() works to be compatible with the latest version of WiimoteLib (it now performs a dummy byte-read)
 Removed the status check from the function wm_get_battery
+Added support for MATLAB
+Changed the license to th GNU LGPL
 
 
 

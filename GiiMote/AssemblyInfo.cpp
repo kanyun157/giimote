@@ -1,3 +1,20 @@
+// Copyright 2007 Sam Whited
+//
+//    This file is part of GiiMote.
+//
+//    GiiMote is free software: you can redistribute it and/or modify
+//    it under the terms of the GNU Lesser General Public License as published by
+//    the Free Software Foundation, either version 3 of the License, or
+//    (at your option) any later version.
+//
+//    GiiMote is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU Lesser General Public License for more details.
+//
+//    You should have received a copy of the GNU Lesser General Public License
+//    along with GiiMote.  If not, see <http://www.gnu.org/licenses/>.
+
 #include "stdafx.h"
 
 using namespace System;
@@ -12,11 +29,11 @@ using namespace System::Security::Permissions;
 // associated with an assembly.
 //
 [assembly:AssemblyTitleAttribute("GiiMote")];
-[assembly:AssemblyDescriptionAttribute("Wii Remote Extension for Game Maker")];
+[assembly:AssemblyDescriptionAttribute("Wii Remote Extension for Game Maker and MATLAB")];
 [assembly:AssemblyConfigurationAttribute("")];
-[assembly:AssemblyCompanyAttribute("GreenMan Games")];
+[assembly:AssemblyCompanyAttribute("")];
 [assembly:AssemblyProductAttribute("GiiMote")];
-[assembly:AssemblyCopyrightAttribute("Copyright 2007 GreenMan Games")];
+[assembly:AssemblyCopyrightAttribute("Copyright 2007 Sam Whited")];
 [assembly:AssemblyTrademarkAttribute("")];
 [assembly:AssemblyCultureAttribute("")];
 
@@ -31,7 +48,7 @@ using namespace System::Security::Permissions;
 // You can specify all the value or you can default the Revision and Build Numbers
 // by using the '*' as shown below:
 
-[assembly:AssemblyVersionAttribute("2.6.*")];
+[assembly:AssemblyVersionAttribute("3.0.*")];
 
 [assembly:ComVisible(false)];
 
