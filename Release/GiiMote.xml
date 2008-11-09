@@ -1201,6 +1201,9 @@ you will need to make the destructor bind late using the keyword "virtual."
             <summary>Default constructor</summary>
             <returns>Nothing</returns>
         </member>
+        <member name="F:GiiMoteLib.GiiMote.initialized">
+            <summary>True if an instance of GiiMote exists.</summary>
+        </member>
         <member name="F:GiiMoteLib.GiiMote.gm">
             <summary>A static pointer to "this"</summary>
         </member>

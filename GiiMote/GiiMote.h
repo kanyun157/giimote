@@ -1,4 +1,20 @@
 // GiiMote.h
+// Copyright 2007 Sam Whited
+//
+//    This file is part of GiiMote.
+//
+//    GiiMote is free software: you can redistribute it and/or modify
+//    it under the terms of the GNU Lesser General Public License as published by
+//    the Free Software Foundation, either version 3 of the License, or
+//    (at your option) any later version.
+//
+//    GiiMote is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU Lesser General Public License for more details.
+//
+//    You should have received a copy of the GNU Lesser General Public License
+//    along with GiiMote.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 ///////////////////////
@@ -66,12 +82,6 @@ const int rtIRExtensionAccel	= 6;
 const int rtReadData			= 7;
 const int rtStatus				= 8;
 
-/// <summary>True if an instance of GiiMote exists.</summary>
-bool initialized = 0;
-
-using namespace System;
-using namespace WiimoteLib;
-
 /// <summary>Converts a System.String to a char*</summary>
 /// <param name="source">The System.String to convert</param>
 /// <returns>Source as a char*</returns>
@@ -80,6 +90,10 @@ char* toCharArray(System::String^ source)
 	char* pString = (char*)System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(source).ToPointer();
 	return (pString);
 }
+
+
+using namespace System;
+using namespace WiimoteLib;
 
 ////////////////////////////////////////////
 // Wii Remote Functions
@@ -330,8 +344,25 @@ char* toCharArray(System::String^ source)
 		exp double wm_mii_data_dump(char* fName, double miiBlock, double miiNumber);
 		exp double wm_mii_data_inject(char* fName,double miiBlock, double miiNumber);
 		exp double wm_mii_update_crc(char* fName);
-		cli::array<unsigned char,1>^ wm_mii_data_update(cli::array<unsigned char,1>^ miiData);
 
+		exp double ret_one();
+		exp double __cdecl ret_two();
+		exp double __stdcall ret_three();
+
+		exp double ret_one()
+		{
+			return ( 1.0 );
+		}
+
+		double __cdecl ret_two()
+		{
+			return ( 2.0 );
+		}
+
+		double __stdcall ret_three()
+		{
+			return ( 3.0 );
+		}
 
 /// <summary>Functionality to communicate with a Nintendo Wii Remote from Game Maker</summary>
 namespace GiiMoteLib {
@@ -412,6 +443,8 @@ namespace GiiMoteLib {
 		cli::array<Point>^ ir_last_rawmid_pos;
 		/// <summary>A static pointer to "this"</summary>
 		static GiiMoteLib::GiiMote^ gm;
+		/// <summary>True if an instance of GiiMote exists.</summary>
+		static bool initialized;
 
 		 //////////////////
 		// Constructors //
@@ -445,6 +478,7 @@ namespace GiiMoteLib {
 			// Get the width and height of the primary display
 			this->display_height = System::Windows::Forms::Screen::PrimaryScreen->Bounds.Height;
 			this->display_width	 = System::Windows::Forms::Screen::PrimaryScreen->Bounds.Width;
+			GiiMote::initialized = true;
 		}
 		/// <summary>Default destructor</summary>
 		/// <remarks>
@@ -468,6 +502,7 @@ namespace GiiMoteLib {
 			delete ir_last_mid_pos;
 			delete ir_last_rawmid_pos;
 			delete (wc);
+			GiiMote::initialized = false;
 		}
 
 		/// <summary>Wii Remote extension state change event</summary>
@@ -569,30 +604,29 @@ using namespace GiiMoteLib;
 /// <returns>Success or -1 if already initialized</returns>
 double gm_init()
 {
-	if (!initialized)
+	if (!GiiMote::initialized)
 	{
 		try
 		{
 			gcnew GiiMote();
-			initialized = true;
 		}
 		catch(...)
 		{
-			initialized = false;
+			return ( 0 );
 		}
 	}
 	else
 	{
 		return ( -1.0 );
 	}
-	return ( (double)initialized );
+	return ( (double)GiiMote::initialized );
 }
 
 /// <summary>Cleans up the heap when GiiMote exists gracefully</summary>
 /// <returns>Success</returns>
 double gm_cleanup()
 {
-	if (initialized)
+	if (GiiMote::initialized)
 	{
 		try
 		{
@@ -600,10 +634,10 @@ double gm_cleanup()
 		}
 		catch(...)
 		{
-			initialized = 1;
+			return ( 0 );
 		}
-		initialized = false;
+		GiiMote::initialized = false;
 	}
-	return ( !initialized );
+	return ( double(!GiiMote::initialized) );
 }
 

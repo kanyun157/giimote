@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder GUI" version="1.7.0.0" projectFile="C:\Users\Sam\Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation.shfb" started="10/18/2008 21:18:28">
+<shfbBuild product="Sandcastle Help File Builder GUI" version="1.7.0.0" projectFile="C:\Users\Sam\Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation.shfb" started="10/25/2008 0:14:42">
 <buildStep step="Initializing">
 </buildStep>
 <buildStep step="FindingTools">
@@ -14,16 +14,16 @@ Validating and copying documentation assembly information...
 </buildStep>
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
-    Last step completed in 00:00:00.1280
+    Last step completed in 00:00:00.0260
 </buildStep>
 <buildStep step="CopyDependencies">
 Copying documentation assembly dependencies...
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\GiiMote\trunk\Release\WiimoteLib.dll -&gt; C:\Users\Sam\Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\DLL\WiimoteLib.dll
-    Last step completed in 00:00:00.0490
+    Last step completed in 00:00:00.0280
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00.0300
+    Last step completed in 00:00:00.0070
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
@@ -36,18 +36,18 @@ Info: Wrote information on 1 namespaces, 1 types, and 22 members
 XslTransform (v2.4.10520.1)
 Copyright c Microsoft 2005-2006
 Info: Applying XSL transformation 'C:\Program Files\Sandcastle\ProductionTransforms\MergeDuplicates.xsl'.
-    Last step completed in 00:00:01.8310
+    Last step completed in 00:00:00.7670
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00.0420
+    Last step completed in 00:00:00.0070
 </buildStep>
 <buildStep step="ApplyVisibilityProperties">
 Applying visibility properties to reflection information file
     0 attribute nodes removed
     0 explicit interface implementations removed
     0 local and base class EII elements removed
-    Last step completed in 00:00:00.0190
+    Last step completed in 00:00:00.0150
 </buildStep>
 <buildStep step="TransformReflectionInfo">
 Transforming reflection output...
@@ -59,12 +59,12 @@ Info: Applying XSL transformation 'C:\Program Files\Sandcastle\ProductionTransfo
 XslTransform (v2.4.10520.1)
 Copyright c Microsoft 2005-2006
 Info: Applying XSL transformation 'C:\Program Files\Sandcastle\ProductionTransforms\ReflectionToManifest.xsl'.
-    Last step completed in 00:00:01.2740
+    Last step completed in 00:00:00.8660
 </buildStep>
 <buildStep step="ModifyHelpTopicFilenames">
 Modifying help topic filenames in reflection information file
     No changes required
-    Last step completed in 00:00:00.0030
+    Last step completed in 00:00:00.0040
 </buildStep>
 <buildStep step="CopyStandardContent">
 Copying standard help content...
@@ -174,7 +174,7 @@ C:\Program Files\Sandcastle\Presentation\vs2005\scripts\script_manifold.js -&gt;
 C:\Program Files\Sandcastle\Presentation\vs2005\scripts\SplitScreen.js -&gt; C:\Users\Sam\Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\scripts\SplitScreen.js
 C:\Program Files\Sandcastle\Presentation\vs2005\styles\Presentation.css -&gt; C:\Users\Sam\Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\styles\Presentation.css
 C:\Program Files\Sandcastle\Presentation\vs2005\styles\Whidbey\presentation.css -&gt; C:\Users\Sam\Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\styles\Whidbey\presentation.css
-    Last step completed in 00:00:01.2840
+    Last step completed in 00:00:00.5320
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
@@ -188,23 +188,23 @@ Applying XSL transformation 'C:\Users\Sam\Documents\Visual Studio 2008\Projects\
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Help\GiiMote.htm -&gt; C:\Users\Sam\Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\GiiMote.htm
 
 Loading site map 'C:\Users\Sam\Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\SiteMap.sitemap'
-    Last step completed in 00:00:00.2640
+    Last step completed in 00:00:00.2100
 </buildStep>
 <buildStep step="MergeTablesOfContent">
 Merging conceptual and additional tables of content...
-    Last step completed in 00:00:00.0150
+    Last step completed in 00:00:00.0100
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
     conceptual.config
-    Last step completed in 00:00:00.0930
+    Last step completed in 00:00:00.0170
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\sandcastle.config
     No additional help attributes defined.  The 'HTML Help 2 Attributes' component was not added.
-    Last step completed in 00:00:00.2050
+    Last step completed in 00:00:00.0240
 </buildStep>
 <buildStep step="BuildReferenceTopics">
 Building reference help topics...
@@ -962,7 +962,7 @@ Warn: ResolveReferenceLinksComponent2: Unknown reference link target 'T:WiimoteL
 Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.wmGUID
 Info: BuildAssembler: Building topic F:GiiMoteLib.GiiMote.wmIndex
 Info: Processed 28 topics
-    Last step completed in 00:00:46.2480
+    Last step completed in 00:00:39.0770
 </buildStep>
 <buildStep step="GenerateIntermediateTableOfContent">
 Generating intermediate table of content file...
@@ -970,7 +970,7 @@ Generating intermediate table of content file...
 XslTransform (v2.4.10520.1)
 Copyright c Microsoft 2005-2006
 Info: Applying XSL transformation 'C:\Program Files\Sandcastle\ProductionTransforms\CreateVSToc.xsl'.
-    Last step completed in 00:00:00.3050
+    Last step completed in 00:00:00.2630
 </buildStep>
 <buildStep step="ExtractingHtmlInfo">
 Extracting HTML info for Help 1.x and/or website...
@@ -984,11 +984,11 @@ Processed 32 HTML files
 Sorting keywords and generating See Also indices
 Saving Help 1.x keyword index to C:\Users\Sam\Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Documentation.hhk
 Saving Help 1.x table of content to C:\Users\Sam\Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Documentation.hhc
-    Last step completed in 00:00:00.2710
+    Last step completed in 00:00:00.1300
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContent">
 Generating HTML Help 1.x table of content file...
-    Last step completed in 00:00:00.0100
+    Last step completed in 00:00:00.0070
 </buildStep>
 <buildStep step="UpdateTableOfContent">
 Updating table of content with additional content items and determining default topic...
@@ -1029,19 +1029,19 @@ Compile time: 0 minutes, 0 seconds
 
 
 
-Created c:\Users\Sam\Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\Documentation.chm, 141,433 bytes
+Created c:\Users\Sam\Documents\Visual Studio 2008\Projects\GiiMote\trunk\Help\GiiMote Documentation\Working\Output\Documentation.chm, 147,467 bytes
 
-Compression decreased file by 422,103 bytes.
+Compression decreased file by 422,243 bytes.
 
-    Last step completed in 00:00:01.1510
+    Last step completed in 00:00:00.8570
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:00.1060
+    Last step completed in 00:00:00.0350
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully.  Total time: 00:00:53.4970
+Build completed successfully.  Total time: 00:00:43.0240
 
 </buildStep>
 </shfbBuild>
