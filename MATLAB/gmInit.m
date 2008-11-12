@@ -1,8 +1,8 @@
 % Loads GiiMote into memory
 % Returns:
 %   notfound - A list of functions which were not found in the library
-%   warnings - Any warnigns which occured during the processing of the
-%   header or m file
+%   warnings - Any warnigns which occured during the processing of the m
+%   file
 % Arguments:
 %   None
 % Copyright 2008 Sam Whited

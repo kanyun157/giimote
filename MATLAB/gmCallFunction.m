@@ -31,13 +31,14 @@ function retVal = gmCallFunction(funcName, args)
             for i = 1:len
                 retVal = [retVal ', '];
                 if (iscell(args))
-                    retVal = [retVal args{i}];
+                    retVal = [retVal num2str(args{i})];
                 else
-                    retVal = [retVal args(i)];
+                    retVal = [retVal num2str(args(i))];
                 end
             end
         end
         retVal = [retVal ');'];
+        retVal
         retVal = eval(retVal);
     else
         retVal = [];

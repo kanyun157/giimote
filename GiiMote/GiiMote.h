@@ -345,25 +345,6 @@ using namespace WiimoteLib;
 		exp double wm_mii_data_inject(char* fName,double miiBlock, double miiNumber);
 		exp double wm_mii_update_crc(char* fName);
 
-		exp double ret_one();
-		exp double __cdecl ret_two();
-		exp double __stdcall ret_three();
-
-		exp double ret_one()
-		{
-			return ( 1.0 );
-		}
-
-		double __cdecl ret_two()
-		{
-			return ( 2.0 );
-		}
-
-		double __stdcall ret_three()
-		{
-			return ( 3.0 );
-		}
-
 /// <summary>Functionality to communicate with a Nintendo Wii Remote from Game Maker</summary>
 namespace GiiMoteLib {
 
