@@ -636,6 +636,13 @@
 		return ( (double)GiiMote::gm->wmIndex);
 	}
 
+	/// <summary>Exposes the HID device path</summary>
+	/// <returns>HID device path as string</returns>
+	char* wm_get_hid_device_path()
+	{
+		return ( toCharArray(GiiMote::gm->wc[GiiMote::gm->wmIndex]->HIDDevicePath) );
+	}
+
 	/////////////////////////
 	// LED Functions
 	/////////////////////////
@@ -721,19 +728,35 @@
 	/////////////////////////
 
 	/// <summary>Gets the current battery level</summary>
-	/// <returns>The current battery level between 0 and 200</returns>
+	/// <returns>The current battery level as a percent</returns>
 	double wm_get_battery()
 	{
-		double battery_state;
+		float battery_state;
 		try
 		{
-			battery_state = (double)GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->Battery;
+			battery_state = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->Battery;
 		}
 		catch(...)
 		{
-			return ( - 1 );
+			return ( - 1.0 );
 		}
-		return ( battery_state );
+		return ( (double)battery_state );
+	}
+
+	/// <summary>Gets the current raw battery level</summary>
+	/// <returns>The raw battery data</summary>
+	double wm_get_battery_raw()
+	{
+		char battery_state;
+		try
+		{
+			battery_state = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->BatteryRaw;
+		}
+		catch(...)
+		{
+			return ( - 1.0 );
+		}
+		return ( (double)battery_state );
 	}
 
 	/// <summary>Updates the Wii Remote's status</summary>
@@ -1006,6 +1029,7 @@
 		}
 		return ( value );
 	}
+
 	/// <summary>Writes a byte to a register or memory</summary>
 	/// <param name="address">The address to write to</param>
 	/// <returns>Success</returns>

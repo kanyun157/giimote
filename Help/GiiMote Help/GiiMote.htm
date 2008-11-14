@@ -61,6 +61,7 @@ To pair your Wii Remote with your computer follow these steps:</p>
 	<tt><b><a name="wm_get_id">wm_get_id(guid)></b></tt>
 		Gets the unique ID of the Wii Remote with the given guid as a real value.<br>
 </blockquote>
+<p>It is also possible to retreive the HID device path using the function <b><a name="wm_get_hid_device_path">wm_get_hid_device_path()</a></b></p>
 <p>To connect to a single Wii Remote you can call <b><a name="wm_connect">wm_connect()</a></b> which will return either 1 if successful, 0 if the connection failed, or -1 if a Wii Remote is already connected. To connect all discovered Wii Remotes at once you may use <b><a name="wm_connect_all">wm_connect_all()</a></b>. When you are done using the Wii Remote
 you can call <b><a name="wm_disconnect">wm_disconnect()</a></b>
 to release the Wii Remote or <b><a name="wm_disconnect">wm_disconnect_all()</a></b> to release all connected Wii Remotes. Please note that these functions do not stop the Wii Remote(s) from being paired with your computer! You must disconnect the Wii Remote manually to stop it from using its battery power (Press the power button on the Wii Remote or disconnect via your bluetooth stack). We can also check to see if the active Wii Remote is currently connected to our application by using <b><a name="wm_connected">wm_connected()</a></b>. After the Wii Remote is connected,
@@ -269,6 +270,11 @@ its orientation relative to the sensor bar. The following functions exist to use
 	<tt><b><a name="bb_topleft">bb_topleft</a></b></tt><br>
 	<tt><b><a name="bb_topright">bb_topright</a></b></tt><br>
 </blockquote>
+<p>Besides weight one can also calculate the center of gravity of the person on the balance board. To this end, the following functions can be used:</p>
+<blockquote>
+	<tt><b><a name="wm_bb_get_center_of_gravity_x">wm_bb_get_center_of_gravity_x()</a></b></tt><br>
+	<tt><b><a name="wm_bb_get_center_of_gravity_y">wm_bb_get_center_of_gravity_y()</a></b></tt><br>
+</blockquote>
 <h2><a name="MII">Mii Data</a></h2>
 <p>Mii's are avatars that a user can design on the Wii and use as a character in supported channels and games. Mii's can be stored on the Wii Remote to take between consoles. Mii's found in Mii Parade are also stored on the Wii Remote and occupy any space not taken up by user saved Mii data. Mii data comes in two 750 byte blocks each followed by a two byte CRC hash. The Wii console reads the first block of Mii data and then checks the CRC checksum, if they match the block
 is used, if not it goes onto the second block and if that does not check out no Mii's are displayed. The following functions allow you to dump and inject Mii data to and from the Wii Remote; if you wish to change the Mii's properties you will have to do so using Game Maker's built in file functions.</p>
@@ -292,6 +298,7 @@ There are several functions to get raw, unprocessed data from the Wii Remote:
 	<tt><b><a name="wm_get_accel_rawx">wm_get_accel_rawx()</a></b></tt><br>
 	<tt><b><a name="wm_get_accel_rawy">wm_get_accel_rawy()</a></b></tt><br>
 	<tt><b><a name="wm_get_accel_rawz">wm_get_accel_rawz()</a></b></tt><br>
+	<tt><b><a name="wm_get_battery_raw">wm_get_battery_raw()</a></b></tt><br>
 	<tt><b><a name="wm_nunchuck_get_accel_rawx">wm_nunchuck_get_accel_rawx()</a></b></tt><br>
 	<tt><b><a name="wm_nunchuck_get_accel_rawy">wm_nunchuck_get_accel_rawy()</a></b></tt><br>
 	<tt><b><a name="wm_nunchuck_get_accel_rawz">wm_nunchuck_get_accel_rawz()</a></b></tt><br>
