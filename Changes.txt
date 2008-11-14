@@ -6,17 +6,22 @@ Breaking Changes:
 ------------------
 GiiMote is now licensed under the GNU Lesser General Public License (see "COPYING")
 wm_set_write_method() has been removed
+wm_get_battery() now returns a percentage
 
 New Functions:
 ---------------
+wm_bb_get_center_of_gravity_x()
+wm_bb_get_center_of_gravity_y()
 wm_set_using()
 wm_find_all()
 wm_found()
 wm_num_exists()
 wm_connect_all()
 wm_disconnect_all()
+wm_get_battery_raw()
 wm_get_id()
 wm_get_guid()
+wm_get_hid_device_path()
 wm_get_index()
 wm_get_roll()
 wm_get_pitch()

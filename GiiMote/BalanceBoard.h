@@ -22,7 +22,6 @@
 	double wm_bb_get_weight_lbs()
 	{
 		float weight;
-
 		try
 		{
 			weight = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->BalanceBoardState.WeightLb;
@@ -40,7 +39,6 @@
 	double wm_bb_get_weight_kgs()
 	{
 		float weight;
-
 		try
 		{
 			weight = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->BalanceBoardState.WeightKg;
@@ -51,6 +49,20 @@
 		}
 
 		return ( (double)weight );
+	}
+
+	/// <summary>Calculates the center of gravity of the ojbect on the balance board</summary>
+	/// <returns>X value of the center of gravity of the object on the balance board</returns>
+	double wm_bb_get_center_of_gravity_x()
+	{
+		return ( (double)GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->BalanceBoardState.CenterOfGravity.X );
+	}
+
+	/// <summary>Calculates the center of gravity of the ojbect on the balance board</summary>
+	/// <returns>Y value of the center of gravity of the object on the balance board</returns>
+	double wm_bb_get_center_of_gravity_y()
+	{
+		return ( (double)GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->BalanceBoardState.CenterOfGravity.Y );
 	}
 
 	/// <summary>Returns the raw value on the specified sensor</summary>

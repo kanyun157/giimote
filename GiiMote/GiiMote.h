@@ -122,6 +122,7 @@ using namespace WiimoteLib;
 		exp	double  wm_get_index_id(double guid);
 		exp	double  wm_get_index_current();
 		exp	double  wm_get_index_guid(char* guid);
+		exp char*	wm_get_hid_device_path();
 
 		// LED Functions
 		exp double wm_get_led(double led_num);
@@ -130,6 +131,7 @@ using namespace WiimoteLib;
 
 		// Status
 		exp double wm_get_battery();
+		exp double wm_get_battery_raw();
 		exp double wm_get_status();
 		exp double wm_check_extension();
 		exp double wm_set_rumble(double rumbling);
@@ -167,6 +169,8 @@ using namespace WiimoteLib;
 		exp double wm_bb_get_sensor_raw(double sensor);
 		exp double wm_bb_get_sensor_kgs(double sensor);
 		exp double wm_bb_get_sensor_lbs(double sensor);
+		exp double wm_bb_get_center_of_gravity_x();
+		exp double wm_bb_get_center_of_gravity_y();
 
 		// Joysticks (General)
 		exp double joystick_direction(double xx, double yy);
