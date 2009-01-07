@@ -1,5 +1,5 @@
 % Calls a function in GiiMote
-% retVal = gmCallFunction(funcName, arg1, ..., argN)
+% retVal = gmCallFunction(funcName, [arg1, ..., argN])
 % Returns:
 %   retVal - The value returned by the function or an empty vector if there
 %   is an error
@@ -38,7 +38,6 @@ function retVal = gmCallFunction(funcName, args)
             end
         end
         retVal = [retVal ');'];
-        retVal
         retVal = eval(retVal);
     else
         retVal = [];
