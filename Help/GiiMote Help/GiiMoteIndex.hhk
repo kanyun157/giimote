@@ -194,7 +194,7 @@
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_classic_get_calibration_midx()">
 		<param name="Name" value="Calibration">
-		<param name="Local" value="GiiMote.htm#calibration">
+		<param name="Local" value="GiiMote.htm">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_classic_get_calibration_midy()">
@@ -354,7 +354,7 @@
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_get_battery()">
 		<param name="Name" value="Misc. Data">
-		<param name="Local" value="GiiMote.htm#MISC">
+		<param name="Local" value="GiiMote.htm">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_get_guid()">
