@@ -1,5 +1,5 @@
 -------------------------------------------------
-GiiMote Version 3.0 - Nov XX, 2008 - Revision XX
+GiiMote Version 3.0 - Feb XX, 2009 - Revision XX
 -------------------------------------------------
 
 Breaking Changes:
