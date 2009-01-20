@@ -1,5 +1,5 @@
 Managed Library for Nintendo's Wiimote
-v1.6.0.0
+v1.7.0.0
 by Brian Peek (http://www.brianpeek.com/)
 
 For more information, please visit the associated article for this project at:
@@ -13,10 +13,24 @@ If all else fails, please contact me at the address above.  Enjoy!
 Changes
 =======
 
+v1.7.0.0
+--------
+	o Writing registers is now properly waiting for the Wiimote to reply
+	  before continuing...this removes all of the Thread.Sleep() calls and
+	  should *greatly* improve performance when setting LEDs and rumble
+	  (Serial Nightmare & wwibrew.org)
+	o Guitar Hero: World Tour Guitar and Drums now properly recognized and
+	  used (wiibrew.org, tested by Tyler Tolley and Mauro Milazzo)
+	o Guitar whammy bar is now a 5-bit value instead of 4 (wiibrew.org)
+	o Position of 4 IRs now properly reported in Basic reporting mode
+	  (Dan Carter)
+	o Found1/2 now properly reported in MSRS (reported by akka243)
+	o MSRS project updated to Microsoft Robotics Developer Studio 2008
+
 v1.6.0.0
 --------
 	o Added "center of gravity" calculation to the Wii Fit Balance Board
-	  (thanks to SJB)
+	  (thanks to Steven Battersby)
 	o Structs are now marked [Serializable] (suggested by Caio)
 	o Battery property is now a float containing the calculated percentage
 	  of battery remaining
