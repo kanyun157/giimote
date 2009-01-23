@@ -27,6 +27,7 @@ wm_get_roll()
 wm_get_pitch()
 wm_get_yaw()
 wm_get_altitude()
+wm_guitar_get_type()
 wm_ir_display_get_x()
 wm_ir_display_get_y()
 wm_ir_window_get_x()
@@ -87,12 +88,18 @@ rt_irextensionaccel
 rt_readdata
 rt_status
 ext_balanceboard
+ext_drums
 ext_guitar
 wm_blue
 wm_green
 wm_orange
 wm_red
 wm_yellow
+wm_touch_blue
+wm_touch_green
+wm_touch_orange
+wm_touch_red
+wm_touch_yellow
 wm_strum_down
 wm_strum_up
 bb_btmleft

@@ -69,19 +69,34 @@
 		switch ((int)key_code)
 		{
 		case btnBlue:
-			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.ButtonState.Blue;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.FretButtonState.Blue;
 			break;
 		case btnGreen:
-			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.ButtonState.Green;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.FretButtonState.Green;
 			break;
 		case btnOrange:
-			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.ButtonState.Orange;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.FretButtonState.Orange;
 			break;
 		case btnRed:
-			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.ButtonState.Red;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.FretButtonState.Red;
 			break;
 		case btnYellow:
-			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.ButtonState.Yellow;
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.FretButtonState.Yellow;
+			break;
+		case btnTouchBlue:
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.TouchbarState.Blue;
+			break;
+		case btnTouchGreen:
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.TouchbarState.Green;
+			break;
+		case btnTouchOrange:
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.TouchbarState.Orange;
+			break;
+		case btnTouchRed:
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.TouchbarState.Red;
+			break;
+		case btnTouchYellow:
+			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.TouchbarState.Yellow;
 			break;
 		case btnStrumDown:
 			is_pressed = GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.ButtonState.StrumDown;
@@ -227,4 +242,22 @@
 	double wm_guitar_whammybar_rawpos()
 	{
 		return (GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.RawWhammyBar);
+	}
+
+	/// <summary>Type of guitar extension</summary>
+	/// <returns>Guitar Hero 3 (0) or Guitar Hero World Tour (1)</returns>
+	double wm_guitar_get_type()
+	{
+		switch ((int)GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->GuitarState.GuitarType)
+		{
+		case (0):
+			return ( 0.0 );
+			break;
+		case (1):
+			return ( 1.0 );
+			break;
+		default:
+			return ( -1.0 );
+			break;
+		}
 	}

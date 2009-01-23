@@ -71,10 +71,12 @@ calling <b><a name="wm_check_extension">wm_check_extension()</a></b>. This will 
 	<tt><b><a name="ext_classic">ext_classic</a></b></tt><br>
 	<tt><b><a name="ext_nunchuck">ext_nunchuck</a></b></tt><br>
 	<tt><b><a name="ext_guitar">ext_guitar</a></b></tt><br>
+	<tt><b><a name="ext_drums">ext_drums</a></b></tt><br>
 	<tt><b><a name="ext_balanceboard">ext_balanceboard</a></b></tt><br>
 	<tt><b><a name="ext_none">ext_none</a></b></tt><br>
 	<tt><b><a name="ext_unknown">ext_unknown</a></b></tt><br>
 </blockquote>
+<p>There are two types of Guitar extension for the Wii Remote. You can check which is plugged in by calling the function <b><a name="wm_guitar_get_type">wm_guitar_get_type()</a></b> which returns either 1 (Guitar Hero World Tour) or 0 (Guitar Hero 3).</p>
 <p>GiiMote stores data about the Wii Remote inside the extension. Anytime you set 
     the rumble, check the battery life, or change the status of the Wii Remote in any way (by 
     turning off an LED for instance) this data is updated and when you call a function which returns some data (wm_get_rumble for instance) it checks this data, not the Wii Remote directly. Most of the time this information is up to date, but sometimes it is still useful to update the status of the Wii Remote manually.
@@ -123,13 +125,18 @@ The following button key codes exist for use in any function that requires a but
 	<tt><b><a name="wm_zl">wm_zl</a></b></tt><br>
 	<tt><b><a name="wm_c">wm_c</a></b></tt><br>
 	<tt><b><a name="wm_z">wm_z</a></b></tt><br>
-	<tt><b><a name="wm_z">wm_blue</a></b></tt><br>
-	<tt><b><a name="wm_z">wm_green</a></b></tt><br>
-	<tt><b><a name="wm_z">wm_orange</a></b></tt><br>
-	<tt><b><a name="wm_z">wm_red</a></b></tt><br>
-	<tt><b><a name="wm_z">wm_yellow</a></b></tt><br>
-	<tt><b><a name="wm_z">wm_strum_up</a></b></tt><br>
-	<tt><b><a name="wm_z">wm_strum_down</a></b></tt><br>
+	<tt><b><a name="wm_blue">wm_blue</a></b></tt><br>
+	<tt><b><a name="wm_green">wm_green</a></b></tt><br>
+	<tt><b><a name="wm_orange">wm_orange</a></b></tt><br>
+	<tt><b><a name="wm_red">wm_red</a></b></tt><br>
+	<tt><b><a name="wm_yellow">wm_yellow</a></b></tt><br>
+	<tt><b><a name="wm_touch_blue">wm_touch_blue</a></b></tt><br>
+	<tt><b><a name="wm_touch_green">wm_touch_green</a></b></tt><br>
+	<tt><b><a name="wm_touch_orange">wm_touch_orange</a></b></tt><br>
+	<tt><b><a name="wm_touch_red">wm_touch_red</a></b></tt><br>
+	<tt><b><a name="wm_touch_yellow">wm_touch_yellow</a></b></tt><br>
+	<tt><b><a name="wm_strum_up">wm_strum_up</a></b></tt><br>
+	<tt><b><a name="wm_strum_down">wm_strum_down</a></b></tt><br>
 </blockquote>
 <h2><a name="joystick">Joystick Positions</a></h2>
 <p>The Nunchuck, Classic Controller, and Guitar Controller both contain one or more joysticks which can be utilized with the following functions:</p>

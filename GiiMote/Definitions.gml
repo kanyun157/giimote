@@ -35,13 +35,18 @@ const wm_c = 19
 const wm_z = 20
 
 // Guitar Specific Buttons
-const wm_blue       = 21
-const wm_green      = 22
-const wm_orange     = 23
-const wm_red        = 24
-const wm_yellow     = 25
-const wm_strum_down = 26
-const wm_strum_up   = 27
+const wm_blue         = 21
+const wm_green        = 22
+const wm_orange       = 23
+const wm_red          = 24
+const wm_yellow       = 25
+const wm_touch_blue   = 28
+const wm_touch_green  = 29;
+const wm_touch_orange = 30;
+const wm_touch_red    = 31;
+const wm_touch_yellow = 32;
+const wm_strum_down   = 26
+const wm_strum_up     = 27
 
 // Balance Board Sensors
 const bb_btmleft  = 0
@@ -54,6 +59,7 @@ const ext_classic         = 1
 const ext_nunchuck        = 2
 const ext_guitar          = 3
 const ext_balanceboard    = 4
+const ext_drums		  = 5
 const ext_none            = 0
 const ext_unknown         = -1
 
@@ -159,6 +165,7 @@ function wm_get_trigger_dead_zone():real
 function wm_get_yaw():real
 function wm_guitar_check_button(wm_button:real):real
 function wm_guitar_direction():real
+function wm_guitar_get_type():real
 function wm_guitar_pressure():real
 function wm_guitar_rawx():real
 function wm_guitar_rawy():real
