@@ -25,6 +25,7 @@ const int extClassic		= 1;
 const int extNunchuck		= 2;
 const int extGuitar			= 3;
 const int extBalanceBoard	= 4;
+const int extDrums			= 5;
 const int extNone			= 0;
 const int extUnknown		= -1;
 
@@ -57,13 +58,18 @@ const int btnC = 19;
 const int btnZ = 20;
 
 // Guitar Specific
-const int btnBlue		= 21;
-const int btnGreen		= 22;
-const int btnOrange		= 23;
-const int btnRed		= 24;
-const int btnYellow		= 25;
-const int btnStrumDown	= 26;
-const int btnStrumUp	= 27;
+const int btnBlue		 = 21;
+const int btnGreen		 = 22;
+const int btnOrange		 = 23;
+const int btnRed		 = 24;
+const int btnYellow		 = 25;
+const int btnStrumDown	 = 26;
+const int btnStrumUp	 = 27;
+const int btnTouchBlue   = 28;
+const int btnTouchGreen	 = 29;
+const int btnTouchOrange = 30;
+const int btnTouchRed	 = 31;
+const int btnTouchYellow = 32;
 
 // Balance Board Sensors
 const int btmLeft	= 0;
@@ -157,6 +163,9 @@ using namespace WiimoteLib;
 ///////////////////////////////////////////////
 // Buttons, Joysticks, Triggers, and Sensors
 ///////////////////////////////////////////////
+		// Misc. Guitar
+		exp double wm_guitar_get_type();
+
 		// Buttons
 		exp double wm_guitar_check_button(double key_code);
 		exp double wm_nunchuck_check_button(double key_code);

@@ -2,6 +2,6 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
   <siteMapNode title="Overview" url=".\GiiMote Documentation\Topics\Overview.topic" isDefault="true" />
   <siteMapNode title="Copyright" url=".\GiiMote Documentation\Topics\Copyright.topic" />
-  <siteMapNode title="License (Ms-PL)" url=".\GiiMote Documentation\Topics\Lisence.topic" />
+  <siteMapNode title="License (LGPL)" url=".\GiiMote Documentation\Topics\Lisence.topic" />
   <siteMapNode title="Extension Help" url=".\GiiMote Help\GiiMote.htm" />
 </siteMap>

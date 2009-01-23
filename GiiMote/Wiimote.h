@@ -744,7 +744,7 @@
 	}
 
 	/// <summary>Gets the current raw battery level</summary>
-	/// <returns>The raw battery data</summary>
+	/// <returns>The raw battery data</returns>
 	double wm_get_battery_raw()
 	{
 		char battery_state;
@@ -814,21 +814,25 @@
 		double extension_type;
 		try
 		{
-			switch(GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->ExtensionType)
+			switch((int)GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->ExtensionType)
 			{
-			case (WiimoteLib::ExtensionType::ClassicController):
+			case ((int)WiimoteLib::ExtensionType::ClassicController):
 				extension_type = extClassic;
 				break;
-			case (WiimoteLib::ExtensionType::Nunchuk):
+			case ((int)WiimoteLib::ExtensionType::Nunchuk):
 				extension_type = extNunchuck;
 				break;
-			case (WiimoteLib::ExtensionType::Guitar):
+			case ((int)WiimoteLib::ExtensionType::Guitar):
 				extension_type = extGuitar;
 				break;
-			case (WiimoteLib::ExtensionType::BalanceBoard):
+			// This case is the same as for the Guitar.
+			// case (WiimoteLib::ExtensionType::Drums)
+			//	extension_type = extDrums;
+			//	break;
+			case ((int)WiimoteLib::ExtensionType::BalanceBoard):
 				extension_type = extBalanceBoard;
 				break;
-			case (WiimoteLib::ExtensionType::None):
+			case ((int)WiimoteLib::ExtensionType::None):
 				extension_type = extNone;
 				break;
 			default:
