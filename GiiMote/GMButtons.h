@@ -1,5 +1,5 @@
 // GMButtons.h - Contains information on the buttons and triggers
-//				 used by the Wii Remote and Expansions.
+//				 used by the Wii Remote and expansions.
 // Copyright 2007 Sam Whited
 //
 //    This file is part of GiiMote.

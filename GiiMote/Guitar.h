@@ -1,5 +1,5 @@
-// Guitar.h -  Contains functions that deal with the Guitar extension.
-// Copyright 2007 Sam Whited
+// Guitar.h -  Contains functions that deal with the guitar extension.
+// Copyright 2008 Sam Whited
 //
 //    This file is part of GiiMote.
 //

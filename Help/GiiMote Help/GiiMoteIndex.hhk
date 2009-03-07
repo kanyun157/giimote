@@ -302,6 +302,36 @@
 		<param name="Local" value="GiiMote.htm#setup">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_drum_check_button()">
+		<param name="Name" value="Buttons">
+		<param name="Local" value="GiiMote.htm#buttons">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_drum_direction()">
+		<param name="Name" value="Joystick Positions">
+		<param name="Local" value="GiiMote.htm#joystick">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_drum_get_velocity()">
+		<param name="Name" value="Buttons">
+		<param name="Local" value="GiiMote.htm#buttons">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_drum_pressure()">
+		<param name="Name" value="Joystick Positions">
+		<param name="Local" value="GiiMote.htm#joystick">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_drum_xpos()">
+		<param name="Name" value="Joystick Positions">
+		<param name="Local" value="GiiMote.htm#joystick">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_drum_ypos()">
+		<param name="Name" value="Joystick Positions">
+		<param name="Local" value="GiiMote.htm#joystick">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_exists()">
 		<param name="Name" value="Setup">
 		<param name="Local" value="GiiMote.htm#setup">

@@ -1,5 +1,5 @@
 // Orientation.h - Contains functions for getting data from the Wii Remote and expansions
-//			   accelerometers.
+//			       accelerometers.
 // Copyright 2007 Sam Whited
 //
 //    This file is part of GiiMote.
