@@ -34,19 +34,24 @@ const wm_joy_right = 1
 const wm_c = 19
 const wm_z = 20
 
-// Guitar Specific Buttons
+// General Instruments
 const wm_blue         = 21
 const wm_green        = 22
 const wm_orange       = 23
 const wm_red          = 24
 const wm_yellow       = 25
-const wm_touch_blue   = 28
-const wm_touch_green  = 29;
-const wm_touch_orange = 30;
-const wm_touch_red    = 31;
-const wm_touch_yellow = 32;
+
+// Guitar Specific Buttons
 const wm_strum_down   = 26
 const wm_strum_up     = 27
+const wm_touch_blue   = 28
+const wm_touch_green  = 29
+const wm_touch_orange = 30
+const wm_touch_red    = 31
+const wm_touch_yellow = 32
+
+// Drum Specific
+const wm_pedal        = 33
 
 // Balance Board Sensors
 const bb_btmleft  = 0
@@ -127,6 +132,14 @@ function wm_connect_all():real
 function wm_connected():real
 function wm_disconnect():real
 function wm_disconnect_all();
+function wm_drum_check_button(wm_button:real):real
+function wm_drum_direction():real
+function wm_drum_get_velocity(wm_button:real):real
+function wm_drum_pressure():real
+function wm_drum_rawx():real
+function wm_drum_rawy():real
+function wm_drum_xpos():real
+function wm_drum_ypos():real
 function wm_exists():real
 function wm_num_exists():real
 function wm_find_all():real

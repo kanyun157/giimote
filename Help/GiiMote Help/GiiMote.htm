@@ -93,17 +93,25 @@ a success.</p>
 	<tt><b><a name="wm_nunchuck_check_button">wm_nunchuck_check_button(button)</a></b></tt>
 		Gets the status of the given button on the Nunchuck (if inserted).<br>
 	<tt><b><a name="wm_guitar_check_button">wm_guitar_check_button(button)</a></b></tt>
-		Gets the status of the given button on the Guitar (if inserted).<br>
+		Gets the status of the given button on the guitar (if inserted).<br>
+    <tt><b><a name="wm_drum_check_button">wm_drum_check_button(button)</a></b></tt>
+		Gets the status of the given button, head, or pedal on the drum set (if inserted).<br>
 </blockquote>
 <p>There is also an additional function for checking the pressure of L and R on the classic controller:</p>
 <blockquote>
 		<p><tt><b><a name="wm_classic_trigger_pressure">wm_classic_trigger_pressure(trigger)</a></b></tt>
 		This function returns a value between 0.0 and 1.0 depending on the amount the trigger is being pushed in with 1 being all the way in and 0 being released. You may define a &quot;dead zone&quot; for the function by calling <a href="#wm_set_dead_zone">wm_set_dead_zone</a>.</p>
 </blockquote>
-<p>And another for checking the pressure on the Whammy bar on the Guitar:</p>
+<p>Another for checking the pressure on the Whammy bar on the Guitar:</p>
 <blockquote>
 		<p><tt><b><a name="wm_guitar_whammybar_pos">wm_guitar_whammybar_pos()</a></b></tt> The position of the Guitar's whammy bar as a value between 0.0 and 1.0.</p>
 </blockquote>
+
+<p>And another for checking the velocity with which the drum heads and pedal on the drum set are hit:</p>
+<blockquote>
+		<p><tt><b><a name="wm_drum_get_velocity">wm_drum_get_velocity(head)</a></b></tt> The velocity with which the drum head or pedal was hit from 0.0 (hard) to 6.0 (soft).</p>
+</blockquote>
+
 <p>
 The following button key codes exist for use in any function that requires a button (not all buttons are available on all controllers):</p>
 <blockquote>
@@ -137,9 +145,10 @@ The following button key codes exist for use in any function that requires a but
 	<tt><b><a name="wm_touch_yellow">wm_touch_yellow</a></b></tt><br>
 	<tt><b><a name="wm_strum_up">wm_strum_up</a></b></tt><br>
 	<tt><b><a name="wm_strum_down">wm_strum_down</a></b></tt><br>
+	<tt><b><a name="wm_pedal">wm_pedal</a></b></tt><br>
 </blockquote>
 <h2><a name="joystick">Joystick Positions</a></h2>
-<p>The Nunchuck, Classic Controller, and Guitar Controller both contain one or more joysticks which can be utilized with the following functions:</p>
+<p>The Nunchuck, Classic Controller, Guitar controller, and Drum set both contain one or more joysticks which can be utilized with the following functions:</p>
 <blockquote>
 	<tt><b><a name="wm_nunchuck_xpos">wm_nunchuck_xpos()</a></b></tt> From -0.5 (left) to 0.5 (right).<br>
 	<tt><b><a name="wm_nunchuck_ypos">wm_nunchuck_ypos()</a></b></tt><br>
@@ -153,6 +162,10 @@ The following button key codes exist for use in any function that requires a but
 	<tt><b><a name="wm_guitar_ypos">wm_guitar_ypos()</a></b></tt><br>
 	<tt><b><a name="wm_guitar_direction">wm_guitar_direction()</a></b></tt><br>
 	<tt><b><a name="wm_guitar_pressure">wm_guitar_pressure()</a></b></tt><br>
+	<tt><b><a name="wm_drum_xpos">wm_drum_xpos()</a></b></tt><br>
+	<tt><b><a name="wm_drum_ypos">wm_drum_ypos()</a></b></tt><br>
+	<tt><b><a name="wm_drum_direction">wm_drum_direction()</a></b></tt><br>
+	<tt><b><a name="wm_drum_pressure">wm_drum_pressure()</a></b></tt><br>
 </blockquote>
 <p>For the Classic Controller you must specify which joystick to check the values of, for this the following constants are defined:</p>
 <blockquote>
@@ -326,6 +339,8 @@ There are several functions to get raw, unprocessed data from the Wii Remote:
 	<tt><b><a name="wm_guitar_rawy">wm_guitar_rawy()</a></b></tt><br>
 	<tt><b><a name="wm_guitar_whammybar_rawpos">wm_guitar_whammybar_rawpos()</a></b></tt><br>
 	<tt><b><a name="wm_bb_get_sensor_raw">wm_bb_get_sensor_raw(sensor)</a></b></tt><br>
+	<tt><b><a name="wm_drum_rawx">wm_drum_rawx()</a></b></tt><br>
+	<tt><b><a name="wm_drum_rawy">wm_drum_rawy()</a></b></tt><br>
 </blockquote>
 <p>These functions are for advanced use only and return data that has not been normalized.</p>
 

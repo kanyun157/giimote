@@ -30,6 +30,7 @@ using namespace GiiMoteLib;
 #include "Orientation.h"
 #include "IR.h"
 #include "Guitar.h"
+#include "Drums.h"
 #include "Nunchuck.h"
 #include "Classic.h"
 #include "BalanceBoard.h"

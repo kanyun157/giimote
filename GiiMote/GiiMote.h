@@ -29,7 +29,7 @@ const int extDrums			= 5;
 const int extNone			= 0;
 const int extUnknown		= -1;
 
-// Wii Remote specific buttons:
+// General Wii Remote buttons
 const int btnA		= 0;
 const int btnB		= 1;
 const int btnUp		= 2;
@@ -50,6 +50,7 @@ const int btnR	= 14;
 const int btnZL = 15;
 const int btnZR = 16;
 
+// Joysticks
 const int joyL = 0;
 const int joyR = 1;
 
@@ -57,12 +58,14 @@ const int joyR = 1;
 const int btnC = 19;
 const int btnZ = 20;
 
-// Guitar Specific
+// General Instruments
 const int btnBlue		 = 21;
 const int btnGreen		 = 22;
 const int btnOrange		 = 23;
 const int btnRed		 = 24;
 const int btnYellow		 = 25;
+
+// Guitar Specific
 const int btnStrumDown	 = 26;
 const int btnStrumUp	 = 27;
 const int btnTouchBlue   = 28;
@@ -70,6 +73,9 @@ const int btnTouchGreen	 = 29;
 const int btnTouchOrange = 30;
 const int btnTouchRed	 = 31;
 const int btnTouchYellow = 32;
+
+// Drum Specific
+const int btnPedal = 33;
 
 // Balance Board Sensors
 const int btmLeft	= 0;
@@ -168,6 +174,7 @@ using namespace WiimoteLib;
 
 		// Buttons
 		exp double wm_guitar_check_button(double key_code);
+		exp double wm_drum_check_button(double key_code);
 		exp double wm_nunchuck_check_button(double key_code);
 		exp double wm_classic_check_button(double key_code);
 		exp double wm_check_button(double key_code);
@@ -211,6 +218,14 @@ using namespace WiimoteLib;
 		exp double wm_guitar_rawx();
 		exp double wm_guitar_rawy();
 
+		// Joysticks (Drum)
+		exp double wm_drum_xpos();
+		exp double wm_drum_ypos();
+		exp double wm_drum_direction();
+		exp double wm_drum_pressure();
+		exp double wm_drum_rawx();
+		exp double wm_drum_rawy();
+
 		// Triggers (General)
 		exp double wm_set_trigger_dead_zone(double val);
 		exp double wm_get_trigger_dead_zone();
@@ -222,6 +237,9 @@ using namespace WiimoteLib;
 		// Whammy Bar (Guitar)
 		exp double wm_guitar_whammybar_pos();
 		exp double wm_guitar_whammybar_rawpos();
+
+		// Drum
+		exp double wm_drum_get_velocity(double key_code);
 
 ////////////////////////////////////////////
 // Accelerometers and IR
