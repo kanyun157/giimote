@@ -1,5 +1,5 @@
 -------------------------------------------------
-GiiMote Version 3.0 - Feb XX, 2009 - Revision XX
+GiiMote Version 3.0 - xxx XX, 2009 - Revision XX
 -------------------------------------------------
 
 Breaking Changes:
@@ -18,6 +18,12 @@ wm_found()
 wm_num_exists()
 wm_connect_all()
 wm_disconnect_all()
+wm_drum_check_button()
+wm_drum_get_velocity()
+wm_drum_rawx()
+wm_drum_rawy()
+wm_drum_xpos()
+wm_drum_ypos()
 wm_get_battery_raw()
 wm_get_id()
 wm_get_guid()
@@ -102,6 +108,7 @@ wm_touch_red
 wm_touch_yellow
 wm_strum_down
 wm_strum_up
+wm_pedal
 bb_btmleft
 bb_btmright
 bb_topleft
