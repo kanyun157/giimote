@@ -97,12 +97,27 @@
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_bb_get_calibration_kg0(sensor)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_bb_get_calibration_kg17()">
 		<param name="Name" value="Calibration">
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_bb_get_calibration_kg17(sensor)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_bb_get_calibration_kg34()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_bb_get_calibration_kg34(sensor)">
 		<param name="Name" value="Calibration">
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
@@ -137,12 +152,27 @@
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_bb_set_calibration_kg0(sensor, val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_bb_set_calibration_kg17()">
 		<param name="Name" value="Calibration">
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_bb_set_calibration_kg17(sensor, val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_bb_set_calibration_kg34()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_bb_set_calibration_kg34(sensor, val)">
 		<param name="Name" value="Calibration">
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
@@ -182,7 +212,17 @@
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_classic_get_calibration_maxtrigger(trigger)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_classic_get_calibration_maxx()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_classic_get_calibration_maxx(joystick)">
 		<param name="Name" value="Calibration">
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
@@ -192,12 +232,27 @@
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_classic_get_calibration_maxy(joystick)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_classic_get_calibration_midx()">
 		<param name="Name" value="Calibration">
 		<param name="Local" value="GiiMote.htm">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_classic_get_calibration_midx(joystick)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_classic_get_calibration_midy()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_classic_get_calibration_midy(joystick)">
 		<param name="Name" value="Calibration">
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
@@ -207,12 +262,27 @@
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_classic_get_calibration_mintrigger(trigger)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_classic_get_calibration_minx()">
 		<param name="Name" value="Calibration">
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_classic_get_calibration_minx(joystick)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_classic_get_calibration_miny()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_classic_get_calibration_miny(joystick)">
 		<param name="Name" value="Calibration">
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
@@ -227,7 +297,17 @@
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_classic_set_calibration_maxtrigger(trigger, val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_classic_set_calibration_maxx()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_classic_set_calibration_maxx(joystick, val)">
 		<param name="Name" value="Calibration">
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
@@ -237,7 +317,17 @@
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_classic_set_calibration_maxy(joystick, val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_classic_set_calibration_midx()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_classic_set_calibration_midx(joystick, val)">
 		<param name="Name" value="Calibration">
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
@@ -247,7 +337,17 @@
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_classic_set_calibration_midy(joystick, val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_classic_set_calibration_mintrigger()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_classic_set_calibration_mintrigger(trigger, val)">
 		<param name="Name" value="Calibration">
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
@@ -257,7 +357,17 @@
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_classic_set_calibration_minx(joystick, val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_classic_set_calibration_miny()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_classic_set_calibration_miny(joystick, val)">
 		<param name="Name" value="Calibration">
 		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
@@ -385,6 +495,36 @@
 		<param name="Name" value="wm_get_battery()">
 		<param name="Name" value="Misc. Data">
 		<param name="Local" value="GiiMote.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_get_calibration_x0()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_get_calibration_xg()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_get_calibration_y0()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_get_calibration_yg()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_get_calibration_z0()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_get_calibration_zg()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_get_guid()">
@@ -657,6 +797,66 @@
 		<param name="Local" value="GiiMote.htm#accel">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_get_calibration_maxx()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_get_calibration_maxy()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_get_calibration_midx()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_get_calibration_midy()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_get_calibration_minx()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_get_calibration_miny()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_get_calibration_x0()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_get_calibration_xg()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_get_calibration_y0()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_get_calibration_yg()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_get_calibration_z0()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_get_calibration_zg()">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_nunchuck_pressure()">
 		<param name="Name" value="Joystick Positions">
 		<param name="Local" value="GiiMote.htm#joystick">
@@ -675,6 +875,66 @@
 		<param name="Name" value="wm_nunchuck_set_accel_dead_zone_z()">
 		<param name="Name" value="Dead Zone's">
 		<param name="Local" value="GiiMote.htm#dead_zone">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_set_calibration_maxx(val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_set_calibration_maxy(val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_set_calibration_midx(val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_set_calibration_midy(val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_set_calibration_minx(val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_set_calibration_miny(val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_set_calibration_x0(val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_set_calibration_xg(val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_set_calibration_y0(val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_set_calibration_yg(val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_set_calibration_z0(val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_nunchuck_set_calibration_zg(val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_nunchuck_xpos()">
@@ -700,6 +960,36 @@
 		<param name="Name" value="wm_set_accel_dead_zone_z()">
 		<param name="Name" value="Dead Zone's">
 		<param name="Local" value="GiiMote.htm#dead_zone">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_set_calibration_x0(val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_set_calibration_xg(val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_set_calibration_y0(val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_set_calibration_yg(val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_set_calibration_z0(val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wm_set_calibration_zg(val)">
+		<param name="Name" value="Calibration">
+		<param name="Local" value="GiiMote.htm#calibration">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="wm_set_joystick_dead_zone()">
