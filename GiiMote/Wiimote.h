@@ -189,6 +189,7 @@
 	{
 		try
 		{
+			// Try a dummy read from the calibration data for the accelerometer
 			GiiMote::gm->wc[GiiMote::gm->wmIndex]->ReadData(0x0016,1);
 		}
 		catch(...)

@@ -21,7 +21,6 @@
 %     You should have received a copy of the GNU Lesser General Public License
 %     along with GiiMote.  If not, see <http://www.gnu.org/licenses/>.
 function retcode = buildPrototype(fname)
-    cd ../MATLAB
     loadlibrary('GiiMote.dll', '../GiiMote/GiiMote.h', 'mfilename', fname);
     if (libisloaded('GiiMote.dll'))
         retcode = 0;

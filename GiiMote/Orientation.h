@@ -30,8 +30,8 @@
 	{
 		try
 		{
-			float csf = Math::Abs( GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->AccelState.Values.X + GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->AccelState.Values.Y + GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->AccelState.Values.Z );
-			if (  csf > 1.5 || csf < 0.5 )
+			float csf = Math::Abs( GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->AccelState.Values.X ) + Math::Abs( GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->AccelState.Values.Y ) + Math::Abs( GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->AccelState.Values.Z );
+			if (  csf >= 1.5 )
 			{
 				return ( 1 );
 			}

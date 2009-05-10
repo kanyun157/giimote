@@ -17,6 +17,9 @@
 //    along with GiiMote.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
+
+using namespace System::Runtime::InteropServices;
+
 ///////////////////////
 // Define Constants //
 /////////////////////
@@ -110,277 +113,280 @@ using namespace WiimoteLib;
 ////////////////////////////////////////////
 // Wii Remote Functions
 ////////////////////////////////////////////
-		// Connection Functions
-		exp double  gm_init();
-		exp double  gm_cleanup();
-		exp double	wm_find_all();
-		exp double  wm_found();
-		exp double  wm_exists();
-		exp double	wm_num_exists();
-		exp double  wm_set_using_val(double wm);
-		exp	double  wm_set_using_guid(char* wm);
-		exp double  wm_connect();
-		exp double  wm_connect_all();
-		exp double  wm_connected();
-		exp double  wm_disconnect();
-		exp double  wm_disconnect_all();
-		exp double  wm_set_report_type(double report_type, double continuous);
-		exp double  wm_get_report_type();
-		exp double  wm_get_report_continuous();
-		exp double  wm_get_id_current();
-		exp	double  wm_get_id_guid(char* guid);
-		exp char*	wm_get_guid_id(double val);
-		exp	char*	wm_get_guid_current();
-		exp	double  wm_get_index_id(double guid);
-		exp	double  wm_get_index_current();
-		exp	double  wm_get_index_guid(char* guid);
-		exp char*	wm_get_hid_device_path();
+// Connection Functions
+exp double  gm_init();
+exp double  gm_cleanup();
+exp double	wm_find_all();
+exp double  wm_found();
+exp double  wm_exists();
+exp double	wm_num_exists();
+exp double  wm_set_using_val(double wm);
+exp	double  wm_set_using_guid(char* wm);
+exp double  wm_connect();
+exp double  wm_connect_all();
+exp double  wm_connected();
+exp double  wm_disconnect();
+exp double  wm_disconnect_all();
+exp double  wm_set_report_type(double report_type, double continuous);
+exp double  wm_get_report_type();
+exp double  wm_get_report_continuous();
+exp double  wm_get_id_current();
+exp	double  wm_get_id_guid(char* guid);
+exp char*	wm_get_guid_id(double val);
+exp	char*	wm_get_guid_current();
+exp	double  wm_get_index_id(double guid);
+exp	double  wm_get_index_current();
+exp	double  wm_get_index_guid(char* guid);
+exp char*	wm_get_hid_device_path();
 
-		// LED Functions
-		exp double wm_get_led(double led_num);
-		exp double wm_set_leds(double led1, double led2, double led3, double led4);
-		exp double wm_set_leds_int(double val);
+// LED Functions
+exp double wm_get_led(double led_num);
+exp double wm_set_leds(double led1, double led2, double led3, double led4);
+exp double wm_set_leds_int(double val);
 
-		// Status
-		exp double wm_get_battery();
-		exp double wm_get_battery_raw();
-		exp double wm_get_status();
-		exp double wm_check_extension();
-		exp double wm_set_rumble(double rumbling);
-		exp double wm_get_rumble();
+// Status
+exp double wm_get_battery();
+exp double wm_get_battery_raw();
+exp double wm_get_status();
+exp double wm_check_extension();
+exp double wm_set_rumble(double rumbling);
+exp double wm_get_rumble();
 
-		// Orientation
-		exp double wm_get_moving();
-		exp double wm_get_roll();
-		exp double wm_get_pitch();
-		exp double wm_get_yaw();
-		exp double wm_get_altitude();
+// Orientation
+exp double wm_get_moving();
+exp double wm_get_roll();
+exp double wm_get_pitch();
+exp double wm_get_yaw();
+exp double wm_get_altitude();
 
-		// Reading/Writing
-		exp double wm_bin_read_byte(double address);
-		exp double wm_bin_write_byte(double address, double value);
+// Reading/Writing
+exp double wm_bin_read_byte(double address);
+exp double wm_bin_write_byte(double address, double value);
 
 ////////////////////////////////////////////
 // Mathematical Functions
 ////////////////////////////////////////////
-		exp double in_domain(double x, double d1, double d2);
-		exp double domain_rescale(double val, double minin, double maxin, double minout, double maxout);
+exp double in_domain(double x, double d1, double d2);
+exp double domain_rescale(double val, double minin, double maxin, double minout, double maxout);
 
 ///////////////////////////////////////////////
 // Buttons, Joysticks, Triggers, and Sensors
 ///////////////////////////////////////////////
-		// Misc. Guitar
-		exp double wm_guitar_get_type();
+// Misc. Guitar
+exp double wm_guitar_get_type();
 
-		// Buttons
-		exp double wm_guitar_check_button(double key_code);
-		exp double wm_drum_check_button(double key_code);
-		exp double wm_nunchuck_check_button(double key_code);
-		exp double wm_classic_check_button(double key_code);
-		exp double wm_check_button(double key_code);
+// Buttons
+exp double wm_guitar_check_button(double key_code);
+exp double wm_drum_check_button(double key_code);
+exp double wm_nunchuck_check_button(double key_code);
+exp double wm_classic_check_button(double key_code);
+exp double wm_check_button(double key_code);
 
-		// Sensors (Balance Board)
-		exp double wm_bb_get_weight_lbs();
-		exp double wm_bb_get_weight_kgs();
-		exp double wm_bb_get_sensor_raw(double sensor);
-		exp double wm_bb_get_sensor_kgs(double sensor);
-		exp double wm_bb_get_sensor_lbs(double sensor);
-		exp double wm_bb_get_center_of_gravity_x();
-		exp double wm_bb_get_center_of_gravity_y();
+// Sensors (Balance Board)
+exp double wm_bb_get_weight_lbs();
+exp double wm_bb_get_weight_kgs();
+exp double wm_bb_get_sensor_raw(double sensor);
+exp double wm_bb_get_sensor_kgs(double sensor);
+exp double wm_bb_get_sensor_lbs(double sensor);
+exp double wm_bb_get_center_of_gravity_x();
+exp double wm_bb_get_center_of_gravity_y();
 
-		// Joysticks (General)
-		exp double joystick_direction(double xx, double yy);
-		exp double joystick_pressure(double xx, double yy);
-		exp double wm_set_joystick_dead_zone(double val);
-		exp double wm_get_joystick_dead_zone();
-		
-		// Joysticks (Nunchuck)
-		exp double wm_nunchuck_xpos();
-		exp double wm_nunchuck_ypos();
-		exp double wm_nunchuck_direction();
-		exp double wm_nunchuck_pressure();
-		exp double wm_nunchuck_rawx();
-		exp double wm_nunchuck_rawy();
+// Joysticks (General)
+exp double joystick_direction(double xx, double yy);
+exp double joystick_pressure(double xx, double yy);
+exp double wm_set_joystick_dead_zone(double val);
+exp double wm_get_joystick_dead_zone();
 
-		// Joysticks (Classic Controller)
-		exp double wm_classic_xpos(double stick);
-		exp double wm_classic_ypos(double stick);
-		exp double wm_classic_rawx(double stick);
-		exp double wm_classic_rawy(double stick);
-		exp double wm_classic_direction(double stick);
-		exp double wm_classic_pressure(double stick);
+// Joysticks (Nunchuck)
+exp double wm_nunchuck_xpos();
+exp double wm_nunchuck_ypos();
+exp double wm_nunchuck_direction();
+exp double wm_nunchuck_pressure();
+exp double wm_nunchuck_rawx();
+exp double wm_nunchuck_rawy();
 
-		// Joysticks (Guitar)
-		exp double wm_guitar_xpos();
-		exp double wm_guitar_ypos();
-		exp double wm_guitar_direction();
-		exp double wm_guitar_pressure();
-		exp double wm_guitar_rawx();
-		exp double wm_guitar_rawy();
+// Joysticks (Classic Controller)
+exp double wm_classic_xpos(double stick);
+exp double wm_classic_ypos(double stick);
+exp double wm_classic_rawx(double stick);
+exp double wm_classic_rawy(double stick);
+exp double wm_classic_direction(double stick);
+exp double wm_classic_pressure(double stick);
 
-		// Joysticks (Drum)
-		exp double wm_drum_xpos();
-		exp double wm_drum_ypos();
-		exp double wm_drum_direction();
-		exp double wm_drum_pressure();
-		exp double wm_drum_rawx();
-		exp double wm_drum_rawy();
+// Joysticks (Guitar)
+exp double wm_guitar_xpos();
+exp double wm_guitar_ypos();
+exp double wm_guitar_direction();
+exp double wm_guitar_pressure();
+exp double wm_guitar_rawx();
+exp double wm_guitar_rawy();
 
-		// Triggers (General)
-		exp double wm_set_trigger_dead_zone(double val);
-		exp double wm_get_trigger_dead_zone();
+// Joysticks (Drum)
+exp double wm_drum_xpos();
+exp double wm_drum_ypos();
+exp double wm_drum_direction();
+exp double wm_drum_pressure();
+exp double wm_drum_rawx();
+exp double wm_drum_rawy();
 
-		// Triggers (Classic Controller)
-		exp double wm_classic_trigger_pressure(double trigger);
-		exp double wm_classic_trigger_raw(double trigger);
+// Triggers (General)
+exp double wm_set_trigger_dead_zone(double val);
+exp double wm_get_trigger_dead_zone();
 
-		// Whammy Bar (Guitar)
-		exp double wm_guitar_whammybar_pos();
-		exp double wm_guitar_whammybar_rawpos();
+// Triggers (Classic Controller)
+exp double wm_classic_trigger_pressure(double trigger);
+exp double wm_classic_trigger_raw(double trigger);
 
-		// Drum
-		exp double wm_drum_get_velocity(double key_code);
+// Whammy Bar (Guitar)
+exp double wm_guitar_whammybar_pos();
+exp double wm_guitar_whammybar_rawpos();
+
+// Drum
+exp double wm_drum_get_velocity(double key_code);
 
 ////////////////////////////////////////////
 // Accelerometers and IR
 ////////////////////////////////////////////
-		// Accelerometer (General)
-		exp double wm_calc_accel(float accel, int dz_index);
+// Accelerometer (General)
+exp double wm_calc_accel(float accel, int dz_index);
 
-		// Accelerometer (Wii Remote)
-		exp double wm_get_accel_x();
-		exp double wm_get_accel_y();
-		exp double wm_get_accel_z();
-		exp double wm_get_accel_rawx();
-		exp double wm_get_accel_rawy();
-		exp double wm_get_accel_rawz();
-		exp double wm_set_accel_dead_zone_x(double val);
-		exp double wm_set_accel_dead_zone_y(double val);
-		exp double wm_set_accel_dead_zone_z(double val);
-		exp double wm_get_accel_dead_zone_x();
-		exp double wm_get_accel_dead_zone_y();
-		exp double wm_get_accel_dead_zone_z();
+// Accelerometer (Wii Remote)
+exp double wm_get_accel_x();
+exp double wm_get_accel_y();
+exp double wm_get_accel_z();
+exp double wm_get_accel_rawx();
+exp double wm_get_accel_rawy();
+exp double wm_get_accel_rawz();
+exp double wm_set_accel_dead_zone_x(double val);
+exp double wm_set_accel_dead_zone_y(double val);
+exp double wm_set_accel_dead_zone_z(double val);
+exp double wm_get_accel_dead_zone_x();
+exp double wm_get_accel_dead_zone_y();
+exp double wm_get_accel_dead_zone_z();
 
-		// Accelerometer (Nunchuck)
-		exp double wm_nunchuck_get_accel_x();
-		exp double wm_nunchuck_get_accel_y();
-		exp double wm_nunchuck_get_accel_z();
-		exp double wm_nunchuck_get_accel_rawx();
-		exp double wm_nunchuck_get_accel_rawy();
-		exp double wm_nunchuck_get_accel_rawz();
-		exp double wm_nunchuck_set_accel_dead_zone_x(double val);
-		exp double wm_nunchuck_set_accel_dead_zone_y(double val);
-		exp double wm_nunchuck_set_accel_dead_zone_z(double val);
-		exp double wm_nunchuck_get_accel_dead_zone_x();
-		exp double wm_nunchuck_get_accel_dead_zone_y();
-		exp double wm_nunchuck_get_accel_dead_zone_z();
+// Accelerometer (Nunchuck)
+exp double wm_nunchuck_get_accel_x();
+exp double wm_nunchuck_get_accel_y();
+exp double wm_nunchuck_get_accel_z();
+exp double wm_nunchuck_get_accel_rawx();
+exp double wm_nunchuck_get_accel_rawy();
+exp double wm_nunchuck_get_accel_rawz();
+exp double wm_nunchuck_set_accel_dead_zone_x(double val);
+exp double wm_nunchuck_set_accel_dead_zone_y(double val);
+exp double wm_nunchuck_set_accel_dead_zone_z(double val);
+exp double wm_nunchuck_get_accel_dead_zone_x();
+exp double wm_nunchuck_get_accel_dead_zone_y();
+exp double wm_nunchuck_get_accel_dead_zone_z();
 
-		// Infrared
-		exp double wm_ir_set_sensitivity(double sensitivity);
-		exp double wm_ir_get_sensitivity();
-		exp double wm_ir_found_dot(double dot_number);
-		exp double wm_ir_dot_size(double dot_number);
-		exp double wm_ir_dot_get_x(double dot_number);
-		exp double wm_ir_dot_get_y(double dot_number);
-		exp double wm_ir_dot_get_rawx(double dot_number);
-		exp double wm_ir_dot_get_rawy(double dot_number);
-		exp double wm_ir_dot_get_midx();
-		exp double wm_ir_dot_get_midy();
-		exp double wm_ir_dot_get_rawmidx();
-		exp double wm_ir_dot_get_rawmidy();
-		exp double wm_ir_dot_get_delta_x(double dot_number);
-		exp double wm_ir_dot_get_delta_y(double dot_number);
-		exp double wm_ir_dot_get_delta_rawx(double dot_number);
-		exp double wm_ir_dot_get_delta_rawy(double dot_number);
-		exp double wm_ir_dot_get_delta_midx();
-		exp double wm_ir_dot_get_delta_midy();
-		exp double wm_ir_dot_get_delta_rawmidx();
-		exp double wm_ir_dot_get_delta_rawmidy();
-		exp double wm_ir_display_get_x();
-		exp double wm_ir_display_get_y();
+// Infrared
+exp double wm_ir_set_sensitivity(double sensitivity);
+exp double wm_ir_get_sensitivity();
+exp double wm_ir_found_dot(double dot_number);
+exp double wm_ir_dot_size(double dot_number);
+exp double wm_ir_dot_get_x(double dot_number);
+exp double wm_ir_dot_get_y(double dot_number);
+exp double wm_ir_dot_get_rawx(double dot_number);
+exp double wm_ir_dot_get_rawy(double dot_number);
+exp double wm_ir_dot_get_midx();
+exp double wm_ir_dot_get_midy();
+exp double wm_ir_dot_get_rawmidx();
+exp double wm_ir_dot_get_rawmidy();
+exp double wm_ir_dot_get_delta_x(double dot_number);
+exp double wm_ir_dot_get_delta_y(double dot_number);
+exp double wm_ir_dot_get_delta_rawx(double dot_number);
+exp double wm_ir_dot_get_delta_rawy(double dot_number);
+exp double wm_ir_dot_get_delta_midx();
+exp double wm_ir_dot_get_delta_midy();
+exp double wm_ir_dot_get_delta_rawmidx();
+exp double wm_ir_dot_get_delta_rawmidy();
+exp double wm_ir_display_get_x();
+exp double wm_ir_display_get_y();
 
 ////////////////////////////////////////////
 // Calibration
 ////////////////////////////////////////////
-		// Nunchuck Get
-		exp double wm_nunchuck_get_calibration_x0();
-		exp double wm_nunchuck_get_calibration_xg();
-		exp double wm_nunchuck_get_calibration_y0();
-		exp double wm_nunchuck_get_calibration_yg();
-		exp double wm_nunchuck_get_calibration_z0();
-		exp double wm_nunchuck_get_calibration_zg();
-		exp double wm_nunchuck_get_calibration_maxx();
-		exp double wm_nunchuck_get_calibration_maxy();
-		exp double wm_nunchuck_get_calibration_midx();
-		exp double wm_nunchuck_get_calibration_midy();
-		exp double wm_nunchuck_get_calibration_minx();
-		exp double wm_nunchuck_get_calibration_miny();
-		// Nunchuck Set
-		exp double wm_nunchuck_set_calibration_x0(double val);
-		exp double wm_nunchuck_set_calibration_xg(double val);
-		exp double wm_nunchuck_set_calibration_y0(double val);
-		exp double wm_nunchuck_set_calibration_yg(double val);
-		exp double wm_nunchuck_set_calibration_z0(double val);
-		exp double wm_nunchuck_set_calibration_zg(double val);
-		exp double wm_nunchuck_set_calibration_maxx(double val);
-		exp double wm_nunchuck_set_calibration_maxy(double val);
-		exp double wm_nunchuck_set_calibration_midx(double val);
-		exp double wm_nunchuck_set_calibration_midy(double val);
-		exp double wm_nunchuck_set_calibration_minx(double val);
-		exp double wm_nunchuck_set_calibration_miny(double val);
-		// Classic Controller Get
-		exp double wm_classic_get_calibration_maxtrigger(double trigger);
-		exp double wm_classic_get_calibration_mintrigger(double trigger);
-		exp double wm_classic_get_calibration_maxx(double joystick);
-		exp double wm_classic_get_calibration_minx(double joystick);
-		exp double wm_classic_get_calibration_midx(double joystick);
-		exp double wm_classic_get_calibration_midy(double joystick);
-		exp double wm_classic_get_calibration_maxy(double joystick);
-		exp double wm_classic_get_calibration_miny(double joystick);
-		// Classic Controller Set
-		exp double wm_classic_set_calibration_maxtrigger(double trigger, double val);
-		exp double wm_classic_set_calibration_mintrigger(double trigger, double val);
-		exp double wm_classic_set_calibration_maxx(double joystick, double val);
-		exp double wm_classic_set_calibration_minx(double joystick, double val);
-		exp double wm_classic_set_calibration_midx(double joystick, double val);
-		exp double wm_classic_set_calibration_midy(double joystick, double val);
-		exp double wm_classic_set_calibration_maxy(double joystick, double val);
-		exp double wm_classic_set_calibration_miny(double joystick, double val);
-		// Wii Remote Get
-		exp double wm_get_calibration_x0();
-		exp double wm_get_calibration_xg();
-		exp double wm_get_calibration_y0();
-		exp double wm_get_calibration_yg();
-		exp double wm_get_calibration_z0();
-		exp double wm_get_calibration_zg();
-		// Wii Remote Set
-		exp double wm_set_calibration_x0(double val);
-		exp double wm_set_calibration_xg(double val);
-		exp double wm_set_calibration_y0(double val);
-		exp double wm_set_calibration_yg(double val);
-		exp double wm_set_calibration_z0(double val);
-		exp double wm_set_calibration_zg(double val);
-		// Balance Board Get
-		exp double wm_bb_get_calibration_kg0(double sensor);
-		exp double wm_bb_get_calibration_kg17(double sensor);
-		exp double wm_bb_get_calibration_kg34(double sensor);
-		// Balance Board Set
-		exp double wm_bb_set_calibration_kg0(double sensor, double val);
-		exp double wm_bb_set_calibration_kg17(double sensor, double val);
-		exp double wm_bb_set_calibration_kg34(double sensor, double val);
+// Nunchuck Get
+exp double wm_nunchuck_get_calibration_x0();
+exp double wm_nunchuck_get_calibration_xg();
+exp double wm_nunchuck_get_calibration_y0();
+exp double wm_nunchuck_get_calibration_yg();
+exp double wm_nunchuck_get_calibration_z0();
+exp double wm_nunchuck_get_calibration_zg();
+exp double wm_nunchuck_get_calibration_maxx();
+exp double wm_nunchuck_get_calibration_maxy();
+exp double wm_nunchuck_get_calibration_midx();
+exp double wm_nunchuck_get_calibration_midy();
+exp double wm_nunchuck_get_calibration_minx();
+exp double wm_nunchuck_get_calibration_miny();
+// Nunchuck Set
+exp double wm_nunchuck_set_calibration_x0(double val);
+exp double wm_nunchuck_set_calibration_xg(double val);
+exp double wm_nunchuck_set_calibration_y0(double val);
+exp double wm_nunchuck_set_calibration_yg(double val);
+exp double wm_nunchuck_set_calibration_z0(double val);
+exp double wm_nunchuck_set_calibration_zg(double val);
+exp double wm_nunchuck_set_calibration_maxx(double val);
+exp double wm_nunchuck_set_calibration_maxy(double val);
+exp double wm_nunchuck_set_calibration_midx(double val);
+exp double wm_nunchuck_set_calibration_midy(double val);
+exp double wm_nunchuck_set_calibration_minx(double val);
+exp double wm_nunchuck_set_calibration_miny(double val);
+// Classic Controller Get
+exp double wm_classic_get_calibration_maxtrigger(double trigger);
+exp double wm_classic_get_calibration_mintrigger(double trigger);
+exp double wm_classic_get_calibration_maxx(double joystick);
+exp double wm_classic_get_calibration_minx(double joystick);
+exp double wm_classic_get_calibration_midx(double joystick);
+exp double wm_classic_get_calibration_midy(double joystick);
+exp double wm_classic_get_calibration_maxy(double joystick);
+exp double wm_classic_get_calibration_miny(double joystick);
+// Classic Controller Set
+exp double wm_classic_set_calibration_maxtrigger(double trigger, double val);
+exp double wm_classic_set_calibration_mintrigger(double trigger, double val);
+exp double wm_classic_set_calibration_maxx(double joystick, double val);
+exp double wm_classic_set_calibration_minx(double joystick, double val);
+exp double wm_classic_set_calibration_midx(double joystick, double val);
+exp double wm_classic_set_calibration_midy(double joystick, double val);
+exp double wm_classic_set_calibration_maxy(double joystick, double val);
+exp double wm_classic_set_calibration_miny(double joystick, double val);
+// Wii Remote Get
+exp double wm_get_calibration_x0();
+exp double wm_get_calibration_xg();
+exp double wm_get_calibration_y0();
+exp double wm_get_calibration_yg();
+exp double wm_get_calibration_z0();
+exp double wm_get_calibration_zg();
+// Wii Remote Set
+exp double wm_set_calibration_x0(double val);
+exp double wm_set_calibration_xg(double val);
+exp double wm_set_calibration_y0(double val);
+exp double wm_set_calibration_yg(double val);
+exp double wm_set_calibration_z0(double val);
+exp double wm_set_calibration_zg(double val);
+// Balance Board Get
+exp double wm_bb_get_calibration_kg0(double sensor);
+exp double wm_bb_get_calibration_kg17(double sensor);
+exp double wm_bb_get_calibration_kg34(double sensor);
+// Balance Board Set
+exp double wm_bb_set_calibration_kg0(double sensor, double val);
+exp double wm_bb_set_calibration_kg17(double sensor, double val);
+exp double wm_bb_set_calibration_kg34(double sensor, double val);
 
 ////////////////////////////////////////////
 // Mii Functions
 ////////////////////////////////////////////
-		exp double wm_mii_data_dump(char* fName, double miiBlock, double miiNumber);
-		exp double wm_mii_data_inject(char* fName,double miiBlock, double miiNumber);
-		exp double wm_mii_update_crc(char* fName);
+exp double wm_mii_data_dump(char* fName, double miiBlock, double miiNumber);
+exp double wm_mii_data_inject(char* fName,double miiBlock, double miiNumber);
+exp double wm_mii_update_crc(char* fName);
 
-/// <summary>Functionality to communicate with a Nintendo Wii Remote from Game Maker</summary>
-namespace GiiMoteLib {
-
+/// <summary>Functionality to communicate with a Wii Remote from programs with generic library binding methods</summary>
+namespace GiiMoteLib
+{
 	/// <summary>The class embodying GiiMote</summary>
-	public ref class GiiMote
+	[GuidAttribute(L"873767D4-F03A-4DC5-8A6B-E6824b180D63")]
+	[ClassInterfaceAttribute(ClassInterfaceType::None)]
+	[ProgId("GiiMoteLib::GiiMote")]
+	public ref class __declspec(uuid("873767D4-F03A-4DC5-8A6B-E6824b180D63")) GiiMote
 	{
 	public:
 		/// <summary>A collection of all the Wii Remotes attatched to the system</summary>
@@ -493,13 +499,8 @@ namespace GiiMoteLib {
 			GiiMote::initialized = true;
 		}
 		/// <summary>Default destructor</summary>
-		/// <remarks>
-		/// The GiiMote destructor (~GiiMote) is not bound late.
-		/// If you introduce a class into this library which inherits from GiiMote
-		/// you will need to make the destructor bind late using the keyword "virtual."
-		/// </remarks>
 		/// <returns>Nothing</returns>
-		~GiiMote()
+		virtual ~GiiMote()
 		{
 			wm_disconnect_all();
 			delete ir_screen_pos;
@@ -520,7 +521,7 @@ namespace GiiMoteLib {
 		/// <summary>Wii Remote extension state change event</summary>
 		/// <param name="sender">Object sending the event</param>
 		/// <param name="args">Current extension status</param>
-		void wm_OnWiimoteExtensionChanged(System::Object^ sender, WiimoteExtensionChangedEventArgs^ args)
+		virtual void wm_OnWiimoteExtensionChanged(System::Object^ sender, WiimoteExtensionChangedEventArgs^ args)
 		{
 			// Since I'm not sure how to identify which Wii Remote is triggering the event
 			// and this one doesn't happen often, update all of them.
@@ -538,7 +539,7 @@ namespace GiiMoteLib {
 		/// <summary>Wii Remote state change event</summary>
 		/// <param name="sender">Object sending the event</param>
 		/// <param name="args">Current Wii Remote state</param>
-		void wm_OnWiimoteChanged(System::Object^ sender, WiimoteChangedEventArgs^ args)
+		virtual void wm_OnWiimoteChanged(System::Object^ sender, WiimoteChangedEventArgs^ args)
 		{
 			// Update only the calling Wii Remote
 			int Index = -1;
@@ -652,4 +653,3 @@ double gm_cleanup()
 	}
 	return ( double(!GiiMote::initialized) );
 }
-

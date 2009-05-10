@@ -50,7 +50,11 @@ using namespace System::Security::Permissions;
 
 [assembly:AssemblyVersionAttribute("3.0.*")];
 
-[assembly:ComVisible(false)];
+[assembly:ComVisible(true)];
+
+[assembly:AssemblyDelaySign(false)]
+
+[assembly:AssemblyKeyFile("")]
 
 [assembly:CLSCompliantAttribute(true)];
 
