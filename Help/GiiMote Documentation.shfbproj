@@ -1,0 +1,160 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <!-- The configuration and platform will be used to determine which
+         assemblies to include from solution and project documentation
+         sources -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{f948b45b-5319-4b9d-9c10-d59fcf38f390}</ProjectGuid>
+    <SHFBSchemaVersion>1.8.0.0</SHFBSchemaVersion>
+    <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual
+         Studio adds them anyway -->
+    <AssemblyName>Documentation</AssemblyName>
+    <RootNamespace>Documentation</RootNamespace>
+    <Name>Documentation</Name>
+    <!-- SHFB properties -->
+    <OutputPath>.\GiiMote Documentation\</OutputPath>
+    <HtmlHelpName>Documentation</HtmlHelpName>
+    <ProjectSummary>Functionality to communicate with the Wii Remote %28Wiimote%29 from Game Maker and MATLAB.</ProjectSummary>
+    <MissingTags>AutoDocumentCtors, Namespace, TypeParameter</MissingTags>
+    <VisibleItems>InheritedMembers, Internals, Privates, Protected, SealedProtected, PrivateFields</VisibleItems>
+    <HtmlHelp1xCompilerPath>
+    </HtmlHelp1xCompilerPath>
+    <HtmlHelp2xCompilerPath>
+    </HtmlHelp2xCompilerPath>
+    <SandcastlePath>
+    </SandcastlePath>
+    <WorkingPath>
+    </WorkingPath>
+    <BuildLogFile>
+    </BuildLogFile>
+    <FrameworkVersion>3.5</FrameworkVersion>
+    <HelpTitle>GiiMote Documentation</HelpTitle>
+    <CopyrightHref>http://giimote.googlecode.com/</CopyrightHref>
+    <CopyrightText>Copyright 2008 Sam Whited</CopyrightText>
+    <FeedbackEMailAddress>leif902+giimote%40gmail.com</FeedbackEMailAddress>
+    <FeedbackEMailLinkText>leif902%40gmail.com</FeedbackEMailLinkText>
+    <SdkLinkTarget>Blank</SdkLinkTarget>
+    <PresentationStyle>vs2005</PresentationStyle>
+    <HelpFileVersion>2.6.0.0</HelpFileVersion>
+    <DocumentationSources>
+      <DocumentationSource sourceFile="..\Release\GiiMote.dll" />
+<DocumentationSource sourceFile="..\Release\GiiMote.xml" /></DocumentationSources>
+    <RootNamespaceContainer>False</RootNamespaceContainer>
+    <RootNamespaceTitle>
+    </RootNamespaceTitle>
+    <CppCommentsFixup>True</CppCommentsFixup>
+    <NamespaceSummaries>
+      <NamespaceSummaryItem name="(global)" isDocumented="True">Contains functions for working with GiiMote</NamespaceSummaryItem>
+<NamespaceSummaryItem name="GiiMoteLib" isDocumented="True">Contains the GiiMote class declaration and members</NamespaceSummaryItem>
+<NamespaceSummaryItem name="&lt;CppImplementationDetails&gt;" isDocumented="False" />
+<NamespaceSummaryItem name="&lt;CrtImplementationDetails&gt;" isDocumented="False" />
+<NamespaceSummaryItem name="vc_attributes" isDocumented="False" /></NamespaceSummaries>
+    <ApiFilter>
+      <Filter entryType="Namespace" fullName="" isExposed="False" xmlns="">
+  <Filter entryType="Class" fullName="&lt;Module&gt;" isExposed="True">
+    <Filter entryType="Constructor" fullName="&lt;Module&gt;.#cctor" filterName=".cctor" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;.___CxxCallUnwindDelDtor" filterName="___CxxCallUnwindDelDtor" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;.___CxxCallUnwindDtor" filterName="___CxxCallUnwindDtor" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;.___CxxCallUnwindVecDtor" filterName="___CxxCallUnwindVecDtor" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;.__CxxDetectRethrow" filterName="__CxxDetectRethrow" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;.__CxxExceptionFilter" filterName="__CxxExceptionFilter" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;.__CxxQueryExceptionSize" filterName="__CxxQueryExceptionSize" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;.__CxxRegisterExceptionObject" filterName="__CxxRegisterExceptionObject" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;.__CxxUnregisterExceptionObject" filterName="__CxxUnregisterExceptionObject" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;.__FrameUnwindFilter" filterName="__FrameUnwindFilter" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;.__security_init_cookie" filterName="__security_init_cookie" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;._amsg_exit" filterName="_amsg_exit" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;._app_exit_callback" filterName="_app_exit_callback" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;._atexit_helper" filterName="_atexit_helper" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;._atexit_m" filterName="_atexit_m" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;._atexit_m_appdomain" filterName="_atexit_m_appdomain" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;._cexit" filterName="_cexit" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;._CxxThrowException" filterName="_CxxThrowException" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;._decode_pointer" filterName="_decode_pointer" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;._encode_pointer" filterName="_encode_pointer" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;._encoded_null" filterName="_encoded_null" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;._exit_callback" filterName="_exit_callback" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;._getFiberPtrId" filterName="_getFiberPtrId" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;._initatexit_app_domain" filterName="_initatexit_app_domain" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;._initatexit_m" filterName="_initatexit_m" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;._initterm" filterName="_initterm" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;._initterm_e" filterName="_initterm_e" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;._initterm_m" filterName="_initterm_m" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;._onexit_m" filterName="_onexit_m" isExposed="False" />
+    <Filter entryType="Method" fullName="&lt;Module&gt;._onexit_m_appdomain" filterName="_onexit_m_appdomain" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.??_7type_info@@6B@" filterName="??_7type_info@@6B@" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.??_R0H@8" filterName="??_R0H@8" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?_lock@AtExitLock@&lt;CrtImplementationDetails&gt;@@$$Q0PAXA" filterName="?_lock@AtExitLock@&lt;CrtImplementationDetails&gt;@@$$Q0PAXA" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?_ref_count@AtExitLock@&lt;CrtImplementationDetails&gt;@@$$Q0HA" filterName="?_ref_count@AtExitLock@&lt;CrtImplementationDetails&gt;@@$$Q0HA" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?Count@AllDomains@&lt;CrtImplementationDetails&gt;@@2HA" filterName="?Count@AllDomains@&lt;CrtImplementationDetails&gt;@@2HA" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?Entered@DefaultDomain@&lt;CrtImplementationDetails&gt;@@2_NA" filterName="?Entered@DefaultDomain@&lt;CrtImplementationDetails&gt;@@2_NA" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?hasNative@DefaultDomain@&lt;CrtImplementationDetails&gt;@@0W4State@TriBool@2@A" filterName="?hasNative@DefaultDomain@&lt;CrtImplementationDetails&gt;@@0W4State@TriBool@2@A" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?hasPerProcess@DefaultDomain@&lt;CrtImplementationDetails&gt;@@0W4State@TriBool@2@A" filterName="?hasPerProcess@DefaultDomain@&lt;CrtImplementationDetails&gt;@@0W4State@TriBool@2@A" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?Initialized@CurrentDomain@&lt;CrtImplementationDetails&gt;@@$$Q2HA" filterName="?Initialized@CurrentDomain@&lt;CrtImplementationDetails&gt;@@$$Q2HA" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?InitializedNative@CurrentDomain@&lt;CrtImplementationDetails&gt;@@$$Q2W4State@Progress@2@A" filterName="?InitializedNative@CurrentDomain@&lt;CrtImplementationDetails&gt;@@$$Q2W4State@Progress@2@A" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?InitializedNative@DefaultDomain@&lt;CrtImplementationDetails&gt;@@2_NA" filterName="?InitializedNative@DefaultDomain@&lt;CrtImplementationDetails&gt;@@2_NA" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?InitializedNativeFromCCTOR@DefaultDomain@&lt;CrtImplementationDetails&gt;@@2_NA" filterName="?InitializedNativeFromCCTOR@DefaultDomain@&lt;CrtImplementationDetails&gt;@@2_NA" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?InitializedPerAppDomain@CurrentDomain@&lt;CrtImplementationDetails&gt;@@$$Q2W4State@Progress@2@A" filterName="?InitializedPerAppDomain@CurrentDomain@&lt;CrtImplementationDetails&gt;@@$$Q2W4State@Progress@2@A" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?InitializedPerProcess@CurrentDomain@&lt;CrtImplementationDetails&gt;@@$$Q2W4State@Progress@2@A" filterName="?InitializedPerProcess@CurrentDomain@&lt;CrtImplementationDetails&gt;@@$$Q2W4State@Progress@2@A" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?InitializedPerProcess@DefaultDomain@&lt;CrtImplementationDetails&gt;@@2_NA" filterName="?InitializedPerProcess@DefaultDomain@&lt;CrtImplementationDetails&gt;@@2_NA" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?InitializedVtables@CurrentDomain@&lt;CrtImplementationDetails&gt;@@$$Q2W4State@Progress@2@A" filterName="?InitializedVtables@CurrentDomain@&lt;CrtImplementationDetails&gt;@@$$Q2W4State@Progress@2@A" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?IsDefaultDomain@CurrentDomain@&lt;CrtImplementationDetails&gt;@@$$Q2_NA" filterName="?IsDefaultDomain@CurrentDomain@&lt;CrtImplementationDetails&gt;@@$$Q2_NA" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?ProcessAttach@NativeDll@&lt;CrtImplementationDetails&gt;@@0IB" filterName="?ProcessAttach@NativeDll@&lt;CrtImplementationDetails&gt;@@0IB" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?ProcessDetach@NativeDll@&lt;CrtImplementationDetails&gt;@@0IB" filterName="?ProcessDetach@NativeDll@&lt;CrtImplementationDetails&gt;@@0IB" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?ProcessVerifier@NativeDll@&lt;CrtImplementationDetails&gt;@@0IB" filterName="?ProcessVerifier@NativeDll@&lt;CrtImplementationDetails&gt;@@0IB" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?ThreadAttach@NativeDll@&lt;CrtImplementationDetails&gt;@@0IB" filterName="?ThreadAttach@NativeDll@&lt;CrtImplementationDetails&gt;@@0IB" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?ThreadDetach@NativeDll@&lt;CrtImplementationDetails&gt;@@0IB" filterName="?ThreadDetach@NativeDll@&lt;CrtImplementationDetails&gt;@@0IB" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.?Uninitialized@CurrentDomain@&lt;CrtImplementationDetails&gt;@@$$Q2HA" filterName="?Uninitialized@CurrentDomain@&lt;CrtImplementationDetails&gt;@@$$Q2HA" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.__@@_PchSym_@00@UfhvihUhznUwlxfnvmghUerhfzoLhgfwrlLCAAIUkilqvxghUtrrnlgvUgifmpUtrrnlgvUivovzhvUhgwzucOlyq@" filterName="__@@_PchSym_@00@UfhvihUhznUwlxfnvmghUerhfzoLhgfwrlLCAAIUkilqvxghUtrrnlgvUgifmpUtrrnlgvUivovzhvUhgwzucOlyq@" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.__exit_list_size_app_domain" filterName="__exit_list_size_app_domain" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.__native_dllmain_reason" filterName="__native_dllmain_reason" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.__native_startup_lock" filterName="__native_startup_lock" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.__native_startup_state" filterName="__native_startup_state" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.__native_vcclrit_reason" filterName="__native_vcclrit_reason" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.__onexitbegin_app_domain" filterName="__onexitbegin_app_domain" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.__onexitend_app_domain" filterName="__onexitend_app_domain" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.__unep@?_UninitializeDefaultDomain@LanguageSupport@&lt;CrtImplementationDetails&gt;@@$$FCGJPAX@Z" filterName="__unep@?_UninitializeDefaultDomain@LanguageSupport@&lt;CrtImplementationDetails&gt;@@$$FCGJPAX@Z" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.__unep@?DoNothing@DefaultDomain@&lt;CrtImplementationDetails&gt;@@$$FCGJPAX@Z" filterName="__unep@?DoNothing@DefaultDomain@&lt;CrtImplementationDetails&gt;@@$$FCGJPAX@Z" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.__xc_a" filterName="__xc_a" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.__xc_z" filterName="__xc_z" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.__xi_a" filterName="__xi_a" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;.__xi_z" filterName="__xi_z" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;._CT??_R0H@84" filterName="_CT??_R0H@84" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;._CTA1H" filterName="_CTA1H" isExposed="False" />
+    <Filter entryType="Field" fullName="&lt;Module&gt;._TI1H" filterName="_TI1H" isExposed="False" />
+  </Filter>
+</Filter>
+<Filter entryType="Namespace" fullName="&lt;CppImplementationDetails&gt;" isExposed="False" xmlns="" />
+<Filter entryType="Namespace" fullName="&lt;CrtImplementationDetails&gt;" isExposed="False" xmlns="" />
+<Filter entryType="Namespace" fullName="vc_attributes" isExposed="False" xmlns="" /></ApiFilter>
+  </PropertyGroup>
+  <!-- There are no properties for these two groups but they need to appear in
+       order for Visual Studio to perform the build. -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  </PropertyGroup>
+  <ItemGroup>
+    <SiteMap Include="GiiMote Documentation\SiteMap.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GiiMote Help\" />
+    <Folder Include="GiiMote Documentation\Topics\" />
+    <Folder Include="GiiMote Documentation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GiiMote Help\GiiMote.htm" />
+    <Content Include="GiiMote Documentation\Topics\Lisence.topic" />
+    <Content Include="GiiMote Documentation\Topics\Copyright.topic" />
+    <Content Include="GiiMote Documentation\Topics\Overview.topic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="WiimoteLib">
+      <HintPath>..\Release\WiimoteLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <!-- Import the SHFB build targets -->
+  <Import Project="$(SHFBROOT)\SandcastleHelpFileBuilder.targets" />
+</Project>
