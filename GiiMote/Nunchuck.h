@@ -22,7 +22,7 @@
 	/// <returns>Normalized acceleration</returns>
 	double wm_nunchuck_get_accel_x()
 	{
-		return ( wm_calc_accel(GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->AccelState.Values.X, 3) );
+		return ( wm_calc_accel(GiiMote::gm->wc[GiiMote::gm->wmIndex]->WiimoteState->NunchukState.AccelState.Values.X, 3) );
 	}
 
 	/// <summary>Normalized accelerometer data</summary>
