@@ -1,0 +1,3 @@
+# Introduction #
+
+Yaw is one of the three Tait-Bryan rotations along with Pitch and Roll and is defined as the rotation of a rigid body around its vertical (Z on the Wii Remote) axis. Yaw is the only Tait-Bryan rotation which can not be calculated using the force of gravity since it is defined (in the case of the Wii Remote) as rotation around the axis of gravity. _Ergo_ to calculate Yaw the Wii Remote's infrared support must be utilized.
